@@ -28,6 +28,13 @@ class SettingsSchema
                     'favicon' => ['label' => 'Browser tab icon', 'type' => 'image', 'default' => $k('2016-04-Logo-1.png')],
                 ],
             ],
+            'topbar' => [
+                'label' => 'Top bar & announcement',
+                'fields' => [
+                    'announcement_text' => ['label' => 'Announcement – text in the blue bar at the very top (leave empty to hide it)', 'type' => 'text', 'default' => 'KLM Safaris Internship Opportunity – Online Tourism Marketing and Content Creation'],
+                    'announcement_link' => ['label' => 'Announcement – where it links to (e.g. /internship-opportunity)', 'type' => 'text', 'default' => '/internship-opportunity'],
+                ],
+            ],
             'brand' => [
                 'label' => 'Brand & contact',
                 'fields' => [
@@ -45,8 +52,6 @@ class SettingsSchema
                     'address' => ['label' => 'Office address', 'type' => 'textarea', 'default' => "Market Street, P.O Box 7815\nMoshi, Kilimanjaro\nTanzania – East Africa"],
                     'office_hours' => ['label' => 'Office hours', 'type' => 'text', 'default' => 'Mon – Sat · 08:00 – 18:00 EAT'],
                     'map_embed' => ['label' => 'Google Maps embed URL (contact page)', 'type' => 'text', 'default' => 'https://www.google.com/maps?q=Market+Street,+Moshi,+Tanzania&output=embed'],
-                    'announcement_text' => ['label' => 'Announcement bar text (leave empty to hide)', 'type' => 'text', 'default' => 'KLM Safaris Internship Opportunity – Online Tourism Marketing and Content Creation'],
-                    'announcement_link' => ['label' => 'Announcement bar link', 'type' => 'text', 'default' => '/internship-opportunity'],
                 ],
             ],
             'social' => [

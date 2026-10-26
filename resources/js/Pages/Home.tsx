@@ -743,7 +743,7 @@ function Reviews({ items }: { items: Testimonial[] }) {
                             <span>
                                 <TripadvisorBubbles size={14} />
                                 <span className="mt-1 block text-[15px] font-semibold">{settings.rating_count}</span>
-                                <span className="link-arrow mt-1 !text-[13px]">Read them on {settings.rating_source}</span>
+                                <span className="link-arrow mt-1 !text-[13px]">{tx('reviews_read_on', { source: settings.rating_source })}</span>
                             </span>
                         </a>
                     )}

@@ -268,7 +268,7 @@ export default function TourShow({ tour, related, testimonials, consultant }: Pr
                             <span className="eyebrow">{tx('tour_similar_label')}</span>
                             <h2 className="h-section mt-4">{tx('tour_similar')}</h2>
                         </div>
-                        {tour.category && <Link href={`/experiences/${tour.category.slug}`} className="btn btn-outline hidden sm:inline-flex">All {tour.category.name}</Link>}
+                        {tour.category && <Link href={`/experiences/${tour.category.slug}`} className="btn btn-outline hidden sm:inline-flex">{tx('tour_all_in', { name: tour.category.name })}</Link>}
                     </div>
                     <div className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{related.map((t, i) => <TourCard key={t.id} tour={t} delay={i * 80} />)}</div>
                 </section>

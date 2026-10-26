@@ -263,14 +263,19 @@ function GalleryInput({ value, onChange }: { value: string[]; onChange: (v: stri
     );
 }
 
-type MediaFile = { path: string; url: string; name: string };
+type MediaFile = { path: string; url: string; name: string; source?: 'upload' | 'site' };
 
 export function MediaPicker({ onClose, onPick, multiple = false }: { onClose: () => void; onPick: (urls: string[]) => void; multiple?: boolean }) {
     const [files, setFiles] = useState<MediaFile[]>([]);
     const [selected, setSelected] = useState<string[]>([]);
     const [uploading, setUploading] = useState(false);
     const [url, setUrl] = useState('');
+    const [source, setSource] = useState<'' | 'upload' | 'site'>('');
+    const [q, setQ] = useState('');
     const fileRef = useRef<HTMLInputElement>(null);
+    // Uploaded images plus the site's own photos, filterable by source and file name.
+    const words = q.toLowerCase().split(/\s+/).filter(Boolean);
+    const shown = files.filter((f) => (!source || f.source === source) && words.every((w) => f.name.toLowerCase().replace(/[-_]/g, ' ').includes(w)));
 
     const load = () => axios.get<MediaFile[]>('/admin/media').then((r) => setFiles(r.data));
     useEffect(() => { load(); }, []);
@@ -314,9 +319,17 @@ export function MediaPicker({ onClose, onPick, multiple = false }: { onClose: ()
                     <input className={input} value={url} onChange={(e) => setUrl(e.target.value)} placeholder="…or paste an external image URL" />
                     <button type="button" disabled={!url} onClick={() => onPick([url])} className="shrink-0 rounded-xl bg-sand-100 px-4 text-sm disabled:opacity-40">Use URL</button>
                 </div>
-                <div className="grid flex-1 grid-cols-3 gap-3 overflow-y-auto p-5 sm:grid-cols-5">
-                    {files.length === 0 && <p className="col-span-full py-10 text-center text-sm text-ink/45">No uploads yet.</p>}
-                    {files.map((f) => (
+                <div className="flex flex-wrap items-center gap-2 px-5 pt-4">
+                    {([['', 'All'], ['upload', 'Uploaded'], ['site', 'Site photos']] as const).map(([key, label]) => (
+                        <button type="button" key={key} onClick={() => setSource(key)} className={cn('rounded-full px-3.5 py-1.5 text-xs transition', source === key ? 'bg-ink text-white' : 'bg-sand-100 text-ink/60 hover:text-ink')}>
+                            {label} <span className="opacity-60">{key ? files.filter((f) => f.source === key).length : files.length}</span>
+                        </button>
+                    ))}
+                    <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search photos (e.g. serengeti, mawe)…" className="min-w-[180px] flex-1 rounded-full border border-ink/10 px-4 py-1.5 text-sm outline-none focus:border-ink/30" />
+                </div>
+                <div className="grid min-h-0 flex-1 auto-rows-max grid-cols-3 content-start gap-3 overflow-y-auto p-5 sm:grid-cols-5">
+                    {shown.length === 0 && <p className="col-span-full py-10 text-center text-sm text-ink/45">{files.length ? 'No images match.' : 'No images yet — upload some above.'}</p>}
+                    {shown.map((f) => (
                         <button type="button" key={f.path} onClick={() => toggle(f.url)} onDoubleClick={() => onPick([f.url])} className={cn('relative aspect-square overflow-hidden rounded-xl ring-2 transition', selected.includes(f.url) ? 'ring-gold' : 'ring-transparent hover:ring-ink/20')}>
                             <img src={f.url} alt={f.name} className="h-full w-full object-cover" loading="lazy" />
                             {selected.includes(f.url) && <span className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-gold text-white"><Icon name="check" size={14} /></span>}

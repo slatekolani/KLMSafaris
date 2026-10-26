@@ -12,8 +12,12 @@ export function img(url: string | null | undefined, width = 1200, quality = 72):
     return url;
 }
 
+/** Shown instead of a price when none is set — CMS → Site text ("Price when none is set"), set by the site layout. */
+let priceFallback = 'On request';
+export const setPriceFallback = (label: string) => { if (label) priceFallback = label; };
+
 export function money(value: number | null | undefined): string {
-    if (value === null || value === undefined || Number.isNaN(Number(value))) return 'On request';
+    if (value === null || value === undefined || Number.isNaN(Number(value))) return priceFallback;
     return '$' + Number(value).toLocaleString('en-US', { maximumFractionDigits: 0 });
 }
 

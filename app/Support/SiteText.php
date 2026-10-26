@@ -115,6 +115,7 @@ class SiteText
                     'ui_why_more' => $t('Why us – link', 'Learn more'),
                     'ui_reviews_label' => $t('Reviews – label', 'Guest reviews'),
                     'ui_reviews_more' => $t('Reviews – link on long reviews', 'Read full review'),
+                    'ui_reviews_read_on' => $t('Homepage reviews – link under the rating ({source} = review site)', 'Read them on {source}'),
                 ],
             ],
             'text_tours' => [
@@ -144,6 +145,7 @@ class SiteText
                     'ui_tours_empty_text' => $t('All tours page – no results text', 'We design custom journeys every day. Tell us what you are dreaming of and we will build it from scratch.', 'textarea'),
                     'ui_tours_empty_button' => $t('All tours page – no results button', 'Plan your own trip'),
                     'ui_tour_crumb' => $t('Tour page – breadcrumb for all tours', 'Journeys'),
+                    'ui_tour_all_in' => $t('Tour page – button to the experience ({name} = experience)', 'All {name}'),
                     'ui_tour_nav_overview' => $t('Tour page – section tab: overview', 'Overview'),
                     'ui_tour_nav_itinerary' => $t('Tour page – section tab: itinerary', 'Itinerary'),
                     'ui_tour_nav_included' => $t('Tour page – section tab: included', 'What’s included'),
@@ -245,6 +247,7 @@ class SiteText
                     'ui_cat_see' => $t('Experience page – first button ({count})', 'See {count} tours'),
                     'ui_cat_custom' => $t('Experience page – second button', 'Plan a custom trip'),
                     'ui_cat_choose' => $t('Experience page – list title (when no homepage title)', 'Choose your tour'),
+                    'ui_cat_hero_title' => $t('Experience page – hero title ({name} = experience; *stars* = blue)', '{name} *in Tanzania*'),
                     'ui_cat_guides' => $t('Experience page – guides title ({name} = experience)', '{name} guides'),
                     'ui_cat_questions' => $t('Experience page – FAQ title ({name} = experience)', '{name} questions'),
                     'ui_cat_filter_all' => $t('Experience page – filter: all', 'All'),

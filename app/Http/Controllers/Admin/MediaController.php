@@ -46,11 +46,16 @@ class MediaController extends Controller
         return back()->with('success', 'File deleted.');
     }
 
+    /**
+     * Everything the site can use: images uploaded in the CMS (deletable), then the site's own photos that came with
+     * the website and the old klmsafaris.com (public/images/klm) — shown so they can be found and reused, but protected
+     * from deletion because tours, galleries and pages point at them.
+     */
     private function files(): array
     {
         $disk = Storage::disk('public');
 
-        return collect($disk->allFiles('uploads'))
+        $uploads = collect($disk->allFiles('uploads'))
             ->filter(fn ($p) => ! str_starts_with(basename($p), '.'))
             ->map(fn ($p) => [
                 'path' => $p,
@@ -58,9 +63,23 @@ class MediaController extends Controller
                 'name' => basename($p),
                 'size' => $disk->size($p),
                 'modified' => $disk->lastModified($p),
+                'source' => 'upload',
             ])
             ->sortByDesc('modified')
-            ->values()
-            ->all();
+            ->values();
+
+        $site = collect(glob(public_path('images/klm/*.{jpg,jpeg,png,webp,gif,svg,avif}'), GLOB_BRACE) ?: [])
+            ->map(fn ($f) => [
+                'path' => 'images/klm/'.basename($f),
+                'url' => '/images/klm/'.basename($f),
+                'name' => basename($f),
+                'size' => filesize($f),
+                'modified' => filemtime($f),
+                'source' => 'site',
+            ])
+            ->sortBy('name')
+            ->values();
+
+        return $uploads->concat($site)->all();
     }
 }

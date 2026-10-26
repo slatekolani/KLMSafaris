@@ -17,7 +17,7 @@ export default function Category({ category, tours, others, faqs, guides }: { ca
 
     return (
         <SiteLayout title={category.name} description={category.description} image={category.image}>
-            <PageHero image={category.image} eyebrow={category.tagline} title={`${category.name} *in Tanzania*`} subtitle={category.description} crumbs={[{ label: 'Experiences', href: '/tours' }, { label: category.name }]}
+            <PageHero image={category.image} eyebrow={category.tagline} title={tx('cat_hero_title', { name: category.name })} subtitle={category.description} crumbs={[{ label: 'Experiences', href: '/tours' }, { label: category.name }]}
                 facts={[{ label: tx('cat_fact_tours'), value: tours.length }, { label: tx('cat_fact_price'), value: prices.length ? Math.min(...prices) : null, prefix: '$' }, { label: tx('cat_fact_length'), value: span, suffix: ` ${tx('label_days')}` }]}>
                 <div className="mt-10 flex flex-wrap gap-3">
                     <a href="#journeys" className="btn btn-gold">{tx('cat_see', { count: tours.length })} <Icon name="arrow" size={16} className="arrow" /></a>

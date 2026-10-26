@@ -35,7 +35,7 @@ export default function ResourceForm({ resource, tabs, record, viewUrl }: { reso
         return () => window.removeEventListener('keydown', onKey);
     });
 
-    const title = editing ? (data.title || data.name || data.question || data.label || `Edit ${resource.singular}`) : `New ${resource.singular.toLowerCase()}`;
+    const title = String(editing ? (data.title || data.name || data.question || data.label || `Edit ${resource.singular}`) : `New ${resource.singular.toLowerCase()}`).replace(/\*/g, ''); // no *highlight* stars in the tab title
 
     return (
         <AdminLayout title={title} actions={viewUrl && <a href={viewUrl} target="_blank" rel="noreferrer" className="hidden items-center gap-2 rounded-full bg-white px-4 py-2 text-sm ring-1 ring-ink/10 hover:bg-sand-100 md:flex"><Icon name="eye" size={15} /> Preview</a>}>

@@ -3,13 +3,14 @@ import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'rea
 import Icon from '@/Components/Icon';
 import BrandTile, { BrandMark } from '@/Components/BrandIcon';
 import Logo from '@/Components/Logo';
-import { cn, img, plain, useShared, useText, whatsappLink } from '@/lib/utils';
+import { cn, img, plain, setPriceFallback, useShared, useText, whatsappLink } from '@/lib/utils';
 
 type Props = { children: ReactNode; title?: string; description?: string | null; image?: string | null; solidHeader?: boolean; mobileBar?: boolean };
 
 export default function SiteLayout({ children, title, description, image, solidHeader = false, mobileBar = true }: Props) {
     const { settings, seo } = useShared();
     useRevealObserver();
+    setPriceFallback(settings.ui_price_request);
     // Tags come from the server (App\Support\Seo) so crawlers see them too; page props are only a fallback.
     const metaTitle = seo?.title || (title ? plain(title) : settings.site_name);
     const metaText = seo?.description || description || settings.meta_description;

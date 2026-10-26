@@ -43,7 +43,7 @@ export default function ToursIndex({ tours, categories, destinations, filters }:
                 eyebrow={settings.tours_hero_eyebrow}
                 title={active ? tx('tours_title_cat', { name: active.name }) : settings.tours_hero_title}
                 subtitle={settings.tours_hero_text}
-                crumbs={[{ label: 'Tours' }]}
+                crumbs={[{ label: tx('tour_crumb') }]}
                 facts={[{ label: active ? tx('tours_count_label_cat', { name: active.name }) : tx('tours_count_label'), value: tours.length }, { label: tx('tours_fact_experiences'), value: categories.length }, { label: tx('tours_fact_destinations'), value: destinations.length }]}
             />
 
