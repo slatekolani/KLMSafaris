@@ -19,7 +19,7 @@ export default function Enquiries({ enquiries, statuses, counts, filters }: { en
 
     return (
         <AdminLayout title="Enquiries">
-            <div className="no-scrollbar mb-5 flex gap-1 overflow-x-auto">
+            <div className="no-scrollbar mb-5 flex gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain">
                 {['', ...statuses].map((s) => (
                     <Link key={s} href={s ? `/admin/enquiries?status=${s}` : '/admin/enquiries'} preserveState className={cn('flex shrink-0 items-center gap-2 rounded-full px-4 py-2 text-sm capitalize', (filters.status ?? '') === s ? 'bg-forest-900 text-white' : 'bg-white text-ink/60 ring-1 ring-ink/10')}>
                         {s || 'All'} <span className="text-xs opacity-60">{s ? counts[s] ?? 0 : total}</span>

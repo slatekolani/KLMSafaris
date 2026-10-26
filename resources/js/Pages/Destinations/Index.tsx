@@ -2,14 +2,16 @@ import { Link } from '@inertiajs/react';
 import Icon from '@/Components/Icon';
 import PageHero from '@/Components/PageHero';
 import SiteLayout from '@/Layouts/SiteLayout';
-import { cn, img, useShared } from '@/lib/utils';
+import { cn, img, useShared, useText } from '@/lib/utils';
 import type { Destination } from '@/types';
 
 export default function DestinationsIndex({ destinations }: { destinations: Destination[] }) {
     const { settings } = useShared();
+    const tx = useText();
     return (
-        <SiteLayout title="Destinations">
-            <PageHero image={settings.destinations_hero_image} eyebrow={settings.destinations_hero_eyebrow} title={settings.destinations_hero_title} subtitle={settings.destinations_hero_text} crumbs={[{ label: 'Destinations' }]} />
+        <SiteLayout title={tx('menu_destinations')}>
+            <PageHero image={settings.destinations_hero_image} eyebrow={settings.destinations_hero_eyebrow} title={settings.destinations_hero_title} subtitle={settings.destinations_hero_text} crumbs={[{ label: tx('menu_destinations') }]}
+                facts={[{ label: tx('dest_fact_count'), value: destinations.length }, { label: tx('dest_fact_tours'), value: destinations.reduce((n, d) => n + (d.tours_count ?? 0), 0) || null }, { label: tx('dest_fact_base'), value: tx('dest_fact_base_value') }]} />
             <section className="container-site py-24">
                 <div className="grid gap-6 md:grid-cols-6">
                     {destinations.map((d, i) => {
@@ -22,7 +24,7 @@ export default function DestinationsIndex({ destinations }: { destinations: Dest
                                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-8 text-white">
                                     <div>
                                         <p className="text-[11px] uppercase tracking-eyebrow text-gold-light">{d.region}</p>
-                                        <h2 className="mt-2 text-4xl font-semibold tracking-tight leading-tight sm:text-5xl">{d.name}</h2>
+                                        <h2 className="font-display mt-2 text-4xl font-semibold tracking-tight leading-tight sm:text-5xl">{d.name}</h2>
                                         <p className="mt-2 max-w-md text-white/75">{d.tagline}</p>
                                         <p className="mt-4 text-xs uppercase tracking-[0.18em] text-white/60">{d.tours_count} tours{d.best_time ? ` · Best: ${d.best_time.split('·')[0]}` : ''}</p>
                                     </div>

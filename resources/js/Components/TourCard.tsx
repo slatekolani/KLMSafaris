@@ -1,9 +1,10 @@
 import { Link } from '@inertiajs/react';
 import Icon from '@/Components/Icon';
-import { cn, img, money } from '@/lib/utils';
+import { cn, img, money, useText } from '@/lib/utils';
 import type { TourCard as T } from '@/types';
 
 export default function TourCard({ tour, className, delay = 0, light = false }: { tour: T; className?: string; delay?: number; light?: boolean }) {
+    const tx = useText();
     return (
         <Link href={`/tours/${tour.slug}`} data-reveal style={{ ['--d' as string]: `${delay}ms` }} className={cn('group block', className)}>
             <div className="img-zoom relative aspect-[4/5] overflow-hidden bg-sand-200">
@@ -18,10 +19,10 @@ export default function TourCard({ tour, className, delay = 0, light = false }: 
             </div>
             <div className="pt-5">
                 <p className={cn('eyebrow', light && 'eyebrow-light')}>{tour.group_name || tour.category?.name}</p>
-                <h3 className={cn('mt-2 text-[1.28rem] font-semibold leading-snug tracking-tight transition-colors', light ? 'text-white group-hover:text-gold-light' : 'text-ink group-hover:text-gold-dark')}>{tour.title}</h3>
+                <h3 className={cn('font-display mt-2 text-[1.28rem] font-semibold leading-snug tracking-tight transition-colors', light ? 'text-white group-hover:text-gold-light' : 'text-ink group-hover:text-gold-dark')}>{tour.title}</h3>
                 <div className={cn('mt-4 flex items-baseline justify-between gap-4 border-t pt-3 text-[14px]', light ? 'border-white/15' : 'border-ink/10')}>
-                    <span className={light ? 'text-white/55' : 'text-ink/55'}>{tour.season || 'All year round'}</span>
-                    <span className={cn('shrink-0 font-semibold', light ? 'text-white' : 'text-ink')}>{tour.price_from ? <>From {money(tour.price_from)}</> : 'Price on request'}</span>
+                    <span className={light ? 'text-white/55' : 'text-ink/55'}>{tour.season || tx('card_season')}</span>
+                    <span className={cn('shrink-0 font-semibold', light ? 'text-white' : 'text-ink')}>{tour.price_from ? <>{tx('label_from')} {money(tour.price_from)}</> : tx('price_request')}</span>
                 </div>
             </div>
         </Link>

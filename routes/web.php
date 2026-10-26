@@ -53,6 +53,7 @@ Route::get('login', fn () => redirect()->route('admin.login'))->name('login');
 |--------------------------------------------------------------------------
 */
 
+Route::get('sitemap.xml', \App\Http\Controllers\SitemapController::class)->name('sitemap');
 Route::get('/', [SiteController::class, 'home'])->name('home');
 Route::get('tours', [SiteController::class, 'tours'])->name('tours');
 Route::get('tours/{slug}', [SiteController::class, 'tour'])->name('tour');
@@ -61,10 +62,14 @@ Route::get('destinations', [SiteController::class, 'destinations'])->name('desti
 Route::get('destinations/{slug}', [SiteController::class, 'destination'])->name('destination');
 Route::get('journal', [SiteController::class, 'journal'])->name('journal');
 Route::get('journal/{slug}', [SiteController::class, 'post'])->name('post');
+Route::get('gallery', [SiteController::class, 'gallery'])->name('gallery');
+Route::get('accommodation', [SiteController::class, 'stays'])->name('stays');
+Route::get('accommodation/{slug}', [SiteController::class, 'stay'])->name('stay');
 Route::get('contact', [SiteController::class, 'contact'])->name('contact');
 Route::get('plan-your-trip', [SiteController::class, 'plan'])->name('plan');
 Route::post('enquire', [SiteController::class, 'enquire'])->middleware('throttle:8,1')->name('enquire');
 Route::post('subscribe', [SiteController::class, 'subscribe'])->middleware('throttle:8,1')->name('subscribe');
+Route::get('unsubscribe/{token}', [SiteController::class, 'unsubscribe'])->name('unsubscribe');
 
 // CMS pages (About, Sustainability, Volunteer, Terms…) — keep last.
 Route::get('{slug}', [SiteController::class, 'page'])->where('slug', '[a-z0-9\-]+')->name('page');

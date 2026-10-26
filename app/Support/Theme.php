@@ -8,6 +8,8 @@ use App\Models\Setting;
 class Theme
 {
     public const HEADING_FONTS = [
+        'Nunito Sans' => ['Nunito+Sans:ital,opsz,wght@0,6..12,300..800;1,6..12,400', 'sans-serif'],
+        'Afacad' => ['Afacad:ital,wght@0,400..700;1,400..700', 'sans-serif'],
         'Archivo' => ['Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900', 'sans-serif'],
         'Inter Tight' => ['Inter+Tight:ital,wght@0,300..800;1,400', 'sans-serif'],
         'Fraunces' => ['Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700', 'serif'],
@@ -23,6 +25,8 @@ class Theme
     ];
 
     public const BODY_FONTS = [
+        'Afacad' => ['Afacad:ital,wght@0,400..700;1,400..700', 'sans-serif'],
+        'Nunito Sans' => ['Nunito+Sans:ital,opsz,wght@0,6..12,300..800;1,6..12,400', 'sans-serif'],
         'Archivo' => ['Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900', 'sans-serif'],
         'Plus Jakarta Sans' => ['Plus+Jakarta+Sans:ital,wght@0,300..700;1,400', 'sans-serif'],
         'Inter' => ['Inter:wght@300..700', 'sans-serif'],
@@ -37,8 +41,8 @@ class Theme
     public static function fontsUrl(): string
     {
         $s = Setting::allValues();
-        $h = static::HEADING_FONTS[$s['font_heading']] ?? static::HEADING_FONTS['Archivo'];
-        $b = static::BODY_FONTS[$s['font_body']] ?? static::BODY_FONTS['Archivo'];
+        $h = static::HEADING_FONTS[$s['font_heading']] ?? static::HEADING_FONTS['Nunito Sans'];
+        $b = static::BODY_FONTS[$s['font_body']] ?? static::BODY_FONTS['Afacad'];
         $families = array_unique([$h[0], $b[0]]);
 
         return 'https://fonts.googleapis.com/css2?family='.implode('&family=', $families).'&display=swap';
@@ -47,14 +51,14 @@ class Theme
     public static function cssVariables(): string
     {
         $s = Setting::allValues();
-        $heading = array_key_exists($s['font_heading'], static::HEADING_FONTS) ? $s['font_heading'] : 'Archivo';
-        $body = array_key_exists($s['font_body'], static::BODY_FONTS) ? $s['font_body'] : 'Archivo';
+        $heading = array_key_exists($s['font_heading'], static::HEADING_FONTS) ? $s['font_heading'] : 'Nunito Sans';
+        $body = array_key_exists($s['font_body'], static::BODY_FONTS) ? $s['font_body'] : 'Afacad';
 
-        $primary = static::hex($s['color_primary'], '#4A8DC1');
-        $dark = static::hex($s['color_dark'], '#0E1113');
-        $accent = static::hex($s['color_accent'], '#F9DF74');
-        $light = static::hex($s['color_light'], '#F5F3EE');
-        $ink = static::hex($s['color_text'], '#111417');
+        $primary = static::hex($s['color_primary'], '#468BC2');
+        $dark = static::hex($s['color_dark'], '#000000');
+        $accent = static::hex($s['color_accent'], '#468BC2');
+        $light = static::hex($s['color_light'], '#FFFFFF');
+        $ink = static::hex($s['color_text'], '#000000');
 
         $vars = [
             '--font-display' => "\"$heading\", ".static::HEADING_FONTS[$heading][1],
@@ -81,7 +85,7 @@ class Theme
 
     public static function themeColor(): string
     {
-        return static::hex(Setting::allValues()['color_dark'] ?? '', '#0E1113');
+        return static::hex(Setting::allValues()['color_dark'] ?? '', '#000000');
     }
 
     private static function hex(?string $value, string $fallback): string

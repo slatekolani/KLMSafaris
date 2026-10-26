@@ -46,6 +46,26 @@ export function useShared(): SharedProps {
     return usePage<SharedProps>().props;
 }
 
+/** Site text from CMS → Site settings → “Site text” tabs: t('nav_plan') reads ui_nav_plan; {name}-style placeholders are filled from vars. */
+export function useText() {
+    const { settings } = useShared();
+    return (key: string, vars: Record<string, string | number> = {}) =>
+        String(settings[`ui_${key}`] ?? '').replace(/\{(\w+)\}/g, (_, v) => String(vars[v] ?? ''));
+}
+
+/** A CMS option list (rows of title + value) as [value, label] pairs for a <select>. */
+export function useOptions(key: string): [string, string][] {
+    const { settings } = useShared();
+    const rows: { title?: string; value?: string }[] = Array.isArray(settings[`ui_${key}`]) ? settings[`ui_${key}`] : [];
+    return rows.map((r) => [r.value ?? '', r.title ?? '']);
+}
+
 export function whatsappLink(number: string, text = 'Hello KLM Safaris! I would like to plan a trip to Tanzania.'): string {
     return `https://wa.me/${(number || '').replace(/\D/g, '')}?text=${encodeURIComponent(text)}`;
+}
+
+/** "Journey with *KLM Safaris*" → ["Journey with", "*KLM Safaris*"] so each line can be revealed. */
+export function splitLines(title: string): string[] {
+    const parts = title.split(/(\*[^*]+\*)/).map((p) => p.trim()).filter(Boolean);
+    return parts.length > 1 ? parts : [title];
 }

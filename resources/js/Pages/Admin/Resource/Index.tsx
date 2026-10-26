@@ -48,7 +48,7 @@ export default function ResourceIndex({ resource, rows, filters, filterOptions }
             </div>
 
             <Card className="overflow-hidden">
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto overflow-y-hidden overscroll-x-contain">
                     <table className="w-full text-left text-sm">
                         <thead className="border-b border-ink/[0.06] bg-sand-50 text-xs uppercase tracking-wider text-ink/45">
                             <tr>

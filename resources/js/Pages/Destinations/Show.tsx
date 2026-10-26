@@ -5,35 +5,37 @@ import Lightbox from '@/Components/Lightbox';
 import PageHero from '@/Components/PageHero';
 import TourCard from '@/Components/TourCard';
 import SiteLayout from '@/Layouts/SiteLayout';
-import { img } from '@/lib/utils';
+import { img, useText } from '@/lib/utils';
 import type { Destination, TourCard as TC } from '@/types';
 
 export default function DestinationShow({ destination: d, tours, others }: { destination: Destination; tours: TC[]; others: Destination[] }) {
+    const tx = useText();
     const [lb, setLb] = useState<number | null>(null);
     const gallery = d.gallery ?? [];
 
     return (
         <SiteLayout title={d.name} description={d.excerpt} image={d.image}>
-            <PageHero tall image={d.image} eyebrow={d.region} title={d.name} subtitle={d.tagline} crumbs={[{ label: 'Destinations', href: '/destinations' }, { label: d.name }]} />
+            <PageHero tall image={d.image} eyebrow={d.region} title={d.name} subtitle={d.tagline} crumbs={[{ label: tx('menu_destinations'), href: '/destinations' }, { label: d.name }]}
+                facts={[{ label: tx('dest_region'), value: d.region }, { label: tx('dest_best'), value: d.best_time }, { label: tx('dest_tours'), value: tours.length || null }]} />
 
             <section className="container-site grid gap-14 py-24 lg:grid-cols-12">
                 <div className="lg:col-span-7">
-                    <span className="eyebrow">About {d.name}</span>
-                    <p className="mt-6 text-3xl font-semibold tracking-tight leading-snug sm:text-4xl">{d.excerpt}</p>
+                    <span className="eyebrow">{tx('dest_about', { name: d.name })}</span>
+                    <p className="font-display mt-6 text-3xl font-semibold tracking-tight leading-snug sm:text-4xl">{d.excerpt}</p>
                     <div className="prose-lux mt-8" dangerouslySetInnerHTML={{ __html: d.body ?? '' }} />
                 </div>
                 <aside className="lg:col-span-5">
                     <div className="sticky top-28 space-y-5">
                         <div className=" bg-forest-900 p-8 text-white">
-                            <p className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-gold-light"><Icon name="calendar" size={16} /> Best time to visit</p>
-                            <p className="mt-3 text-2xl font-semibold tracking-tight leading-snug">{d.best_time}</p>
+                            <p className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-gold-light"><Icon name="calendar" size={16} /> {tx('dest_best')}</p>
+                            <p className="font-display mt-3 text-2xl font-semibold tracking-tight leading-snug">{d.best_time}</p>
                             {!!d.highlights?.length && (
                                 <>
-                                    <p className="mt-8 text-[11px] uppercase tracking-[0.2em] text-gold-light">Highlights</p>
+                                    <p className="mt-8 text-[11px] uppercase tracking-[0.2em] text-gold-light">{tx('dest_highlights')}</p>
                                     <ul className="mt-4 space-y-3">{d.highlights.map((h) => <li key={h} className="flex gap-3 text-white/80"><Icon name="sparkle" size={16} className="mt-1 shrink-0 text-gold-light" />{h}</li>)}</ul>
                                 </>
                             )}
-                            <Link href="/plan-your-trip" className="btn btn-gold mt-8 w-full">Plan a trip here</Link>
+                            <Link href={`/plan-your-trip?destination=${d.slug}`} className="btn btn-gold mt-8 w-full">{tx('dest_plan')}</Link>
                         </div>
                     </div>
                 </aside>
@@ -54,15 +56,15 @@ export default function DestinationShow({ destination: d, tours, others }: { des
             {tours.length > 0 && (
                 <section className="bg-sand-100 py-24">
                     <div className="container-site">
-                        <span className="eyebrow">Journeys</span>
-                        <h2 className="mt-4 text-5xl font-semibold tracking-tight">Experience {d.name}</h2>
+                        <span className="eyebrow">{tx('dest_journeys')}</span>
+                        <h2 className="h-section mt-4">{tx('dest_experience', { name: d.name })}</h2>
                         <div className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{tours.map((t, i) => <TourCard key={t.id} tour={t} delay={(i % 3) * 70} />)}</div>
                     </div>
                 </section>
             )}
 
             <section className="container-site py-24">
-                <span className="eyebrow">Combine with</span>
+                <span className="eyebrow">{tx('dest_combine')}</span>
                 <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                     {others.map((o) => (
                         <Link key={o.id} href={`/destinations/${o.slug}`} className="img-zoom group relative block h-64 overflow-hidden">

@@ -23,7 +23,8 @@ export default {
                 display: ['var(--font-display)'],
                 sans: ['var(--font-sans)'],
             },
-            letterSpacing: { eyebrow: '0.24em' },
+            // Afacad is already compact; keep headings at normal tracking like the reference site.
+            letterSpacing: { eyebrow: '0.24em', tight: '0', tighter: '-0.01em' },
             transitionTimingFunction: { lux: 'cubic-bezier(.19,1,.22,1)' },
             maxWidth: { site: '88rem' },
         },

@@ -58,7 +58,7 @@ export interface Tour extends TourCard {
     departure_time: string | null;
     return_time: string | null;
     dress_code: string | null;
-    pricing: { people: string; price: string }[] | null;
+    pricing: { people: string; price: string | null }[] | null;
     meta_title: string | null;
     meta_description: string | null;
     destinations: { id: number; name: string; slug: string; image: string | null }[];
@@ -100,7 +100,11 @@ export interface Page {
     subtitle: string | null;
     image: string | null;
     body: string | null;
-    sections: { title?: string; text?: string; image?: string }[] | null;
+    sections: { title?: string; text?: string; points?: string; button_label?: string; button_url?: string; image?: string }[] | null;
+    cta_title?: string | null;
+    cta_text?: string | null;
+    cta_label?: string | null;
+    cta_url?: string | null;
     meta_title: string | null;
     meta_description: string | null;
 }
@@ -141,9 +145,12 @@ export interface SharedProps {
     menu: {
         categories: Category[];
         destinations: Destination[];
+        partners: Partner[];
         pages: { title: string; menu_title: string | null; slug: string; footer_group: string }[];
     } | null;
     admin: { nav: { key: string; label: string; icon: string; group: string }[]; newEnquiries: number } | null;
+    /** Search & share tags for this page, worked out on the server (App\\Support\\Seo). */
+    seo?: { title: string; description: string; image: string | null; url: string; type: string; robots: string; published: string | null; site: string; twitter: string | null; schema: Record<string, unknown> | null };
     [key: string]: unknown;
 }
 

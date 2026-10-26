@@ -43,7 +43,7 @@ export default function ResourceForm({ resource, tabs, record, viewUrl }: { reso
                 <Link href={base} className="mb-5 inline-flex items-center gap-2 text-sm text-ink/50 hover:text-ink"><Icon name="arrowLeft" size={15} /> {resource.label}</Link>
 
                 {tabs.length > 1 && (
-                    <div className="no-scrollbar mb-5 flex gap-1 overflow-x-auto rounded-full bg-white p-1 ring-1 ring-ink/[0.06]">
+                    <div className="no-scrollbar mb-5 flex gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain rounded-full bg-white p-1 ring-1 ring-ink/[0.06]">
                         {tabs.map((t, i) => {
                             const hasErr = t.fields.some((f) => errors[f.name]);
                             return (

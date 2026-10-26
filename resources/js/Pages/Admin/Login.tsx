@@ -33,7 +33,7 @@ export default function Login() {
                             <label className="field-label">Password</label>
                             <input type="password" className="field" value={data.password} onChange={(e) => setData('password', e.target.value)} />
                         </div>
-                        <label className="flex items-center gap-2 text-sm text-ink/60"><input type="checkbox" checked={data.remember} onChange={(e) => setData('remember', e.target.checked)} className="accent-[#c39a5b]" /> Keep me signed in</label>
+                        <label className="flex items-center gap-2 text-sm text-ink/60"><input type="checkbox" checked={data.remember} onChange={(e) => setData('remember', e.target.checked)} className="accent-[rgb(var(--c-primary))]" /> Keep me signed in</label>
                         <button disabled={processing} className="btn btn-dark w-full">{processing ? 'Signing in…' : 'Sign in'} <Icon name="arrow" size={16} className="arrow" /></button>
                     </div>
                     <a href="/" className="mt-8 flex items-center gap-2 text-sm text-ink/50 hover:text-ink"><Icon name="arrowLeft" size={15} /> Back to website</a>

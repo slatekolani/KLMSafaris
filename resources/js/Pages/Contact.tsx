@@ -2,22 +2,23 @@ import EnquiryForm from '@/Components/EnquiryForm';
 import Icon from '@/Components/Icon';
 import PageHero from '@/Components/PageHero';
 import SiteLayout from '@/Layouts/SiteLayout';
-import { img, initials, useShared, whatsappLink } from '@/lib/utils';
+import { img, initials, useShared, useText, whatsappLink } from '@/lib/utils';
 import type { Faq, TeamMember } from '@/types';
 import { FaqList } from './Category';
 
 export default function Contact({ faqs, team }: { faqs: Faq[]; team: TeamMember[] }) {
     const { settings } = useShared();
+    const tx = useText();
     const cards = [
-        { icon: 'phone', label: 'Call us', value: settings.phone, href: `tel:${settings.phone}` },
-        { icon: 'mail', label: 'Email us', value: settings.email, href: `mailto:${settings.email}` },
-        { icon: 'send', label: 'WhatsApp', value: settings.phone_2 || 'Chat instantly', href: whatsappLink(settings.whatsapp) },
-        { icon: 'clock', label: 'Office hours', value: settings.office_hours },
+        { icon: 'phone', label: tx('contact_call'), value: settings.phone, href: `tel:${settings.phone}` },
+        { icon: 'mail', label: tx('contact_email'), value: settings.email, href: `mailto:${settings.email}` },
+        { icon: 'send', label: tx('contact_whatsapp'), value: settings.phone_2 || tx('contact_whatsapp_text'), href: whatsappLink(settings.whatsapp, tx('whatsapp_message')) },
+        { icon: 'clock', label: tx('contact_hours'), value: settings.office_hours },
     ];
 
     return (
-        <SiteLayout title="Contact us">
-            <PageHero image={settings.contact_hero_image} eyebrow={settings.contact_hero_eyebrow} title={settings.contact_hero_title} subtitle={settings.contact_hero_text} crumbs={[{ label: 'Contact' }]} />
+        <SiteLayout title={settings.contact_hero_eyebrow || tx('menu_contact')}>
+            <PageHero image={settings.contact_hero_image} eyebrow={settings.contact_hero_eyebrow} title={settings.contact_hero_title} subtitle={settings.contact_hero_text} crumbs={[{ label: tx('menu_contact') }]} overlap />
 
             <section className="container-site -mt-16 relative z-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {cards.map((c, i) => {
@@ -35,9 +36,9 @@ export default function Contact({ faqs, team }: { faqs: Faq[]; team: TeamMember[
 
             <section className="container-site grid gap-14 py-24 lg:grid-cols-12">
                 <div className="lg:col-span-5">
-                    <span className="eyebrow">Send a message</span>
-                    <h2 className="mt-4 text-5xl font-semibold tracking-tight leading-tight">Tell us how you dream of travelling</h2>
-                    <p className="mt-5 text-ink/60">The more you share, the better we can tailor our first ideas. There is never any obligation.</p>
+                    <span className="eyebrow">{tx('contact_form_label')}</span>
+                    <h2 className="h-section mt-4">{tx('contact_form_title')}</h2>
+                    <p className="mt-5 text-ink/60">{tx('contact_form_text')}</p>
                     <div className="mt-10 overflow-hidden ring-1 ring-ink/5">
                         {settings.map_embed && <iframe src={settings.map_embed} title="Office map" className="h-72 w-full grayscale" loading="lazy" />}
                         <div className="flex items-start gap-4 bg-white p-6"><Icon name="pin" className="mt-1 text-gold" /><p className="whitespace-pre-line text-ink/70"><span className="font-semibold text-ink">{settings.company_name}</span>{'\n'}{settings.address}</p></div>
@@ -51,12 +52,12 @@ export default function Contact({ faqs, team }: { faqs: Faq[]; team: TeamMember[
             {team.length > 0 && (
                 <section className="bg-sand-100 py-24">
                     <div className="container-site">
-                        <span className="eyebrow">The people behind your trip</span>
+                        <span className="eyebrow">{tx('contact_team')}</span>
                         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                             {team.map((m) => (
                                 <div key={m.id} data-reveal className=" bg-white p-7 text-center ring-1 ring-ink/5">
-                                    {m.photo ? <img src={img(m.photo, 300)} alt={m.name} className="mx-auto h-28 w-28 rounded-none object-cover" /> : <span className="mx-auto flex h-28 w-28 items-center justify-center rounded-none bg-forest text-4xl font-semibold tracking-tight text-gold-light">{initials(m.name)}</span>}
-                                    <p className="mt-5 text-2xl font-semibold tracking-tight">{m.name}</p>
+                                    {m.photo ? <img src={img(m.photo, 300)} alt={m.name} className="mx-auto h-28 w-28 rounded-none object-cover" /> : <span className="font-display mx-auto flex h-28 w-28 items-center justify-center rounded-none bg-forest text-4xl font-semibold tracking-tight text-gold-light">{initials(m.name)}</span>}
+                                    <p className="font-display mt-5 text-2xl font-semibold tracking-tight">{m.name}</p>
                                     <p className="text-[11px] uppercase tracking-[0.18em] text-gold-dark">{m.role}</p>
                                     <p className="mt-3 text-sm text-ink/60">{m.bio}</p>
                                 </div>
@@ -68,7 +69,7 @@ export default function Contact({ faqs, team }: { faqs: Faq[]; team: TeamMember[
 
             {faqs.length > 0 && (
                 <section className="container-site grid gap-12 py-24 lg:grid-cols-12">
-                    <div className="lg:col-span-4"><span className="eyebrow">FAQ</span><h2 className="mt-4 text-5xl font-semibold tracking-tight">Before you ask</h2></div>
+                    <div className="lg:col-span-4"><span className="eyebrow">{tx('faq_label')}</span><h2 className="h-section mt-4">{tx('contact_faq_title')}</h2></div>
                     <div className="lg:col-span-8"><FaqList faqs={faqs} /></div>
                 </section>
             )}

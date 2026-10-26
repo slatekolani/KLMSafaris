@@ -1,5 +1,5 @@
 import { useForm } from '@inertiajs/react';
-import { useState, type FormEvent } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import { FieldRenderer, type FieldDef } from '@/Components/admin/Fields';
 import AdminLayout, { Button, Card } from '@/Layouts/AdminLayout';
 import { cn } from '@/lib/utils';
@@ -9,13 +9,22 @@ type Group = { key: string; label: string; fields: (FieldDef & { type: string })
 export default function Settings({ groups, values }: { groups: Group[]; values: Record<string, any> }) {
     const [tab, setTab] = useState(0);
     const { data, setData, post, processing, isDirty } = useForm<Record<string, any>>(values);
-    const submit = (e: FormEvent) => { e.preventDefault(); post('/admin/settings', { preserveScroll: true }); };
+    const submit = (e?: FormEvent) => { e?.preventDefault(); post('/admin/settings', { preserveScroll: true }); };
+
+    // Ctrl/Cmd + S saves, as on the other CMS forms.
+    useEffect(() => {
+        const onKey = (e: KeyboardEvent) => {
+            if ((e.metaKey || e.ctrlKey) && e.key === 's') { e.preventDefault(); submit(); }
+        };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    });
     const group = groups[tab];
 
     return (
         <AdminLayout title="Site settings">
             <form onSubmit={submit} className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[220px_1fr]">
-                <nav className="flex gap-1 overflow-x-auto lg:flex-col">
+                <nav className="flex gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain lg:flex-col">
                     {groups.map((g, i) => (
                         <button type="button" key={g.key} onClick={() => setTab(i)} className={cn('shrink-0 rounded-xl px-4 py-2.5 text-left text-sm transition', tab === i ? 'bg-forest-900 text-white' : 'text-ink/60 hover:bg-white')}>{g.label}</button>
                     ))}

@@ -9,10 +9,16 @@
 
 @layer base {
     html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
-    body { @apply bg-sand-50 font-sans text-ink antialiased; font-size: 16px; line-height: 1.6; }
+    /* Type scale follows africanscenicsafaris.com: airy 16/17px body at 1.7, headings at 1.2 with normal tracking. */
+    /* Default (subpixel) smoothing like the reference site — forced antialiasing made Afacad look thin. */
+    body { @apply bg-sand-50 font-sans text-ink; font-size: 16px; line-height: 1.7; }
+    /* Afacad (body) has a small x-height; match it to the heading font's so text reads at its set size. */
+    body { font-size-adjust: 0.486; }
+    h1, h2, h3, h4, .font-display, .h-section, .h-display, .display-xl, .lead, .eyebrow { font-size-adjust: none; }
+    @media (min-width: 768px) { body { font-size: 17px; } }
     ::selection { background: rgb(var(--c-primary)); color: #fff; }
     h1, h2, h3, h4 { font-family: var(--font-display); }
-    h1, h2, h3, h4, .font-display { font-weight: 600; letter-spacing: -0.025em; }
+    h1, h2, h3, h4, .font-display { font-weight: 700; letter-spacing: 0; }
     img { -webkit-user-drag: none; }
 }
 
@@ -20,27 +26,32 @@
     .container-site { @apply mx-auto w-full max-w-site px-5 sm:px-8 lg:px-12; }
 
     /* Small section label: "Kilimanjaro" / "01 — Experiences" */
-    .eyebrow { @apply inline-flex items-center gap-2 text-[11.5px] font-semibold uppercase tracking-[0.18em] text-ink/55; }
-    .eyebrow-light { @apply text-white/65; }
+    .eyebrow { @apply inline-flex items-center gap-2 font-display text-[13px] font-medium uppercase tracking-[0.08em] text-gold; }
+    .eyebrow-light { @apply text-gold-light; }
 
     /* Display type */
-    .display-xl { font-family: var(--font-display); font-weight: 700; font-stretch: 100%; text-transform: uppercase; letter-spacing: -0.02em; line-height: .92; font-size: clamp(2.1rem, 10.2vw, 9rem); overflow-wrap: anywhere; }
-    @media (min-width: 768px) { .display-xl { font-stretch: 112%; font-size: clamp(3rem, 8.4vw, 9rem); } }
-    .h-display { font-family: var(--font-display); font-weight: 700; font-stretch: 100%; text-transform: uppercase; letter-spacing: -0.02em; line-height: .95; font-size: clamp(2rem, 8.5vw, 5.5rem); overflow-wrap: anywhere; }
-    @media (min-width: 768px) { .h-display { font-stretch: 108%; font-size: clamp(2.6rem, 6vw, 5.5rem); } }
-    .h-section { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.03em; line-height: 1.02; font-size: clamp(2.1rem, 4vw, 3.75rem); }
-    .lead { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.02em; line-height: 1.22; font-size: clamp(1.35rem, 2.1vw, 2rem); }
+    /* Hero / page titles — extra-bold (Nunito Sans has a true 800). */
+    .display-xl { font-family: var(--font-display); font-weight: 800; text-transform: capitalize; letter-spacing: 0; line-height: 1.15; font-size: clamp(2rem, 7.5vw, 2.4rem); overflow-wrap: anywhere; }
+    @media (min-width: 768px) { .display-xl { font-size: clamp(2.6rem, 4.4vw, 4rem); } }
+    .h-display { font-family: var(--font-display); font-weight: 800; text-transform: capitalize; letter-spacing: 0; line-height: 1.2; font-size: clamp(1.9rem, 7vw, 2.25rem); overflow-wrap: anywhere; }
+    @media (min-width: 768px) { .h-display { font-size: clamp(2.4rem, 3.6vw, 3.4rem); } }
+    /* Section titles — like their H2: semibold Title Case, 32px → 45px. */
+    .h-section { font-family: var(--font-display); font-weight: 700; text-transform: capitalize; letter-spacing: 0; line-height: 1.2; font-size: clamp(2rem, 3.2vw, 2.85rem); }
+    /* The intro line under a section title — heading font, regular weight, 20px → 25px. */
+    .lead { font-family: var(--font-display); font-weight: 400; letter-spacing: 0; line-height: 1.2; font-size: clamp(1.25rem, 1.75vw, 1.6rem); }
 
-    /* "*word*" in CMS headlines renders as a quieter second tone, not decoration. */
-    .fancy em, .fancy-dark em { font-style: normal; font-weight: inherit; opacity: .45; }
+    /* "*word*" in CMS headlines renders in the logo blue, on light and dark backgrounds alike. */
+    .fancy em, .fancy-dark em { font-style: normal; font-weight: inherit; color: rgb(var(--c-primary)); }
+    /* Titles over photos get a soft shadow so the logo blue stays readable on bright skies. */
+    .on-photo { text-shadow: 0 2px 28px rgb(0 0 0 / .5), 0 1px 3px rgb(0 0 0 / .4); }
 
     /* Buttons — rectangular, confident, one accent colour */
     .btn { @apply relative inline-flex h-[52px] items-center justify-center gap-3 whitespace-nowrap rounded-[2px] px-7 text-[14px] font-semibold tracking-[0.01em] transition-colors duration-300; }
-    .btn-gold { @apply bg-gold text-white hover:bg-gold-dark; }
-    .btn-dark { @apply bg-ink text-white hover:bg-ink/85; }
-    .btn-light { @apply bg-white text-ink hover:bg-white/85; }
-    .btn-ghost { @apply border border-white/45 text-white hover:border-white hover:bg-white hover:text-ink; }
-    .btn-outline { @apply border border-ink/20 text-ink hover:border-ink hover:bg-ink hover:text-white; }
+    /* Every button follows the “Plan your trip” style: logo blue, turning white with a blue outline on hover.
+       The variant names are kept so existing markup keeps working. */
+    .btn-brand, .btn-gold, .btn-dark, .btn-light, .btn-ghost, .btn-outline { @apply border border-gold bg-gold text-white hover:bg-white hover:text-gold; }
+    /* The reverse, for a second button beside a blue one: white with a blue outline, turning blue on hover. */
+    .btn-brand-outline { @apply border border-gold bg-white text-gold hover:bg-gold hover:text-white; }
     .btn svg { @apply transition-transform duration-300; }
     .btn:hover svg.arrow { transform: translateX(3px); }
 
@@ -58,10 +69,13 @@
     .field-label { @apply mb-1.5 block text-[11.5px] font-semibold uppercase tracking-[0.14em] text-ink/55; }
 
     /* Rich text from the CMS */
-    .prose-lux { @apply text-[17px] leading-[1.8] text-ink/75; }
+    .prose-lux { @apply text-[16px] leading-[1.7] text-ink/80 md:text-[17px]; overflow-wrap: break-word; min-width: 0; }
+    /* Old-site content can carry fixed widths — nothing may push the page wider than the phone. */
+    .prose-lux img, .prose-lux video, .prose-lux iframe, .prose-lux embed { max-width: 100%; height: auto; }
+    .prose-lux iframe { aspect-ratio: 16 / 9; width: 100%; }
     .prose-lux > * + * { @apply mt-5; }
-    .prose-lux h2 { @apply mt-14 font-display text-[1.9rem] font-semibold leading-tight tracking-tight text-ink; }
-    .prose-lux h3 { @apply mt-10 font-display text-[1.35rem] font-semibold tracking-tight text-ink; }
+    .prose-lux h2 { @apply mt-10 font-display text-[1.5rem] font-semibold leading-tight tracking-tight text-ink sm:mt-14 sm:text-[1.9rem]; }
+    .prose-lux h3 { @apply mt-8 font-display text-[1.2rem] font-semibold tracking-tight text-ink sm:mt-10 sm:text-[1.35rem]; }
     .prose-lux h4 { @apply mt-8 font-display text-lg font-semibold text-ink; }
     .prose-lux a { @apply text-ink underline decoration-gold underline-offset-4 hover:text-gold-dark; }
     .prose-lux ul { @apply space-y-2.5 pl-0; }
@@ -71,7 +85,9 @@
     .prose-lux blockquote { @apply my-10 border-l-2 border-ink pl-6 font-display text-[1.6rem] font-medium leading-snug tracking-tight text-ink; }
     .prose-lux img { @apply my-8 w-full; }
     .prose-lux strong { @apply font-semibold text-ink; }
-    .prose-lux table { @apply w-full text-left text-[15px]; }
+    /* Wide tables scroll sideways inside their own box on small screens. */
+    .prose-lux table { @apply block w-full max-w-full overflow-x-auto text-left text-[15px] md:table; -webkit-overflow-scrolling: touch; }
+    .prose-lux td, .prose-lux th { min-width: 7.5rem; }
     .prose-lux th { @apply border-b border-ink px-3 py-3 font-semibold text-ink; }
     .prose-lux td { @apply border-b border-ink/10 px-3 py-3; }
 }
@@ -92,16 +108,33 @@
 [data-reveal='fade'], [data-reveal='scale'] { transform: none; }
 [data-reveal].is-in { opacity: 1; transform: none; }
 
-.clip-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.2s cubic-bezier(.77,0,.18,1); transition-delay: var(--d, 0ms); }
-.clip-reveal.is-in { clip-path: inset(0 0 0 0); }
+/* The wrapper stays unclipped so the reveal observer can see it; its content wipes in. */
+.clip-reveal > * { clip-path: inset(0 0 100% 0); transition: clip-path 1.2s cubic-bezier(.77,0,.18,1); transition-delay: var(--d, 0ms); }
+.clip-reveal.is-in > * { clip-path: inset(0 0 0 0); }
 
 @keyframes kenburns { from { transform: scale(1.08); } to { transform: scale(1); } }
 .kenburns { animation: kenburns 10s ease-out forwards; }
+
+/* Hero camera moves — one per slide, so each photo travels differently */
+@keyframes kb-a { from { transform: scale(1.24) translate3d(2.5%, 1.5%, 0); } to { transform: scale(1.04) translate3d(-1.5%, -1%, 0); } }
+@keyframes kb-b { from { transform: scale(1.04) translate3d(-2%, 0, 0); } to { transform: scale(1.22) translate3d(2%, -1.5%, 0); } }
+@keyframes kb-c { from { transform: scale(1.2) translate3d(-2.5%, 2%, 0); } to { transform: scale(1.03) translate3d(1.5%, -1%, 0); } }
+@keyframes kb-d { from { transform: scale(1.05) translate3d(1.5%, 1.5%, 0); } to { transform: scale(1.22) translate3d(-2%, -1%, 0); } }
+.kb-a, .kb-b, .kb-c, .kb-d { animation-duration: var(--kb, 9s); animation-timing-function: cubic-bezier(.25,.1,.25,1); animation-fill-mode: forwards; will-change: transform; }
+.kb-a { animation-name: kb-a; } .kb-b { animation-name: kb-b; } .kb-c { animation-name: kb-c; } .kb-d { animation-name: kb-d; }
+@keyframes kb-video { from { transform: scale(1.12); } to { transform: scale(1.02); } }
+.kb-video { animation: kb-video var(--kb, 11s) ease-out forwards; }
 
 @keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
 .rise > span { display: inline-block; animation: rise 1.1s cubic-bezier(.2,.8,.2,1) both; }
 .mask { display: block; overflow: hidden; padding-bottom: .04em; }
 .mask > span { display: block; animation: rise 1.1s cubic-bezier(.2,.8,.2,1) both; }
+
+@keyframes hero-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.hero-in { animation: hero-in 1s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--d, 0ms); }
+
+@keyframes wipe { from { clip-path: inset(0 0 0 100%); } to { clip-path: inset(0 0 0 0); } }
+.hero-wipe { animation: wipe 1.3s cubic-bezier(.77,0,.18,1) both; }
 
 @keyframes progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 .slide-progress { transform-origin: left; animation: progress var(--dur, 7s) linear forwards; }
@@ -114,5 +147,8 @@
 
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-    [data-reveal], .clip-reveal { opacity: 1; transform: none; clip-path: none; }
+    [data-reveal], .clip-reveal > * { opacity: 1; transform: none; clip-path: none; }
 }
+
+/* Sticky bars that sit just under the site header and slide up when it tucks away */
+.below-nav { top: var(--nav-h, 0px); transition: top .3s ease-out; }

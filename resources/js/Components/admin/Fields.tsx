@@ -34,7 +34,7 @@ export function FieldRenderer({ field, value, onChange, error }: { field: FieldD
                 return (
                     <div className="flex items-center gap-3">
                         <input type="color" value={/^#[0-9a-f]{6}$/i.test(value ?? '') ? value : '#000000'} onChange={(e) => onChange(e.target.value.toUpperCase())} className="h-11 w-14 cursor-pointer rounded-xl border border-ink/10 bg-white p-1" />
-                        <input className={input} value={value ?? ''} onChange={(e) => onChange(e.target.value)} placeholder="#4A8DC1" />
+                        <input className={input} value={value ?? ''} onChange={(e) => onChange(e.target.value)} placeholder="#468BC2" />
                     </div>
                 );
             case 'select':
@@ -150,10 +150,19 @@ function Repeater({ fields, value, onChange, itemLabel }: { fields: Record<strin
                         <div className="grid gap-4 border-t border-ink/[0.06] bg-sand-50 p-4 sm:grid-cols-2">
                             {Object.entries(fields).map(([k, type]) => (
                                 <div key={k} className={type === 'textarea' || type === 'image' || k === 'title' ? 'sm:col-span-2' : ''}>
-                                    <label className="mb-1 block text-xs font-medium capitalize text-ink/60">{k.replace(/_/g, ' ')}</label>
-                                    {type === 'textarea' ? <textarea rows={3} className={input} value={row[k] ?? ''} onChange={(e) => update(i, k, e.target.value)} />
-                                        : type === 'image' ? <ImageInput value={row[k] ?? ''} onChange={(v) => update(i, k, v)} />
-                                            : <input className={input} value={row[k] ?? ''} onChange={(e) => update(i, k, e.target.value)} />}
+                                    {type === 'toggle' ? (
+                                        <label className="flex cursor-pointer items-center gap-2 pt-5 text-sm capitalize text-ink/70">
+                                            <input type="checkbox" className="h-4 w-4 accent-[rgb(var(--c-primary))]" checked={!!row[k]} onChange={(e) => update(i, k, e.target.checked ? '1' : '')} />
+                                            {k.replace(/_/g, ' ')}
+                                        </label>
+                                    ) : (
+                                        <>
+                                            <label className="mb-1 block text-xs font-medium capitalize text-ink/60">{k.replace(/_/g, ' ')}</label>
+                                            {type === 'textarea' ? <textarea rows={3} className={input} value={row[k] ?? ''} onChange={(e) => update(i, k, e.target.value)} />
+                                                : type === 'image' ? <ImageInput value={row[k] ?? ''} onChange={(v) => update(i, k, v)} />
+                                                    : <input type={type === 'number' ? 'number' : 'text'} className={input} value={row[k] ?? ''} onChange={(e) => update(i, k, e.target.value)} />}
+                                        </>
+                                    )}
                                 </div>
                             ))}
                         </div>

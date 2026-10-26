@@ -39,7 +39,7 @@ class ResourceController extends Controller
 
         $paginator->getCollection()->transform(fn (Model $m) => [
             'id' => $m->id,
-            'title' => $m->{$def['title']},
+            'title' => $m->{$def['title']} ?: (isset($def['title_fallback']) ? $m->{$def['title_fallback']} : null) ?: '#'.$m->id,
             'image' => isset($def['image']) ? $m->{$def['image']} : null,
             'cells' => collect($def['columns'])->map(fn ($c) => data_get($m, $c['name']))->all(),
             'view' => isset($def['view']) ? $this->viewUrl($def['view'], $m) : null,
@@ -181,7 +181,7 @@ class ResourceController extends Controller
                     $value = (bool) $value;
                     break;
                 case 'number':
-                    $value = ($value === null || $value === '') ? ($name === 'price_from' ? null : 0) : $value;
+                    $value = ($value === null || $value === '') ? (($name === 'price_from' || ! empty($field['nullable'])) ? null : 0) : $value;
                     break;
                 case 'relation':
                     $value = $value ?: null;

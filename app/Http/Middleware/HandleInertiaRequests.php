@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Destination;
 use App\Models\Enquiry;
 use App\Models\Page;
+use App\Models\Partner;
 use App\Models\Setting;
 use App\Support\AdminResources;
 use Illuminate\Http\Request;
@@ -25,7 +26,8 @@ class HandleInertiaRequests extends Middleware
         $isAdmin = $request->is('admin', 'admin/*');
 
         return array_merge(parent::share($request), [
-            'settings' => fn () => Setting::allValues(),
+            // Trip-planner copy is large and only used on that page, which receives it directly.
+            'settings' => fn () => array_filter(Setting::allValues(), fn ($key) => ! str_starts_with($key, 'plan_'), ARRAY_FILTER_USE_KEY),
             'flash' => fn () => [
                 'success' => $request->session()->get('success'),
                 'error' => $request->session()->get('error'),
@@ -36,6 +38,7 @@ class HandleInertiaRequests extends Middleware
                     ->with(['tours' => fn ($q) => $q->select('id', 'category_id', 'group_name', 'title', 'slug', 'duration_days')])
                     ->get(['id', 'name', 'slug', 'tagline', 'image']),
                 'destinations' => Destination::orderBy('sort_order')->get(['id', 'name', 'slug', 'region', 'image']),
+                'partners' => Partner::orderBy('sort_order')->get(['id', 'name', 'subtitle', 'logo', 'url']),
                 'pages' => Page::where('is_published', true)->whereNotNull('footer_group')->orderBy('sort_order')->get(['title', 'menu_title', 'slug', 'footer_group']),
             ],
             'admin' => $isAdmin && $request->user() ? fn () => [
