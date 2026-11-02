@@ -23,8 +23,8 @@ class EnquiryReceived extends Mailable
     {
         $e = $this->enquiry;
         $subject = match ($e->source) {
-            'planner' => "New trip plan — {$e->name}",
-            'tour' => 'New enquiry: '.($e->tour?->title ?? 'a tour')." — {$e->name}",
+            'planner' => "New trip plan from {$e->name}",
+            'tour' => 'New enquiry: '.($e->tour?->title ?? 'a tour')." from {$e->name}",
             default => "New message from {$e->name}",
         };
 

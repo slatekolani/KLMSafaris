@@ -282,7 +282,7 @@ file_put_contents("$dataDir/tours.json", json_encode($tours, JSON_PRETTY_PRINT |
 function scrapePage(string $url): ?array
 {
     [$d, $x] = dom(fetch($url));
-    // Pick the largest content container — the first Elementor block on the page is the mega menu.
+    // Pick the largest content container: the first Elementor block on the page is the mega menu.
     $node = null;
     $best = 0;
     foreach ($x->query("//*[@data-elementor-type='wp-page' or @data-elementor-type='wp-post' or @data-elementor-type='single-post' or @data-elementor-type='single-page'] | //div[".cls('entry-content')." or ".cls('mkdf-post-text')." or ".cls('wpb-content-wrapper')."] | //article") as $cand) {

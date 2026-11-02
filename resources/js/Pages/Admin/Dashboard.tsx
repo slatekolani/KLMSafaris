@@ -15,6 +15,7 @@ export const STATUS_COLORS: Record<string, string> = {
     new: 'bg-gold/15 text-gold-dark',
     contacted: 'bg-sky-100 text-sky-700',
     quoted: 'bg-violet-100 text-violet-700',
+    confirmed: 'bg-emerald-100 text-emerald-700',
     booked: 'bg-acacia/15 text-acacia',
     closed: 'bg-ink/10 text-ink/50',
 };
@@ -65,7 +66,7 @@ export default function Dashboard({ counts, months, recent, topTours }: Props) {
                         <Link href="/admin/enquiries" className="text-sm text-gold-dark hover:underline">View all</Link>
                     </div>
                     <div className="mt-4 divide-y divide-ink/[0.06]">
-                        {recent.length === 0 && <p className="py-10 text-center text-sm text-ink/45">No enquiries yet — they will appear here the moment a guest gets in touch.</p>}
+                        {recent.length === 0 && <p className="py-10 text-center text-sm text-ink/45">No enquiries yet, they will appear here the moment a guest gets in touch.</p>}
                         {recent.map((e) => (
                             <Link key={e.id} href={`/admin/enquiries?q=${encodeURIComponent(e.email)}`} className="flex items-center gap-4 py-3.5 hover:bg-sand-50">
                                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-forest-900 text-sm text-gold-light">{e.name[0]}</span>

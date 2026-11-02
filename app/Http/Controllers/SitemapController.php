@@ -9,7 +9,7 @@ use App\Models\Page;
 use App\Models\Post;
 use App\Models\Tour;
 
-/** /sitemap.xml — every public page, built from the CMS so new tours, posts and pages appear automatically. */
+/** /sitemap.xml: every public page, built from the CMS so new tours, posts and pages appear automatically. */
 class SitemapController extends Controller
 {
     public function __invoke()

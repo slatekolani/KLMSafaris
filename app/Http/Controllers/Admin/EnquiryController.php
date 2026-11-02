@@ -10,7 +10,7 @@ use Inertia\Inertia;
 
 class EnquiryController extends Controller
 {
-    public const STATUSES = ['new', 'contacted', 'quoted', 'booked', 'closed'];
+    public const STATUSES = ['new', 'contacted', 'quoted', 'confirmed', 'booked', 'closed'];
 
     public function index(Request $request)
     {
@@ -35,12 +35,19 @@ class EnquiryController extends Controller
 
     public function update(Request $request, Enquiry $enquiry)
     {
-        $enquiry->update($request->validate([
+        // Status buttons save on their own (only "status" is sent); the notes box saves both.
+        $data = $request->validate([
             'status' => 'required|in:'.implode(',', self::STATUSES),
-            'notes' => 'nullable|string',
-        ]));
+            'notes' => 'sometimes|nullable|string',
+        ]);
+        // Remember who moved it and when, so the whole team sees the same progress.
+        if ($data['status'] !== $enquiry->status) {
+            $data['status_changed_by'] = $request->user()?->name;
+            $data['status_changed_at'] = now();
+        }
+        $enquiry->update($data);
 
-        return back()->with('success', 'Enquiry updated.');
+        return back()->with('success', 'Enquiry marked "'.$enquiry->status.'".');
     }
 
     public function destroy(Enquiry $enquiry)

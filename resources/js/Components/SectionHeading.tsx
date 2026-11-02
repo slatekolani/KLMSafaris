@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { cn, fancy } from '@/lib/utils';
 
 /** Editorial section header: label + headline on the left, supporting copy and action on the right. */
-export default function SectionHeading({ eyebrow, title, text, align = 'left', light = false, action, className, index }: {
+export default function SectionHeading({ eyebrow, title, text, align = 'left', light = false, action, className }: {
     eyebrow?: string | null;
     title: string;
     text?: string | null;
@@ -10,12 +10,11 @@ export default function SectionHeading({ eyebrow, title, text, align = 'left', l
     light?: boolean;
     action?: ReactNode;
     className?: string;
-    index?: string;
 }) {
     if (align === 'center') {
         return (
             <div className={cn('mx-auto max-w-3xl text-center', className)}>
-                {eyebrow && <p data-reveal className={cn('eyebrow', light && 'eyebrow-light')}>{index && <span className="text-gold">{index}</span>}{eyebrow}</p>}
+                {eyebrow && <p data-reveal className={cn('eyebrow', light && 'eyebrow-light')}>{eyebrow}</p>}
                 <h2 data-reveal style={{ ['--d' as string]: '60ms' }} className={cn('h-section fancy mt-4 text-balance', light ? 'text-white' : 'text-ink')}>{fancy(title)}</h2>
                 {text && <p data-reveal style={{ ['--d' as string]: '120ms' }} className={cn('lead mx-auto mt-5 max-w-2xl', light ? 'text-white/80' : 'text-ink/80')}>{text}</p>}
                 {action && <div data-reveal className="mt-8">{action}</div>}
@@ -25,7 +24,7 @@ export default function SectionHeading({ eyebrow, title, text, align = 'left', l
     return (
         <div className={cn('grid gap-6 lg:grid-cols-12 lg:items-end', className)}>
             <div className="lg:col-span-7">
-                {eyebrow && <p data-reveal className={cn('eyebrow', light && 'eyebrow-light')}>{index && <span className="mr-1 text-gold">{index}</span>}{eyebrow}</p>}
+                {eyebrow && <p data-reveal className={cn('eyebrow', light && 'eyebrow-light')}>{eyebrow}</p>}
                 <h2 data-reveal style={{ ['--d' as string]: '60ms' }} className={cn('h-section fancy mt-4 text-balance', light ? 'text-white' : 'text-ink')}>{fancy(title)}</h2>
             </div>
             {(text || action) && (

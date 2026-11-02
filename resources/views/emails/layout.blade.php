@@ -26,7 +26,7 @@
                 <tr><td style="padding:8px 32px 32px;font-size:15px;line-height:1.65;color:#222;">
                     {{ $slot }}
                 </td></tr>
-                <tr><td style="background:#000000;padding:22px 32px;font-size:12.5px;line-height:1.7;color:#cfd3d6;">
+                <tr><td style="background:#1D4468;padding:22px 32px;font-size:12.5px;line-height:1.7;color:#cfd3d6;">
                     <strong style="color:#ffffff;">{{ $s['site_name'] ?? 'KLM Safaris' }}</strong><br>
                     {!! nl2br(e($s['address'] ?? '')) !!}<br>
                     <a href="tel:{{ $s['phone'] ?? '' }}" style="color:#cfd3d6;text-decoration:none;">{{ $s['phone'] ?? '' }}</a>

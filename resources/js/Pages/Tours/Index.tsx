@@ -1,6 +1,7 @@
 import { Link, router } from '@inertiajs/react';
 import { useEffect, useRef, useState } from 'react';
 import Icon from '@/Components/Icon';
+import Pagination, { usePaged } from '@/Components/Pagination';
 import PageHero from '@/Components/PageHero';
 import TourCard from '@/Components/TourCard';
 import SiteLayout from '@/Layouts/SiteLayout';
@@ -19,6 +20,7 @@ export default function ToursIndex({ tours, categories, destinations, filters }:
     const [q, setQ] = useState(filters.q ?? '');
     const [more, setMore] = useState(false); // phones: search & dropdowns fold away so the sticky bar stays slim
     const first = useRef(true);
+    const paged = usePaged(tours);
 
     const apply = (next: Filters) => {
         const merged = { ...filters, ...next };
@@ -52,7 +54,7 @@ export default function ToursIndex({ tours, categories, destinations, filters }:
                     <div className="flex items-center gap-2">
                     <div className="no-scrollbar -ml-5 flex min-w-0 flex-1 gap-2 overflow-x-auto overflow-y-hidden overscroll-x-contain pl-5 md:-mr-5 md:pr-5">
                         {[{ slug: '', name: tx('tours_all') }, ...categories].map((c) => (
-                            <button key={c.slug} onClick={() => apply({ category: c.slug })} className={cn('shrink-0 rounded-none px-5 py-2 text-[13px] font-medium transition', (filters.category ?? '') === c.slug ? 'bg-ink text-sand' : 'bg-white text-ink/70 ring-1 ring-ink/10 hover:text-ink')}>
+                            <button key={c.slug} onClick={() => apply({ category: c.slug })} className={cn('shrink-0 rounded-none px-5 py-2 text-[13px] font-medium transition', (filters.category ?? '') === c.slug ? 'bg-forest-900 text-sand' : 'bg-white text-ink/70 ring-1 ring-ink/10 hover:text-ink')}>
                                 {c.name}
                             </button>
                         ))}
@@ -81,13 +83,16 @@ export default function ToursIndex({ tours, categories, destinations, filters }:
                     {activeCount > 0 && <button onClick={() => { setQ(''); router.get('/tours'); }} className="flex items-center gap-2 text-sm text-gold-dark hover:underline"><Icon name="close" size={14} /> {tx('tours_clear')}</button>}
                 </div>
                 {tours.length ? (
-                    <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                        {tours.map((t, i) => <TourCard key={t.id} tour={t} delay={(i % 3) * 70} />)}
+                    <div ref={paged.top}>
+                        <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                            {paged.shown.map((t, i) => <TourCard key={t.id} tour={t} delay={(i % 4) * 60} />)}
+                        </div>
+                        <Pagination {...paged} />
                     </div>
                 ) : (
                     <div className=" bg-white p-16 text-center ring-1 ring-ink/5">
                         <Icon name="compass" size={44} className="mx-auto text-gold" />
-                        <h2 className="font-display mt-5 text-4xl font-semibold tracking-tight">{tx('tours_empty_title')}</h2>
+                        <h2 className="h-section mt-5">{tx('tours_empty_title')}</h2>
                         <p className="mx-auto mt-3 max-w-md text-ink/60">{tx('tours_empty_text')}</p>
                         <Link href="/plan-your-trip" className="btn btn-gold mt-8">{tx('tours_empty_button')}</Link>
                     </div>

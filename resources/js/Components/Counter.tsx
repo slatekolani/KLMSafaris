@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 /** Counts up from zero the first time it scrolls into view. */
 export default function Counter({ value, duration = 2200 }: { value: string; duration?: number }) {
     const target = parseFloat(value.replace(/[^\d.]/g, '')) || 0;
+    const suffix = value.match(/[^\d.,\s]+$/)?.[0] ?? ''; // keeps a trailing "+" (e.g. "500+")
     const [n, setN] = useState(0);
     const ref = useRef<HTMLSpanElement>(null);
 
@@ -24,5 +25,5 @@ export default function Counter({ value, duration = 2200 }: { value: string; dur
         return () => io.disconnect();
     }, [target, duration]);
 
-    return <span ref={ref}>{Math.round(n).toLocaleString('en-US')}</span>;
+    return <span ref={ref}>{Math.round(n).toLocaleString('en-US')}{suffix}</span>;
 }

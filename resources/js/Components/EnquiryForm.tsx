@@ -23,7 +23,7 @@ export default function EnquiryForm({ tourId, tour, source = 'contact', compact 
         return (
             <div className={cn(' p-8 text-center', dark ? 'bg-white/5 text-white' : 'bg-sand-100')}>
                 <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-none bg-gold text-white"><Icon name="check" size={24} /></span>
-                <h3 className="font-display mt-5 text-3xl font-semibold tracking-tight">{tx('form_thanks')}</h3>
+                <h3 className="font-display mt-5 text-2xl font-semibold tracking-tight">{tx('form_thanks')}</h3>
                 <p className={cn('mt-2', dark ? 'text-white/70' : 'text-ink/60')}>{tx('form_thanks_text', { email: sent || '' })}</p>
                 <button onClick={() => setSent(false)} className="mt-6 text-sm text-gold underline underline-offset-4">{tx('form_again')}</button>
             </div>

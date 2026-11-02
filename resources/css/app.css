@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 /*
- * KLM Safaris design system — editorial, restrained, photography-first.
+ * KLM Safaris design system: editorial, restrained, photography-first.
  * Colours and fonts are CSS variables set from CMS → Site settings → Design.
  */
 
 @layer base {
     html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
     /* Type scale follows africanscenicsafaris.com: airy 16/17px body at 1.7, headings at 1.2 with normal tracking. */
-    /* Default (subpixel) smoothing like the reference site — forced antialiasing made Afacad look thin. */
+    /* Default (subpixel) smoothing like the reference site: forced antialiasing made Afacad look thin. */
     body { @apply bg-sand-50 font-sans text-ink; font-size: 16px; line-height: 1.7; }
     /* Afacad (body) has a small x-height; match it to the heading font's so text reads at its set size. */
     body { font-size-adjust: 0.486; }
@@ -25,27 +25,28 @@
 @layer components {
     .container-site { @apply mx-auto w-full max-w-site px-5 sm:px-8 lg:px-12; }
 
-    /* Small section label: "Kilimanjaro" / "01 — Experiences" */
+    /* Small section label: "Kilimanjaro" / "01: Experiences" */
     .eyebrow { @apply inline-flex items-center gap-2 font-display text-[13px] font-medium uppercase tracking-[0.08em] text-gold; }
     .eyebrow-light { @apply text-gold-light; }
 
     /* Display type */
-    /* Hero / page titles — extra-bold (Nunito Sans has a true 800). */
-    .display-xl { font-family: var(--font-display); font-weight: 800; text-transform: capitalize; letter-spacing: 0; line-height: 1.15; font-size: clamp(2rem, 7.5vw, 2.4rem); overflow-wrap: anywhere; }
-    @media (min-width: 768px) { .display-xl { font-size: clamp(2.6rem, 4.4vw, 4rem); } }
-    .h-display { font-family: var(--font-display); font-weight: 800; text-transform: capitalize; letter-spacing: 0; line-height: 1.2; font-size: clamp(1.9rem, 7vw, 2.25rem); overflow-wrap: anywhere; }
-    @media (min-width: 768px) { .h-display { font-size: clamp(2.4rem, 3.6vw, 3.4rem); } }
-    /* Section titles — like their H2: semibold Title Case, 32px → 45px. */
-    .h-section { font-family: var(--font-display); font-weight: 700; text-transform: capitalize; letter-spacing: 0; line-height: 1.2; font-size: clamp(2rem, 3.2vw, 2.85rem); }
-    /* The intro line under a section title — heading font, regular weight, 20px → 25px. */
-    .lead { font-family: var(--font-display); font-weight: 400; letter-spacing: 0; line-height: 1.2; font-size: clamp(1.25rem, 1.75vw, 1.6rem); }
+    /* Hero / page titles: extra-bold (Nunito Sans has a true 800). */
+    .display-xl { font-family: var(--font-display); font-weight: 800; letter-spacing: 0; line-height: 1.15; font-size: clamp(2rem, 7.5vw, 2.4rem); overflow-wrap: anywhere; }
+    @media (min-width: 768px) { .display-xl { font-size: clamp(2.4rem, 3.8vw, 3.4rem); } }
+    .h-display { font-family: var(--font-display); font-weight: 800; letter-spacing: 0; line-height: 1.2; font-size: clamp(1.75rem, 6.5vw, 2.1rem); overflow-wrap: anywhere; }
+    @media (min-width: 768px) { .h-display { font-size: clamp(2.1rem, 3.2vw, 2.8rem); } }
+    /* One type scale for the whole site: page title (h-display) > section title (h-section) > card title > body text. */
+    /* Section titles: 28px → 38px. */
+    .h-section { font-family: var(--font-display); font-weight: 700; letter-spacing: 0; line-height: 1.2; font-size: clamp(1.75rem, 2.6vw, 2.4rem); }
+    /* The intro line under a section title: heading font, regular weight, 18px → 21px. */
+    .lead { font-family: var(--font-display); font-weight: 400; letter-spacing: 0; line-height: 1.45; font-size: clamp(1.125rem, 1.4vw, 1.3rem); }
 
     /* "*word*" in CMS headlines renders in the logo blue, on light and dark backgrounds alike. */
     .fancy em, .fancy-dark em { font-style: normal; font-weight: inherit; color: rgb(var(--c-primary)); }
     /* Titles over photos get a soft shadow so the logo blue stays readable on bright skies. */
     .on-photo { text-shadow: 0 2px 28px rgb(0 0 0 / .5), 0 1px 3px rgb(0 0 0 / .4); }
 
-    /* Buttons — rectangular, confident, one accent colour */
+    /* Buttons: rectangular, confident, one accent colour */
     .btn { @apply relative inline-flex h-[52px] items-center justify-center gap-3 whitespace-nowrap rounded-[2px] px-7 text-[14px] font-semibold tracking-[0.01em] transition-colors duration-300; }
     /* Every button follows the “Plan your trip” style: logo blue, turning white with a blue outline on hover.
        The variant names are kept so existing markup keeps working. */
@@ -64,17 +65,17 @@
     .img-zoom img { @apply transition-transform duration-[1.2s] ease-out; }
     .img-zoom:hover img { transform: scale(1.04); }
 
-    .glass { @apply bg-ink/55 backdrop-blur-md; }
+    .glass { @apply bg-forest-900/55 backdrop-blur-md; }
     .field { @apply w-full rounded-[2px] border border-ink/15 bg-white px-4 py-3.5 text-[15px] outline-none transition placeholder:text-ink/35 focus:border-ink; }
     .field-label { @apply mb-1.5 block text-[11.5px] font-semibold uppercase tracking-[0.14em] text-ink/55; }
 
     /* Rich text from the CMS */
     .prose-lux { @apply text-[16px] leading-[1.7] text-ink/80 md:text-[17px]; overflow-wrap: break-word; min-width: 0; }
-    /* Old-site content can carry fixed widths — nothing may push the page wider than the phone. */
+    /* Old-site content can carry fixed widths: nothing may push the page wider than the phone. */
     .prose-lux img, .prose-lux video, .prose-lux iframe, .prose-lux embed { max-width: 100%; height: auto; }
     .prose-lux iframe { aspect-ratio: 16 / 9; width: 100%; }
     .prose-lux > * + * { @apply mt-5; }
-    .prose-lux h2 { @apply mt-10 font-display text-[1.5rem] font-semibold leading-tight tracking-tight text-ink sm:mt-14 sm:text-[1.9rem]; }
+    .prose-lux h2 { @apply mt-10 font-display text-[1.5rem] font-semibold leading-tight tracking-tight text-ink sm:mt-14 sm:text-[1.6rem]; }
     .prose-lux h3 { @apply mt-8 font-display text-[1.2rem] font-semibold tracking-tight text-ink sm:mt-10 sm:text-[1.35rem]; }
     .prose-lux h4 { @apply mt-8 font-display text-lg font-semibold text-ink; }
     .prose-lux a { @apply text-ink underline decoration-gold underline-offset-4 hover:text-gold-dark; }
@@ -82,14 +83,24 @@
     .prose-lux ul li { @apply relative pl-6; }
     .prose-lux ul li::before { content: ''; @apply absolute left-0 top-[0.72em] h-1.5 w-1.5 bg-gold; }
     .prose-lux ol { @apply list-decimal space-y-2 pl-6; }
-    .prose-lux blockquote { @apply my-10 border-l-2 border-ink pl-6 font-display text-[1.6rem] font-medium leading-snug tracking-tight text-ink; }
+    .prose-lux blockquote { @apply my-10 border-l-2 border-ink pl-6 font-display text-[1.3rem] font-medium leading-snug tracking-tight text-ink; }
     .prose-lux img { @apply my-8 w-full; }
     .prose-lux strong { @apply font-semibold text-ink; }
     /* Wide tables scroll sideways inside their own box on small screens. */
-    .prose-lux table { @apply block w-full max-w-full overflow-x-auto text-left text-[15px] md:table; -webkit-overflow-scrolling: touch; }
+    .prose-lux table { @apply my-8 block w-full max-w-full overflow-x-auto border border-ink/10 text-left text-[15px] md:table; border-collapse: collapse; -webkit-overflow-scrolling: touch; }
     .prose-lux td, .prose-lux th { min-width: 7.5rem; }
-    .prose-lux th { @apply border-b border-ink px-3 py-3 font-semibold text-ink; }
-    .prose-lux td { @apply border-b border-ink/10 px-3 py-3; }
+    .prose-lux th { @apply bg-forest-900 px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.08em] text-white; }
+    .prose-lux td { @apply border-t border-ink/10 px-4 py-3; }
+    .prose-lux tr:nth-child(even) td { @apply bg-sand-100; }
+    .prose-lux td:first-child { @apply font-semibold text-ink; }
+    .prose-lux img { @apply rounded-[2px]; }
+    /* The opening paragraph of a long page: bigger and lighter. */
+    .prose-intro { @apply text-[17px] leading-[1.75] md:text-[19px]; }
+    .prose-intro > p:first-child { @apply text-ink; }
+    /* Inside cards and FAQ answers: tighter spacing. */
+    .prose-compact { @apply text-[15px] leading-[1.65] md:text-[15.5px]; }
+    .prose-compact > * + * { @apply mt-3; }
+    .prose-compact img { @apply my-4; }
 }
 
 @layer utilities {
@@ -99,7 +110,7 @@
     .stretch { font-stretch: 112%; }
 }
 
-/* Retired decorative helpers — kept as no-ops so older markup stays harmless. */
+/* Retired decorative helpers: kept as no-ops so older markup stays harmless. */
 .grain::after, .pulse-ring::before { content: none; }
 .floaty { animation: none; }
 
@@ -115,7 +126,7 @@
 @keyframes kenburns { from { transform: scale(1.08); } to { transform: scale(1); } }
 .kenburns { animation: kenburns 10s ease-out forwards; }
 
-/* Hero camera moves — one per slide, so each photo travels differently */
+/* Hero camera moves: one per slide, so each photo travels differently */
 @keyframes kb-a { from { transform: scale(1.24) translate3d(2.5%, 1.5%, 0); } to { transform: scale(1.04) translate3d(-1.5%, -1%, 0); } }
 @keyframes kb-b { from { transform: scale(1.04) translate3d(-2%, 0, 0); } to { transform: scale(1.22) translate3d(2%, -1.5%, 0); } }
 @keyframes kb-c { from { transform: scale(1.2) translate3d(-2.5%, 2%, 0); } to { transform: scale(1.03) translate3d(1.5%, -1%, 0); } }

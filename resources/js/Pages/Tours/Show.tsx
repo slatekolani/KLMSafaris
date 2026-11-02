@@ -16,7 +16,6 @@ const SECTIONS = [
     ['overview', 'tour_nav_overview'],
     ['itinerary', 'tour_nav_itinerary'],
     ['inclusions', 'tour_nav_included'],
-    ['pricing', 'tour_nav_pricing'],
     ['gallery', 'tour_nav_gallery'],
     ['enquire', 'tour_nav_enquire'],
 ] as const;
@@ -45,41 +44,44 @@ export default function TourShow({ tour, related, testimonials, consultant }: Pr
 
     return (
         <SiteLayout mobileBar={false} title={tour.meta_title || tour.title} description={tour.meta_description || tour.excerpt} image={tour.image}>
-            {/* Hero */}
-            <section className="relative isolate flex min-h-[80svh] items-end overflow-hidden bg-ink text-white md:min-h-[calc(100svh-120px)]">
+            {/* Hero: only what matters at first glance (title, length, style, rating, price); the rest is in "At a glance" below */}
+            <section className="relative isolate flex min-h-[68svh] items-end overflow-hidden bg-forest-900 text-white md:min-h-[72svh]">
                 {tour.image && <HeroMedia src={tour.image} />}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/15 to-black/0" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/5 to-black/25" />
-                <div className="container-site relative z-10 pb-12 pt-24">
-                    <nav className="hero-in mb-6 flex flex-wrap sm:mb-8 items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/60">
-                        <Link href="/" className="hover:text-white">{tx('crumb_home')}</Link><Icon name="chevronRight" size={12} />
-                        <Link href="/tours" className="hover:text-white">{tx('tour_crumb')}</Link><Icon name="chevronRight" size={12} />
-                        {tour.category && <><Link href={`/experiences/${tour.category.slug}`} className="hover:text-white">{tour.category.name}</Link><Icon name="chevronRight" size={12} /></>}
-                        <span className="text-white/90">{tour.title}</span>
-                    </nav>
-                    <div className="hero-in mb-5 flex flex-wrap gap-2" style={{ ['--d' as string]: '80ms' }}>
-                        {tour.group_name && <span className="bg-gold px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">{tour.group_name}</span>}
-                        {tour.badge && <span className="bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-ink">{tour.badge}</span>}
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/30 to-forest-900/20" />
+                <div className="container-site relative z-10 grid gap-8 pb-10 pt-28 lg:grid-cols-12 lg:items-end lg:pb-14">
+                    <div className="lg:col-span-8">
+                        <nav className="hero-in mb-5 flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/60">
+                            <Link href="/tours" className="hover:text-white">{tx('tour_crumb')}</Link>
+                            {tour.category && <><Icon name="chevronRight" size={12} /><Link href={`/experiences/${tour.category.slug}`} className="hover:text-white">{tour.category.name}</Link></>}
+                        </nav>
+                        <h1 className="h-display on-photo text-balance"><span className="mask"><span style={{ animationDelay: '120ms' }}>{tour.title}</span></span></h1>
+                        {tour.subtitle && <p style={{ ['--d' as string]: '260ms' }} className="hero-in mt-4 line-clamp-2 max-w-2xl text-[17px] leading-relaxed text-white/80">{tour.subtitle}</p>}
+                        <ul style={{ ['--d' as string]: '380ms' }} className="hero-in mt-6 flex flex-wrap gap-2">
+                            {[
+                                ['clock', `${tour.duration_days} ${tour.duration_days === 1 ? tx('tour_fact_day') : tx('label_days')}`],
+                                ['mountain', tour.difficulty],
+                                ['users', tour.group_size],
+                            ].filter(([, v]) => v).map(([icon, v]) => (
+                                <li key={icon} className="flex items-center gap-2 border border-white/25 bg-white/10 px-3.5 py-2 text-[13.5px] font-medium backdrop-blur-md">
+                                    <Icon name={icon as 'clock'} size={15} className="text-gold-light" />{v}
+                                </li>
+                            ))}
+                            {settings.rating_count && (
+                                <li className="flex items-center gap-2 border border-white/25 bg-white/10 px-3.5 py-2 text-[13.5px] font-medium backdrop-blur-md">
+                                    <Icon name="star" size={15} className="text-gold-light" />{settings.rating_count}
+                                </li>
+                            )}
+                        </ul>
                     </div>
-                    <h1 className="h-display on-photo max-w-5xl text-balance"><span className="mask"><span style={{ animationDelay: '120ms' }}>{tour.title}</span></span></h1>
-                    {tour.subtitle && <p style={{ ['--d' as string]: '300ms' }} className="font-display hero-in mt-4 max-w-2xl text-lg font-semibold tracking-tight text-white/80 sm:mt-5 sm:text-3xl">{tour.subtitle}</p>}
-
-                    <div style={{ ['--d' as string]: '420ms' }} className="glass hero-in mt-7 grid grid-cols-2 gap-px overflow-hidden sm:mt-10 sm:grid-cols-3 lg:grid-cols-6">
-                        {facts.map(([icon, label, value]) => (
-                            <div key={label} className="flex items-center gap-2.5 p-3.5 sm:gap-3 sm:p-5">
-                                <Icon name={icon} size={20} className="shrink-0 text-gold-light" />
-                                <div className="min-w-0">
-                                    <p className="text-[10px] uppercase tracking-[0.2em] text-white/55">{label}</p>
-                                    <p className="truncate text-[15px]">{value}</p>
-                                </div>
-                            </div>
-                        ))}
-                        <div className="col-span-2 hidden items-center justify-between gap-3 bg-white/10 p-5 sm:col-span-3 sm:flex lg:col-span-1 lg:flex-col lg:items-start lg:justify-center">
-                            <div>
-                                <p className="text-[10px] uppercase tracking-[0.2em] text-white/55">{tx('label_from')}</p>
-                                <p className="font-display text-3xl leading-none text-gold-light">{money(tour.price_from)}</p>
-                            </div>
-                            {tour.price_note && <p className="text-xs text-white/55">{tour.price_note}</p>}
+                    {/* Price & the two ways to book (phones have the same in the bar at the bottom) */}
+                    <div style={{ ['--d' as string]: '480ms' }} className="hero-in hidden bg-white p-5 text-ink shadow-[0_30px_60px_-30px_rgba(0,0,0,.6)] sm:block sm:p-6 lg:col-span-4 lg:justify-self-end lg:w-full lg:max-w-[340px]">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ink/50">{tour.price_from ? tx('label_from') : tx('price_request')}</p>
+                        {tour.price_from ? (
+                            <p className="mt-1 flex items-baseline gap-2"><span className="font-display text-[2.2rem] font-bold leading-none text-forest-900">{money(tour.price_from)}</span>{tour.price_note && <span className="text-[13px] text-ink/55">{tour.price_note}</span>}</p>
+                        ) : null}
+                        <div className="mt-5 grid gap-2">
+                            <a href="#enquire" className="btn btn-gold w-full">{tx('tour_enquire_now')} <Icon name="arrow" size={16} className="arrow" /></a>
+                            <a href={whatsappLink(settings.whatsapp, tx('tour_whatsapp', { tour: tour.title }))} target="_blank" rel="noreferrer" className="btn w-full border border-[#25D366] bg-white text-[#128C4B] hover:bg-[#25D366] hover:text-white"><Icon name="whatsapp" size={17} /> WhatsApp</a>
                         </div>
                     </div>
                 </div>
@@ -89,7 +91,7 @@ export default function TourShow({ tour, related, testimonials, consultant }: Pr
             <div className="below-nav sticky z-30 border-b border-ink/5 bg-sand-50/90 backdrop-blur-xl">
                 <div className="container-site flex items-center justify-between gap-6">
                     <nav className="no-scrollbar -mx-5 flex overflow-x-auto overflow-y-hidden overscroll-x-contain px-5">
-                        {SECTIONS.filter(([id]) => id !== 'pricing' || !!tour.pricing?.length).map(([id, label]) => (
+                        {SECTIONS.map(([id, label]) => (
                             <a key={id} href={`#${id}`} className={cn('relative shrink-0 px-4 py-5 text-[13px] font-medium uppercase tracking-[0.12em] transition-colors', current === id ? 'text-ink' : 'text-ink/45 hover:text-ink')}>
                                 {tx(label)}
                                 <span className={cn('absolute inset-x-4 bottom-0 h-0.5 origin-left bg-gold transition-transform duration-500', current === id ? 'scale-x-100' : 'scale-x-0')} />
@@ -101,14 +103,24 @@ export default function TourShow({ tour, related, testimonials, consultant }: Pr
             </div>
 
             <div className="container-site grid gap-14 py-12 sm:py-20 lg:grid-cols-12">
-                <div className="lg:col-span-8">
+                <div className="min-w-0 lg:col-span-8">
                     {/* Overview */}
                     <section id="overview" className="scroll-mt-28">
+                        {facts.length > 0 && (
+                            <dl className="mb-10 grid grid-cols-2 gap-px overflow-hidden border border-ink/10 bg-ink/10 sm:grid-cols-3">
+                                {facts.map(([icon, label, value]) => (
+                                    <div key={label} className="flex items-center gap-3 bg-white p-4">
+                                        <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-gold/10 text-gold"><Icon name={icon as 'clock'} size={18} /></span>
+                                        <div className="min-w-0"><dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink/45">{label}</dt><dd className="truncate text-[15px] font-medium text-ink">{value}</dd></div>
+                                    </div>
+                                ))}
+                            </dl>
+                        )}
                         <span className="eyebrow">{tx('tour_overview')}</span>
                         <div className="prose-lux mt-6" dangerouslySetInnerHTML={{ __html: tour.overview ?? '' }} />
                         {!!tour.highlights?.length && (
                             <div className="mt-10 bg-white p-6 ring-1 ring-ink/5 sm:mt-12 sm:p-8">
-                                <p className="font-display text-2xl sm:text-3xl">{tx('tour_highlights')}</p>
+                                <p className="font-display text-xl sm:text-2xl">{tx('tour_highlights')}</p>
                                 <ul className="mt-6 grid gap-4 sm:grid-cols-2">
                                     {tour.highlights.map((h) => (
                                         <li key={h} className="flex gap-3"><span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-none bg-gold/15 text-gold-dark"><Icon name="check" size={14} /></span><span className="text-ink/75">{h}</span></li>
@@ -148,32 +160,15 @@ export default function TourShow({ tour, related, testimonials, consultant }: Pr
                         <h2 className="h-section mt-4">{tx('tour_included_title')}</h2>
                         <div className="mt-10 grid gap-6 sm:grid-cols-2">
                             <div className=" bg-white p-8 ring-1 ring-ink/5">
-                                <p className="font-display flex items-center gap-3 text-2xl font-semibold tracking-tight"><span className="flex h-9 w-9 items-center justify-center rounded-none bg-gold/15 text-gold-dark"><Icon name="check" size={18} /></span>{tx('tour_included')}</p>
+                                <p className="font-display flex items-center gap-3 text-xl font-semibold tracking-tight"><span className="flex h-9 w-9 items-center justify-center rounded-none bg-gold/15 text-gold-dark"><Icon name="check" size={18} /></span>{tx('tour_included')}</p>
                                 <ul className="mt-6 space-y-3.5">{(tour.includes ?? []).map((x) => <li key={x} className="flex gap-3 text-[15px] text-ink/75"><Icon name="check" size={16} className="mt-1 shrink-0 text-acacia" />{x}</li>)}</ul>
                             </div>
                             <div className=" bg-white p-8 ring-1 ring-ink/5">
-                                <p className="font-display flex items-center gap-3 text-2xl font-semibold tracking-tight"><span className="flex h-9 w-9 items-center justify-center rounded-none bg-clay/10 text-clay"><Icon name="x" size={18} /></span>{tx('tour_excluded')}</p>
+                                <p className="font-display flex items-center gap-3 text-xl font-semibold tracking-tight"><span className="flex h-9 w-9 items-center justify-center rounded-none bg-clay/10 text-clay"><Icon name="x" size={18} /></span>{tx('tour_excluded')}</p>
                                 <ul className="mt-6 space-y-3.5">{(tour.excludes ?? []).map((x) => <li key={x} className="flex gap-3 text-[15px] text-ink/75"><Icon name="x" size={16} className="mt-1 shrink-0 text-clay" />{x}</li>)}</ul>
                             </div>
                         </div>
                     </section>
-
-                    {/* Pricing by group size */}
-                    {!!tour.pricing?.length && (
-                        <section id="pricing" className="mt-16 scroll-mt-28 sm:mt-24">
-                            <span className="eyebrow">{tx('tour_pricing')}</span>
-                            <h2 className="h-section mt-4">{tx('tour_price_pp')}</h2>
-                            <p className="mt-3 text-ink/60">{tx('tour_price_intro')}{tour.price_note ? ` (${tour.price_note})` : ''}</p>
-                            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-                                {tour.pricing.map((row, i) => (
-                                    <div key={i} className={cn(' p-5 ring-1 transition', i === 0 ? 'bg-forest-900 text-white ring-forest-900' : 'bg-white ring-ink/[0.07] hover:ring-gold')}>
-                                        <p className={cn('flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em]', i === 0 ? 'text-white/60' : 'text-ink/45')}><Icon name="users" size={14} />{row.people} {row.people === '1' ? 'person' : 'people'}</p>
-                                        <p className={cn('font-display mt-2 text-2xl font-semibold tracking-tight sm:text-3xl', i === 0 ? 'text-gold-light' : 'text-ink')}>{row.price && /\d/.test(String(row.price)) ? `$${String(row.price).replace(/^\$/, '')}` : <span className="text-xl">{tx('price_request')}</span>}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
-                    )}
 
                     {/* Gallery */}
                     <section id="gallery" className="mt-16 scroll-mt-28 sm:mt-24">
@@ -183,31 +178,15 @@ export default function TourShow({ tour, related, testimonials, consultant }: Pr
                             {gallery.map((g, i) => (
                                 <button key={g} onClick={() => setLightbox(i)} className={cn('img-zoom group relative overflow-hidden', i === 0 && 'col-span-2 row-span-2')}>
                                     <img src={img(g, i === 0 ? 1200 : 600)} alt="" loading="lazy" className="h-full w-full object-cover" />
-                                    <span className="absolute inset-0 flex items-center justify-center bg-ink/0 text-white opacity-0 transition group-hover:bg-ink/30 group-hover:opacity-100"><Icon name="plus" size={28} /></span>
+                                    <span className="absolute inset-0 flex items-center justify-center bg-ink/0 text-white opacity-0 transition group-hover:bg-forest-900/30 group-hover:opacity-100"><Icon name="plus" size={28} /></span>
                                 </button>
                             ))}
                         </div>
                         {tour.route_map && <img src={img(tour.route_map, 1400)} alt="Route map" className="mt-6 w-full ring-1 ring-ink/5" />}
                     </section>
 
-                    {/* Reviews */}
-                    {!!testimonials.length && (
-                        <section className="mt-16 sm:mt-24">
-                            <span className="eyebrow">{tx('tour_stories')}</span>
-                            <div className="mt-8 grid gap-5 sm:grid-cols-2">
-                                {testimonials.slice(0, 4).map((r) => (
-                                    <figure key={r.id} className=" bg-white p-7 ring-1 ring-ink/5">
-                                        <Stars count={r.rating} />
-                                        <blockquote className="mt-4 font-display text-xl leading-snug">“{r.quote}”</blockquote>
-                                        <figcaption className="mt-5 flex items-center gap-3 text-sm">
-                                            <span className="flex h-10 w-10 items-center justify-center rounded-none bg-forest font-display text-gold-light">{initials(r.name)}</span>
-                                            <span><span className="block font-medium">{r.name}</span><span className="text-ink/50">{r.country}</span></span>
-                                        </figcaption>
-                                    </figure>
-                                ))}
-                            </div>
-                        </section>
-                    )}
+                    {/* Reviews: five-star Tripadvisor reviews (CMS → Testimonials), swipe or use the arrows */}
+                    {!!testimonials.length && <GuestStories items={testimonials} />}
                 </div>
 
                 {/* Sticky booking card */}
@@ -216,7 +195,7 @@ export default function TourShow({ tour, related, testimonials, consultant }: Pr
                         <div className="overflow-hidden bg-forest-900 text-white shadow-[0_40px_80px_-40px_rgba(18,20,15,.6)]">
                             <div className="p-8">
                                 <p className="text-[11px] uppercase tracking-[0.2em] text-white/50">{tx('tour_starting')}</p>
-                                <p className="font-display mt-1 text-6xl font-semibold tracking-tight leading-none text-gold-light">{money(tour.price_from)}</p>
+                                <p className="font-display mt-1 text-5xl font-semibold tracking-tight leading-none text-gold-light">{money(tour.price_from)}</p>
                                 {tour.price_note && <p className="mt-2 text-sm text-white/55">{tour.price_note}</p>}
                                 <div className="mt-6 space-y-3 border-t border-white/10 pt-6 text-sm text-white/75">
                                     {facts.slice(0, 3).map(([icon, label, value]) => <p key={label} className="flex items-center gap-3"><Icon name={icon} size={16} className="text-gold-light" /><span className="text-white/45">{label}</span><span className="ml-auto text-right">{value}</span></p>)}
@@ -241,7 +220,7 @@ export default function TourShow({ tour, related, testimonials, consultant }: Pr
                     <div className="container-site relative grid gap-14 py-20 lg:grid-cols-12 lg:py-28">
                         <div className="lg:col-span-5">
                             <span className="eyebrow eyebrow-light">{tx('tour_enq_label')}</span>
-                            <h2 className="fancy font-display mt-5 text-[2.1rem] font-semibold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">{fancy(tx('tour_enq_title'))}</h2>
+                            <h2 className="h-section fancy mt-5">{fancy(tx('tour_enq_title'))}</h2>
                             <p className="mt-6 text-white/65">{tx('tour_enq_text', { tour: tour.title })}</p>
                             {consultant && (
                                 <div className="mt-10 flex items-center gap-4 bg-white/5 p-5">
@@ -270,7 +249,7 @@ export default function TourShow({ tour, related, testimonials, consultant }: Pr
                         </div>
                         {tour.category && <Link href={`/experiences/${tour.category.slug}`} className="btn btn-outline hidden sm:inline-flex">{tx('tour_all_in', { name: tour.category.name })}</Link>}
                     </div>
-                    <div className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{related.map((t, i) => <TourCard key={t.id} tour={t} delay={i * 80} />)}</div>
+                    <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">{related.map((t, i) => <TourCard key={t.id} tour={t} delay={i * 80} />)}</div>
                 </section>
             )}
 
@@ -318,15 +297,15 @@ function Itinerary({ days }: { days: ItineraryDay[] }) {
                                 <span className="text-lg sm:text-xl">{i + 1}</span>
                             </span>
                             <button onClick={() => setOpen(isOpen ? open.filter((n) => n !== i) : [...open, i])} className="flex w-full items-center justify-between gap-4 border-b border-ink/[0.08] py-5 text-left sm:py-7">
-                                <span className="font-display text-[1.15rem] font-semibold leading-snug sm:text-[1.65rem] sm:font-normal sm:leading-tight">{d.title}</span>
+                                <span className="font-display text-[1.15rem] font-semibold leading-snug sm:text-[1.35rem] sm:leading-tight">{d.title}</span>
                                 <Icon name="plus" size={20} className={cn('shrink-0 text-gold transition-transform duration-500', isOpen && 'rotate-45')} />
                             </button>
                             <div className={cn('grid transition-all duration-700 ease-lux', isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0')}>
                                 <div className="overflow-hidden">
                                     <p className="pt-4 text-[15px] leading-relaxed text-ink/70 sm:pt-5 sm:text-[16px]">{d.description}</p>
                                     <div className="flex flex-wrap gap-2 pb-8 pt-5">
-                                        {d.accommodation && d.accommodation !== '—' && <Chip icon="bed">{d.accommodation}</Chip>}
-                                        {d.meals && d.meals !== '—' && <Chip icon="utensils">{d.meals}</Chip>}
+                                        {!blank(d.accommodation) && <Chip icon="bed">{d.accommodation}</Chip>}
+                                        {!blank(d.meals) && <Chip icon="utensils">{d.meals}</Chip>}
                                         {d.altitude && <Chip icon="mountain">{d.altitude}</Chip>}
                                     </div>
                                 </div>
@@ -338,6 +317,9 @@ function Itinerary({ days }: { days: ItineraryDay[] }) {
         </section>
     );
 }
+
+/** Older itineraries use a lone dash (or nothing) to mean "none". */
+const blank = (v?: string | null) => !v || /^[\s\u2013\u2014-]*$/.test(v);
 
 function Chip({ icon, children }: { icon: string; children: React.ReactNode }) {
     return <span className="inline-flex items-center gap-2 rounded-none bg-white px-3.5 py-1.5 text-[13px] text-ink/70 ring-1 ring-ink/10"><Icon name={icon} size={14} className="text-gold-dark" />{children}</span>;
@@ -388,3 +370,69 @@ function AltitudeProfile({ days, values }: { days: ItineraryDay[]; values: numbe
         </div>
     );
 }
+
+/** Guest stories carousel: fixed-height cards, swipe right-to-left on phones, arrows on PC. Long stories fold with "Read more". */
+function GuestStories({ items }: { items: Testimonial[] }) {
+    const { settings } = useShared();
+    const tx = useText();
+    const track = useRef<HTMLDivElement>(null);
+    const [at, setAt] = useState(0);
+    const [open, setOpen] = useState<Testimonial | null>(null);
+    const step = () => { const el = track.current; const card = el?.firstElementChild as HTMLElement | null; return card ? card.offsetWidth + 20 : 0; };
+    const go = (dir: number) => track.current?.scrollBy({ left: dir * step(), behavior: 'smooth' });
+    const onScroll = () => { const el = track.current; if (el) setAt(Math.round(el.scrollLeft / (step() || 1))); };
+    const atEnd = () => { const el = track.current; return !el || el.scrollLeft + el.clientWidth >= el.scrollWidth - 4; };
+
+    return (
+        <section className="mt-16 sm:mt-24">
+            <div className="flex items-end justify-between gap-4">
+                <div>
+                    <span className="eyebrow">{tx('tour_stories')}</span>
+                    {settings.rating_count && (
+                        <a href={settings.tripadvisor || '#'} target="_blank" rel="noreferrer" className="mt-3 flex items-center gap-2 text-[13px] text-ink/60 hover:text-ink">
+                            <Icon name="tripadvisor" size={18} className="text-[#34E0A1]" /> {settings.rating_count} · {tx('reviews_read_on', { source: settings.rating_source || 'Tripadvisor' })}
+                        </a>
+                    )}
+                </div>
+                <div className="flex shrink-0 items-center gap-3">
+                    <span className="hidden text-[13px] tabular-nums text-ink/50 sm:inline">{String(Math.min(at + 1, items.length)).padStart(2, '0')} / {String(items.length).padStart(2, '0')}</span>
+                    <button onClick={() => go(-1)} aria-label="Previous story" className="flex h-11 w-11 items-center justify-center border border-ink/20 transition hover:bg-forest-900 hover:text-white"><Icon name="arrowLeft" size={17} /></button>
+                    <button onClick={() => (atEnd() ? track.current?.scrollTo({ left: 0, behavior: 'smooth' }) : go(1))} aria-label="Next story" className="flex h-11 w-11 items-center justify-center border border-ink/20 transition hover:bg-forest-900 hover:text-white"><Icon name="arrow" size={17} /></button>
+                </div>
+            </div>
+            <div ref={track} onScroll={onScroll} className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-pl-5 px-5 sm:mx-0 sm:scroll-pl-0 sm:px-0">
+                {items.map((r) => (
+                    <figure key={r.id} className="flex h-[330px] w-[85%] shrink-0 snap-start flex-col border border-ink/10 bg-white p-6 sm:w-[calc((100%-1.25rem)/2)]">
+                        <div className="flex items-center justify-between">
+                            <Stars count={r.rating} className="text-gold" />
+                            {r.source && <span className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-ink/45"><Icon name="tripadvisor" size={14} className="text-[#34E0A1]" />{r.source}</span>}
+                        </div>
+                        {r.title && <p className="mt-4 line-clamp-1 font-display text-[1.05rem] font-semibold text-ink">{r.title}</p>}
+                        <blockquote className="mt-2 line-clamp-5 text-[15px] leading-relaxed text-ink/70">“{r.quote}”</blockquote>
+                        {r.quote.length > 260 && <button onClick={() => setOpen(r)} className="link-arrow mt-2 self-start !text-[13px]">{tx('reviews_read_more')}</button>}
+                        <figcaption className="mt-auto flex items-center gap-3 border-t border-ink/10 pt-4 text-sm">
+                            <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-forest-900 font-display text-gold-light">{initials(r.name)}</span>
+                            <span className="min-w-0"><span className="block truncate font-semibold text-ink">{r.name}</span><span className="block truncate text-ink/50">{[r.trip, r.country].filter(Boolean).join(' · ')}</span></span>
+                        </figcaption>
+                    </figure>
+                ))}
+            </div>
+
+            {/* "Read more": the full story in a window, so the cards keep their size */}
+            {open && (
+                <div role="dialog" aria-modal="true" onClick={() => setOpen(null)} className="fixed inset-0 z-[80] flex items-center justify-center bg-forest-900/70 p-5 backdrop-blur-sm">
+                    <div onClick={(e) => e.stopPropagation()} className="max-h-[85vh] w-full max-w-xl overflow-y-auto bg-white p-7 shadow-2xl sm:p-9">
+                        <div className="flex items-start justify-between gap-4">
+                            <Stars count={open.rating} className="text-gold" />
+                            <button onClick={() => setOpen(null)} aria-label="Close" className="flex h-9 w-9 items-center justify-center border border-ink/15 hover:bg-sand-100"><Icon name="close" size={16} /></button>
+                        </div>
+                        {open.title && <p className="mt-4 font-display text-[1.2rem] font-semibold text-ink">{open.title}</p>}
+                        <p className="mt-3 whitespace-pre-line text-[15.5px] leading-relaxed text-ink/75">“{open.quote}”</p>
+                        <p className="mt-6 text-sm"><span className="font-semibold">{open.name}</span><span className="text-ink/50"> · {[open.trip, open.source].filter(Boolean).join(' · ')}</span></p>
+                    </div>
+                </div>
+            )}
+        </section>
+    );
+}
+

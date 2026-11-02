@@ -23,28 +23,31 @@ export default function StayCard({ stay, className }: { stay: Stay; className?: 
     const cover = stayCover(stay);
     const where = stay.location || stay.destination?.name;
 
+    // Same frame as TourCard (border, 16:10 photo, two-line title, bottom row) so stays and trips line up everywhere.
     return (
-        <Link href={`/accommodation/${stay.slug}`} className={cn('img-zoom group relative block aspect-[4/3] overflow-hidden bg-ink sm:aspect-[4/5]', className)}>
-            {cover ? (
-                <img src={img(cover, 900)} alt={stay.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-            ) : (
-                <span aria-hidden className="absolute inset-0 flex items-center justify-center"
-                    style={{ backgroundImage: 'radial-gradient(rgb(255 255 255 / .07) 1px, transparent 1px)', backgroundSize: '14px 14px' }}>
-                    <span className="flex flex-col items-center gap-3 pb-16 text-white/35 sm:pb-20 transition duration-500 group-hover:text-white/55">
-                        <Icon name="bed" size={34} />
-                        <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">{tx('stays_photo_soon')}</span>
+        <Link href={`/accommodation/${stay.slug}`}
+            className={cn('group flex h-full flex-col overflow-hidden border border-ink/10 bg-white transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_18px_40px_-24px_rgba(29,68,104,.45)]', className)}>
+            <div className="img-zoom relative aspect-[16/10] shrink-0 overflow-hidden bg-forest-900">
+                {cover ? (
+                    <img src={img(cover, 800)} alt={stay.name} loading="lazy" className="h-full w-full object-cover" />
+                ) : (
+                    <span aria-hidden className="absolute inset-0 flex items-center justify-center"
+                        style={{ backgroundImage: 'radial-gradient(rgb(255 255 255 / .07) 1px, transparent 1px)', backgroundSize: '14px 14px' }}>
+                        <span className="flex flex-col items-center gap-2 text-white/40 transition duration-500 group-hover:text-white/60">
+                            <Icon name="bed" size={26} />
+                            <span className="text-[10px] font-semibold uppercase tracking-[0.18em]">{tx('stays_photo_soon')}</span>
+                        </span>
                     </span>
-                </span>
-            )}
-            <div className={cn('absolute inset-0', cover ? 'bg-gradient-to-t from-black/85 via-black/15 to-transparent' : 'bg-gradient-to-t from-black/60 to-transparent')} />
-            <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                <span className="bg-gold px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-[0.14em]">{stay.type}</span>
-                <p className="mt-3 font-display text-[1.3rem] font-semibold leading-tight">{stay.name}</p>
-                {where && <p className="mt-1 flex items-center gap-1.5 text-[13px] text-white/70"><Icon name="pin" size={13} />{where}</p>}
+                )}
             </div>
-            <span className="absolute right-4 top-4 flex h-9 w-9 translate-y-1 items-center justify-center bg-white text-ink opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                <Icon name="arrowUpRight" size={16} />
-            </span>
+            <div className="flex flex-1 flex-col p-4">
+                <p className="eyebrow !text-[11px]">{stay.type}</p>
+                <h3 className="font-display mt-1.5 line-clamp-2 min-h-[2.75em] text-[1.05rem] font-semibold leading-snug tracking-tight text-ink transition-colors group-hover:text-gold-dark">{stay.name}</h3>
+                <div className="mt-auto flex items-center justify-between gap-4 border-t border-ink/10 pt-3 text-[13.5px]">
+                    <span className="flex min-w-0 items-center gap-1.5 text-ink/60">{where && <><Icon name="pin" size={13} className="shrink-0 text-gold" /><span className="truncate">{where}</span></>}</span>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center text-gold transition group-hover:translate-x-0.5"><Icon name="arrow" size={16} /></span>
+                </div>
+            </div>
         </Link>
     );
 }

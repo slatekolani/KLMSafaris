@@ -71,5 +71,5 @@ Route::post('enquire', [SiteController::class, 'enquire'])->middleware('throttle
 Route::post('subscribe', [SiteController::class, 'subscribe'])->middleware('throttle:8,1')->name('subscribe');
 Route::get('unsubscribe/{token}', [SiteController::class, 'unsubscribe'])->name('unsubscribe');
 
-// CMS pages (About, Sustainability, Volunteer, Terms…) — keep last.
+// CMS pages (About, Sustainability, Volunteer, Terms…): keep last.
 Route::get('{slug}', [SiteController::class, 'page'])->where('slug', '[a-z0-9\-]+')->name('page');

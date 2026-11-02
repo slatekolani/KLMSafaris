@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Pagination, { usePaged } from '@/Components/Pagination';
 import PageHero from '@/Components/PageHero';
 import StayCard, { type Stay } from '@/Components/StayCard';
 import SiteLayout from '@/Layouts/SiteLayout';
@@ -8,8 +9,10 @@ import { cn, useShared, useText } from '@/lib/utils';
 export default function AccommodationIndex({ stays, types }: { stays: Stay[]; types: string[] }) {
     const { settings } = useShared();
     const tx = useText();
-    const [type, setType] = useState('');
+    // A homepage type tab links here as /accommodation?type=Luxury, so open on that tab.
+    const [type, setType] = useState(() => (typeof window === 'undefined' ? '' : new URLSearchParams(window.location.search).get('type') ?? ''));
     const shown = stays.filter((s) => !type || s.type === type);
+    const paged = usePaged(shown);
     const areas = new Set(stays.map((s) => s.destination?.id).filter(Boolean)).size;
 
     return (
@@ -32,8 +35,11 @@ export default function AccommodationIndex({ stays, types }: { stays: Stay[]; ty
                 )}
 
                 {shown.length ? (
-                    <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
-                        {shown.map((s) => <StayCard key={s.id} stay={s} />)}
+                    <div ref={paged.top}>
+                        <div className="mt-8 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                            {paged.shown.map((s) => <StayCard key={s.id} stay={s} />)}
+                        </div>
+                        <Pagination {...paged} />
                     </div>
                 ) : (
                     <p className="py-20 text-center text-lg text-ink/60">{tx('stays_empty')}</p>

@@ -36,8 +36,8 @@ const PART_IMAGE: Record<Part, string> = { climb: 'kilimanjaro', safari: 'safari
 const CATEGORY_PART: Record<string, Part> = { kilimanjaro: 'climb', safari: 'safari', zanzibar: 'beach', 'day-tours': 'daytrips' };
 
 const r10 = (n: number) => Math.round(n / 10) * 10;
-const fmt = (r: Range) => (r[0] === r[1] ? money(r[0]) : `${money(r[0])} – ${money(r[1])}`);
-const span = (r: Range) => (r[0] === r[1] ? `${r[0]}` : `${r[0]}–${r[1]}`);
+const fmt = (r: Range) => (r[0] === r[1] ? money(r[0]) : `${money(r[0])} to ${money(r[1])}`);
+const span = (r: Range) => (r[0] === r[1] ? `${r[0]}` : `${r[0]}-${r[1]}`);
 const closest = (list: Pkg[], days: number) => [...list].sort((a, b) => Math.abs(a.days - days) - Math.abs(b.days - days))[0];
 const num = (v: unknown, fallback: number) => (Number.isFinite(Number(v)) && String(v) !== '' ? Number(v) : fallback);
 
@@ -254,14 +254,14 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
     };
     const go = (s: number) => { setPrompt(null); setStep(Math.max(0, Math.min(s, steps.length - 1))); window.scrollTo({ top: 0, behavior: 'smooth' }); };
 
-    const dayLabel = (l: (typeof numbered)[number]) => (l.pending || (!fixed && l.part === 'travel') ? '' : fixed ? `${c('plan_word_day_label')} ${l.from}${l.to > l.from ? `–${l.to}` : ''}` : days(l.days));
+    const dayLabel = (l: (typeof numbered)[number]) => (l.pending || (!fixed && l.part === 'travel') ? '' : fixed ? `${c('plan_word_day_label')} ${l.from}${l.to > l.from ? `-${l.to}` : ''}` : days(l.days));
 
     const submit = () => {
         const plan = [
-            `— ${tripName} —`,
+            tripName,
             ...numbered.map((l) => `${dayLabel(l)}: ${l.title}`),
             `${c('plan_fact_when')}: ${when} · ${c('plan_fact_group')}: ${party}, ${data.adults} + ${data.children}${style ? ` · ${c('plan_fact_style')}: ${style}` : ''}`,
-            ...lines.map((l) => `${l.label}: ${l.range ? fmt(l.range) : '—'}`),
+            ...lines.map((l) => `${l.label}: ${l.range ? fmt(l.range) : c('plan_fact_unset')}`),
             total ? `${c('plan_price_title')}: ${fmt(total)}` : '',
         ].filter(Boolean).join('\n');
         form.transform((d) => ({
@@ -293,9 +293,9 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
 
     const summary = (
         <div className="bg-white shadow-[0_40px_80px_-50px_rgba(0,0,0,.45)] ring-1 ring-ink/5">
-            <div className="relative h-36 overflow-hidden bg-ink">
+            <div className="relative h-36 overflow-hidden bg-forest-900">
                 {heroImage && <img key={heroImage} src={img(heroImage, 900)} alt="" className="hero-in h-full w-full object-cover" />}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 to-forest-900/10" />
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 text-white">
                     <div className="min-w-0">
                         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-light">{c('plan_summary_kicker')}</p>
@@ -325,7 +325,7 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                         {numbered.map((l, i) => (
                             <li key={i} className="relative flex gap-4 pb-3 last:pb-0">
                                 {i < numbered.length - 1 && <span className="absolute bottom-0 left-[5px] top-4 w-px bg-ink/10" />}
-                                <span className={cn('relative mt-1.5 h-[11px] w-[11px] shrink-0 rounded-full', l.pending ? 'border-2 border-dashed border-gold bg-white' : l.part === 'travel' ? 'bg-ink/30' : 'bg-gold')} />
+                                <span className={cn('relative mt-1.5 h-[11px] w-[11px] shrink-0 rounded-full', l.pending ? 'border-2 border-dashed border-gold bg-white' : l.part === 'travel' ? 'bg-forest-900/30' : 'bg-gold')} />
                                 <div className={cn('min-w-0 flex-1', l.pending && 'text-ink/45')}>
                                     {dayLabel(l) && <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-ink/45">{dayLabel(l)}</p>}
                                     <p className="text-[14px] font-semibold leading-snug">{l.title}</p>
@@ -336,9 +336,9 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                     </ol>
 
                     <dl className="mt-4 grid grid-cols-3 border-y border-ink/10 text-[13px]">
-                        <Fact icon="calendar" label={c('plan_fact_when')} value={when || '—'} />
+                        <Fact icon="calendar" label={c('plan_fact_when')} value={when || c('plan_fact_unset')} />
                         <Fact icon="users" label={c('plan_fact_group')} value={`${travellers} ${travellers === 1 ? c('plan_word_person') : c('plan_word_people')}`} />
-                        <Fact icon="bed" label={c('plan_fact_style')} value={style || '—'} />
+                        <Fact icon="bed" label={c('plan_fact_style')} value={style || c('plan_fact_unset')} />
                     </dl>
 
                     <div className="px-5 py-4">
@@ -403,7 +403,7 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                 <div className="container-site grid gap-10 py-10 lg:grid-cols-12 lg:gap-14 lg:py-14">
                     <div className="min-w-0 lg:col-span-7">
                         <div key={current} className="hero-in">
-                            {/* 1 — What the trip is made of */}
+                            {/* 1: What the trip is made of */}
                             {current === 'trip' && (
                                 <Step title={c('plan_step_trip_title')} hint={c('plan_step_trip_hint')}>
                                     <div className="grid grid-cols-2 gap-3 sm:gap-4">
@@ -414,7 +414,7 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                                 </Step>
                             )}
 
-                            {/* 2 — The decisions that set each part's length */}
+                            {/* 2: The decisions that set each part's length */}
                             {current === 'shape' && (
                                 <Step title={c('plan_step_shape_title')} hint={c('plan_step_shape_hint')}>
                                     <div className="space-y-12">
@@ -427,7 +427,7 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                                                             <p className="mt-0.5 text-[13px] text-ink/55">{routeNotes.find((n) => n.title === r.route)?.note ?? ''}</p>
                                                             <div className="mt-3 flex flex-wrap gap-2">
                                                                 {r.options.map((o) => (
-                                                                    <button key={o.id} onClick={() => { setClimb(o.id); nextAfter('climb'); }} className={cn('relative px-3.5 py-2 text-[13px] font-semibold ring-1 transition', climb === o.id ? 'bg-ink text-white ring-ink' : 'bg-white ring-ink/15 hover:ring-ink')}>
+                                                                    <button key={o.id} onClick={() => { setClimb(o.id); nextAfter('climb'); }} className={cn('relative px-3.5 py-2 text-[13px] font-semibold ring-1 transition', climb === o.id ? 'bg-forest-900 text-white ring-ink' : 'bg-white ring-ink/15 hover:ring-ink')}>
                                                                         {days(o.days)} · {money(o.price)}
                                                                         {o.popular && <span className={cn('ml-2 text-[10.5px] uppercase tracking-[0.12em]', climb === o.id ? 'text-gold-light' : 'text-gold-dark')}>{c('plan_popular')}</span>}
                                                                     </button>
@@ -481,11 +481,11 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                                 </Step>
                             )}
 
-                            {/* 3 — When, with what each month means for this trip */}
+                            {/* 3: When, with what each month means for this trip */}
                             {current === 'when' && (
                                 <Step title={c('plan_step_when_title')} hint={t('plan_step_when_hint', { part: primary ? c(`plan_part_word_${primary}`) : '' })}>
                                     <div className="flex items-center justify-between gap-4">
-                                        <button onClick={() => { const on = month !== 'flexible'; setMonth(on ? 'flexible' : ''); if (on) toContinue(); }} className={cn('px-4 py-2 text-[13px] font-semibold ring-1 transition', month === 'flexible' ? 'bg-ink text-white ring-ink' : 'bg-white ring-ink/15 hover:ring-ink')}>{c('plan_flexible')}</button>
+                                        <button onClick={() => { const on = month !== 'flexible'; setMonth(on ? 'flexible' : ''); if (on) toContinue(); }} className={cn('px-4 py-2 text-[13px] font-semibold ring-1 transition', month === 'flexible' ? 'bg-forest-900 text-white ring-ink' : 'bg-white ring-ink/15 hover:ring-ink')}>{c('plan_flexible')}</button>
                                         <button onClick={() => { setExact(!exact); setMonth(''); }} className="text-[13px] font-semibold text-gold-dark underline underline-offset-4">{exact ? c('plan_pick_month') : c('plan_exact')}</button>
                                     </div>
                                     {exact ? (
@@ -496,7 +496,7 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                                                 const on = month === m.value;
                                                 const s = primary ? seasonFor(primary, m.m) : null;
                                                 return (
-                                                    <button key={m.value} onClick={() => { setMonth(on ? '' : m.value); if (!on) toContinue(); }} className={cn('p-3 text-left ring-1 transition-all duration-300', on ? 'bg-ink text-white ring-ink' : 'bg-white ring-ink/10 hover:ring-gold')}>
+                                                    <button key={m.value} onClick={() => { setMonth(on ? '' : m.value); if (!on) toContinue(); }} className={cn('p-3 text-left ring-1 transition-all duration-300', on ? 'bg-forest-900 text-white ring-ink' : 'bg-white ring-ink/10 hover:ring-gold')}>
                                                         <span className="font-display block text-[17px] font-semibold tracking-tight">{m.label} <span className={cn('text-[13px] font-normal', on ? 'text-white/55' : 'text-ink/40')}>{m.year}</span></span>
                                                         {s?.note && <span className={cn('mt-1 flex items-start gap-1 text-[11.5px] leading-snug', on ? 'text-gold-light' : s.warn ? 'text-clay' : 'text-ink/50')}>{s.warn && <Icon name="help" size={12} className="mt-px shrink-0" />}{s.note}</span>}
                                                     </button>
@@ -520,12 +520,12 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                                 </Step>
                             )}
 
-                            {/* 4 — Who is travelling */}
+                            {/* 4: Who is travelling */}
                             {current === 'who' && (
                                 <Step title={c('plan_step_who_title')} hint={c('plan_step_who_hint')}>
                                     <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
                                         {parties.map((p) => (
-                                            <button key={p.title} onClick={() => { chooseParty(p); toContinue(); }} className={cn('flex flex-col items-start gap-3 p-4 text-left ring-1 transition', party === p.title ? 'bg-ink text-white ring-ink' : 'bg-white ring-ink/10 hover:ring-gold')}>
+                                            <button key={p.title} onClick={() => { chooseParty(p); toContinue(); }} className={cn('flex flex-col items-start gap-3 p-4 text-left ring-1 transition', party === p.title ? 'bg-forest-900 text-white ring-ink' : 'bg-white ring-ink/10 hover:ring-gold')}>
                                                 <Icon name={p.icon || 'users'} size={20} className={party === p.title ? 'text-gold-light' : 'text-gold-dark'} />
                                                 <span className="text-[15px] font-semibold">{p.title}</span>
                                             </button>
@@ -544,7 +544,7 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                                 </Step>
                             )}
 
-                            {/* 5 — Comfort level (only when there is accommodation to choose) */}
+                            {/* 5: Comfort level (only when there is accommodation to choose) */}
                             {current === 'style' && (
                                 <Step title={c('plan_step_style_title')} hint={c('plan_step_style_hint')}>
                                     <div className="grid gap-3 sm:grid-cols-3">
@@ -556,7 +556,7 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                                             const name = beachOnly && s === 'Lodge' ? c('plan_style_beach_name') : s;
                                             const text = beachOnly && s === 'Lodge' ? c('plan_style_beach_text') : c(`plan_style_${s.toLowerCase()}`);
                                             return (
-                                                <button key={s} onClick={() => { setStyle(s); toContinue(); }} className={cn('flex flex-col p-5 text-left ring-1 transition-all duration-300', on ? 'bg-ink text-white ring-ink' : 'bg-white ring-ink/10 hover:ring-gold')}>
+                                                <button key={s} onClick={() => { setStyle(s); toContinue(); }} className={cn('flex flex-col p-5 text-left ring-1 transition-all duration-300', on ? 'bg-forest-900 text-white ring-ink' : 'bg-white ring-ink/10 hover:ring-gold')}>
                                                     <span className="flex items-center justify-between"><span className="font-display text-[1.35rem] font-semibold tracking-tight">{name}</span><span className={cn('flex h-5 w-5 items-center justify-center border-2', on ? 'border-gold bg-gold text-white' : 'border-ink/20 text-transparent')}><Icon name="check" size={12} /></span></span>
                                                     <span className={cn('mt-2 text-[13px]', on ? 'text-white/65' : 'text-ink/55')}>{text}</span>
                                                     <span className={cn('mt-4 space-y-1 border-t pt-3 text-[13px]', on ? 'border-white/15' : 'border-ink/10')}>
@@ -571,7 +571,7 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                                 </Step>
                             )}
 
-                            {/* 6 — Review and send */}
+                            {/* 6: Review and send */}
                             {current === 'review' && (
                                 <Step title={c('plan_step_review_title')} hint={c('plan_step_review_hint')}>
                                     <div className="mb-8 lg:hidden">{summary}</div>
@@ -588,12 +588,22 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
 
                         {/* Phone: a compact view of the plan while answering */}
                         {current !== 'review' && parts.length > 0 && (
-                            <div className="mt-8 flex items-center justify-between gap-4 bg-ink p-4 text-white lg:hidden">
+                            <div className="mt-8 flex items-center justify-between gap-4 bg-forest-900 p-4 text-white lg:hidden">
                                 <div className="min-w-0">
                                     <p className="text-[10.5px] font-semibold uppercase tracking-[0.18em] text-gold-light">{c('plan_mobile_kicker')}</p>
                                     <p className="mt-0.5 text-[15px] font-semibold">{tripName}</p>
                                 </div>
                                 {shaping && total && <p className="shrink-0 text-right text-[13px]"><span className="block text-white/55">{c('plan_from')}</span><span className="font-semibold">{money(total[0])}</span></p>}
+                            </div>
+                        )}
+
+                        {prompt && (
+                            <div role="status" aria-live="polite" className="mt-8 hidden items-center gap-5 border border-gold/30 bg-gold/10 p-5 lg:flex">
+                                <p className="flex flex-1 items-start gap-3 text-[15px] leading-snug text-ink"><Icon name="check" size={18} className="mt-0.5 shrink-0 text-gold-dark" />{t('plan_more_prompt', { item: prompt.item })}</p>
+                                <div className="flex shrink-0 gap-2">
+                                    <button onClick={() => setPrompt(null)} className="btn btn-brand-outline !h-11 !px-5">{c('plan_more_add')}</button>
+                                    <button onClick={() => prompt.done()} className="btn btn-brand !h-11 !px-5">{c('plan_more_done')} <Icon name="arrow" size={15} className="arrow" /></button>
+                                </div>
                             </div>
                         )}
 
@@ -623,8 +633,8 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                 </div>
 
                 {/* "Add another?" after picking in a multi-choice step */}
-                <div className={cn('fixed inset-x-0 bottom-4 z-50 flex justify-center px-4 transition-all duration-500', prompt ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-6 opacity-0')} role="dialog" aria-live="polite">
-                    <div className="flex w-full max-w-xl flex-col gap-3 bg-ink p-4 text-white shadow-[0_30px_60px_-20px_rgba(0,0,0,.5)] sm:flex-row sm:items-center sm:gap-5 sm:p-5">
+                <div className={cn('fixed inset-x-0 bottom-4 z-50 flex justify-center px-4 transition-all duration-500 lg:hidden', prompt ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-6 opacity-0')} role="dialog" aria-live="polite">
+                    <div className="flex w-full max-w-xl flex-col gap-3 bg-forest-900 p-4 text-white shadow-[0_30px_60px_-20px_rgba(0,0,0,.5)] sm:flex-row sm:items-center sm:gap-5 sm:p-5">
                         <p className="flex flex-1 items-start gap-3 text-[15px] leading-snug"><Icon name="check" size={18} className="mt-0.5 shrink-0 text-gold-light" />{prompt ? t('plan_more_prompt', { item: prompt.item }) : ''}</p>
                         <div className="flex shrink-0 gap-2">
                             <button onClick={() => setPrompt(null)} className="btn btn-brand-outline !h-11 flex-1 !px-4">{c('plan_more_add')}</button>
@@ -647,7 +657,7 @@ function Confirmation({ c, t, name, email, tripName, legs, when, nextSteps, what
             <section className="container-site grid gap-12 py-16 lg:grid-cols-12 lg:py-24">
                 <div className="lg:col-span-7">
                     <span className="flex h-14 w-14 items-center justify-center bg-gold text-white"><Icon name="check" size={26} /></span>
-                    <h1 className="font-display mt-8 text-[clamp(2.2rem,5vw,4rem)] font-semibold leading-[1.02] tracking-tight">{t('plan_done_title', { name: name.split(' ')[0] })}</h1>
+                    <h1 className="h-display mt-8">{t('plan_done_title', { name: name.split(' ')[0] })}</h1>
                     <p className="mt-5 max-w-xl text-lg text-ink/60">{t('plan_done_text', { trip: tripName, when: when || c('plan_flexible_label') })}</p>
                     {c('plan_done_email') && <p className="mt-3 flex items-center gap-2 text-[15px] text-ink/70"><Icon name="mail" size={16} className="text-gold" />{t('plan_done_email', { email })}</p>}
                     <ol className="mt-10 space-y-6">
@@ -664,7 +674,7 @@ function Confirmation({ c, t, name, email, tripName, legs, when, nextSteps, what
                     </div>
                 </div>
                 <div className="lg:col-span-5">
-                    <div className="bg-ink p-7 text-white">
+                    <div className="bg-forest-900 p-7 text-white">
                         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-light">{c('plan_done_route')}</p>
                         <ol className="mt-4 space-y-3">
                             {legs.map((l, i) => <li key={i} className="flex gap-4 text-[15px]"><span className="w-20 shrink-0 text-white/45">{l.label}</span>{l.title}</li>)}
@@ -680,7 +690,7 @@ function Confirmation({ c, t, name, email, tripName, legs, when, nextSteps, what
 function Step({ title, hint, children }: { title: string; hint: string; children: ReactNode }) {
     return (
         <>
-            <h1 className="font-display fancy text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tight"><span className="mask"><span>{title.split(/(\*[^*]+\*)/g).map((p, i) => (p.startsWith('*') ? <em key={i}>{p.slice(1, -1)}</em> : p))}</span></span></h1>
+            <h1 className="h-display fancy"><span className="mask"><span>{title.split(/(\*[^*]+\*)/g).map((p, i) => (p.startsWith('*') ? <em key={i}>{p.slice(1, -1)}</em> : p))}</span></span></h1>
             <p className="mt-4 max-w-xl text-[16px] text-ink/60">{hint}</p>
             <div className="mt-8">{children}</div>
         </>
@@ -725,7 +735,7 @@ function PickCard({ active, onClick, image, title, text, small }: { active: bool
     return (
         <button onClick={onClick} aria-pressed={active} className={cn('img-zoom group relative overflow-hidden text-left outline-none ring-2 ring-offset-2 ring-offset-sand-50 transition-all duration-500', small ? 'h-32 sm:h-36' : 'h-44 sm:h-56', active ? 'ring-gold' : 'ring-transparent')}>
             {image && <img src={img(image, 600)} alt="" className="h-full w-full object-cover" />}
-            <div className={cn('absolute inset-0 transition-colors duration-500', active ? 'bg-ink/55' : 'bg-gradient-to-t from-black/80 via-black/20 to-transparent')} />
+            <div className={cn('absolute inset-0 transition-colors duration-500', active ? 'bg-forest-900/55' : 'bg-gradient-to-t from-forest-900/80 via-forest-900/20 to-transparent')} />
             <span className={cn('absolute right-3 top-3 flex h-7 w-7 items-center justify-center border-2 transition-all duration-500', active ? 'border-gold bg-gold text-white' : 'border-white/80 text-transparent')}><Icon name="check" size={15} /></span>
             <div className="absolute bottom-0 p-4 text-white sm:p-5">
                 <p className={cn('font-display font-semibold leading-tight tracking-tight', small ? 'text-[16px]' : 'text-[1.3rem]')}>{title}</p>
@@ -740,9 +750,9 @@ function Counter({ label, note, value, min, max, onChange }: { label: string; no
         <div className="flex items-center justify-between gap-4 bg-white p-4 ring-1 ring-ink/10">
             <span><span className="font-display block text-[16px] font-semibold tracking-tight">{label}</span><span className="text-[12.5px] text-ink/50">{note}</span></span>
             <div className="flex shrink-0 items-center gap-3">
-                <button onClick={() => onChange(Math.max(min, value - 1))} disabled={value <= min} className="flex h-10 w-10 items-center justify-center ring-1 ring-ink/15 hover:bg-ink hover:text-white disabled:opacity-30" aria-label={`− ${label}`}><Icon name="minus" size={16} /></button>
+                <button onClick={() => onChange(Math.max(min, value - 1))} disabled={value <= min} className="flex h-10 w-10 items-center justify-center ring-1 ring-ink/15 hover:bg-forest-900 hover:text-white disabled:opacity-30" aria-label={`− ${label}`}><Icon name="minus" size={16} /></button>
                 <span className="w-7 text-center text-lg font-semibold tabular-nums">{value}</span>
-                <button onClick={() => onChange(Math.min(max, value + 1))} disabled={value >= max} className="flex h-10 w-10 items-center justify-center ring-1 ring-ink/15 hover:bg-ink hover:text-white disabled:opacity-30" aria-label={`+ ${label}`}><Icon name="plus" size={16} /></button>
+                <button onClick={() => onChange(Math.min(max, value + 1))} disabled={value >= max} className="flex h-10 w-10 items-center justify-center ring-1 ring-ink/15 hover:bg-forest-900 hover:text-white disabled:opacity-30" aria-label={`+ ${label}`}><Icon name="plus" size={16} /></button>
             </div>
         </div>
     );

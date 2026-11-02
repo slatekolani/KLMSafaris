@@ -111,7 +111,7 @@ class Seo
                 $cover = data_get($st, 'image') ?: data_get($st, 'gallery.0');
                 $where = data_get($st, 'location') ?: data_get($st, 'destination.name');
                 $seo['title'] = data_get($st, 'name');
-                $seo['description'] = data_get($st, 'excerpt') ?: trim(data_get($st, 'type').($where ? " in $where" : '').' — a place to stay on KLM Safaris trips in Tanzania.');
+                $seo['description'] = data_get($st, 'excerpt') ?: trim(data_get($st, 'type').($where ? " in $where" : '').'. A place to stay on KLM Safaris trips in Tanzania.');
                 $seo['image'] = $cover;
                 $seo['schema'][] = array_filter(['@type' => 'LodgingBusiness', 'name' => data_get($st, 'name'), 'image' => self::abs($cover), 'address' => $where ? ['@type' => 'PostalAddress', 'addressLocality' => $where, 'addressCountry' => 'TZ'] : null, 'url' => data_get($st, 'website')]);
                 break;

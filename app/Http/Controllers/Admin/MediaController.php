@@ -48,7 +48,7 @@ class MediaController extends Controller
 
     /**
      * Everything the site can use: images uploaded in the CMS (deletable), then the site's own photos that came with
-     * the website and the old klmsafaris.com (public/images/klm) — shown so they can be found and reused, but protected
+     * the website and the old klmsafaris.com (public/images/klm): shown so they can be found and reused, but protected
      * from deletion because tours, galleries and pages point at them.
      */
     private function files(): array

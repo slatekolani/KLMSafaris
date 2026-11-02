@@ -37,7 +37,7 @@ export function BrandMark({ brand, size = 18, className, color }: { brand: Brand
     );
 }
 
-/** A square tile in the network's own colours with its real logo — used for the footer social links. */
+/** A square tile in the network's own colours with its real logo: used for the footer social links. */
 export default function BrandTile({ brand, size = 40, className }: { brand: Brand; size?: number; className?: string }) {
     const c = COLOURS[brand];
     return (

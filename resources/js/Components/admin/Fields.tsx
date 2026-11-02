@@ -46,7 +46,7 @@ export function FieldRenderer({ field, value, onChange, error }: { field: FieldD
             case 'relation':
                 return (
                     <select className={input} value={value ?? ''} onChange={(e) => onChange(e.target.value ? Number(e.target.value) : null)}>
-                        <option value="">— None —</option>
+                        <option value="">None</option>
                         {Object.entries(field.options ?? {}).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
                     </select>
                 );
@@ -191,7 +191,7 @@ export function ImageInput({ value, onChange }: { value: string; onChange: (v: s
         <div className="flex gap-3">
             <button type="button" onClick={() => setPicker(true)} className="group relative h-24 w-32 shrink-0 overflow-hidden rounded-xl bg-sand-100 ring-1 ring-ink/10">
                 {value ? <img src={img(value, 300)} alt="" className="h-full w-full object-cover" /> : <Icon name="image" size={26} className="mx-auto text-ink/30" />}
-                <span className="absolute inset-0 flex items-center justify-center bg-ink/50 text-xs font-medium text-white opacity-0 transition group-hover:opacity-100">Change</span>
+                <span className="absolute inset-0 flex items-center justify-center bg-forest-900/50 text-xs font-medium text-white opacity-0 transition group-hover:opacity-100">Change</span>
             </button>
             <div className="flex min-w-0 flex-1 flex-col gap-2">
                 <input className={input} value={value} placeholder="Paste an image URL or choose from library" onChange={(e) => onChange(e.target.value)} />
@@ -224,7 +224,7 @@ function VideoInput({ value, onChange }: { value: string; onChange: (v: string) 
     };
     return (
         <div className="flex gap-3">
-            <div className="h-24 w-40 shrink-0 overflow-hidden rounded-xl bg-ink ring-1 ring-ink/10">
+            <div className="h-24 w-40 shrink-0 overflow-hidden rounded-xl bg-forest-900 ring-1 ring-ink/10">
                 {value ? <video src={value} muted loop autoPlay playsInline className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center text-xs text-white/40">No video</div>}
             </div>
             <div className="flex min-w-0 flex-1 flex-col gap-2">
@@ -299,7 +299,7 @@ export function MediaPicker({ onClose, onPick, multiple = false }: { onClose: ()
     const toggle = (u: string) => setSelected((s) => (s.includes(u) ? s.filter((x) => x !== u) : multiple ? [...s, u] : [u]));
 
     return (
-        <div className="fixed inset-0 z-[90] flex items-center justify-center bg-ink/60 p-4 backdrop-blur-sm" onClick={onClose}>
+        <div className="fixed inset-0 z-[90] flex items-center justify-center bg-forest-900/60 p-4 backdrop-blur-sm" onClick={onClose}>
             <div className="flex max-h-[88vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl" onClick={(e) => e.stopPropagation()}>
                 <div className="flex items-center justify-between border-b border-ink/[0.06] px-6 py-4">
                     <p className="font-display text-2xl">Media library</p>
@@ -321,14 +321,14 @@ export function MediaPicker({ onClose, onPick, multiple = false }: { onClose: ()
                 </div>
                 <div className="flex flex-wrap items-center gap-2 px-5 pt-4">
                     {([['', 'All'], ['upload', 'Uploaded'], ['site', 'Site photos']] as const).map(([key, label]) => (
-                        <button type="button" key={key} onClick={() => setSource(key)} className={cn('rounded-full px-3.5 py-1.5 text-xs transition', source === key ? 'bg-ink text-white' : 'bg-sand-100 text-ink/60 hover:text-ink')}>
+                        <button type="button" key={key} onClick={() => setSource(key)} className={cn('rounded-full px-3.5 py-1.5 text-xs transition', source === key ? 'bg-forest-900 text-white' : 'bg-sand-100 text-ink/60 hover:text-ink')}>
                             {label} <span className="opacity-60">{key ? files.filter((f) => f.source === key).length : files.length}</span>
                         </button>
                     ))}
                     <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search photos (e.g. serengeti, mawe)…" className="min-w-[180px] flex-1 rounded-full border border-ink/10 px-4 py-1.5 text-sm outline-none focus:border-ink/30" />
                 </div>
                 <div className="grid min-h-0 flex-1 auto-rows-max grid-cols-3 content-start gap-3 overflow-y-auto p-5 sm:grid-cols-5">
-                    {shown.length === 0 && <p className="col-span-full py-10 text-center text-sm text-ink/45">{files.length ? 'No images match.' : 'No images yet — upload some above.'}</p>}
+                    {shown.length === 0 && <p className="col-span-full py-10 text-center text-sm text-ink/45">{files.length ? 'No images match.' : 'No images yet: upload some above.'}</p>}
                     {shown.map((f) => (
                         <button type="button" key={f.path} onClick={() => toggle(f.url)} onDoubleClick={() => onPick([f.url])} className={cn('relative aspect-square overflow-hidden rounded-xl ring-2 transition', selected.includes(f.url) ? 'ring-gold' : 'ring-transparent hover:ring-ink/20')}>
                             <img src={f.url} alt={f.name} className="h-full w-full object-cover" loading="lazy" />
@@ -379,7 +379,7 @@ function RichText({ value, onChange }: { value: string; onChange: (v: string) =>
                 {!source && tools.map(([title, iconEl, fn]) => (
                     <button key={title} type="button" title={title} onMouseDown={(e) => { e.preventDefault(); fn(); }} className="flex h-8 min-w-8 items-center justify-center rounded-lg px-1.5 text-ink/70 hover:bg-white hover:text-ink">{iconEl}</button>
                 ))}
-                <button type="button" onClick={() => setSource(!source)} className={cn('ml-auto rounded-lg px-2.5 py-1 text-xs', source ? 'bg-ink text-white' : 'text-ink/50 hover:bg-white')}>{'</>'} HTML</button>
+                <button type="button" onClick={() => setSource(!source)} className={cn('ml-auto rounded-lg px-2.5 py-1 text-xs', source ? 'bg-forest-900 text-white' : 'text-ink/50 hover:bg-white')}>{'</>'} HTML</button>
             </div>
             {source ? (
                 <textarea className="block min-h-[280px] w-full p-4 font-mono text-[13px] outline-none" value={value} onChange={(e) => onChange(e.target.value)} />

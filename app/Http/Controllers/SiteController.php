@@ -51,16 +51,16 @@ class SiteController extends Controller
             'slides' => HeroSlide::where('is_active', true)->orderBy('sort_order')->get(),
             'categories' => $categories,
             'rows' => $rows,
-            // The homepage shows a selection; the rest are on /accommodation. Lodges with photos come first.
+            // The homepage shows 8 per type tab; the rest are on /accommodation. Lodges with photos come first.
             'stays' => Accommodation::published()->with('destination:id,name')
                 ->orderByRaw('(image IS NULL AND (gallery IS NULL OR JSON_LENGTH(gallery) = 0))')->orderBy('sort_order')->orderBy('name')
-                ->take(8)->get(['id', 'name', 'slug', 'type', 'location', 'image', 'gallery', 'excerpt', 'destination_id']),
+                ->get(['id', 'name', 'slug', 'type', 'location', 'image', 'gallery', 'excerpt', 'destination_id']), // the homepage shows 8 per type tab
             'staysTotal' => Accommodation::published()->count(),
             // "All tours" tab: featured trips first, across every experience.
             'allTours' => $this->tourCards(Tour::query())->orderByDesc('is_featured')->orderBy('sort_order')->take(12)->get(),
             'destinations' => Destination::where('is_featured', true)->orderBy('sort_order')->withCount('tours')->get(['id', 'name', 'slug', 'region', 'tagline', 'image']),
             'stats' => Stat::orderBy('sort_order')->get(),
-            'testimonials' => Testimonial::where('is_active', true)->orderBy('sort_order')->get(),
+            'testimonials' => Testimonial::where('is_active', true)->where('rating', 5)->orderBy('sort_order')->get(), // five-star reviews only
             'posts' => Post::published()->take(3)->get(['id', 'title', 'slug', 'topic', 'excerpt', 'image', 'read_minutes', 'published_at']),
             'counts' => [
                 'tours' => Tour::published()->count(),
@@ -127,7 +127,10 @@ class SiteController extends Controller
         if ($retired) {
             return redirect($retired, 301);
         }
-        $tour = Tour::published()->where('slug', $slug)->with(['category:id,name,slug', 'destinations:id,name,slug,image'])->firstOrFail();
+        $tour = Tour::published()->where('slug', $slug)->with(['category:id,name,slug,includes,excludes', 'destinations:id,name,slug,image'])->firstOrFail();
+        // No lists of its own yet: show the category's defaults.
+        $tour->includes = $tour->includes ?: ($tour->category?->includes ?? []);
+        $tour->excludes = $tour->excludes ?: ($tour->category?->excludes ?? []);
 
         return Inertia::render('Tours/Show', [
             'tour' => $tour,
@@ -135,7 +138,7 @@ class SiteController extends Controller
                 ->where('id', '!=', $tour->id)
                 ->where('category_id', $tour->category_id)
                 ->orderByDesc('is_featured')->take(3)->get(),
-            'testimonials' => Testimonial::where('is_active', true)->orderBy('sort_order')->take(4)->get(),
+            'testimonials' => Testimonial::where('is_active', true)->where('rating', 5)->orderBy('sort_order')->take(12)->get(), // five-star only, shown as a carousel
             'consultant' => TeamMember::where('is_consultant', true)->orderBy('sort_order')->first(),
         ]);
     }
@@ -162,7 +165,7 @@ class SiteController extends Controller
     {
         $posts = Post::published()
             ->when($request->filled('topic'), fn ($q) => $q->where('topic', $request->topic))
-            ->paginate(9, ['id', 'title', 'slug', 'topic', 'excerpt', 'image', 'author', 'read_minutes', 'published_at'])
+            ->paginate(13, ['id', 'title', 'slug', 'topic', 'excerpt', 'image', 'author', 'read_minutes', 'published_at']) // one featured post + three rows of four
             ->withQueryString();
 
         return Inertia::render('Journal/Index', [
@@ -283,7 +286,7 @@ class SiteController extends Controller
                 'standard' => ['rate' => $range($beach->reject(fn (Tour $t) => $t->difficulty === 'Luxury')), 'tours' => $beach->reject(fn (Tour $t) => $t->difficulty === 'Luxury')->map($card)->values()],
                 'luxury' => ['rate' => $range($beachLuxury), 'tours' => $beachLuxury->map($card)->values()],
             ],
-            // Day trips around Moshi & Arusha (Lake Victoria and Zanzibar excursions belong to other legs).
+            // Day trips around Kilimanjaro & Arusha (Lake Victoria and Zanzibar excursions belong to other legs).
             'dayTrips' => $in('day-tours')->filter(fn (Tour $t) => $t->price_from > 0 && ! $t->destinations->contains('slug', 'lake-victoria'))->sortBy('price_from')->map($card)->values(),
         ];
     }
@@ -349,7 +352,7 @@ class SiteController extends Controller
         return $list ?: [config('mail.from.address')];
     }
 
-    /** Never let a mail problem lose a submission — it is already saved in the CMS; log the failure instead. */
+    /** Never let a mail problem lose a submission: it is already saved in the CMS; log the failure instead. */
     private function sendMail(callable $send, string $what): void
     {
         try {

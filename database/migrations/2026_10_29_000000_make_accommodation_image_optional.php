@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    // Lodges can be listed before KLM has photos of them — the site shows "photo coming soon" instead.
+    // Lodges can be listed before KLM has photos of them: the site shows "photo coming soon" instead.
     public function up(): void
     {
         Schema::table('accommodations', function (Blueprint $table) {

@@ -8,7 +8,7 @@ class Enquiry extends Model
 {
     protected $guarded = ['id'];
 
-    protected $casts = ['interests' => 'array', 'travel_date' => 'date:Y-m-d'];
+    protected $casts = ['interests' => 'array', 'travel_date' => 'date:Y-m-d', 'status_changed_at' => 'datetime'];
 
     public function tour()
     {

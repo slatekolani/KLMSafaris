@@ -23,11 +23,52 @@ export default function PageHero({ image, eyebrow, title, subtitle, crumbs = [],
     const lines = splitLines(title);
     const tx = useText();
 
+    // No photo chosen in the CMS: a text-only hero styled like the footer (navy, white text, soft dotted pattern).
+    if (!image) {
+        return (
+            <section className="relative isolate overflow-hidden bg-forest-900 text-white">
+                <div aria-hidden className="absolute inset-0 -z-10 opacity-60" style={{ backgroundImage: 'radial-gradient(rgb(255 255 255 / .09) 1px, transparent 1px)', backgroundSize: '18px 18px', maskImage: 'linear-gradient(to left, #000, transparent 70%)' }} />
+                <div aria-hidden className="absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-gold/20 blur-3xl" />
+                <div className="container-site flex items-center justify-between gap-6 pt-6 sm:pt-8">
+                    <nav className="hero-in flex min-w-0 flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/50" aria-label="Breadcrumb">
+                        <Link href="/" className="hover:text-white">{tx('crumb_home')}</Link>
+                        {crumbs.map((c) => (
+                            <span key={c.label} className="flex min-w-0 items-center gap-2">
+                                <Icon name="chevronRight" size={12} />
+                                {c.href ? <Link href={c.href} className="hover:text-white">{c.label}</Link> : <span className="truncate text-white/80">{c.label}</span>}
+                            </span>
+                        ))}
+                    </nav>
+                </div>
+                <div className={cn('container-site grid gap-8 pt-12 lg:grid-cols-12 lg:items-end', overlap ? 'pb-28 sm:pb-32' : 'pb-14 sm:pb-16')}>
+                    <div className={cn('min-w-0', shown.length ? 'lg:col-span-8' : 'lg:col-span-10')}>
+                        {eyebrow && <p className="hero-in eyebrow eyebrow-light">{eyebrow}</p>}
+                        <h1 className="h-display fancy mt-4 max-w-4xl text-white">
+                            {lines.map((line, i) => <span key={i} className="mask"><span style={{ animationDelay: `${120 + i * 120}ms` }}>{fancy(line)}</span></span>)}
+                        </h1>
+                        {subtitle && <p className="hero-in mt-5 max-w-2xl text-[17px] leading-relaxed text-white/70 sm:text-lg" style={{ ['--d' as string]: '300ms' }}>{subtitle}</p>}
+                        {children && <div className="hero-in" style={{ ['--d' as string]: '420ms' }}>{children}</div>}
+                    </div>
+                    {shown.length > 0 && (
+                        <dl className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:col-span-4 lg:grid-cols-1">
+                            {shown.map((f, i) => (
+                                <div key={f.label} className="hero-in border border-white/15 bg-white/5 px-4 py-3" style={{ ['--d' as string]: `${400 + i * 100}ms` }}>
+                                    <dt className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/50">{f.label}</dt>
+                                    <dd className="font-display mt-0.5 truncate text-[1.2rem] font-semibold text-white">{f.prefix}{f.value}{f.suffix}</dd>
+                                </div>
+                            ))}
+                        </dl>
+                    )}
+                </div>
+            </section>
+        );
+    }
+
     return (
-        <section className={cn('relative isolate flex flex-col overflow-hidden bg-ink text-white', tall ? 'min-h-[78svh] md:min-h-[calc(100svh-120px)]' : 'min-h-[64svh] md:min-h-[72svh]')}>
+        <section className={cn('relative isolate flex flex-col overflow-hidden bg-forest-900 text-white', tall ? 'min-h-[78svh] md:min-h-[calc(100svh-120px)]' : 'min-h-[64svh] md:min-h-[72svh]')}>
             {image && <HeroMedia src={image} />}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-black/0" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-black/25" />
+            <div className="absolute inset-0 bg-gradient-to-r from-forest-900/60 via-forest-900/20 to-forest-900/0" />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-forest-900/5 to-forest-900/25" />
 
             <div className="container-site relative z-10 flex items-center justify-between gap-6 pt-6 sm:pt-8">
                 <nav className="hero-in flex min-w-0 flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/60" aria-label="Breadcrumb">
@@ -39,7 +80,7 @@ export default function PageHero({ image, eyebrow, title, subtitle, crumbs = [],
                         </span>
                     ))}
                 </nav>
-                <MoshiClock />
+                <KilimanjaroClock />
             </div>
 
             <div className={cn('container-site relative z-10 mt-auto grid gap-10 pt-20', overlap ? 'pb-28 sm:pb-32' : 'pb-12 sm:pb-16', 'lg:grid-cols-12 lg:items-end lg:gap-12')}>
@@ -59,7 +100,7 @@ export default function PageHero({ image, eyebrow, title, subtitle, crumbs = [],
                 </div>
 
                 {shown.length > 0 && (
-                    <dl className="grid grid-cols-2 border-t border-white/20 sm:grid-cols-3 lg:col-span-4 lg:grid-cols-1 lg:border-t-0 lg:bg-black/40 lg:px-8 lg:py-2 lg:backdrop-blur-md">
+                    <dl className="grid grid-cols-2 border-t border-white/20 sm:grid-cols-3 lg:col-span-4 lg:grid-cols-1 lg:border-t-0 lg:bg-forest-900/40 lg:px-8 lg:py-2 lg:backdrop-blur-md">
                         {shown.map((f, i) => (
                             <div key={f.label} className="hero-in border-b border-white/15 py-4 pr-4 last:border-b-0 lg:py-5 lg:pr-0" style={{ ['--d' as string]: `${450 + i * 110}ms` }}>
                                 <dt className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/55">{f.label}</dt>
@@ -76,7 +117,7 @@ export default function PageHero({ image, eyebrow, title, subtitle, crumbs = [],
 }
 
 /** Live local time at the office, so the page feels like it comes from people on the ground. */
-function MoshiClock() {
+function KilimanjaroClock() {
     const read = () => {
         const parts = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZone: 'Africa/Dar_es_Salaam' }).formatToParts(new Date());
         const h = Number(parts.find((p) => p.type === 'hour')?.value ?? 0);
@@ -95,7 +136,7 @@ function MoshiClock() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-70" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
             </span>
-            Good {now.part} from Moshi · <span className="tabular-nums text-white">{now.time}</span> EAT
+            Good {now.part} from Kilimanjaro · <span className="tabular-nums text-white">{now.time}</span> EAT
         </p>
     );
 }

@@ -55,7 +55,7 @@ class Theme
         $body = array_key_exists($s['font_body'], static::BODY_FONTS) ? $s['font_body'] : 'Afacad';
 
         $primary = static::hex($s['color_primary'], '#468BC2');
-        $dark = static::hex($s['color_dark'], '#000000');
+        $dark = static::hex($s['color_dark'], '#1D4468');
         $accent = static::hex($s['color_accent'], '#468BC2');
         $light = static::hex($s['color_light'], '#FFFFFF');
         $ink = static::hex($s['color_text'], '#000000');
@@ -85,7 +85,7 @@ class Theme
 
     public static function themeColor(): string
     {
-        return static::hex(Setting::allValues()['color_dark'] ?? '', '#000000');
+        return static::hex(Setting::allValues()['color_dark'] ?? '', '#1D4468');
     }
 
     private static function hex(?string $value, string $fallback): string

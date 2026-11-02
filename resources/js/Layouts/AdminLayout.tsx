@@ -73,7 +73,7 @@ export default function AdminLayout({ title, actions, children }: { title: strin
             <Head title={`${title} · Admin`} />
             <aside className="fixed inset-y-0 left-0 z-40 hidden w-64 bg-forest-900 lg:block">{sidebar}</aside>
             <div className={cn('fixed inset-0 z-50 lg:hidden', mobile ? 'visible' : 'invisible')}>
-                <div onClick={() => setMobile(false)} className={cn('absolute inset-0 bg-ink/50 transition-opacity', mobile ? 'opacity-100' : 'opacity-0')} />
+                <div onClick={() => setMobile(false)} className={cn('absolute inset-0 bg-forest-900/50 transition-opacity', mobile ? 'opacity-100' : 'opacity-0')} />
                 <aside className={cn('absolute inset-y-0 left-0 w-72 bg-forest-900 transition-transform duration-300', mobile ? 'translate-x-0' : '-translate-x-full')}>{sidebar}</aside>
             </div>
 
@@ -118,7 +118,7 @@ export function Card({ children, className }: { children: ReactNode; className?:
 export function Button({ children, variant = 'primary', className, ...rest }: { variant?: 'primary' | 'ghost' | 'danger' | 'dark' } & React.ButtonHTMLAttributes<HTMLButtonElement>) {
     const styles = {
         primary: 'bg-gold text-white hover:bg-gold-dark',
-        dark: 'bg-forest-900 text-white hover:bg-ink',
+        dark: 'bg-forest-900 text-white hover:bg-forest-900',
         ghost: 'bg-white text-ink ring-1 ring-ink/10 hover:bg-sand-100',
         danger: 'bg-white text-clay ring-1 ring-clay/30 hover:bg-clay hover:text-white',
     }[variant];

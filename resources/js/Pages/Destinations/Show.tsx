@@ -2,6 +2,7 @@ import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 import Icon from '@/Components/Icon';
 import Lightbox from '@/Components/Lightbox';
+import Pagination, { usePaged } from '@/Components/Pagination';
 import PageHero from '@/Components/PageHero';
 import TourCard from '@/Components/TourCard';
 import SiteLayout from '@/Layouts/SiteLayout';
@@ -10,6 +11,7 @@ import type { Destination, TourCard as TC } from '@/types';
 
 export default function DestinationShow({ destination: d, tours, others }: { destination: Destination; tours: TC[]; others: Destination[] }) {
     const tx = useText();
+    const paged = usePaged(tours);
     const [lb, setLb] = useState<number | null>(null);
     const gallery = d.gallery ?? [];
 
@@ -21,14 +23,14 @@ export default function DestinationShow({ destination: d, tours, others }: { des
             <section className="container-site grid gap-14 py-24 lg:grid-cols-12">
                 <div className="lg:col-span-7">
                     <span className="eyebrow">{tx('dest_about', { name: d.name })}</span>
-                    <p className="font-display mt-6 text-3xl font-semibold tracking-tight leading-snug sm:text-4xl">{d.excerpt}</p>
+                    <p className="font-display mt-6 text-xl font-semibold tracking-tight leading-snug sm:text-2xl">{d.excerpt}</p>
                     <div className="prose-lux mt-8" dangerouslySetInnerHTML={{ __html: d.body ?? '' }} />
                 </div>
                 <aside className="lg:col-span-5">
                     <div className="sticky top-28 space-y-5">
                         <div className=" bg-forest-900 p-8 text-white">
                             <p className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-gold-light"><Icon name="calendar" size={16} /> {tx('dest_best')}</p>
-                            <p className="font-display mt-3 text-2xl font-semibold tracking-tight leading-snug">{d.best_time}</p>
+                            <p className="font-display mt-3 text-xl font-semibold tracking-tight leading-snug">{d.best_time}</p>
                             {!!d.highlights?.length && (
                                 <>
                                     <p className="mt-8 text-[11px] uppercase tracking-[0.2em] text-gold-light">{tx('dest_highlights')}</p>
@@ -58,7 +60,8 @@ export default function DestinationShow({ destination: d, tours, others }: { des
                     <div className="container-site">
                         <span className="eyebrow">{tx('dest_journeys')}</span>
                         <h2 className="h-section mt-4">{tx('dest_experience', { name: d.name })}</h2>
-                        <div className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{tours.map((t, i) => <TourCard key={t.id} tour={t} delay={(i % 3) * 70} />)}</div>
+                        <div ref={paged.top} className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">{paged.shown.map((t, i) => <TourCard key={t.id} tour={t} delay={(i % 4) * 60} />)}</div>
+                        <Pagination {...paged} />
                     </div>
                 </section>
             )}
@@ -69,7 +72,7 @@ export default function DestinationShow({ destination: d, tours, others }: { des
                     {others.map((o) => (
                         <Link key={o.id} href={`/destinations/${o.slug}`} className="img-zoom group relative block h-64 overflow-hidden">
                             <img src={img(o.image, 600)} alt="" loading="lazy" className="h-full w-full object-cover" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 to-transparent" />
                             <div className="absolute bottom-0 p-6 text-white"><p className="text-[10px] uppercase tracking-[0.2em] text-white/60">{o.region}</p><p className="font-display text-2xl">{o.name}</p></div>
                         </Link>
                     ))}

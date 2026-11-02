@@ -22,16 +22,16 @@ homepage text, page headers, footer links, SEO).
 
 The launch content was imported from the old klmsafaris.com:
 
-- `database/scripts/scrape-klmsafaris.php` – re-runnable importer → `database/seeders/data/*.json`
+- `database/scripts/scrape-klmsafaris.php`: re-runnable importer → `database/seeders/data/*.json`
   and images in `public/images/klm/`
-- `database/seeders/ContentSeeder.php` – loads that data into the CMS tables
+- `database/seeders/ContentSeeder.php`: loads that data into the CMS tables
 
 To start over from the imported content: `php artisan migrate:fresh --seed` (erases CMS edits).
 
 ## Layout
 
-- `resources/js/Pages/*.tsx` – public pages; `resources/js/Pages/Admin/*` – CMS
-- `app/Support/AdminResources.php` – every CMS content type and its fields
-- `app/Support/SettingsSchema.php` – every site setting and its default
-- `app/Support/Theme.php` – fonts and colours from the Design settings
+- `resources/js/Pages/*.tsx`: public pages; `resources/js/Pages/Admin/*`: CMS
+- `app/Support/AdminResources.php`: every CMS content type and its fields
+- `app/Support/SettingsSchema.php`: every site setting and its default
+- `app/Support/Theme.php`: fonts and colours from the Design settings
 # enaboishu

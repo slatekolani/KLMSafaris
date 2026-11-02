@@ -38,7 +38,7 @@ export default function Media({ files }: { files: F[] }) {
             <div className="mt-6 flex flex-wrap items-center gap-3">
                 <div className="flex gap-1 rounded-full bg-white p-1 ring-1 ring-ink/10">
                     {TABS.map(([key, label]) => (
-                        <button key={key} onClick={() => setSource(key)} className={cn('rounded-full px-4 py-1.5 text-sm transition', source === key ? 'bg-ink text-white' : 'text-ink/60 hover:text-ink')}>
+                        <button key={key} onClick={() => setSource(key)} className={cn('rounded-full px-4 py-1.5 text-sm transition', source === key ? 'bg-forest-900 text-white' : 'text-ink/60 hover:text-ink')}>
                             {label} <span className="opacity-60">{count(key)}</span>
                         </button>
                     ))}

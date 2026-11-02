@@ -26,7 +26,7 @@ export default function ResourceIndex({ resource, rows, filters, filterOptions }
         if (c.format === 'money') return money(v as number);
         if (c.format === 'date') return formatDate(v as string, { day: 'numeric', month: 'short', year: 'numeric' });
         if (c.format === 'path') return <code className="rounded bg-sand-100 px-1.5 py-0.5 text-xs">/{String(v)}</code>;
-        return (v as string) ?? '—';
+        return (v as string) ?? '';
     };
 
     return (

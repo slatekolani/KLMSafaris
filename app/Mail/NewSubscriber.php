@@ -20,7 +20,7 @@ class NewSubscriber extends Mailable
 
     public function envelope(): Envelope
     {
-        return new Envelope(subject: "New newsletter subscriber — {$this->subscriber->email}");
+        return new Envelope(subject: "New newsletter subscriber: {$this->subscriber->email}");
     }
 
     public function content(): Content

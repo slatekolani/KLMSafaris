@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /** A lodge, camp or hotel KLM uses on its trips (CMS → Accommodation). */
 class Accommodation extends Model
 {
-    public const TYPES = ['Camping', 'Tented camp', 'Lodge', 'Luxury lodge', 'Hotel', 'Beach resort'];
+    public const TYPES = ['Camping', 'Tented camp', 'Lodge', 'Luxury', 'Hotel', 'Beach resort'];
 
     protected $guarded = ['id'];
 

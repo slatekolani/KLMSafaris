@@ -70,8 +70,8 @@ export default function AccommodationShow({ stay, more, tours }: { stay: Full; m
                 </div>
 
                 <aside className="lg:col-span-4">
-                    <div className="bg-ink p-7 text-white/70 lg:sticky" style={{ top: 'calc(var(--nav-h, 0px) + 2rem)' }}>
-                        <h2 className="fancy font-display text-[1.6rem] font-bold leading-tight text-white">{fancy(tx('stay_cta_title'))}</h2>
+                    <div className="bg-forest-900 p-7 text-white/70 lg:sticky" style={{ top: 'calc(var(--nav-h, 0px) + 2rem)' }}>
+                        <h2 className="h-section fancy text-white">{fancy(tx('stay_cta_title'))}</h2>
                         <p className="mt-3 text-[15px] leading-relaxed">{tx('stay_cta_text')}</p>
                         <Link href="/plan-your-trip" className="btn btn-brand mt-6 w-full">{tx('stay_cta_button')} <Icon name="arrow" size={16} className="arrow" /></Link>
                         <Link href="/contact" className="btn mt-3 w-full border border-white/40 bg-transparent text-white hover:bg-white hover:text-gold">{tx('stay_ask')}</Link>
@@ -88,7 +88,7 @@ export default function AccommodationShow({ stay, more, tours }: { stay: Full; m
                 <section className="border-t border-ink/10 bg-white py-16 lg:py-20">
                     <div className="container-site">
                         <h2 className="h-section">{tx('stay_tours', { area: stay.destination.name })}</h2>
-                        <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                        <div className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                             {tours.map((t) => <TourCard key={t.id} tour={t} />)}
                         </div>
                     </div>
@@ -101,7 +101,7 @@ export default function AccommodationShow({ stay, more, tours }: { stay: Full; m
                         <h2 className="h-section">{tx('stay_more')}</h2>
                         <Link href="/accommodation" className="link-arrow hidden sm:inline-flex">{tx('stays_title')} <Icon name="arrow" size={14} /></Link>
                     </div>
-                    <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+                    <div className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                         {more.map((s) => <StayCard key={s.id} stay={s} />)}
                     </div>
                 </section>

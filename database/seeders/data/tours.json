@@ -5,14 +5,14 @@
         "price": null,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p>This safari experience takes you from Lake Victoria to the endless plains of Serengeti National park. It will take you to the best National Park in Africa -Serengeti. This tour will involve two alternatives. From Mwanza to Serengeti, Ngorongoro Tarangire and Lake Manyara Parks and back to Mwanza or from Mwanza to the named parks to Kilimanjaro International Airport via Ngorongoro Crater. This is the best way to explore Serengeti between Mwanza Arusha and Moshi</p>",
+        "overview": "<p>This safari experience takes you from Lake Victoria to the endless plains of Serengeti National park. It will take you to the best National Park in Africa -Serengeti. This tour will involve two alternatives. From Mwanza to Serengeti, Ngorongoro Tarangire and Lake Manyara Parks and back to Mwanza or from Mwanza to the named parks to Kilimanjaro International Airport via Ngorongoro Crater. This is the best way to explore Serengeti between Mwanza Arusha and Kilimanjaro</p>",
         "days": 7,
         "min_age": "16++",
         "types": [
             "Lake Manyara & Tarangire"
         ],
         "destination": "National Parks : Lake Manyara, Ngorongoro Crater, Tarangire, Serengeti",
-        "departure": "Mwanza / Mwanza (or Arusha or Moshi)",
+        "departure": "Mwanza / Mwanza (or Arusha or Kilimanjaro)",
         "departure_time": "Please be ready by 8:15 AM for a prompt departure at 9:00 AM.",
         "return_time": "Approximately 5:00 PM in the last day.",
         "dress_code": "Casual & comfortable. Sun hat, sunscreen and insect repellent are recommended.",
@@ -78,7 +78,7 @@
             },
             {
                 "title": "Karatu to Mwanza or Arusha",
-                "description": "After breakfast, you will start your journey through Ngorongoro and Serengeti National Park back to Mwanza via Ndabaka Gate.  You will have your picnic lunch in the afternoon later dinner and overnight at the hotel in Mwanza. Alternatively you can drive to Moshi. Dinner and overnight at the Lodge in Mwanza or Moshi",
+                "description": "After breakfast, you will start your journey through Ngorongoro and Serengeti National Park back to Mwanza via Ndabaka Gate.  You will have your picnic lunch in the afternoon later dinner and overnight at the hotel in Mwanza. Alternatively you can drive to Kilimanjaro. Dinner and overnight at the Lodge in Mwanza or Kilimanjaro",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -119,7 +119,7 @@
     },
     {
         "slug": "kilimanjaro-6-days-machame-route",
-        "title": "Kilimanjaro – 6 Days Machame Route",
+        "title": "Kilimanjaro 6 Days Machame Route",
         "price": 2200,
         "draft": false,
         "price_note": "per person",
@@ -130,7 +130,7 @@
             "Machame Route"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town to Machame Gate",
+        "departure": "Kilimanjaro to Machame Gate",
         "departure_time": "Please be ready by 8:15 AM for a prompt departure at 9:00 AM.",
         "return_time": "Approximately 1:00 PM in the last day.",
         "dress_code": "Casual. Comfortable athletic clothing, hiking shoes, hat, cold weather jacket, gloves, pants, spare clothing.",
@@ -160,8 +160,8 @@
         ],
         "itinerary": [
             {
-                "title": "Arrive in Moshi, Kilimanjaro",
-                "description": "Arrive in Tanzania via Kilimanjaro International Airport (JRO), KLM Safaris' staff will pick you up and transfer you to Moshi town where you will spend the first night at Park View Inn  or Keys Hotel in Moshi.",
+                "title": "Arrive in Kilimanjaro",
+                "description": "Arrive in Tanzania via Kilimanjaro International Airport (JRO), KLM Safaris' staff will pick you up and transfer you to Kilimanjaro where you will spend the first night at Park View Inn  or Keys Hotel in Kilimanjaro.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -203,7 +203,7 @@
             },
             {
                 "title": "Descend from Mweka Camp to Mweka Gate",
-                "description": "Descend from Mweka Camp to Mweka Gate (1,640 meters or 5,340 feet) for a walk of 3 – 4 hours with a distance of 10 Km or 6 Miles. Transfer to the hotel for summit certificate and cerebration party. Overnight at a hotel.\r\nZone: Rain forest\r\nTotal distance covered is: 62 Km or 37 miles",
+                "description": "Descend from Mweka Camp to Mweka Gate (1,640 meters or 5,340 feet) for a walk of 3-4 hours with a distance of 10 Km or 6 Miles. Transfer to the hotel for summit certificate and cerebration party. Overnight at a hotel.\r\nZone: Rain forest\r\nTotal distance covered is: 62 Km or 37 miles",
                 "accommodation": "",
                 "meals": "",
                 "altitude": "1,640 m"
@@ -268,7 +268,7 @@
     },
     {
         "slug": "kilimanjaro-5-days-marangu-route",
-        "title": "Kilimanjaro – 5 Days Marangu Route",
+        "title": "Kilimanjaro 5 Days Marangu Route",
         "price": 1580,
         "draft": false,
         "price_note": "per person",
@@ -279,7 +279,7 @@
             "Marangu Route"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town to Marangu Gate",
+        "departure": "Kilimanjaro to Marangu Gate",
         "departure_time": "Please be ready by 8:15 AM for a prompt departure at 9:00 AM.",
         "return_time": "Approximately 1:00 PM in the last day.",
         "dress_code": "Casual. Comfortable athletic clothing, hiking shoes, hat, cold weather jacket, gloves, pants, spare clothing.",
@@ -310,7 +310,7 @@
         "itinerary": [
             {
                 "title": "Arrival in Tanzania and transfer to the hotel",
-                "description": "Arrive in Tanzania via Kilimanjaro International airport (JRO) KLM Safaris' staff will pick you up and transfer you to Moshi town where you will spend the first night at a hotel of your choice. For those who will arrive through Jomo Kenyatta International Airport (JKIA) in Kenya, we will pick them up and get transferred by Shuttle bus to Moshi.",
+                "description": "Arrive in Tanzania via Kilimanjaro International airport (JRO) KLM Safaris' staff will pick you up and transfer you to Kilimanjaro where you will spend the first night at a hotel of your choice. For those who will arrive through Jomo Kenyatta International Airport (JKIA) in Kenya, we will pick them up and get transferred by Shuttle bus to Kilimanjaro.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -466,7 +466,7 @@
             },
             {
                 "title": "Serengeti to Mwanza",
-                "description": "After breakfast you will have morning game drive then later after lunch you will start on route game viewing on the way to the Ndabaka gate then Mwanza.  Overnight at Malaika hotel in Mwanza and transfer to the Airport in the final day.\r\nAlternatively after breakfast you will start on- route game drive to Ngorongoro Crater  in the second day the Dinner and Accommodation at the Rhino Lodge.  In the third day after the early breakfast, you will proceed directly to the crater floor for a full day crater game drive with picnic lunch down the crater whereby here you will be able to see all \"big five\" animals. Later, you will proceed to Karatu,  Arusha and finally to Kilimanjaro International Airport. You can as well spend a night in Arusha and Moshi for some Day Tours.",
+                "description": "After breakfast you will have morning game drive then later after lunch you will start on route game viewing on the way to the Ndabaka gate then Mwanza.  Overnight at Malaika hotel in Mwanza and transfer to the Airport in the final day.\r\nAlternatively after breakfast you will start on- route game drive to Ngorongoro Crater  in the second day the Dinner and Accommodation at the Rhino Lodge.  In the third day after the early breakfast, you will proceed directly to the crater floor for a full day crater game drive with picnic lunch down the crater whereby here you will be able to see all \"big five\" animals. Later, you will proceed to Karatu,  Arusha and finally to Kilimanjaro International Airport. You can as well spend a night in Arusha and Kilimanjaro for some Day Tours.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -564,7 +564,7 @@
             },
             {
                 "title": "Full day in Serengeti National Park Game Drive",
-                "description": "After breakfast 7:00am you will start exploring Serengeti. The Serengeti National Park is the jewel in the crown of Tanzania’s game parks and offers arguably the best game viewing in Africa. The setting is perfect – a sea of endless plains that stretches to the horizon, dotted with the occasional acacia tree and termite mound. This Savannah is home to huge herds of buffalo that every year make the mass migration north, through crocodile infested rivers, in a frenzied mixture of mating and galloping that is driven by instinct. Prides of lion rule here, their hungry gaze sweeping the Savannah for a chance to attack the thousands of elands, impala and gazelle. Solitary leopard stakes out their place in the high branches of the acacia tree and herds of elephant’s roam at will. This is Africa that you have always dreamed about. You will have your picnic lunch and Later in the afternoon you will leave Serengeti to Ngorongoro for Dinner and overnight at Tented Lodge in Ngorongoro",
+                "description": "After breakfast 7:00am you will start exploring Serengeti. The Serengeti National Park is the jewel in the crown of Tanzania’s game parks and offers arguably the best game viewing in Africa. The setting is perfect, a sea of endless plains that stretches to the horizon, dotted with the occasional acacia tree and termite mound. This Savannah is home to huge herds of buffalo that every year make the mass migration north, through crocodile infested rivers, in a frenzied mixture of mating and galloping that is driven by instinct. Prides of lion rule here, their hungry gaze sweeping the Savannah for a chance to attack the thousands of elands, impala and gazelle. Solitary leopard stakes out their place in the high branches of the acacia tree and herds of elephant’s roam at will. This is Africa that you have always dreamed about. You will have your picnic lunch and Later in the afternoon you will leave Serengeti to Ngorongoro for Dinner and overnight at Tented Lodge in Ngorongoro",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -578,7 +578,7 @@
             },
             {
                 "title": "Lake Manyara National park and Mto wa Mbu cultural tour",
-                "description": "After breakfast at Karatu, you will start driving to Lake Manyara National Park about 30min from Karatu Town. While the scenic beauty of this park certainly makes it worth a visit, the game viewing here is not as rewarding as in Tanzania's other Northern parks.  Nonetheless, famous for its tree-climbing lions, flamingos, large concentration of elephants, buffalo and monkeys, as well as breath-taking scenery and soda-ash lake in the centre, Manyara should definitely not be missed!  You will start game drive till noon then proceed to  Mto wa mbu a village adjacent to the park for hot traditional lunch.  Your guide will be from the village itself so you will have a unique opportunity to see the community through his eyes. Tours last around 2 hours, but are flexible. During your visit you’ll get a good feel for the social side of the village – the farms and the milling machines, the schools, markets and churches. You’ll likely start in the village banana plantation, where they grow different varieties of bananas. Then you on the way you will visit milling machines, schools and a church. Next you might visit a youth art project, and learn about the different painting styles and techniques. The artists are happy for you to ask questions and take photos. Your tour will finish in the bustling local market, where you can wander around stalls selling fruit and vegetables stalls, spices and meals. After your tour you will proceed to Arusha   and arrive before 5pm: If you will travel the same day our driver guide will drop you at the Airport",
+                "description": "After breakfast at Karatu, you will start driving to Lake Manyara National Park about 30min from Karatu Town. While the scenic beauty of this park certainly makes it worth a visit, the game viewing here is not as rewarding as in Tanzania's other Northern parks.  Nonetheless, famous for its tree-climbing lions, flamingos, large concentration of elephants, buffalo and monkeys, as well as breath-taking scenery and soda-ash lake in the centre, Manyara should definitely not be missed!  You will start game drive till noon then proceed to  Mto wa mbu a village adjacent to the park for hot traditional lunch.  Your guide will be from the village itself so you will have a unique opportunity to see the community through his eyes. Tours last around 2 hours, but are flexible. During your visit you’ll get a good feel for the social side of the village, the farms and the milling machines, the schools, markets and churches. You’ll likely start in the village banana plantation, where they grow different varieties of bananas. Then you on the way you will visit milling machines, schools and a church. Next you might visit a youth art project, and learn about the different painting styles and techniques. The artists are happy for you to ask questions and take photos. Your tour will finish in the bustling local market, where you can wander around stalls selling fruit and vegetables stalls, spices and meals. After your tour you will proceed to Arusha   and arrive before 5pm: If you will travel the same day our driver guide will drop you at the Airport",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -664,7 +664,7 @@
             },
             {
                 "title": "Lake Manyara-Serengeti",
-                "description": "After breakfast we continue with the game drive to the world famous Serengeti National Park which derives its name from the Masai for “endless plain”, is the jewel of Tanzania’s protected areas and lies on a vast plateau between the eastern arm of the Rift Valley and the huge expanse of Lake Victoria. Tanzania’s oldest and most popular national park and a World Heritage site, the Serengeti is best known for the annual migration of hundreds of thousands of wildebeest, zebra and Thomson’s gazelle. Spectacular game viewing—of buffalo, elephant, giraffe, topi, impala, Grant’s gazelle, lion and leopard is a highlight. Be inspired by the “amazing Acadia trees” dotted throughout the Serengeti, where visitors are treated with some of the most mesmerizing sunsets in the world. Our small safari vehicles minimize drive times and improve your chances of snapping that perfect shot of one of the elusive ‘Big 5’",
+                "description": "After breakfast we continue with the game drive to the world famous Serengeti National Park which derives its name from the Masai for “endless plain”, is the jewel of Tanzania’s protected areas and lies on a vast plateau between the eastern arm of the Rift Valley and the huge expanse of Lake Victoria. Tanzania’s oldest and most popular national park and a World Heritage site, the Serengeti is best known for the annual migration of hundreds of thousands of wildebeest, zebra and Thomson’s gazelle. Spectacular game viewing of buffalo, elephant, giraffe, topi, impala, Grant’s gazelle, lion and leopard is a highlight. Be inspired by the “amazing Acadia trees” dotted throughout the Serengeti, where visitors are treated with some of the most mesmerizing sunsets in the world. Our small safari vehicles minimize drive times and improve your chances of snapping that perfect shot of one of the elusive ‘Big 5’",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -685,7 +685,7 @@
             },
             {
                 "title": "Ngorongoro Crater-Arusha",
-                "description": "Early in the morning we drive to Ngorongoro crater descend to the crater floor where you will be amazed by the sheer number and diversity of animals and birdlife. Seated or standing in our pop up safari vehicles the viewing opportunities are endless, just deciding which way to look and what to look at, the choices are unlimited. The sheer excitement as we spot any of the Big 5 or we get the call over the radio that a lion is perched high atop a nearby rocky outcrop or a black rhino has been sighted and rush with our vehicle to catch a glimpse before the moment passes. The excitement mounts again as arrive to yet another sighting, perhaps a lioness and her cubs right next to our vehicle. The sheer excitement of the chase is indescribable. Late afternoon drive back to Moshi. Overnight at Hotel.",
+                "description": "Early in the morning we drive to Ngorongoro crater descend to the crater floor where you will be amazed by the sheer number and diversity of animals and birdlife. Seated or standing in our pop up safari vehicles the viewing opportunities are endless, just deciding which way to look and what to look at, the choices are unlimited. The sheer excitement as we spot any of the Big 5 or we get the call over the radio that a lion is perched high atop a nearby rocky outcrop or a black rhino has been sighted and rush with our vehicle to catch a glimpse before the moment passes. The excitement mounts again as arrive to yet another sighting, perhaps a lioness and her cubs right next to our vehicle. The sheer excitement of the chase is indescribable. Late afternoon drive back to Kilimanjaro. Overnight at Hotel.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -763,8 +763,8 @@
             "Serengeti"
         ],
         "destination": "National Parks: Lake Manyara, Ngorongoro Crater, Serengeti",
-        "departure": "Arusha / Arusha or Moshi or Airport",
-        "departure_time": "Please be ready for a prompt departure at 9:00 AM from Arusha (or 7:30 AM from Moshi)",
+        "departure": "Arusha / Arusha or Kilimanjaro or Airport",
+        "departure_time": "Please be ready for a prompt departure at 9:00 AM from Arusha (or 7:30 AM from Kilimanjaro)",
         "return_time": "Approximately 5:00 PM in the last day.",
         "dress_code": "Casual and comfortable. Sun hat, sunscreen and insect repellent are recommended.",
         "includes": [
@@ -815,7 +815,7 @@
             },
             {
                 "title": "Serengeti National Park",
-                "description": "After breakfast, you will a have full day to explore Serengeti while following the migration of  huge herds of wildebeest that every year make the mass migration north, through crocodile infested rivers, in a frenzied mixture of mating and galloping that is driven by instinct.\r\nSerengeti National Park is the jewel in the crown of Tanzania’s game parks and offers arguably the best game viewing in Africa. The setting is perfect – a sea of endless plains that stretches to the horizon, dotted with the acacia trees and termite mounds. Prides of lion rule here, as their hungry gazes sweep the savannah for a chance to attack one of the thousands of eland, impala and gazelle. Solitary leopards lie high in the branches of the acacia trees while herds of elephants roam at will. This is the Africa that you have always dreamed about.\r\nAfter an amazing day, you will return to your lodge/tented camp for dinner and an overnight stay.",
+                "description": "After breakfast, you will a have full day to explore Serengeti while following the migration of  huge herds of wildebeest that every year make the mass migration north, through crocodile infested rivers, in a frenzied mixture of mating and galloping that is driven by instinct.\r\nSerengeti National Park is the jewel in the crown of Tanzania’s game parks and offers arguably the best game viewing in Africa. The setting is perfect, a sea of endless plains that stretches to the horizon, dotted with the acacia trees and termite mounds. Prides of lion rule here, as their hungry gazes sweep the savannah for a chance to attack one of the thousands of eland, impala and gazelle. Solitary leopards lie high in the branches of the acacia trees while herds of elephants roam at will. This is the Africa that you have always dreamed about.\r\nAfter an amazing day, you will return to your lodge/tented camp for dinner and an overnight stay.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -836,7 +836,7 @@
             },
             {
                 "title": "Ngorongoro Crater - Arusha",
-                "description": "After an early breakfast, you will drive for approximately 30 minutes to the crater floor.\r\nUpon arrival, you will be amazed by the concentration and sheer number and diversity of animals and bird life! Seated or standing in your safari vehicle, the game viewing opportunities will be endless...\r\nThe Ngorongoro Crater is a breathtakingly beautiful setting and the best place in East Africa to see the Big Five. On the crater floor you can expect to see herds of zebra, wildebeest, Thomson’s gazelle, Grant’s gazelle, topi and many more. Sightings of predators such as lion, hyena, jackal and bat-eared fox regularly occur here as well. Although cheetah and leopard are a little more scarce in this park, they can still be spotted with a little luck.  Ngorongoro Crater is also one of a handful of places in Africa where you have a very good chance of seeing rhino, though usually from a distance. Bird species are also numerous and varied here.\r\nAfter your half-day safari in the crater, we will leave the park and head back to town. You will be dropped off at your hotel in Arusha or Moshi in the evening, or even at Kilimanjaro International Airport depending on what you have planned for the remainder of your stay in Tanzania.",
+                "description": "After an early breakfast, you will drive for approximately 30 minutes to the crater floor.\r\nUpon arrival, you will be amazed by the concentration and sheer number and diversity of animals and bird life! Seated or standing in your safari vehicle, the game viewing opportunities will be endless...\r\nThe Ngorongoro Crater is a breathtakingly beautiful setting and the best place in East Africa to see the Big Five. On the crater floor you can expect to see herds of zebra, wildebeest, Thomson’s gazelle, Grant’s gazelle, topi and many more. Sightings of predators such as lion, hyena, jackal and bat-eared fox regularly occur here as well. Although cheetah and leopard are a little more scarce in this park, they can still be spotted with a little luck.  Ngorongoro Crater is also one of a handful of places in Africa where you have a very good chance of seeing rhino, though usually from a distance. Bird species are also numerous and varied here.\r\nAfter your half-day safari in the crater, we will leave the park and head back to town. You will be dropped off at your hotel in Arusha or Kilimanjaro in the evening, or even at Kilimanjaro International Airport depending on what you have planned for the remainder of your stay in Tanzania.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -977,7 +977,7 @@
         "price": 2950,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p>Explore Tanzania with your family as you discover the wildlife, history, people, culture and beauty that spans across this incredible landscape. Roam the famous Serengeti National Park, nearly 15,000 sq km of rolling savanna that shelters an astounding array of animals, from miniature dik-dik antelopes to the noble African elephant. Spot wildlife while taking in mind-blowing views from the edge of Ngorongoro Crater and listen to the sounds of the African night in a thrilling camping experience. This is also a human journey that puts you in the heart of the valleys once inhabited by some of humankind’s earliest ancestors – where you’ll have the opportunity to learn from the Maasai community – hear about the customs and traditions of village life and even prepare a local Swahili dish. If you’re looking for a family adventure full of friendly folk and some of the best game-viewing in Africa, then this will truly be a trip to remember!</p>",
+        "overview": "<p>Explore Tanzania with your family as you discover the wildlife, history, people, culture and beauty that spans across this incredible landscape. Roam the famous Serengeti National Park, nearly 15,000 sq km of rolling savanna that shelters an astounding array of animals, from miniature dik-dik antelopes to the noble African elephant. Spot wildlife while taking in mind-blowing views from the edge of Ngorongoro Crater and listen to the sounds of the African night in a thrilling camping experience. This is also a human journey that puts you in the heart of the valleys once inhabited by some of humankind’s earliest ancestors, where you’ll have the opportunity to learn from the Maasai community, hear about the customs and traditions of village life and even prepare a local Swahili dish. If you’re looking for a family adventure full of friendly folk and some of the best game-viewing in Africa, then this will truly be a trip to remember!</p>",
         "days": 10,
         "min_age": "Any +",
         "types": [
@@ -1037,7 +1037,7 @@
             },
             {
                 "title": "Ngorongoro to Serengeti National Park",
-                "description": "After breakfast you will proceed to Serengeti for about 4hours from Ngorongoro with on-route game drive. After about 3 hours you will arrive at Serengeti Naabi entrance gate and have your picnic lunch. The Serengeti National Park is the jewel in the crown of Tanzania’s game parks and offers arguably the best game viewing in Africa. The setting is perfect – a sea of endless plains that stretches to the horizon, dotted with the occasional acacia tree and termite mound. This Savannah is home to huge herds of buffalo that every year make the mass migration north during August/September, through crocodile infested rivers, in a frenzied mixture of mating and galloping that is driven by instinct. Prides of lion rule here, their hungry gaze sweeping the Savannah for a chance to attack the thousands of elands, impala and gazelle. Solitary leopard stakes out their place in the high branches of the acacia tree and herds of elephant’s roam at will. This is Africa that you have always dreamed about. Dinner and Overnight at Mawe Tented Camp (Full board).",
+                "description": "After breakfast you will proceed to Serengeti for about 4hours from Ngorongoro with on-route game drive. After about 3 hours you will arrive at Serengeti Naabi entrance gate and have your picnic lunch. The Serengeti National Park is the jewel in the crown of Tanzania’s game parks and offers arguably the best game viewing in Africa. The setting is perfect, a sea of endless plains that stretches to the horizon, dotted with the occasional acacia tree and termite mound. This Savannah is home to huge herds of buffalo that every year make the mass migration north during August/September, through crocodile infested rivers, in a frenzied mixture of mating and galloping that is driven by instinct. Prides of lion rule here, their hungry gaze sweeping the Savannah for a chance to attack the thousands of elands, impala and gazelle. Solitary leopard stakes out their place in the high branches of the acacia tree and herds of elephant’s roam at will. This is Africa that you have always dreamed about. Dinner and Overnight at Mawe Tented Camp (Full board).",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -1065,21 +1065,21 @@
             },
             {
                 "title": "Lake Manyara Game Drive and Mto wa Mbu Village tour",
-                "description": "After breakfast at Karatu, you will start driving to Lake Manyara National park about 30min from Karatu Town.  You will start game drive till noon and stop at the picnic site for lunch. After lunch, you will proceed to Mto wa mbu a village adjacent to the park.  Your guide will be from the village itself so you will have a unique opportunity to see the community through his eyes. Tours last around 2 hours, but are flexible. During your visit you’ll get a good feel for the social side of the village – the farms and the milling machines, the schools, markets and churches. You’ll likely start in the village banana plantation, where they grow different varieties of bananas. Then you on the way you will visit milling machines, schools and a church. Next you might visit a youth art project, and learn about the different painting styles and techniques. The artists are happy for you to ask questions and take photos. Your tour will finish in the bustling local market, where you can wander around stalls selling fruit and vegetables stalls, spices and meal. After your tour you will proceed to Moshi for an overnight at Park View Inn/ Panama Garden Resort (Bed and Breakfast)",
+                "description": "After breakfast at Karatu, you will start driving to Lake Manyara National park about 30min from Karatu Town.  You will start game drive till noon and stop at the picnic site for lunch. After lunch, you will proceed to Mto wa mbu a village adjacent to the park.  Your guide will be from the village itself so you will have a unique opportunity to see the community through his eyes. Tours last around 2 hours, but are flexible. During your visit you’ll get a good feel for the social side of the village, the farms and the milling machines, the schools, markets and churches. You’ll likely start in the village banana plantation, where they grow different varieties of bananas. Then you on the way you will visit milling machines, schools and a church. Next you might visit a youth art project, and learn about the different painting styles and techniques. The artists are happy for you to ask questions and take photos. Your tour will finish in the bustling local market, where you can wander around stalls selling fruit and vegetables stalls, spices and meal. After your tour you will proceed to Kilimanjaro for an overnight at Park View Inn/ Panama Garden Resort (Bed and Breakfast)",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
             },
             {
-                "title": "Materuni Waterfalls and Coffee Tour in Moshi",
-                "description": " \n You will leave the hotel 8:00 am after breakfast to Materuni Waterfalls and Coffee Tour. Materuni Waterfall is the highest and most impressive waterfall at the foothill of Mt. Kilimanjaro. You’ll visit a coffee farm and learn about how coffee is grown, harvested and processed, and you’ll try your hand at roasting and preparing a fresh cup of coffee the Chagga way. After coffee tour and test you’ll take a beautiful 30 minutes hike through the hills and valleys en route to the Materuni. The valleys and hills are covered by tropical rainforest, coffee, banana and avocado “shambas”, the Kiswahili word for farms. On a clear day great view of Kibo and Moshi town can be seen during hiking. The hike to the base of the Waterfall can be demanding and hiking boots are recommended. Finally, you can refresh at the waterfall’s cold water, so don’t forget to bring your swim wear. Later you will leave back to Moshi town at 1pm. Later return to Moshi Accommodation at Park View Inn/ Panama Garden Resort (Bed and Breakfast)",
+                "title": "Materuni Waterfalls and Coffee Tour in Kilimanjaro",
+                "description": " \n You will leave the hotel 8:00 am after breakfast to Materuni Waterfalls and Coffee Tour. Materuni Waterfall is the highest and most impressive waterfall at the foothill of Mt. Kilimanjaro. You’ll visit a coffee farm and learn about how coffee is grown, harvested and processed, and you’ll try your hand at roasting and preparing a fresh cup of coffee the Chagga way. After coffee tour and test you’ll take a beautiful 30 minutes hike through the hills and valleys en route to the Materuni. The valleys and hills are covered by tropical rainforest, coffee, banana and avocado “shambas”, the Kiswahili word for farms. On a clear day great view of Kibo and Kilimanjaro can be seen during hiking. The hike to the base of the Waterfall can be demanding and hiking boots are recommended. Finally, you can refresh at the waterfall’s cold water, so don’t forget to bring your swim wear. Later you will leave back to Kilimanjaro at 1pm. Later return to Kilimanjaro Accommodation at Park View Inn/ Panama Garden Resort (Bed and Breakfast)",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
             },
             {
                 "title": "Departure",
-                "description": "After breakfast, relax in the morning at the hotel, afternoon final shopping at Moshi. Recommended, I-curio shop and then Lunch in the city at Blossoms later proceed to Airport 4pm and arrive 5pm and fly home",
+                "description": "After breakfast, relax in the morning at the hotel, afternoon final shopping at Kilimanjaro. Recommended, I-curio shop and then Lunch in the city at Blossoms later proceed to Airport 4pm and arrive 5pm and fly home",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -1273,7 +1273,7 @@
             },
             {
                 "title": "Lake Manyara National Park",
-                "description": "After breakfast, we will continue with your epic safari – Lake Manyara National Park. This relatively small but diverse park, 120km west of Arusha, is so named for the shallow salt lake which covers a good seventy percent of the park’s surface area. Flooding and drying with the seasons the soda lake is home to thousands of flamingo as well as over 500 other bird species. On our exploration of the park we will see monkey, giraffe, zebra, wildebeest, buffalo, elephant, and, with some luck, lions lounging in the trees. The park is known for its diverse landscapes; not only open grassy plains but also primate-filled woodlands and baobab dotted cliffs. After another memorable game drive we, with our adventure replete with images of the African wilds to last a lifetime. Dinner and overnight at Ngorongoro Farm House or Similar property(full Board).",
+                "description": "After breakfast, we will continue with your epic safari, Lake Manyara National Park. This relatively small but diverse park, 120km west of Arusha, is so named for the shallow salt lake which covers a good seventy percent of the park’s surface area. Flooding and drying with the seasons the soda lake is home to thousands of flamingo as well as over 500 other bird species. On our exploration of the park we will see monkey, giraffe, zebra, wildebeest, buffalo, elephant, and, with some luck, lions lounging in the trees. The park is known for its diverse landscapes; not only open grassy plains but also primate-filled woodlands and baobab dotted cliffs. After another memorable game drive we, with our adventure replete with images of the African wilds to last a lifetime. Dinner and overnight at Ngorongoro Farm House or Similar property(full Board).",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -1287,7 +1287,7 @@
             },
             {
                 "title": "Full day in Serengeti National Park Game Drive",
-                "description": "After breakfast you will start exploring the Serengeti with both morning and afternoon game drives, following the great migration The Serengeti National Park is the jewel in the crown of Tanzania’s game parks and offers arguably the best game viewing in Africa. The setting is perfect – a sea of endless plains that stretches to the horizon, dotted with the occasional acacia tree and termite mound. This Savannah is home to huge herds of buffalo that every year make the mass migration north, through crocodile infested rivers, in a frenzied mixture of mating and galloping that is driven by instinct. Prides of lion rule here, their hungry gaze sweeping the Savannah for a chance to attack the thousands of elands, impala and gazelle. Solitary leopard stakes out their place in the high branches of the acacia tree and herds of elephant’s roam at will. If you like to watch wildlife from another perspective, we recommend you to go on a balloon safari this is optional activity available on request for $550 per person. It is an amazing experience to drift silently above the plains with herds of wildlife. This is Africa that you have always dreamed about. Dinner and Overnight at Heritage Tented Camps. (full Board).",
+                "description": "After breakfast you will start exploring the Serengeti with both morning and afternoon game drives, following the great migration The Serengeti National Park is the jewel in the crown of Tanzania’s game parks and offers arguably the best game viewing in Africa. The setting is perfect, a sea of endless plains that stretches to the horizon, dotted with the occasional acacia tree and termite mound. This Savannah is home to huge herds of buffalo that every year make the mass migration north, through crocodile infested rivers, in a frenzied mixture of mating and galloping that is driven by instinct. Prides of lion rule here, their hungry gaze sweeping the Savannah for a chance to attack the thousands of elands, impala and gazelle. Solitary leopard stakes out their place in the high branches of the acacia tree and herds of elephant’s roam at will. If you like to watch wildlife from another perspective, we recommend you to go on a balloon safari this is optional activity available on request for $550 per person. It is an amazing experience to drift silently above the plains with herds of wildlife. This is Africa that you have always dreamed about. Dinner and Overnight at Heritage Tented Camps. (full Board).",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -1308,7 +1308,7 @@
             },
             {
                 "title": "Karatu to Arusha then Airport",
-                "description": "After breakfast,  we will start our journey to Arusha. On the way we will visit Mto wa mbu a village adjacent to the park.  Your guide will be from the village itself so you will have a unique opportunity to see the community through his eyes. Tours last around 2 hours, but are flexible. During your visit you’ll get a good feel for the social side of the village – the farms and the milling machines, the schools, markets and churches.  Later we will have our traditional lunch and proceed to Arusha. Later in the evening we shall go to Kilimanjaro International Airport and Fly Home",
+                "description": "After breakfast,  we will start our journey to Arusha. On the way we will visit Mto wa mbu a village adjacent to the park.  Your guide will be from the village itself so you will have a unique opportunity to see the community through his eyes. Tours last around 2 hours, but are flexible. During your visit you’ll get a good feel for the social side of the village, the farms and the milling machines, the schools, markets and churches.  Later we will have our traditional lunch and proceed to Arusha. Later in the evening we shall go to Kilimanjaro International Airport and Fly Home",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -1462,7 +1462,7 @@
         "price": null,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p>This amazing tour will take you from Lake Victoria to the endless plains of Serengeti the best National Park to visit in Africa. This tour will involve two alternatives. From Mwanza to Serengeti – Ngorongoro and back to Mwanza or from Mwanza to Serengeti – Ngororongo then Kilimanjaro International Airport. This is the best way to explore Serengeti between Mwanza and Arusha in six days.</p>",
+        "overview": "<p>This amazing tour will take you from Lake Victoria to the endless plains of Serengeti the best National Park to visit in Africa. This tour will involve two alternatives. From Mwanza to Serengeti, Ngorongoro and back to Mwanza or from Mwanza to Serengeti, Ngororongo then Kilimanjaro International Airport. This is the best way to explore Serengeti between Mwanza and Arusha in six days.</p>",
         "days": 6,
         "min_age": "16++",
         "types": [
@@ -1747,7 +1747,7 @@
                 "altitude": ""
             },
             {
-                "title": "Lake Manyara – Tarangire National Park - Arusha",
+                "title": "Lake Manyara: Tarangire National Park - Arusha",
                 "description": "After an early breakfast you will drive for approximately 1.5hrs to Tarangire National Park. Tarangire is a lovely, quiet park in Northern Tanzania. It is most famous for its elephant migration, birding and authentic safari atmosphere. Every year during the dry season from June to November, the wildlife migrates through the park allowing for a very large number of different species to be seen here. As most of this part of the country is dry, the Tarangire River remains the only source of water and consequently attracts large numbers of wildebeests, elephants, gazelles, zebras, hartebeest, buffaloes and various predators such as lions and cheetahs that come to drink and graze around the river banks. Large swathes of Tarangire remain almost untouched, especially in the southern region of the park. With game-viewing that is exceptional in the dry season, this Tanzania safari park is a unique gem on the Northern safari circuit, especially if you love elephants! After an amazing game drive, you will begin your journey back to Arusha in the late afternoon. You will be dropped off at your hotel in Arusha or at Arusha Airport or Kilimanjaro International Airport, depending on what your plans are for the remainder of your stay in Tanzania.",
                 "accommodation": "",
                 "meals": "",
@@ -1824,7 +1824,7 @@
         ],
         "itinerary": [
             {
-                "title": "Moshi/Arusha to Momella Gate to Miriakamba Hut",
+                "title": "Kilimanjaro/Arusha to Momella Gate to Miriakamba Hut",
                 "description": "Today’s Stats Hiking Time:4-5 hours\r\nTotal Distance:8 km\r\nStarting Altitude:2956m (9698ft)\r\nFinal Altitude:3978m (13054ft)\r\nEnvironment: Lower heather zone\r\nAfter breakfast 8:00am we will start our journey to and we drive to Momella Gate where we complete registration formalities and a national park ranger is assigned to accompany our group.\r\nSetting off from Momella Gate, we take the southern route known for its abundant wildlife. The track passes through open grassland where there is the possibility of spotting buffalo grazing in one of the clearings. The fortunate few may see giraffe and elephants.\r\nThe forest section is especially scenic with strangler figs, wild mango, African olive and wild elder. Birdlife is abundant with common sightings of Hartlaub’s turaco, olive pigeon, white fronted bee eaters, fiscal shrike, stone chat, variable sunbirds and the tropical boubou. Trekkers with a keen eye will spot several species of butterflies such as the blue swallow-tail, soldier commodore, mocker swallow-tail, golden winged forester, emperor and forest mother of pearl.\r\nWe cross the Ngare Nanyuki river just above the Maio Waterfalls climbing steadily through lush montane forest until we reach the “Fig Tree” (famous for the roadway passing through it) where we enjoy our well-deserved lunch.\r\nAfter lunch, the canopy begins to thin and we encounter many forms of bird life and hear the grunting calls of the magnificent black colobus monkeys with their long ‘cape’ of white hair and a flowing white tail.\r\nAround 2300m the higher montane forest begins and is home to juniper and podo trees while beautiful wild flowers such as the empetient species, red-hot poker, orchids, fire ball lily and gladiolus adorn the trail.\r\nBy mid-afternoon the path clears and we encounter the first close views of the towering cliffs of Mt Meru and the stunning ash cone. Miriakampa Hut, situated in idyllic grassy glade, is reached in time to enjoy the afternoon sun and beautiful views over the surrounding plains towards Kilimanjaro.\r\nFrom here we can go on an evening game walk in hopes of watching some wildlife at one of the watering holes in the crater.\n ",
                 "accommodation": "",
                 "meals": "",
@@ -1846,7 +1846,7 @@
             },
             {
                 "title": "Miriakamba Hut to Momella Gate-Arusha",
-                "description": "Today’s Stats Hiking Time:2-3 hrs. trekking\r\nStarting Altitude:2516m\r\nFinal Altitude:1500m\r\nEnvironment: Moorland, Parkland\r\n After a leisurely morning we complete our 2-3 hour descent taking the direct route through open grassland and mixed forest, with good chances of seeing wildlife. The northern trail has excellent views back towards the crater, Momella Lakes and over the plains of the national park.\r\nBy late morning we reach Momella Gate and receive our summit certificates, say farewell to our crew and have time for a short picnic lunch and game drive before returning to Moshi or Arusha for some well-deserved shower and fresh clothes.\n ",
+                "description": "Today’s Stats Hiking Time:2-3 hrs. trekking\r\nStarting Altitude:2516m\r\nFinal Altitude:1500m\r\nEnvironment: Moorland, Parkland\r\n After a leisurely morning we complete our 2-3 hour descent taking the direct route through open grassland and mixed forest, with good chances of seeing wildlife. The northern trail has excellent views back towards the crater, Momella Lakes and over the plains of the national park.\r\nBy late morning we reach Momella Gate and receive our summit certificates, say farewell to our crew and have time for a short picnic lunch and game drive before returning to Kilimanjaro or Arusha for some well-deserved shower and fresh clothes.\n ",
                 "accommodation": "",
                 "meals": "",
                 "altitude": "1500 m"
@@ -1926,14 +1926,14 @@
                 "altitude": ""
             },
             {
-                "title": "Arusha – Tarangire National Park - Karatu",
+                "title": "Arusha: Tarangire National Park - Karatu",
                 "description": "Today you will be picked up at your hotel after breakfast and hit the road in direction of Tarangire National Park. Tarangire is a lovely, quiet park in Northern Tanzania. It is most famous for its elephant migration, birding and authentic safari atmosphere. Every year during the dry season from June to November, the wildlife migrate through the park allowing for a very large number of different species to be seen here. As most of this part of the country is dry, the Tarangire River remains the only source of water and consequently attracts large numbers of wildebeests, elephants, gazelles, zebras, hartebeest, buffaloes and various predators such as lions and cheetahs that come to drink and graze around the river banks. Large swathes of Tarangire remain almost untouched, especially in the southern region of the park.  With game-viewing that is exceptional in the dry season, this Tanzania safari park is a unique gem on the Northern safari circuit, especially if you love elephants!. After your amazing full-day game drive, you will head to your hotel in Karatu for dinner and an overnight stay.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
             },
             {
-                "title": "Karatu – Ngorongoro Crater - Karatu",
+                "title": "Karatu: Ngorongoro Crater - Karatu",
                 "description": "After an early breakfast (around 7:00 AM) you will arrive at Ngorongoro Crater following a scenic drive through the Karatu region and Northern Tanzania's highlands. Upon arrival at the gate of Ngorongoro and after registering, you will drive for another 45 minutes on the crater rim before descending onto the crater floor. At Ngorongoro you will be amazed by the concentration and sheer number and diversity of animals and bird life! Seated or standing in your safari vehicle, the game viewing opportunities will be endless. The Ngorongoro Crater is a breathtakingly beautiful setting and the best place in East Africa to see the Big Five. Down here on the crater floor you can expect to see herds of zebra, wildebeest, Thomson’s gazelle, Grant’s gazelle, topi and many more. Sightings of predators such as lion, hyena, jackal and bat-eared fox regularly occur here as well. Although cheetah and leopard are a little more scarce in this park, they can still be spotted with a little luck.  Ngorongoro Crater is also one of a handful of places in Africa where you have a very good chance of seeing rhino, though usually from a distance. Bird species are also numerous and varied here. After this wonderful safari day, you will be driven back to your hotel in Karatu for dinner and an overnight stay.",
                 "accommodation": "",
                 "meals": "",
@@ -1980,18 +1980,18 @@
     },
     {
         "slug": "kilimanjaro-6-days-rongai-route",
-        "title": "Kilimanjaro – 6 Thrilling Days Rongai Route",
+        "title": "Kilimanjaro 6 Thrilling Days Rongai Route",
         "price": 2230,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p>Rongai Route begins on the Northern side of Mount Kilimanjaro. It is a long drive to the starting point from Moshi town, but you are rewarded by fantastic views and sometimes you will be the only climbers around; If you take this route up the mountain, you are obliged by park rules to descend via the Marangu Route on the South side of the mountain, therefore climbers see the mountain from many views point.</p>",
+        "overview": "<p>Rongai Route begins on the Northern side of Mount Kilimanjaro. It is a long drive to the starting point from Kilimanjaro, but you are rewarded by fantastic views and sometimes you will be the only climbers around; If you take this route up the mountain, you are obliged by park rules to descend via the Marangu Route on the South side of the mountain, therefore climbers see the mountain from many views point.</p>",
         "days": 6,
         "min_age": "16++",
         "types": [
             "Rongai Route"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town to Rongai Gate",
+        "departure": "Kilimanjaro to Rongai Gate",
         "departure_time": "Please be ready by 8:15 AM for a prompt departure at 9:00 AM.",
         "return_time": "Approximately 1:00 PM in the last day.",
         "dress_code": "Casual. Comfortable athletic clothing, hiking shoes, hat, cold weather jacket, gloves, pants, spare clothing.",
@@ -2022,7 +2022,7 @@
         "itinerary": [
             {
                 "title": "Arrival in Tanzania and transfer to the hotel",
-                "description": "Arrive in Tanzania via Kilimanjaro International airport (JRO) KLM Safaris' staff will pick you up and transfer to Moshi town where you will spend the first night at Park Inn View or Kilimanjaro Wonders Hotel. For those who will arrive through Jomo Kenyatta International Airport (JKA) in Kenya, we will get them picked up and transferred by Riverside Shuttle Bus to Moshi.",
+                "description": "Arrive in Tanzania via Kilimanjaro International airport (JRO) KLM Safaris' staff will pick you up and transfer to Kilimanjaro where you will spend the first night at Park Inn View or Kilimanjaro Wonders Hotel. For those who will arrive through Jomo Kenyatta International Airport (JKA) in Kenya, we will get them picked up and transferred by Riverside Shuttle Bus to Kilimanjaro.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -2036,7 +2036,7 @@
             },
             {
                 "title": "Climbing from Simba Camp to Second Cave (3600m)",
-                "description": "In the morning the journey towards Kibo will resume. At the second ancient cave, an appetising hot lunch will be served. After lunch we will trek through a brief section of the barren dunes of the moorland and continue amid the heather vegetation zone which is studded with ethereal, enormous lobelias. There is a high possibility of viewing the breath-taking display of the Kibo peak. There is also a chance that we may spot jackals and the odd buffalo – there is no need to panic as your guide accompanies you at all times.\r\nWalking Time: 6-8 hours walking.",
+                "description": "In the morning the journey towards Kibo will resume. At the second ancient cave, an appetising hot lunch will be served. After lunch we will trek through a brief section of the barren dunes of the moorland and continue amid the heather vegetation zone which is studded with ethereal, enormous lobelias. There is a high possibility of viewing the breath-taking display of the Kibo peak. There is also a chance that we may spot jackals and the odd buffalo. There is no need to panic as your guide accompanies you at all times.\r\nWalking Time: 6-8 hours walking.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": "3600 m"
@@ -2203,7 +2203,7 @@
             "Lemosho route"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town to Lemosho Gate",
+        "departure": "Kilimanjaro to Lemosho Gate",
         "departure_time": "Please be ready by 8:15 AM for a prompt departure at 9:00 AM.",
         "return_time": "Approximately 1:00 PM in the last day.",
         "dress_code": "Casual. Comfortable athletic clothing, hiking shoes, hat, cold weather jacket, gloves, pants, spare clothing.",
@@ -2233,8 +2233,8 @@
         ],
         "itinerary": [
             {
-                "title": "Arrival in Tanzania and transfer to Moshi",
-                "description": "Arrive in Tanzania, KLM Safaris' staff will pick you up and transfer you to Moshi town where you will spend the first night at a hotel.",
+                "title": "Arrival in Tanzania and transfer to Kilimanjaro",
+                "description": "Arrive in Tanzania, KLM Safaris' staff will pick you up and transfer you to Kilimanjaro where you will spend the first night at a hotel.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -2352,7 +2352,7 @@
             "Lemosho route"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town to Lemosho Gate",
+        "departure": "Kilimanjaro to Lemosho Gate",
         "departure_time": "Please be ready by 8:15 AM for a prompt departure at 9:00 AM.",
         "return_time": "Approximately 1:00 PM in the last day.",
         "dress_code": "Casual. Comfortable athletic clothing, hiking shoes, hat, cold weather jacket, gloves, pants, spare clothing.",
@@ -2383,7 +2383,7 @@
         "itinerary": [
             {
                 "title": "Arrival in Tanzania and transfer to the hotel",
-                "description": "Arrive in Tanzania via Kilimanjaro International airport (JRO).KLM Safaris' staff will pick you up and transfer to Moshi town where you will spend the first night at a hotel.",
+                "description": "Arrive in Tanzania via Kilimanjaro International airport (JRO).KLM Safaris' staff will pick you up and transfer to Kilimanjaro where you will spend the first night at a hotel.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -2508,7 +2508,7 @@
             "Machame Route"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town to Machame Gate",
+        "departure": "Kilimanjaro to Machame Gate",
         "departure_time": "Please be ready by 8:15 AM for a prompt departure at 9:00 AM.",
         "return_time": "Approximately 1:00 PM on the final day.",
         "dress_code": "Casual. Comfortable athletic clothing, hiking shoes, hat, cold weather jacket, gloves, pants, spare clothing.",
@@ -2539,7 +2539,7 @@
         "itinerary": [
             {
                 "title": "Arrival in Tanzania and transfer to the hotel",
-                "description": "Upon arrival in Tanzania via Kilimanjaro International airport (JRO), you will be picked up by a KLM Safaris staff member a KLM Safaris placard and transferred to Moshi town where you will spend your first night at a hotel.",
+                "description": "Upon arrival in Tanzania via Kilimanjaro International airport (JRO), you will be picked up by a KLM Safaris staff member a KLM Safaris placard and transferred to Kilimanjaro where you will spend your first night at a hotel.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -2588,7 +2588,7 @@
             },
             {
                 "title": "Descend from Mweka Camp to Mweka Gate",
-                "description": "Descent from Mweka Camp to Mweka Gate (1,640 meters or 5,340 feet)\r\nHiking hours: 3 – 4 hours\r\nDistance: 10 km or 6 miles\r\nZone: Rainforest\r\nFollowing a well-deserved breakfast, your staff will have a big party full of singing and dancing to celebrate your ascension of Mount Kilimanjaro. It is at this time that you can present your tips to your guide, assistant guides, chef(s) and porters.\r\nFollowing the celebration, you will begin your descent from Mweka Camp to Mweka Gate where TANAPA requires all hikers to sign the register. You will also receive a certificate of completion at this time. Hikers who reached Stella Point (5685m) receive green certificates and hikers who reached Uhuru Peak (5895m) receive gold certificates.\r\nOnce all the formalities are completed you will be transferred back to your hotel in Moshi.",
+                "description": "Descent from Mweka Camp to Mweka Gate (1,640 meters or 5,340 feet)\r\nHiking hours: 3-4 hours\r\nDistance: 10 km or 6 miles\r\nZone: Rainforest\r\nFollowing a well-deserved breakfast, your staff will have a big party full of singing and dancing to celebrate your ascension of Mount Kilimanjaro. It is at this time that you can present your tips to your guide, assistant guides, chef(s) and porters.\r\nFollowing the celebration, you will begin your descent from Mweka Camp to Mweka Gate where TANAPA requires all hikers to sign the register. You will also receive a certificate of completion at this time. Hikers who reached Stella Point (5685m) receive green certificates and hikers who reached Uhuru Peak (5895m) receive gold certificates.\r\nOnce all the formalities are completed you will be transferred back to your hotel in Kilimanjaro.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": "5895 m"
@@ -2653,16 +2653,16 @@
     },
     {
         "slug": "kilimanjaro-7-days-rongai-route",
-        "title": "Kilimanjaro – 7 Days Rongai Route",
+        "title": "Kilimanjaro 7 Days Rongai Route",
         "price": 2500,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p>Rongai Route begins on the Northern side of Mount Kilimanjaro. It is a long drive to the starting point from Moshi town, but you are rewarded by fantastic views and sometimes you will be the only climbers around; If you take this route up the mountain, you are obliged by park rules to descend via the Marangu Route on the South side of the mountain, therefore climbers see the mountain from many views point.</p>",
+        "overview": "<p>Rongai Route begins on the Northern side of Mount Kilimanjaro. It is a long drive to the starting point from Kilimanjaro, but you are rewarded by fantastic views and sometimes you will be the only climbers around; If you take this route up the mountain, you are obliged by park rules to descend via the Marangu Route on the South side of the mountain, therefore climbers see the mountain from many views point.</p>",
         "days": 7,
         "min_age": "16++",
         "types": [],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town to Rongai Gate",
+        "departure": "Kilimanjaro to Rongai Gate",
         "departure_time": "Please be ready by 8:15 AM for a prompt departure at 9:00 AM.",
         "return_time": "Approximately 1:00 PM in the last day.",
         "dress_code": "Casual. Comfortable athletic clothing, hiking shoes, hat, cold weather jacket, gloves, pants, spare clothing.",
@@ -2693,7 +2693,7 @@
         "itinerary": [
             {
                 "title": "Arrival in Tanzania and transfer to the hotel",
-                "description": "Upon arrival in Tanzania via Kilimanjaro International airport (JRO), you will be picked up by a KLM Safaris staff member a KLM Safaris placard and transferred to Moshi town where you will spend your first night at a hotel.",
+                "description": "Upon arrival in Tanzania via Kilimanjaro International airport (JRO), you will be picked up by a KLM Safaris staff member a KLM Safaris placard and transferred to Kilimanjaro where you will spend your first night at a hotel.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -2735,14 +2735,14 @@
             },
             {
                 "title": "Kibo Camp to Uhuru Peak 5,895 M",
-                "description": "You will wake up around 11:30pm, The first section of the trail consists of a rocky path to the Hans Meyer Cave (5150m), also a good resting spot. The path then zigzags up to Gillman’s Point (5 681m), which is located on the crater rim. This section is very steep with a lot of stone scree, requiring a great physical and mental effort, probably the most demanding section of the entire route. From Gillman’s Point you will normally encounter snow all the way up to Uhuru peak (5895m), the highest point in Africa. Total exhilaration and satisfaction set in – you made it! Weather conditions on the summit will determine how long you can spend taking photographs before the descent back to Kibo hut. Once there, you will have a short rest then begin your descent to Horombo hut where you will overnight.",
+                "description": "You will wake up around 11:30pm, The first section of the trail consists of a rocky path to the Hans Meyer Cave (5150m), also a good resting spot. The path then zigzags up to Gillman’s Point (5 681m), which is located on the crater rim. This section is very steep with a lot of stone scree, requiring a great physical and mental effort, probably the most demanding section of the entire route. From Gillman’s Point you will normally encounter snow all the way up to Uhuru peak (5895m), the highest point in Africa. Total exhilaration and satisfaction set in. You made it! Weather conditions on the summit will determine how long you can spend taking photographs before the descent back to Kibo hut. Once there, you will have a short rest then begin your descent to Horombo hut where you will overnight.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": "5895 m"
             },
             {
                 "title": "Descend from Horombo Hut to Marangu Gate",
-                "description": "After breakfast and following the celebration, you will begin your descent from Mandara hut to Marangu Gate where TANAPA requires all hikers to sign the register. You will also receive a certificate of completion at this time. Hikers who reached Gillman's Point receive green certificates and hikers who reached Uhuru Peak receive gold certificates. Once all the formalities are completed you will be transferred back to your hotel in Moshi.\r\n ",
+                "description": "After breakfast and following the celebration, you will begin your descent from Mandara hut to Marangu Gate where TANAPA requires all hikers to sign the register. You will also receive a certificate of completion at this time. Hikers who reached Gillman's Point receive green certificates and hikers who reached Uhuru Peak receive gold certificates. Once all the formalities are completed you will be transferred back to your hotel in Kilimanjaro.\r\n ",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -2818,7 +2818,7 @@
             "Umbwe Route"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town to Umbwe Gate",
+        "departure": "Kilimanjaro to Umbwe Gate",
         "departure_time": "Please be ready by 8:15 AM for a prompt departure at 9:00 AM.",
         "return_time": "Approximately 1:00 PM in the last day.",
         "dress_code": "Casual. Comfortable athletic clothing, hiking shoes, hat, cold weather jacket, gloves, pants, spare clothing.",
@@ -2849,14 +2849,14 @@
         "itinerary": [
             {
                 "title": "Arrival in Tanzania and transfer to the hotel",
-                "description": "Upon arrival in Tanzania via Kilimanjaro International airport (JRO), you will be picked up by a KLM Safaris staff member a KLM Safaris placard and transferred to Moshi town where you will spend your first night at a hotel.",
+                "description": "Upon arrival in Tanzania via Kilimanjaro International airport (JRO), you will be picked up by a KLM Safaris staff member a KLM Safaris placard and transferred to Kilimanjaro where you will spend your first night at a hotel.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
             },
             {
                 "title": "Drive to Umbwe Park Gate to Umbwe Cave camp",
-                "description": "After Breakfast KLM Safaris' team will gather at the hotel for the introduction of the crew that will accompany clients then drive from Moshi town to Umbwe Park Gate (4,100ft) for registration process before begin hiking to the first camp which is Umbwe Cave camp.\r\nThe first day is through the Montana Forest. Lush vegetation with old trees and lilts of ferns and mosses mark this area that gets reliable rain year round. The forest abounds with wildlife, small bushbucks and duikers as well as monkeys. There is also a rich and varied bird-life. The first 3 hours or so is on a gently rising land before steepening for the last 2 hours. The camp for the night is in a small clearing on the trail.\r\n \r\nUmbwe Cave Camp – Elevation 2940m or 9500ft\r\nDistance 8km\r\nHiking Time: 6-7 hours\r\nVegetation zone: Montane forest",
+                "description": "After Breakfast KLM Safaris' team will gather at the hotel for the introduction of the crew that will accompany clients then drive from Kilimanjaro to Umbwe Park Gate (4,100ft) for registration process before begin hiking to the first camp which is Umbwe Cave camp.\r\nThe first day is through the Montana Forest. Lush vegetation with old trees and lilts of ferns and mosses mark this area that gets reliable rain year round. The forest abounds with wildlife, small bushbucks and duikers as well as monkeys. There is also a rich and varied bird-life. The first 3 hours or so is on a gently rising land before steepening for the last 2 hours. The camp for the night is in a small clearing on the trail.\r\n \r\nUmbwe Cave Camp: Elevation 2940m or 9500ft\r\nDistance 8km\r\nHiking Time: 6-7 hours\r\nVegetation zone: Montane forest",
                 "accommodation": "",
                 "meals": "",
                 "altitude": "2940 m"
@@ -2884,14 +2884,14 @@
             },
             {
                 "title": "Barafu to Uhuru Peak then descend to Mweka camp",
-                "description": "The hike toward the summit begins at 11:30 pm as you continue your way between the Rebmann and Ratzel glaciers. The route heads northwest and you will ascend over large rocks and stone scree. During the ascent, many hikers feel that this is the most mentally and physically challenging part of the climb. After about 6 hours, you will reach Stella Point (5685m), located on the crater rim. After enjoying the magnificent sunrise, you will continue ascending for about 2 hours on a snow-covered trail to Uhuru Peak (5895m). Reaching the summit of Mt. Kilimanjaro is a lifetime accomplishment! Once you are there, you will be able to spend a short time on the summit taking photographs before the descent to Barafu Camp begins. Once back at Barafu camp, you will rest and enjoy a hot lunch in the sun. After eating, you will continue descending down to Mweka Hut. The Mweka Trail will lead you through the scree and rocks to the moorland and eventually into the rain forest. Mweka Camp is located in the upper rain forest so fog and rain should be expected. Here, you will be served a well-deserved hot dinner and be able to wash and rest for the night.\nElevation 4600m to 5895m (and down 3100m) or 15,000ft to 19,300ft (and down to 10,200ft)\r\nDistance: 7km\r\nascent/23km descent\r\nHiking Time: 6 – 8 hours ascent\r\n7 – 8 hours descent\r\nVegetation Zone: Stone scree and ice-capped",
+                "description": "The hike toward the summit begins at 11:30 pm as you continue your way between the Rebmann and Ratzel glaciers. The route heads northwest and you will ascend over large rocks and stone scree. During the ascent, many hikers feel that this is the most mentally and physically challenging part of the climb. After about 6 hours, you will reach Stella Point (5685m), located on the crater rim. After enjoying the magnificent sunrise, you will continue ascending for about 2 hours on a snow-covered trail to Uhuru Peak (5895m). Reaching the summit of Mt. Kilimanjaro is a lifetime accomplishment! Once you are there, you will be able to spend a short time on the summit taking photographs before the descent to Barafu Camp begins. Once back at Barafu camp, you will rest and enjoy a hot lunch in the sun. After eating, you will continue descending down to Mweka Hut. The Mweka Trail will lead you through the scree and rocks to the moorland and eventually into the rain forest. Mweka Camp is located in the upper rain forest so fog and rain should be expected. Here, you will be served a well-deserved hot dinner and be able to wash and rest for the night.\nElevation 4600m to 5895m (and down 3100m) or 15,000ft to 19,300ft (and down to 10,200ft)\r\nDistance: 7km\r\nascent/23km descent\r\nHiking Time: 6-8 hours ascent\r\n7-8 hours descent\r\nVegetation Zone: Stone scree and ice-capped",
                 "accommodation": "",
                 "meals": "",
                 "altitude": "3100 m"
             },
             {
                 "title": "Descend from Mweka camp to Mweka Gate",
-                "description": "Descent from Mweka Camp to Mweka Gate (1,640 meters or 5,340 feet) Hiking hours: 3 – 4 hours Distance: 10 km or 6 miles Zone: Rainforest Following a well-deserved breakfast, your staff will have a big party full of singing and dancing to celebrate your ascension of Mount Kilimanjaro. It is at this time that you can present your tips to your guide, assistant guides, chef(s) and porters. Following the celebration, you will begin your descent from Mweka Camp to Mweka Gate where TANAPA requires all hikers to sign the register. You will also receive a certificate of completion at this time. Hikers who reached Stella Point (5685m) receive green certificates and hikers who reached Uhuru Peak (5895m) receive gold certificates. Once all the formalities are completed you will be transferred back to your hotel in Moshi.\nElevation: 3100m to 1830m or 10,200ft to 6000ft\r\nDistance: 15 km\r\nHiking Time: 5 hours\r\nVegetation: Forest",
+                "description": "Descent from Mweka Camp to Mweka Gate (1,640 meters or 5,340 feet) Hiking hours: 3-4 hours Distance: 10 km or 6 miles Zone: Rainforest Following a well-deserved breakfast, your staff will have a big party full of singing and dancing to celebrate your ascension of Mount Kilimanjaro. It is at this time that you can present your tips to your guide, assistant guides, chef(s) and porters. Following the celebration, you will begin your descent from Mweka Camp to Mweka Gate where TANAPA requires all hikers to sign the register. You will also receive a certificate of completion at this time. Hikers who reached Stella Point (5685m) receive green certificates and hikers who reached Uhuru Peak (5895m) receive gold certificates. Once all the formalities are completed you will be transferred back to your hotel in Kilimanjaro.\nElevation: 3100m to 1830m or 10,200ft to 6000ft\r\nDistance: 15 km\r\nHiking Time: 5 hours\r\nVegetation: Forest",
                 "accommodation": "",
                 "meals": "",
                 "altitude": "1830 m"
@@ -2956,7 +2956,7 @@
     },
     {
         "slug": "kilimanjaro-6-days-marangu-route",
-        "title": "Kilimanjaro – 6 Days Marangu Route",
+        "title": "Kilimanjaro 6 Days Marangu Route",
         "price": 1550,
         "draft": false,
         "price_note": "per person",
@@ -2967,7 +2967,7 @@
             "Marangu Route"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town to Marangu Gate",
+        "departure": "Kilimanjaro to Marangu Gate",
         "departure_time": "Please be ready by 8:15 AM for a prompt departure at 9:00 AM.",
         "return_time": "Approximately 1:00 PM in the last day.",
         "dress_code": "Casual. Comfortable athletic clothing, hiking shoes, hat, cold weather jacket, gloves, pants, spare clothing.",
@@ -2998,7 +2998,7 @@
         "itinerary": [
             {
                 "title": "Arrival in Tanzania and transfer to the hotel",
-                "description": "Upon arrival in Tanzania via Kilimanjaro International airport (JRO), you will be picked up by a KLM Safaris staff member a KLM Safaris placard and transferred to Moshi town where you will spend your first night at a hotel.",
+                "description": "Upon arrival in Tanzania via Kilimanjaro International airport (JRO), you will be picked up by a KLM Safaris staff member a KLM Safaris placard and transferred to Kilimanjaro where you will spend your first night at a hotel.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -3040,7 +3040,7 @@
             },
             {
                 "title": "Horombo Huts to Marangu Gate",
-                "description": "After breakfast and following the celebration, you will begin your descent from Mandara hut to Marangu Gate where TANAPA requires all hikers to sign the register. You will also receive a certificate of completion at this time. Hikers who reached Gillman's Point receive green certificates and hikers who reached Uhuru Peak receive gold certificates. Once all the formalities are completed you will be transferred back to your hotel in Moshi.",
+                "description": "After breakfast and following the celebration, you will begin your descent from Mandara hut to Marangu Gate where TANAPA requires all hikers to sign the register. You will also receive a certificate of completion at this time. Hikers who reached Gillman's Point receive green certificates and hikers who reached Uhuru Peak receive gold certificates. Once all the formalities are completed you will be transferred back to your hotel in Kilimanjaro.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -3111,7 +3111,7 @@
             "Kilimanjaro"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town to Northern circuit Gate",
+        "departure": "Kilimanjaro to Northern circuit Gate",
         "departure_time": "Please be ready by 8:15 AM for a prompt departure at 9:00 AM.",
         "return_time": "Approximately 1:00 PM in the last day.",
         "dress_code": "Casual. Comfortable athletic clothing, hiking shoes, hat, cold weather jacket, gloves, pants, spare clothing.",
@@ -3142,7 +3142,7 @@
         "itinerary": [
             {
                 "title": "Arrival in Tanzania and transfer to hotel",
-                "description": "Upon arrival in Tanzania via Kilimanjaro International airport (JRO), you will be picked up by a KLM Safaris staff member a KLM Safaris placard and transferred to Moshi town where you will spend your first night at a hotel.",
+                "description": "Upon arrival in Tanzania via Kilimanjaro International airport (JRO), you will be picked up by a KLM Safaris staff member a KLM Safaris placard and transferred to Kilimanjaro where you will spend your first night at a hotel.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -3326,7 +3326,7 @@
                 "altitude": "3820 m"
             },
             {
-                "title": "Saddle Hut to Summit to Miriakamba Hut-Momela gate –Arusha",
+                "title": "Saddle Hut to Summit to Miriakamba Hut-Momela gate to Arusha",
                 "description": "Today’s Stats Hiking Time:4-5 hours ascent + 6-8 hours descent\r\nHiking Distance:5 km ascent + 15 km descent\r\nStarting Altitude:2516m\r\nSummit:4566m\r\nFinal Altitude:2516m\r\nEnvironment: Alpine Desert\r\nAt around 3am we rise, put on all our warm clothes and enjoy a hot cup of tea or chocolate before setting out\r\non the trail. The first hour is a steep climb to Rhino Point (3800m/12,467ft), and then the path continues along a narrow but spectacular ridge of ash and rock to reach Cobra Point (4350m/14,272ft).\r\nThe summit is now within our reach and after an hour of climbing and light scrambling over rocks and boulders we look up to see the summit flag beckoning us onwards and upwards.\r\nArriving at the summit we are greeted with stunning views of the crater rim, the spectacular ash cone rising from the crater floor, Mount Kilimanjaro floating on the morning clouds just 70km away, and the Rift Valley in the distance.\r\nAfter soaking up the magnificent vistas and celebrating our summit success we begin our descent where we may encounter the delicately-hoofed klipspringers bounding from rock to rock in the early morning light. The route back to Rhino Point, in the sharp morning light traverses a narrow ridge between the sloping outer wall of the crater and the sheer cliffs of the inner wall, is one of the most dramatic and exhilarating walks in Africa.\r\n ",
                 "accommodation": "",
                 "meals": "",
@@ -3447,7 +3447,7 @@
         "price": 59,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p><strong>Driving Time from Moshi:</strong> 45 minutes<br><strong>Altitude:</strong> 1,600m above sea level<br><strong>Hiking Time:</strong> 30 minutes<br><strong>Coffee Tour Duration:</strong> 1 hour<br><strong>Location:</strong> Near Moshi Town</p>\n <p>Materuni Waterfall is the highest and most impressive waterfall at the foothills of Mt. Kilimanjaro, located at latitude -3.25025° (3° 15′ 1″ S) and longitude 37.40007° (37° 24′ 0″ E).</p>\n <p>Upon arrival, you will complete the necessary formalities before embarking on a scenic 40-minute hike down to the village and waterfall. The trail takes you through rolling hills and valleys covered in lush tropical rainforests, and coffee, banana, and avocado farms, locally known as <em>shambas</em>. Your guide will provide insights into the flora, fauna, and local farming practices.</p>\n <p>Once you reach the waterfall, you can take in its breathtaking beauty and enjoy a refreshing swim in the cool, clear waters, so don’t forget to bring your swimming gear.</p>\n <p>After the waterfall visit, you’ll experience an authentic coffee tour, where you will learn about the entire coffee production process from cultivation and harvesting to roasting and brewing done the traditional Chagga way. You’ll even get to roast and prepare your cup of freshly brewed coffee.</p>\n <p>To complete your experience, you’ll enjoy a delicious traditional meal featuring a variety of local dishes and fresh seasonal fruits. This will give you a true taste of the region’s culture before departing the village.</p>\n <p>On a clear day, you’ll also be rewarded with stunning views of Kibo Peak and Moshi town during the hike. Please note that the trek to the waterfall can be physically demanding, so sturdy hiking boots are highly recommended.</p>",
+        "overview": "<p><strong>Driving Time from Kilimanjaro:</strong> 45 minutes<br><strong>Altitude:</strong> 1,600m above sea level<br><strong>Hiking Time:</strong> 30 minutes<br><strong>Coffee Tour Duration:</strong> 1 hour<br><strong>Location:</strong> Near Kilimanjaro</p>\n <p>Materuni Waterfall is the highest and most impressive waterfall at the foothills of Mt. Kilimanjaro, located at latitude -3.25025° (3° 15′ 1″ S) and longitude 37.40007° (37° 24′ 0″ E).</p>\n <p>Upon arrival, you will complete the necessary formalities before embarking on a scenic 40-minute hike down to the village and waterfall. The trail takes you through rolling hills and valleys covered in lush tropical rainforests, and coffee, banana, and avocado farms, locally known as <em>shambas</em>. Your guide will provide insights into the flora, fauna, and local farming practices.</p>\n <p>Once you reach the waterfall, you can take in its breathtaking beauty and enjoy a refreshing swim in the cool, clear waters, so don’t forget to bring your swimming gear.</p>\n <p>After the waterfall visit, you’ll experience an authentic coffee tour, where you will learn about the entire coffee production process from cultivation and harvesting to roasting and brewing done the traditional Chagga way. You’ll even get to roast and prepare your cup of freshly brewed coffee.</p>\n <p>To complete your experience, you’ll enjoy a delicious traditional meal featuring a variety of local dishes and fresh seasonal fruits. This will give you a true taste of the region’s culture before departing the village.</p>\n <p>On a clear day, you’ll also be rewarded with stunning views of Kibo Peak and Kilimanjaro during the hike. Please note that the trek to the waterfall can be physically demanding, so sturdy hiking boots are highly recommended.</p>",
         "days": 1,
         "min_age": "Any +",
         "types": [
@@ -3511,7 +3511,7 @@
                 "price": "50"
             }
         ],
-        "meta_description": "Discover Materuni Waterfall near Moshi, Tanzania. Hike through lush forests, swim in cool waters, and enjoy a Chagga coffee tour. Book now!"
+        "meta_description": "Discover Materuni Waterfall near Kilimanjaro, Tanzania. Hike through lush forests, swim in cool waters, and enjoy a Chagga coffee tour. Book now!"
     },
     {
         "slug": "lake-challa-day-trip-tour",
@@ -3519,7 +3519,7 @@
         "price": 55,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p>Lake Chala Safari is a private game reserve located on the western slopes of Mount Kilimanjaro, near the Kenya-Tanzania border. It is approximately a 2.5-hour drive from Moshi and 8 km from Taveta. The reserve is named after Lake Chala, a unique caldera lake, also known as Dschalla, with a depth of over 3,000 meters making it one of Africa’s deepest inland water bodies.</p>\n <p>Upon arrival, our guide will take you to various viewpoints where you can explore the region’s diverse flora and fauna. You will then descend towards the lakeshore, passing through lush green vegetation with breathtaking views of the deep blue lake ahead. The lake’s crystal clear waters are home to a variety of fish, though swimming is not highly recommended.</p>\n <p>The walk around the lake offers stunning scenery but can be a bit challenging. Along the way, you may encounter wildlife such as lizards, baboons, monkeys, and even snakes.</p>\n <p>After your tour, you can unwind at the camp’s scenic bar overlooking the lake, where you can enjoy a refreshing drink while taking in the tranquil surroundings.</p>",
+        "overview": "<p>Lake Chala Safari is a private game reserve located on the western slopes of Mount Kilimanjaro, near the Kenya-Tanzania border. It is approximately a 2.5-hour drive from Kilimanjaro and 8 km from Taveta. The reserve is named after Lake Chala, a unique caldera lake, also known as Dschalla, with a depth of over 3,000 meters making it one of Africa’s deepest inland water bodies.</p>\n <p>Upon arrival, our guide will take you to various viewpoints where you can explore the region’s diverse flora and fauna. You will then descend towards the lakeshore, passing through lush green vegetation with breathtaking views of the deep blue lake ahead. The lake’s crystal clear waters are home to a variety of fish, though swimming is not highly recommended.</p>\n <p>The walk around the lake offers stunning scenery but can be a bit challenging. Along the way, you may encounter wildlife such as lizards, baboons, monkeys, and even snakes.</p>\n <p>After your tour, you can unwind at the camp’s scenic bar overlooking the lake, where you can enjoy a refreshing drink while taking in the tranquil surroundings.</p>",
         "days": 1,
         "min_age": "Any +",
         "types": [
@@ -3589,14 +3589,14 @@
         "price": 59,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p>We will pick you up from your hotel in Moshi early in the morning for a one-hour drive to Kikuletwa Chemka Hot Springs, a stunning geothermal oasis. The crystal-clear waters, heated naturally from underground springs, create a refreshing and relaxing environment. Despite its name, the water is warm rather than hot, and some areas reach depths of up to 10 meters, allowing for incredible visibility. A swimsuit is essential for this experience.</p>\n     <p>After enjoying your swim, we will take you to a nearby restaurant for a delicious hot lunch and provide you with bottled water. Following lunch, you will have plenty of time to relax and take another dip in the springs. Keep an eye out for local wildlife, including vervet monkeys, which often visit the area.</p>\n <p>By late afternoon, we will return to Moshi, leaving you refreshed and rejuvenated after this unforgettable experience at Chemka Hot Springs.</p>",
+        "overview": "<p>We will pick you up from your hotel in Kilimanjaro early in the morning for a one-hour drive to Kikuletwa Chemka Hot Springs, a stunning geothermal oasis. The crystal-clear waters, heated naturally from underground springs, create a refreshing and relaxing environment. Despite its name, the water is warm rather than hot, and some areas reach depths of up to 10 meters, allowing for incredible visibility. A swimsuit is essential for this experience.</p>\n     <p>After enjoying your swim, we will take you to a nearby restaurant for a delicious hot lunch and provide you with bottled water. Following lunch, you will have plenty of time to relax and take another dip in the springs. Keep an eye out for local wildlife, including vervet monkeys, which often visit the area.</p>\n <p>By late afternoon, we will return to Kilimanjaro, leaving you refreshed and rejuvenated after this unforgettable experience at Chemka Hot Springs.</p>",
         "days": 1,
         "min_age": "Any +",
         "types": [
             "Day Tours"
         ],
         "destination": null,
-        "departure": "Moshi Town to Kikuletwa Hot Spring",
+        "departure": "Kilimanjaro to Kikuletwa Hot Spring",
         "departure_time": "Any Time Before 5:00 PM",
         "return_time": "Approximately 1:00 PM in the last day.",
         "dress_code": "Casual comfortable clothing, swimming costume and towel.",
@@ -3662,8 +3662,8 @@
             "Serengeti"
         ],
         "destination": "National Parks: Ngorongoro Crater, Serengeti",
-        "departure": "Moshi or Arusha / Moshi or Arusha or Airport",
-        "departure_time": "7:30AM from Moshi or 9:00AM from Arusha",
+        "departure": "Kilimanjaro or Arusha / Kilimanjaro or Arusha or Airport",
+        "departure_time": "7:30AM from Kilimanjaro or 9:00AM from Arusha",
         "return_time": "Approximately 5:00 PM in the last day.",
         "dress_code": "Casual and comfortable. Sun hat, sunscreen and insect repellent are recommended.",
         "includes": [
@@ -3721,7 +3721,7 @@
             },
             {
                 "title": "Serengeti National Park",
-                "description": "After breakfast you will have a full day to explore Serengeti with both morning and afternoon game drives.\r\nThe Serengeti National Park is the jewel in the crown of Tanzania’s game parks and offers arguably the best game viewing in Africa. The setting is perfect – a sea of endless plains that stretches to the horizon, dotted with the acacia trees and termite mounds. Serengeti is home to huge herds of wildebeest that every year make the mass migration north, through crocodile infested rivers, in a frenzied mixture of mating and galloping that is driven by instinct. Prides of lion rule here, as their hungry gazes sweep the savannah for a chance to attack one of the thousands of eland, impala and gazelle. Solitary leopards lie high in the branches of the acacia tree while herds of elephants roam at will. This is the Africa that you have always dreamed about.\r\nAfter another amazing day of explorations, you will return to your lodge/tented camp for dinner and an overnight stay.",
+                "description": "After breakfast you will have a full day to explore Serengeti with both morning and afternoon game drives.\r\nThe Serengeti National Park is the jewel in the crown of Tanzania’s game parks and offers arguably the best game viewing in Africa. The setting is perfect, a sea of endless plains that stretches to the horizon, dotted with the acacia trees and termite mounds. Serengeti is home to huge herds of wildebeest that every year make the mass migration north, through crocodile infested rivers, in a frenzied mixture of mating and galloping that is driven by instinct. Prides of lion rule here, as their hungry gazes sweep the savannah for a chance to attack one of the thousands of eland, impala and gazelle. Solitary leopards lie high in the branches of the acacia tree while herds of elephants roam at will. This is the Africa that you have always dreamed about.\r\nAfter another amazing day of explorations, you will return to your lodge/tented camp for dinner and an overnight stay.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -3734,8 +3734,8 @@
                 "altitude": ""
             },
             {
-                "title": "Serengeti – Arusha (or Moshi or Airport)",
-                "description": "After an early breakfast, you will embark on your final short game drive as you head towards the exit of Serengeti National Park.\r\nToday the drive back to town will be quite long (8 hours), but you will once again be able to admire the beautiful Ngorongoro Conservation Area while spotting game along the way.\r\nWe will stop for lunch on the road as we head towards your final destination. We will drop you off at your hotel in Arusha or Moshi, or even at Kilimanjaro International Airport, depending on what you have planned for the remainder of your stay in Tanzania.",
+                "title": "Serengeti: Arusha (or Kilimanjaro or Airport)",
+                "description": "After an early breakfast, you will embark on your final short game drive as you head towards the exit of Serengeti National Park.\r\nToday the drive back to town will be quite long (8 hours), but you will once again be able to admire the beautiful Ngorongoro Conservation Area while spotting game along the way.\r\nWe will stop for lunch on the road as we head towards your final destination. We will drop you off at your hotel in Arusha or Kilimanjaro, or even at Kilimanjaro International Airport, depending on what you have planned for the remainder of your stay in Tanzania.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -3846,7 +3846,7 @@
                 "price": "890"
             }
         ],
-        "meta_description": "Escape to the wild with KLM Safaris on a 2-day fly-in safari from Zanzibar. Fly over breathtaking landscapes, explore Tanzania's iconic parks, witness incredible wildlife on guided game drives, and unwind in luxurious lodges. A short, unforgettable adventure awaits—book today!"
+        "meta_description": "Escape to the wild with KLM Safaris on a 2-day fly-in safari from Zanzibar. Fly over breathtaking landscapes, explore Tanzania's iconic parks, witness incredible wildlife on guided game drives, and unwind in luxurious lodges. A short, unforgettable adventure awaits, book today!"
     },
     {
         "slug": "3-day-zanzibar-to-ngorongoro-luxury-safari",
@@ -4192,21 +4192,21 @@
             },
             {
                 "title": "Lake Manyara Game Drive and Mto wa Mbu Village tour",
-                "description": "After breakfast at Baobab Tented Camp, you will start your day to Lake Manyara National Park which is about 30min drive hours’ drive from Karatu. You will check inn about 15 minutes then proceed with game drive for 3 hours. Lake Manyara National Park will provide you a unique wilderness experience including diverse landscapes such as the Rift Valley soda lake, open grasslands, dense woodlands, stunning mountainsides and abundant wildlife. You will have an opportunity to spot greater and lesser pink flamingos on Lake Manyara shores. Around noon you will have your picnic lunch at the picnic site. After lunch, you will proceed to Mto wa mbu a village adjacent to the park. Your guide will be from the village itself so you will have a unique opportunity to see the community through his eyes. Tours last around 1 hour, but are flexible. During your visit you’ll get a good feel for the social side of the village – the farms and the milling machines, the schools, markets and churches. You’ll likely start in the village banana plantation, where they grow different varieties of bananas. Then you on the way you will visit milling machines, schools and a church. Next you might visit a youth art project, and learn about the different painting styles and techniques. The artists are happy for you to ask questions and take photos.  Then you will experience the Maasai tribe and you will participate in their traditional ceremonies and joining in their vibrant dances, accompanied by the intricate art of face painting, fostering a cultural exchange and immersive encounter. Your tour will finish in the bustling local market, where you can wander around stalls selling fruit and vegetables stalls, spices and meal. After your tour you will proceed Arusha then Moshi for Dinner and overnight at Tulivu Kilimanjaro Retreat at Moshi or similar (Bed and Breakfast).",
+                "description": "After breakfast at Baobab Tented Camp, you will start your day to Lake Manyara National Park which is about 30min drive hours’ drive from Karatu. You will check inn about 15 minutes then proceed with game drive for 3 hours. Lake Manyara National Park will provide you a unique wilderness experience including diverse landscapes such as the Rift Valley soda lake, open grasslands, dense woodlands, stunning mountainsides and abundant wildlife. You will have an opportunity to spot greater and lesser pink flamingos on Lake Manyara shores. Around noon you will have your picnic lunch at the picnic site. After lunch, you will proceed to Mto wa mbu a village adjacent to the park. Your guide will be from the village itself so you will have a unique opportunity to see the community through his eyes. Tours last around 1 hour, but are flexible. During your visit you’ll get a good feel for the social side of the village, the farms and the milling machines, the schools, markets and churches. You’ll likely start in the village banana plantation, where they grow different varieties of bananas. Then you on the way you will visit milling machines, schools and a church. Next you might visit a youth art project, and learn about the different painting styles and techniques. The artists are happy for you to ask questions and take photos.  Then you will experience the Maasai tribe and you will participate in their traditional ceremonies and joining in their vibrant dances, accompanied by the intricate art of face painting, fostering a cultural exchange and immersive encounter. Your tour will finish in the bustling local market, where you can wander around stalls selling fruit and vegetables stalls, spices and meal. After your tour you will proceed Arusha then Kilimanjaro for Dinner and overnight at Tulivu Kilimanjaro Retreat at Kilimanjaro or similar (Bed and Breakfast).",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
             },
             {
-                "title": "Materuni Waterfalls and Coffee Tour in Moshi (Today you will have an opportunity to see Mt.Kilimanjaro)",
-                "description": "Kilimanjaro the tallest free-standing Mountain in the World) After breakfast, at 8:00am you will leave the hotel and drive to Materuni Waterfalls and Coffee Tour for 45minutes. Materuni Waterfall is the highest and most impressive waterfall at the foothill of Mt. Kilimanjaro. You’ll visit a coffee farm and learn about how coffee is grown, harvested and processed, and you’ll try your hand at roasting and preparing a fresh cup of coffee the Chagga way for 1hr. At Materuni  you will be enganged  with local children in the village, we can participate in collaborative activities such as art, music, or dancing together, fostering cultural exchange and shared experiences. After coffee tour and taste you’ll take a beautiful 30 minutes hike through the hills and valleys enroute to the Materuni waterfalls. The valleys and hills are covered by tropical rainforest, coffee, banana and avocado “shambas”, the Kiswahili word for farms. On a clear day great view of Kibo and Moshi town can be seen during hiking. Dinner and overnight at Tulivu Kilimanjaro Retreat at Moshi or similar (Bed and Breakfast).",
+                "title": "Materuni Waterfalls and Coffee Tour in Kilimanjaro (Today you will have an opportunity to see Mt.Kilimanjaro)",
+                "description": "Kilimanjaro the tallest free-standing Mountain in the World) After breakfast, at 8:00am you will leave the hotel and drive to Materuni Waterfalls and Coffee Tour for 45minutes. Materuni Waterfall is the highest and most impressive waterfall at the foothill of Mt. Kilimanjaro. You’ll visit a coffee farm and learn about how coffee is grown, harvested and processed, and you’ll try your hand at roasting and preparing a fresh cup of coffee the Chagga way for 1hr. At Materuni  you will be enganged  with local children in the village, we can participate in collaborative activities such as art, music, or dancing together, fostering cultural exchange and shared experiences. After coffee tour and taste you’ll take a beautiful 30 minutes hike through the hills and valleys enroute to the Materuni waterfalls. The valleys and hills are covered by tropical rainforest, coffee, banana and avocado “shambas”, the Kiswahili word for farms. On a clear day great view of Kibo and Kilimanjaro can be seen during hiking. Dinner and overnight at Tulivu Kilimanjaro Retreat at Kilimanjaro or similar (Bed and Breakfast).",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
             },
             {
-                "title": "Visit Makao Farm Animal Rescue in Moshi",
-                "description": "Today you'll be picked up in Moshi and taken on a 30-minute drive to Makoa Farm near the mountain village of Machame, nestled at 1,070 meters on Kilimanjaro's southern slope. Operated since 1999 by Elisabeth and Laszlo, a German veterinarian couple, this 143-hectare estate houses the Kilimanjaro Animal C.R.E.W., a sanctuary for healthy, orphaned, and injured animals. During the 2-hour guided tour, led by an English-speaking staff member, you'll hear poignant stories about the animals' backgrounds and might assist in feeding them, with species like vervet and blue monkeys, baboons, smaller antelopes, a cheetah, and various bird species. At Makoa Farm, specializing in multi-day horseback safaris, you'll encounter around 20 horses and experience the farm's unique offerings before heading back to Moshi at the end of the tour.\n After tour there is an optional Art workshop in which children will enjoy art workshops, including animal drawing sessions, nature and animal photography workshops, and engaging in local art practices such as crafting fabrics with animal prints, creating Maasai necklaces and bracelets, decorating Maasai sticks, as well as learning and participating in the singing and dancing traditions of the local music culture. Dinner and overnight at Tulivu Kilimanjaro Retreat at Moshi or similar (Bed and Breakfast).",
+                "title": "Visit Makao Farm Animal Rescue in Kilimanjaro",
+                "description": "Today you'll be picked up in Kilimanjaro and taken on a 30-minute drive to Makoa Farm near the mountain village of Machame, nestled at 1,070 meters on Kilimanjaro's southern slope. Operated since 1999 by Elisabeth and Laszlo, a German veterinarian couple, this 143-hectare estate houses the Kilimanjaro Animal C.R.E.W., a sanctuary for healthy, orphaned, and injured animals. During the 2-hour guided tour, led by an English-speaking staff member, you'll hear poignant stories about the animals' backgrounds and might assist in feeding them, with species like vervet and blue monkeys, baboons, smaller antelopes, a cheetah, and various bird species. At Makoa Farm, specializing in multi-day horseback safaris, you'll encounter around 20 horses and experience the farm's unique offerings before heading back to Kilimanjaro at the end of the tour.\n After tour there is an optional Art workshop in which children will enjoy art workshops, including animal drawing sessions, nature and animal photography workshops, and engaging in local art practices such as crafting fabrics with animal prints, creating Maasai necklaces and bracelets, decorating Maasai sticks, as well as learning and participating in the singing and dancing traditions of the local music culture. Dinner and overnight at Tulivu Kilimanjaro Retreat at Kilimanjaro or similar (Bed and Breakfast).",
                 "accommodation": "",
                 "meals": "",
                 "altitude": "1,070 m"
@@ -4305,7 +4305,7 @@
             },
             {
                 "title": "Ngorongoro to Serengeti National Park",
-                "description": "After breakfast you will proceed to Serengeti for about 4hours from Ngorongoro with on-route game drive. After about 3 hours you will arrive at Serengeti Naabi entrance gate and have your picnic lunch. The Serengeti National Park is the jewel in the crown of Tanzania’s game parks and offers arguably the best game viewing in Africa. The setting is perfect – a sea of endless plains that stretches to the horizon, dotted with the occasional acacia tree and termite mound. This Savannah is home to huge herds of buffalo that every year make the mass migration north during August/September, through crocodile infested rivers, in a frenzied mixture of mating and galloping that is driven by instinct. Prides of lion rule here, their hungry gaze sweeping the Savannah for a chance to attack the thousands of elands, impala and gazelle. Solitary leopard stakes out their place in the high branches of the acacia tree and herds of elephant’s roam at will. This is Africa that you have always dreamed about. Dinner and Overnight at Mawe Tented Camp (Full board).",
+                "description": "After breakfast you will proceed to Serengeti for about 4hours from Ngorongoro with on-route game drive. After about 3 hours you will arrive at Serengeti Naabi entrance gate and have your picnic lunch. The Serengeti National Park is the jewel in the crown of Tanzania’s game parks and offers arguably the best game viewing in Africa. The setting is perfect, a sea of endless plains that stretches to the horizon, dotted with the occasional acacia tree and termite mound. This Savannah is home to huge herds of buffalo that every year make the mass migration north during August/September, through crocodile infested rivers, in a frenzied mixture of mating and galloping that is driven by instinct. Prides of lion rule here, their hungry gaze sweeping the Savannah for a chance to attack the thousands of elands, impala and gazelle. Solitary leopard stakes out their place in the high branches of the acacia tree and herds of elephant’s roam at will. This is Africa that you have always dreamed about. Dinner and Overnight at Mawe Tented Camp (Full board).",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -4333,21 +4333,21 @@
             },
             {
                 "title": "Lake Manyara Game Drive and Mto wa Mbu Village tour",
-                "description": "After breakfast at Karatu, you will start driving to Lake Manyara National park about 30min from Karatu Town.  You will start game drive till noon and stop at the picnic site for lunch. After lunch, you will proceed to Mto wa mbu a village adjacent to the park.  Your guide will be from the village itself so you will have a unique opportunity to see the community through his eyes. Tours last around 2 hours, but are flexible. During your visit you’ll get a good feel for the social side of the village – the farms and the milling machines, the schools, markets and churches. You’ll likely start in the village banana plantation, where they grow different varieties of bananas. Then you on the way you will visit milling machines, schools and a church. Next you might visit a youth art project, and learn about the different painting styles and techniques. The artists are happy for you to ask questions and take photos. Your tour will finish in the bustling local market, where you can wander around stalls selling fruit and vegetables stalls, spices and meal. After your tour you will proceed to Moshi for an overnight at Park View Inn/ Panama Garden Resort (Bed and Breakfast)",
+                "description": "After breakfast at Karatu, you will start driving to Lake Manyara National park about 30min from Karatu Town.  You will start game drive till noon and stop at the picnic site for lunch. After lunch, you will proceed to Mto wa mbu a village adjacent to the park.  Your guide will be from the village itself so you will have a unique opportunity to see the community through his eyes. Tours last around 2 hours, but are flexible. During your visit you’ll get a good feel for the social side of the village, the farms and the milling machines, the schools, markets and churches. You’ll likely start in the village banana plantation, where they grow different varieties of bananas. Then you on the way you will visit milling machines, schools and a church. Next you might visit a youth art project, and learn about the different painting styles and techniques. The artists are happy for you to ask questions and take photos. Your tour will finish in the bustling local market, where you can wander around stalls selling fruit and vegetables stalls, spices and meal. After your tour you will proceed to Kilimanjaro for an overnight at Park View Inn/ Panama Garden Resort (Bed and Breakfast)",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
             },
             {
-                "title": "Materuni Waterfalls and Coffee Tour in Moshi",
-                "description": " \n You will leave the hotel 8:00 am after breakfast to Materuni Waterfalls and Coffee Tour. Materuni Waterfall is the highest and most impressive waterfall at the foothill of Mt. Kilimanjaro. You’ll visit a coffee farm and learn about how coffee is grown, harvested and processed, and you’ll try your hand at roasting and preparing a fresh cup of coffee the Chagga way. After coffee tour and test you’ll take a beautiful 30 minutes hike through the hills and valleys en route to the Materuni. The valleys and hills are covered by tropical rainforest, coffee, banana and avocado “shambas”, the Kiswahili word for farms. On a clear day great view of Kibo and Moshi town can be seen during hiking. The hike to the base of the Waterfall can be demanding and hiking boots are recommended. Finally, you can refresh at the waterfall’s cold water, so don’t forget to bring your swim wear. Later you will leave back to Moshi town at 1pm. Later return to Moshi Accommodation at Park View Inn/ Panama Garden Resort (Bed and Breakfast)",
+                "title": "Materuni Waterfalls and Coffee Tour in Kilimanjaro",
+                "description": " \n You will leave the hotel 8:00 am after breakfast to Materuni Waterfalls and Coffee Tour. Materuni Waterfall is the highest and most impressive waterfall at the foothill of Mt. Kilimanjaro. You’ll visit a coffee farm and learn about how coffee is grown, harvested and processed, and you’ll try your hand at roasting and preparing a fresh cup of coffee the Chagga way. After coffee tour and test you’ll take a beautiful 30 minutes hike through the hills and valleys en route to the Materuni. The valleys and hills are covered by tropical rainforest, coffee, banana and avocado “shambas”, the Kiswahili word for farms. On a clear day great view of Kibo and Kilimanjaro can be seen during hiking. The hike to the base of the Waterfall can be demanding and hiking boots are recommended. Finally, you can refresh at the waterfall’s cold water, so don’t forget to bring your swim wear. Later you will leave back to Kilimanjaro at 1pm. Later return to Kilimanjaro Accommodation at Park View Inn/ Panama Garden Resort (Bed and Breakfast)",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
             },
             {
                 "title": "Departure",
-                "description": "After breakfast, relax in the morning at the hotel, afternoon final shopping at Moshi. Recommended, I-curio shop and then Lunch in the city at Blossoms later proceed to Airport 4pm and arrive 5pm and fly home",
+                "description": "After breakfast, relax in the morning at the hotel, afternoon final shopping at Kilimanjaro. Recommended, I-curio shop and then Lunch in the city at Blossoms later proceed to Airport 4pm and arrive 5pm and fly home",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -4529,14 +4529,14 @@
         "price": 180,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p>After breakfast your leader guide will pick you up from your hotel around 9:00am for the long ride to the Chemka Hot Springs which is 22km from Moshi town. You will start your adventure via back road in an off beaten track. During the ride you will enjoy the wonderful scenery and authentic Tanzanian life as it unfolds along the road. On arrival at Chemka Hot Springs you will have an opportunity to refresh yourself in an oasis of geothermal warmth that bubbles up from underground after a long adventure. The pond can be very deep, in some places up to 10 meters, but the water is so clear that you can easily see the bottom of the pond. Regardless to its name, water in the hot springs is warm and quite refreshing and this is the one place where swimsuit is a must.</p>\n <p>We will provide you with a lunch box and a bottle of water. You can eat your lunch in the shade of the trees or, if you’re a sun bunny, find a hot spot all your own. You’ve plenty of time to spot the wildlife that also enjoy the Chemka Hot Springs and return to Moshi refreshed, revitalized and relaxed after your amazing cycling adventure to the hot spring. There is an optional cultural tour at Rundugai after swimming.</p>\n <p><strong>Items included:</strong></p>\n <ul><li>Cycling fees</li>\n <li>Mountain bike</li>\n <li>Helmet</li>\n <li>Lunch</li>\n <li>Mineral water</li>\n <li>Chemka entry fees</li>\n <li>Professional, English-speaking guide</li>\n</ul>",
+        "overview": "<p>After breakfast your leader guide will pick you up from your hotel around 9:00am for the long ride to the Chemka Hot Springs which is 22km from Kilimanjaro. You will start your adventure via back road in an off beaten track. During the ride you will enjoy the wonderful scenery and authentic Tanzanian life as it unfolds along the road. On arrival at Chemka Hot Springs you will have an opportunity to refresh yourself in an oasis of geothermal warmth that bubbles up from underground after a long adventure. The pond can be very deep, in some places up to 10 meters, but the water is so clear that you can easily see the bottom of the pond. Regardless to its name, water in the hot springs is warm and quite refreshing and this is the one place where swimsuit is a must.</p>\n <p>We will provide you with a lunch box and a bottle of water. You can eat your lunch in the shade of the trees or, if you’re a sun bunny, find a hot spot all your own. You’ve plenty of time to spot the wildlife that also enjoy the Chemka Hot Springs and return to Kilimanjaro refreshed, revitalized and relaxed after your amazing cycling adventure to the hot spring. There is an optional cultural tour at Rundugai after swimming.</p>\n <p><strong>Items included:</strong></p>\n <ul><li>Cycling fees</li>\n <li>Mountain bike</li>\n <li>Helmet</li>\n <li>Lunch</li>\n <li>Mineral water</li>\n <li>Chemka entry fees</li>\n <li>Professional, English-speaking guide</li>\n</ul>",
         "days": 1,
         "min_age": null,
         "types": [
             "Day Tours"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town to Chemka Hotspring",
+        "departure": "Kilimanjaro to Chemka Hotspring",
         "departure_time": "09:00 Hrs in the Morning",
         "return_time": "Approximately 16:00 Hrs in the evening.",
         "dress_code": "Casual. Comfortable athletic clothing, spare clothing, swimming costume.",
@@ -4592,7 +4592,7 @@
         "price": 125,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p>Materuni Waterfall is the highest and most impressive waterfall at the foothill of Mt. Kilimanjaro located at the Latitude. -3.25025° or 3° 15′ 1″ south; Longitude. 37.40007° or 37° 24′ 0″ east. On arrival at the village office your company guide will finish all formalities then you’ll take a beautiful 40 minutes hike through the hills and valleys route to the Materuni. The valleys and hills are covered by tropical rainforest, coffee plantation, banana and avocado “shambas”, the Kiswahili word for farms. On a clear day great view of Kibo and Moshi town can be seen during hiking. The hike to the base of the Waterfall can be demanding and hiking boots are recommended. Finally, you can refresh at the waterfall’s cold water, so don’t forget to bring your swim wear. After hiking You’ll visit a coffee place and learn about how coffee is grown, harvested and processed, and you’ll try your hand at roasting and preparing a fresh cup of coffee in the Chagga way. Then after all to finish you will finish with traditional cuisines served in the traditional clay pots that makes you to be close with the nature and culture of native people in the village. After finish materuni village tour now you will proceed for 1 hour and 40 minutes to Chemka hot spring which is the natural pool with clear crystal water caused by geothermal heated spring. On arrival at the entrance gate you will register in the visitors book then you’ll proceed in to the pool for swimming and relaxation after long hiking day hence don’t forget to pack your swimming gears in your day trip backpack. After spent enough time in the pool you will drive heading back to your hotel for dinner and overnight stay.</p>",
+        "overview": "<p>Materuni Waterfall is the highest and most impressive waterfall at the foothill of Mt. Kilimanjaro located at the Latitude. -3.25025° or 3° 15′ 1″ south; Longitude. 37.40007° or 37° 24′ 0″ east. On arrival at the village office your company guide will finish all formalities then you’ll take a beautiful 40 minutes hike through the hills and valleys route to the Materuni. The valleys and hills are covered by tropical rainforest, coffee plantation, banana and avocado “shambas”, the Kiswahili word for farms. On a clear day great view of Kibo and Kilimanjaro can be seen during hiking. The hike to the base of the Waterfall can be demanding and hiking boots are recommended. Finally, you can refresh at the waterfall’s cold water, so don’t forget to bring your swim wear. After hiking You’ll visit a coffee place and learn about how coffee is grown, harvested and processed, and you’ll try your hand at roasting and preparing a fresh cup of coffee in the Chagga way. Then after all to finish you will finish with traditional cuisines served in the traditional clay pots that makes you to be close with the nature and culture of native people in the village. After finish materuni village tour now you will proceed for 1 hour and 40 minutes to Chemka hot spring which is the natural pool with clear crystal water caused by geothermal heated spring. On arrival at the entrance gate you will register in the visitors book then you’ll proceed in to the pool for swimming and relaxation after long hiking day hence don’t forget to pack your swimming gears in your day trip backpack. After spent enough time in the pool you will drive heading back to your hotel for dinner and overnight stay.</p>",
         "days": 1,
         "min_age": "Any +",
         "types": [
@@ -4660,18 +4660,18 @@
     },
     {
         "slug": "kibosho-village-tour",
-        "title": "Kibosho Village Tour from Moshi",
+        "title": "Kibosho Village Tour from Kilimanjaro",
         "price": 80,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p><strong>Highlights</strong></p>\n <p>Hike in a rural village with amazing sceneries and Kilimanjaro view</p>\n <p>Get to know the history of the oldest church adjacent Kilimanjaro</p>\n <p>Meet locals and learn about their livelihoods, history and culture</p>\n <p>Opportunity to taste local banana beer<br></p>\n <p><strong>Tour Description</strong></p>\n <p>This tour will lead you to a village with a hidden treasure of history and culture for about 45 min drive from Moshi town. This is Kibosho which is located adjacent slopes of Mount Kilimanjaro. It is home to one of the oldest Catholic Church in Tanzania. You will have an opportunity to visit a 120-year-old Kibosho Catholic Church at the foot of Mt Kilimanjaro is a stunning structure composed entirely of stones. It was built by the Germans in 1893 and is located in the midst of the banana plantations in the area. On arrival you will be given a tour of the church and the history of this magnificent building will be explained in-depth for 30 minutes. thereafter we will start a hike in amazing hills with wonderful sceneries viewing the Kibo the peak of Kilimanjaro. Here you will meet locals and learn the history of Chagga and their livelihoods. The green scenaries of the old-growth tree, coffee and banana plantations, history and culture is a rewarding experience for this tour. It is truly an unforgettable experience.</p>",
+        "overview": "<p><strong>Highlights</strong></p>\n <p>Hike in a rural village with amazing sceneries and Kilimanjaro view</p>\n <p>Get to know the history of the oldest church adjacent Kilimanjaro</p>\n <p>Meet locals and learn about their livelihoods, history and culture</p>\n <p>Opportunity to taste local banana beer<br></p>\n <p><strong>Tour Description</strong></p>\n <p>This tour will lead you to a village with a hidden treasure of history and culture for about 45 min drive from Kilimanjaro. This is Kibosho which is located adjacent slopes of Mount Kilimanjaro. It is home to one of the oldest Catholic Church in Tanzania. You will have an opportunity to visit a 120-year-old Kibosho Catholic Church at the foot of Mt Kilimanjaro is a stunning structure composed entirely of stones. It was built by the Germans in 1893 and is located in the midst of the banana plantations in the area. On arrival you will be given a tour of the church and the history of this magnificent building will be explained in-depth for 30 minutes. thereafter we will start a hike in amazing hills with wonderful sceneries viewing the Kibo the peak of Kilimanjaro. Here you will meet locals and learn the history of Chagga and their livelihoods. The green scenaries of the old-growth tree, coffee and banana plantations, history and culture is a rewarding experience for this tour. It is truly an unforgettable experience.</p>",
         "days": 1,
         "min_age": "No  Limit+",
         "types": [
             "Day Tours"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town",
+        "departure": "Kilimanjaro",
         "departure_time": "Any time",
         "return_time": "Any time",
         "dress_code": "Casual and Comfortable clothing",
@@ -4720,7 +4720,7 @@
                 "price": "50"
             }
         ],
-        "meta_description": "Join us for a scenic journey from Moshi to Kibosho Village. Enjoy cultural experiences, coffee plantations, and beautiful views of Mount Kilimanjaro."
+        "meta_description": "Join us for a scenic journey from Kilimanjaro to Kibosho Village. Enjoy cultural experiences, coffee plantations, and beautiful views of Mount Kilimanjaro."
     },
     {
         "slug": "coffee-tasting-experience",
@@ -4728,7 +4728,7 @@
         "price": 25,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p>Kilimanjaro Organic Coffee Tasting Experience in Moshi Town 2hrs</p>\n <p>Moshi is a small town with a hidden treasure of experiences. Before or after your Kilimanjaro climb we will introduce you to a real Kilimanjaro Organic Coffee Tasting Experience. It is just a walking distance from your hotel, we will visit a new small organic coffee enterprise with a unique business model. On arrival, you will be invited by Kilimanjaro Cofee Aroma before we start explaining the real experience of organic coffee. We will move to a Roasting Room and see the roasting process, then grinding, parking and thereafter labeling. We will explain to you how coffee is also mixed with other spices from Zanzibar. You will then get an opportunity to taste Kilimanjaro Organic Coffee for free, this is quite an experience. We will also explain to you how the business model is a life saving for local communities in rural areas where organic coffee is cultivated. Actually the enterprise is the main supplier of Organic Coffee in Moshi, Arusha and Overseas. Don’t drink it in your hotel, come and see, hear the story and taste for a memorable experience. Apart from tasting yo will have an opportunity to buy at wholesale price as a gift for your family and friends or take one for your Kilimanjaro climb and Wildlife safari. Finally, along with this experience, you will get an opportunity to take photos of your memorable Kilimanjaro Cofee tasting experience in Moshi<br></p>",
+        "overview": "<p>Kilimanjaro Organic Coffee Tasting Experience in Kilimanjaro 2hrs</p>\n <p>Kilimanjaro is a small town with a hidden treasure of experiences. Before or after your Kilimanjaro climb we will introduce you to a real Kilimanjaro Organic Coffee Tasting Experience. It is just a walking distance from your hotel, we will visit a new small organic coffee enterprise with a unique business model. On arrival, you will be invited by Kilimanjaro Cofee Aroma before we start explaining the real experience of organic coffee. We will move to a Roasting Room and see the roasting process, then grinding, parking and thereafter labeling. We will explain to you how coffee is also mixed with other spices from Zanzibar. You will then get an opportunity to taste Kilimanjaro Organic Coffee for free, this is quite an experience. We will also explain to you how the business model is a life saving for local communities in rural areas where organic coffee is cultivated. Actually the enterprise is the main supplier of Organic Coffee in Kilimanjaro, Arusha and Overseas. Don’t drink it in your hotel, come and see, hear the story and taste for a memorable experience. Apart from tasting yo will have an opportunity to buy at wholesale price as a gift for your family and friends or take one for your Kilimanjaro climb and Wildlife safari. Finally, along with this experience, you will get an opportunity to take photos of your memorable Kilimanjaro Cofee tasting experience in Kilimanjaro<br></p>",
         "days": 1,
         "min_age": "Any +",
         "types": [
@@ -4792,14 +4792,14 @@
         "price": 180,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p><strong>Serval Wildlife Sanctuary Day Trip from Moshi or Arusha<br></strong></p>\n <p>After breakfast your guide will pick you up from your hotel around 9:00am and drive for 1.5 hours from Moshi or 3 hours from Arusha to Serval Wildlife Sanctuary located in the Siha District of Kilimanjaro, Tanzania. The park is home to a variety of animals including lions, monkeys, giraffes, elands, zebras and ostriches.</p>\n <p>This tour offers unforgettable interactions with these free-roaming animals. Also you will have an opportunity to explore ecosystem with over 300 hand planted endemic flora that directly benefit the exquisite animals that reside within Serval Wildlife. At the same time you will enjoy the mesmerising views of Mount Meru and Mount Kilimanjaro.</p>\n <p>If you would like to spend the night at Serval Wildlife, they an ecolodge with luxury villas that are 120 square meters in size. Each villa has a capacity of 2 adults and 2 children and includes a king-size bed, a dining area, a full bathroom with double sinks, a dressing area and an outdoor porch area. The price is $950 per night with full board, free WIFI and free mini bar. The rooms are all air-conditioned and run on 100% solar energy.</p>\n <p><strong>Items included:</strong></p>\n <ul><li>Entrance fee</li>\n <li>Lunch</li>\n <li>Bottled mineral water</li>\n <li>Transportation</li>\n <li>Professional English-speaking guide</li>\n <li>Wildlife Guide</li>\n</ul>\n <p>NB: For Visitors from Dar-es-Salaam kindly contact us +61410195966 Whats App for more info.</p>",
+        "overview": "<p><strong>Serval Wildlife Sanctuary Day Trip from Kilimanjaro or Arusha<br></strong></p>\n <p>After breakfast your guide will pick you up from your hotel around 9:00am and drive for 1.5 hours from Kilimanjaro or 3 hours from Arusha to Serval Wildlife Sanctuary located in the Siha District of Kilimanjaro, Tanzania. The park is home to a variety of animals including lions, monkeys, giraffes, elands, zebras and ostriches.</p>\n <p>This tour offers unforgettable interactions with these free-roaming animals. Also you will have an opportunity to explore ecosystem with over 300 hand planted endemic flora that directly benefit the exquisite animals that reside within Serval Wildlife. At the same time you will enjoy the mesmerising views of Mount Meru and Mount Kilimanjaro.</p>\n <p>If you would like to spend the night at Serval Wildlife, they an ecolodge with luxury villas that are 120 square meters in size. Each villa has a capacity of 2 adults and 2 children and includes a king-size bed, a dining area, a full bathroom with double sinks, a dressing area and an outdoor porch area. The price is $950 per night with full board, free WIFI and free mini bar. The rooms are all air-conditioned and run on 100% solar energy.</p>\n <p><strong>Items included:</strong></p>\n <ul><li>Entrance fee</li>\n <li>Lunch</li>\n <li>Bottled mineral water</li>\n <li>Transportation</li>\n <li>Professional English-speaking guide</li>\n <li>Wildlife Guide</li>\n</ul>\n <p>NB: For Visitors from Dar-es-Salaam kindly contact us +61410195966 Whats App for more info.</p>",
         "days": 1,
         "min_age": "Any +",
         "types": [
             "Day Tours"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi or Arusha / Moshi or Arusha or Airport",
+        "departure": "Kilimanjaro or Arusha / Kilimanjaro or Arusha or Airport",
         "departure_time": "Any from 8am",
         "return_time": "Approximately 16:00 PM",
         "dress_code": "Casual & comfortable.",
@@ -4908,14 +4908,14 @@
         "price": 50,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p>In the morning, we will pick you up from your hotel in Moshi and drive to Marangu, a charming town on the fertile slopes of Mount Kilimanjaro. Known for its rich history and ancient traditions, Marangu is home to the Chagga people, lush rainforests, and thriving coffee and banana plantations.</p>\n <p>This full-day cultural tour offers a blend of adventure, history, and local traditions. You will visit the Chagga underground caves, once used as hideouts during tribal conflicts. Next, we will stop at a small coffee farm, where you’ll learn about the entire coffee-making process—from cultivation to roasting—before preparing your fresh cup of organic coffee, all while enjoying traditional Chagga dances.</p>\n <p>After the coffee experience, we will take a scenic walk through coffee and banana plantations toward the stunning Ndoro Waterfall, cascading from the foothills of Kilimanjaro. Along the way, you’ll have the opportunity to take photos of the majestic Mount Kilimanjaro from a designated viewpoint. The hike to the base of the waterfall passes through lush green landscapes, where you can spot various plants and wildlife. Once at the waterfall, you can relax and even take a refreshing dip in the cool, clear waters.</p>\n <p>After this incredible experience, we will drive back to Moshi, leaving you with unforgettable memories of Marangu’s culture and natural beauty.</p>",
+        "overview": "<p>In the morning, we will pick you up from your hotel in Kilimanjaro and drive to Marangu, a charming town on the fertile slopes of Mount Kilimanjaro. Known for its rich history and ancient traditions, Marangu is home to the Chagga people, lush rainforests, and thriving coffee and banana plantations.</p>\n <p>This full-day cultural tour offers a blend of adventure, history, and local traditions. You will visit the Chagga underground caves, once used as hideouts during tribal conflicts. Next, we will stop at a small coffee farm, where you’ll learn about the entire coffee-making process, from cultivation to roasting, before preparing your fresh cup of organic coffee, all while enjoying traditional Chagga dances.</p>\n <p>After the coffee experience, we will take a scenic walk through coffee and banana plantations toward the stunning Ndoro Waterfall, cascading from the foothills of Kilimanjaro. Along the way, you’ll have the opportunity to take photos of the majestic Mount Kilimanjaro from a designated viewpoint. The hike to the base of the waterfall passes through lush green landscapes, where you can spot various plants and wildlife. Once at the waterfall, you can relax and even take a refreshing dip in the cool, clear waters.</p>\n <p>After this incredible experience, we will drive back to Kilimanjaro, leaving you with unforgettable memories of Marangu’s culture and natural beauty.</p>",
         "days": 1,
         "min_age": "Any +",
         "types": [
             "Day Tours"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town to Marangu",
+        "departure": "Kilimanjaro to Marangu",
         "departure_time": "09:00 Hrs in the Morning",
         "return_time": "Approximately 16:00 Hrs in the evening.",
         "dress_code": "Casual. Comfortable athletic clothing, spare clothing, swimming costume.",
@@ -4981,7 +4981,7 @@
         "price": 95,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p>Our driver guide will pick you at your hotel at 9:00am and start your journey to the Olpopongi Maasai Village.The Olpopongi Maasai-Village is located in West Kilimanjaro 74 kilometers from Moshi and 85 kilometers from Arusha accessible for visitors from both Moshi and Arusha. The village was planned and built by a multi-cultural construction team, led by more than 50 Maasai women &amp; men from the nearby Tinga-Tinga Maasai-Village. All houses are built the traditional way with local and natural materials only – similar to those ones of the nearby Maasai people. The income obtained from your tour supports local Maasai families with water, food, employment, personal income, medical treatments and education. Activities include a village tour, lesson on hunting techniques, demonstration of traditional medicine and bush walk in the Maasai land of the village. A traditional lunch is also served. A traditional lunch will be prepared for you in the afternoon. After your tour of the village, you will be transferred back to your hotel in Moshi or Arusha</p>",
+        "overview": "<p>Our driver guide will pick you at your hotel at 9:00am and start your journey to the Olpopongi Maasai Village.The Olpopongi Maasai-Village is located in West Kilimanjaro 74 kilometers from Kilimanjaro and 85 kilometers from Arusha accessible for visitors from both Kilimanjaro and Arusha. The village was planned and built by a multi-cultural construction team, led by more than 50 Maasai women &amp; men from the nearby Tinga-Tinga Maasai-Village. All houses are built the traditional way with local and natural materials only, similar to those ones of the nearby Maasai people. The income obtained from your tour supports local Maasai families with water, food, employment, personal income, medical treatments and education. Activities include a village tour, lesson on hunting techniques, demonstration of traditional medicine and bush walk in the Maasai land of the village. A traditional lunch is also served. A traditional lunch will be prepared for you in the afternoon. After your tour of the village, you will be transferred back to your hotel in Kilimanjaro or Arusha</p>",
         "days": 1,
         "min_age": "Any +",
         "types": [
@@ -5295,7 +5295,7 @@
             },
             {
                 "title": "Explore Stone Town & Spice Plantations",
-                "description": "After breakfast, dive into the cultural heart of Zanzibar—Stone Town. Wander through its historic alleys, vibrant markets, and former slave market site. In the afternoon, escape to the countryside for a fascinating spice tour, where you’ll experience the rich aromas of Zanzibar’s famous spices like nutmeg and cinnamon.\r\nAccommodation Options: Basic, Mid-Range, or Luxury Lodges",
+                "description": "After breakfast, dive into the cultural heart of Zanzibar, Stone Town. Wander through its historic alleys, vibrant markets, and former slave market site. In the afternoon, escape to the countryside for a fascinating spice tour, where you’ll experience the rich aromas of Zanzibar’s famous spices like nutmeg and cinnamon.\r\nAccommodation Options: Basic, Mid-Range, or Luxury Lodges",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -5476,14 +5476,14 @@
         "price": 2320,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p>The Lemosho Route is widely regarded as the most scenic trail on Mount Kilimanjaro, offering breathtaking panoramic views from various vantage points. It is an excellent choice for both beginners and experienced climbers, providing an authentic trekking experience and a high chance of reaching Uhuru Peak, the highest point in Africa.</p>\n <p>A 8-day trek on the Lemosho Route offers an incredible opportunity to summit one of the world’s most beautiful and unique mountains while being surrounded by pristine nature. Our professional guides and experienced crew will ensure your safety and comfort throughout the journey, managing every step of your trek with expertise—so there’s no need for fear or regrets.</p>\n <p>The Lemosho Route is ideal for acclimatization, allowing climbers to ascend to higher altitudes during the day while sleeping at lower elevations overnight. The route can be completed in 7 or 8 days, but we highly recommend the 8-day itinerary to allow for better acclimatization and increase the chances of a successful summit.</p>",
+        "overview": "<p>The Lemosho Route is widely regarded as the most scenic trail on Mount Kilimanjaro, offering breathtaking panoramic views from various vantage points. It is an excellent choice for both beginners and experienced climbers, providing an authentic trekking experience and a high chance of reaching Uhuru Peak, the highest point in Africa.</p>\n <p>A 8-day trek on the Lemosho Route offers an incredible opportunity to summit one of the world’s most beautiful and unique mountains while being surrounded by pristine nature. Our professional guides and experienced crew will ensure your safety and comfort throughout the journey, managing every step of your trek with expertise, so there’s no need for fear or regrets.</p>\n <p>The Lemosho Route is ideal for acclimatization, allowing climbers to ascend to higher altitudes during the day while sleeping at lower elevations overnight. The route can be completed in 7 or 8 days, but we highly recommend the 8-day itinerary to allow for better acclimatization and increase the chances of a successful summit.</p>",
         "days": 8,
         "min_age": "16++",
         "types": [
             "Lemosho route"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town to Lemosho Gate",
+        "departure": "Kilimanjaro to Lemosho Gate",
         "departure_time": "Please be ready by 8:15 AM for a prompt departure at 9:00 AM.",
         "return_time": "Approximately 1:00 PM in the last day.",
         "dress_code": "Casual. Comfortable athletic clothing, hiking shoes, hat, cold weather jacket, gloves, pants, spare clothing.",
@@ -5514,14 +5514,14 @@
         "itinerary": [
             {
                 "title": "Arrival in Tanzania and transfer to the hotel",
-                "description": "Upon your arrival at Kilimanjaro International Airport (JRO), our staff will be waiting for you, holding a KLM Safaris placard for easy identification. You will then be transferred to your hotel in Moshi, where you will spend your first night, preparing for the adventure ahead.",
+                "description": "Upon your arrival at Kilimanjaro International Airport (JRO), our staff will be waiting for you, holding a KLM Safaris placard for easy identification. You will then be transferred to your hotel in Kilimanjaro, where you will spend your first night, preparing for the adventure ahead.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
             },
             {
                 "title": "Drive to Londorossi Park Gate",
-                "description": "After breakfast at your hotel, your guide will provide a briefing on the day's itinerary. You will then embark on a two-hour drive from Moshi to Londorossi Park Gate.\n Upon arrival at a nearby village, you will receive a packed lunch and have the opportunity to purchase mineral water for the hike. At the park entrance, our guides and porters will organize supplies and complete the Tanzania National Parks Authority (TANAPA) registration process.\n Once everything is set, you will begin a three-hour hike through the lush montane rainforest. Keep an eye out for Colobus monkeys along the way! Midway through the trek, you will pause for an afternoon lunch break before continuing to Mti Mkubwa Camp (Big Tree Camp) at 2,750m, arriving in the early evening.\n At the campsite, the porters who arrive ahead of the group will set up your tent and prepare boiled water for drinking and washing. The chef will then serve a light snack, followed by a hearty dinner to refuel for the next day’s adventure.\n Hiking Time: Approximately 3 hoursHabitat: Montane ForestDistance: 8 km (5 miles)",
+                "description": "After breakfast at your hotel, your guide will provide a briefing on the day's itinerary. You will then embark on a two-hour drive from Kilimanjaro to Londorossi Park Gate.\n Upon arrival at a nearby village, you will receive a packed lunch and have the opportunity to purchase mineral water for the hike. At the park entrance, our guides and porters will organize supplies and complete the Tanzania National Parks Authority (TANAPA) registration process.\n Once everything is set, you will begin a three-hour hike through the lush montane rainforest. Keep an eye out for Colobus monkeys along the way! Midway through the trek, you will pause for an afternoon lunch break before continuing to Mti Mkubwa Camp (Big Tree Camp) at 2,750m, arriving in the early evening.\n At the campsite, the porters who arrive ahead of the group will set up your tent and prepare boiled water for drinking and washing. The chef will then serve a light snack, followed by a hearty dinner to refuel for the next day’s adventure.\n Hiking Time: Approximately 3 hoursHabitat: Montane ForestDistance: 8 km (5 miles)",
                 "accommodation": "",
                 "meals": "",
                 "altitude": "2,750 m"
@@ -5570,7 +5570,7 @@
             },
             {
                 "title": "Descend to Mweka Gate",
-                "description": "After a well-earned breakfast, it’s time to bid farewell to Mount Kilimanjaro. Before descending, your trekking team will hold a celebratory gathering filled with singing and dancing to mark the completion of your journey. This is also the moment to express your gratitude by presenting tips to your guides, assistant guides, chefs, and porters.\n Following the celebration, you will begin your final descent, a three-hour trek down to Mweka Gate. Upon arrival, all hikers are required to sign in with the National Park authorities to receive their certificates of achievement. Those who reached Stella Point (5,685 meters) will receive a green certificate, while those who reached Uhuru Peak (5,895 meters) will be awarded a gold certificate.\n After receiving your certificate, you will continue descending for another hour (approximately 3 kilometers) through the lush rainforest to Mweka Village. From there, a vehicle will be waiting to transfer you back to your hotel in Moshi, where you can relax and celebrate your incredible accomplishment.\n Elevation: 10,065 ft to 5,380 ftDistance: 10 km / 6 milesHiking Time: 3 to 4 hoursHabitat: Rainforest",
+                "description": "After a well-earned breakfast, it’s time to bid farewell to Mount Kilimanjaro. Before descending, your trekking team will hold a celebratory gathering filled with singing and dancing to mark the completion of your journey. This is also the moment to express your gratitude by presenting tips to your guides, assistant guides, chefs, and porters.\n Following the celebration, you will begin your final descent, a three-hour trek down to Mweka Gate. Upon arrival, all hikers are required to sign in with the National Park authorities to receive their certificates of achievement. Those who reached Stella Point (5,685 meters) will receive a green certificate, while those who reached Uhuru Peak (5,895 meters) will be awarded a gold certificate.\n After receiving your certificate, you will continue descending for another hour (approximately 3 kilometers) through the lush rainforest to Mweka Village. From there, a vehicle will be waiting to transfer you back to your hotel in Kilimanjaro, where you can relax and celebrate your incredible accomplishment.\n Elevation: 10,065 ft to 5,380 ftDistance: 10 km / 6 milesHiking Time: 3 to 4 hoursHabitat: Rainforest",
                 "accommodation": "",
                 "meals": "",
                 "altitude": "5,895 m"
@@ -5641,14 +5641,14 @@
         "price": 145,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p><strong>Overview</strong></p>\n <p>The Mount Kilimanjaro Day tour is perfect for those who want to get the taste of the Kilimanjaro Mountain but have limited time while in Moshi or Arusha town. Experience incredible scenery and breathtaking landscapes, and keep your eyes peeled for monkeys and native bird species. This tour is a perfect way to discover the natural beauty of Mount Kilimanjaro.</p>\n <p><strong>Tour description</strong></p>\n <p>After breakfast, our driver-guide will pick you up from your hotel and drive to Kilimanjaro National Park Marangu Gate, 1860 m. The drive will take approximately 1 hour from Moshi. After registration, you will head directly into the park, where you will start your trekking adventure. Alongside the impressive vegetation, you will have the chance to catch a glimpse of black and white colobus monkeys, blue monkeys, and various bird species. Our knowledgeable English-speaking guide will inform you about Mount Kilimanjaro and will explain the different species of plants and animals available in the park. Depending on your fitness level, after 3-4 hours of walking, you will arrive at Mandara Hut, located at 9,000 feet (2,743 meters) above sea level, where a delicious picnic lunch will be served over there.</p>\n <p>After lunch, you will trek further for about 15 minutes to the Maundi crater, another breathtakingly beautiful location on Kilimanjaro. You will be able to view the peak of his majesty Kilimanjaro on less cloudy days. After enjoying the astounding landscapes, you will start descending back for 2 hours to Marangu Gate. Our driver guide will drive you from the gate to your hotel. On your return journey, you can enjoy the sunset and your memories of the day.</p>",
+        "overview": "<p><strong>Overview</strong></p>\n <p>The Mount Kilimanjaro Day tour is perfect for those who want to get the taste of the Kilimanjaro Mountain but have limited time while in Kilimanjaro or Arusha town. Experience incredible scenery and breathtaking landscapes, and keep your eyes peeled for monkeys and native bird species. This tour is a perfect way to discover the natural beauty of Mount Kilimanjaro.</p>\n <p><strong>Tour description</strong></p>\n <p>After breakfast, our driver-guide will pick you up from your hotel and drive to Kilimanjaro National Park Marangu Gate, 1860 m. The drive will take approximately 1 hour from Kilimanjaro. After registration, you will head directly into the park, where you will start your trekking adventure. Alongside the impressive vegetation, you will have the chance to catch a glimpse of black and white colobus monkeys, blue monkeys, and various bird species. Our knowledgeable English-speaking guide will inform you about Mount Kilimanjaro and will explain the different species of plants and animals available in the park. Depending on your fitness level, after 3-4 hours of walking, you will arrive at Mandara Hut, located at 9,000 feet (2,743 meters) above sea level, where a delicious picnic lunch will be served over there.</p>\n <p>After lunch, you will trek further for about 15 minutes to the Maundi crater, another breathtakingly beautiful location on Kilimanjaro. You will be able to view the peak of his majesty Kilimanjaro on less cloudy days. After enjoying the astounding landscapes, you will start descending back for 2 hours to Marangu Gate. Our driver guide will drive you from the gate to your hotel. On your return journey, you can enjoy the sunset and your memories of the day.</p>",
         "days": 1,
         "min_age": "No  Limit+",
         "types": [
             "Day Tours"
         ],
         "destination": "Kilimanjaro",
-        "departure": "Moshi Town",
+        "departure": "Kilimanjaro",
         "departure_time": "09:00 Hrs. in the Morning",
         "return_time": "Approximately 16:00 Hrs in the evening.",
         "dress_code": "Casual. Comfortable athletic clothing, spare clothing, swimming costume.",
@@ -5714,7 +5714,7 @@
         "min_age": "Any +",
         "types": [],
         "destination": "Arusha",
-        "departure": "Moshi or Arusha Town",
+        "departure": "Kilimanjaro or Arusha Town",
         "departure_time": "Any from 8:00 Am",
         "return_time": "Approximately 5:00 PM in the last day.",
         "dress_code": "Casual. Comfortable athletic clothing, spare clothing, swimming costume.",
@@ -5745,7 +5745,7 @@
         "itinerary": [
             {
                 "title": "Day plan",
-                "description": "This is an ideal day trip that takes you to a spectacular experience through observing variety of wildlife, flora, water bodies and scenic view of the landscapes within a short time at Arusha National Park. The park is close to Arusha and Moshi city hence easily to spend a day for more exploration of the wildlife habitats. Within the park there are different destination with authentic experience for game drive like Momella Lake and Ngurdoto crater but also the park allows walking safari that gives you a chance to get close with the nature while exploring the natural wonders. The park support canoeing and horse riding if interested hence you have a chance to have such experience and enough fun moments. The park can be visited all time throughout the year and accessible by road whereby it has 32 km from Arusha and 40 km from Kilimanjaro International Airport. Therefore, it’s your time now to refresh with Arusha National Park.",
+                "description": "This is an ideal day trip that takes you to a spectacular experience through observing variety of wildlife, flora, water bodies and scenic view of the landscapes within a short time at Arusha National Park. The park is close to Arusha and Kilimanjaro city hence easily to spend a day for more exploration of the wildlife habitats. Within the park there are different destination with authentic experience for game drive like Momella Lake and Ngurdoto crater but also the park allows walking safari that gives you a chance to get close with the nature while exploring the natural wonders. The park support canoeing and horse riding if interested hence you have a chance to have such experience and enough fun moments. The park can be visited all time throughout the year and accessible by road whereby it has 32 km from Arusha and 40 km from Kilimanjaro International Airport. Therefore, it’s your time now to refresh with Arusha National Park.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -5779,7 +5779,7 @@
         "min_age": null,
         "types": [],
         "destination": "Lake Manyara",
-        "departure": "Moshi Town",
+        "departure": "Kilimanjaro",
         "departure_time": "Any from 6:00 Am",
         "return_time": "Approximately 5:00 PM in the day.",
         "dress_code": "Casual. Comfortable athletic clothing, spare clothing, swimming costume.",
@@ -5845,7 +5845,7 @@
         "min_age": "Any +",
         "types": [],
         "destination": "Ngorongoro",
-        "departure": "Moshi or Arusha Town",
+        "departure": "Kilimanjaro or Arusha Town",
         "departure_time": "Any time from 5:00 Am",
         "return_time": "Approximately 5:00 PM in the day.",
         "dress_code": "Casual and comfortable. Sun hat, sunscreen and insect repellent are recommended.",
@@ -5903,7 +5903,7 @@
         "min_age": "Any +",
         "types": [],
         "destination": null,
-        "departure": "Moshi or Arusha Town",
+        "departure": "Kilimanjaro or Arusha Town",
         "departure_time": "Any time",
         "return_time": "Any time",
         "dress_code": "Casual. Comfortable athletic clothing, spare clothing, swimming costume.",
@@ -5965,12 +5965,12 @@
         "price": 290,
         "draft": false,
         "price_note": "per person",
-        "overview": "<p>Experience wild Africa in Mkomazi National Park. The wildlife you’ll see here might include elephants that come in across the border from Kenya, as well as oryx, eland, kudu, and Coke’s hartebeest. You might even see the long-necked gerenuk. Birdlife is another highlight, and this is a real hot spot for bird-watchers, drawn here by over 400 different kinds of birds. But most people also love the classic safari landscapes—the views of Mt. Kilimanjaro, the baobab and acacia trees, the low rocky hills, and the wild bushland. And best of all, you might just have this place all to yourself.</p>",
+        "overview": "<p>Experience wild Africa in Mkomazi National Park. The wildlife you’ll see here might include elephants that come in across the border from Kenya, as well as oryx, eland, kudu, and Coke’s hartebeest. You might even see the long-necked gerenuk. Birdlife is another highlight, and this is a real hot spot for bird-watchers, drawn here by over 400 different kinds of birds. But most people also love the classic safari landscapes, the views of Mt. Kilimanjaro, the baobab and acacia trees, the low rocky hills, and the wild bushland. And best of all, you might just have this place all to yourself.</p>",
         "days": 1,
         "min_age": "Any +",
         "types": [],
         "destination": null,
-        "departure": "Moshi Town",
+        "departure": "Kilimanjaro",
         "departure_time": "Any from 6:00 Am",
         "return_time": "Any time",
         "dress_code": "Casual. Comfortable athletic clothing, spare clothing, swimming costume.",
@@ -6001,7 +6001,7 @@
         "itinerary": [
             {
                 "title": "Day plan",
-                "description": "Early in the morning, around 6:30 am, your guide will pick you up at your accommodation center. Commencing a journey takes approximately 4-5 hours from Moshi to Mkomazi National Park, offering picturesque views of the Tanzanian countryside. Upon arrival, you'll complete the entry formalities, and then your guide will provide an overview of the day's itinerary and highlight key attractions. After all, you will start a game drive toward different areas where you will see different animals of your interest until noon, when you will drive to the picnic center for your packed lunch. After lunch, visitors can visit the African Wild Dog Project, where rare and endangered predators are actively protected and bred for release into the wild. As the day winds down, a final game drive is undertaken to spot any missed wildlife, providing excellent opportunities for photography and game viewing. After a fulfilling day of exploration and wildlife viewing, guests will return to Moshi, arriving back at their hotel in the early evening. End of the day trip.",
+                "description": "Early in the morning, around 6:30 am, your guide will pick you up at your accommodation center. Commencing a journey takes approximately 4-5 hours from Kilimanjaro to Mkomazi National Park, offering picturesque views of the Tanzanian countryside. Upon arrival, you'll complete the entry formalities, and then your guide will provide an overview of the day's itinerary and highlight key attractions. After all, you will start a game drive toward different areas where you will see different animals of your interest until noon, when you will drive to the picnic center for your packed lunch. After lunch, visitors can visit the African Wild Dog Project, where rare and endangered predators are actively protected and bred for release into the wild. As the day winds down, a final game drive is undertaken to spot any missed wildlife, providing excellent opportunities for photography and game viewing. After a fulfilling day of exploration and wildlife viewing, guests will return to Kilimanjaro, arriving back at their hotel in the early evening. End of the day trip.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -6096,7 +6096,7 @@
             },
             {
                 "title": "Ngorongoro to Serengeti National Park-Game Drive",
-                "description": "After breakfast, you will proceed to Serengeti for about 4 hours from Ngorongoro with an on-rote game drive. After about 3 hours, you will arrive at the Serengeti Naabi entrance gate and have your picnic lunch. The Serengeti National Park is the jewel in the crown of Tanzania’s game parks and offers arguably the best game viewing in Africa. The setting is perfect—a sea of endless plains that stretches to the horizon, dotted with the occasional acacia tree and termite mound. This Savannah is home to huge herds of buffalo that every year make the mass migration north during August/September, through crocodile-infested rivers, in a frenzied mixture of mating and galloping that is driven by instinct. Prides of lions rule here, their hungry gaze sweeping the Savannah for a chance to attack the thousands of elands, impalas, and gazelles. Solitary leopards stake out their place in the high branches of the acacia tree, and herds of elephant’s roam at will.",
+                "description": "After breakfast, you will proceed to Serengeti for about 4 hours from Ngorongoro with an on-rote game drive. After about 3 hours, you will arrive at the Serengeti Naabi entrance gate and have your picnic lunch. The Serengeti National Park is the jewel in the crown of Tanzania’s game parks and offers arguably the best game viewing in Africa. The setting is perfect, a sea of endless plains that stretches to the horizon, dotted with the occasional acacia tree and termite mound. This Savannah is home to huge herds of buffalo that every year make the mass migration north during August/September, through crocodile-infested rivers, in a frenzied mixture of mating and galloping that is driven by instinct. Prides of lions rule here, their hungry gaze sweeping the Savannah for a chance to attack the thousands of elands, impalas, and gazelles. Solitary leopards stake out their place in the high branches of the acacia tree, and herds of elephant’s roam at will.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
@@ -6131,14 +6131,14 @@
             },
             {
                 "title": "Arusha National Park Game Drive and Walking Tour",
-                "description": "After breakfast, you will drive about 1 hour to Arusha National Park. The park is beautiful and famous for its green surroundings, lakes, unique sights, and its black and white colubus monkey. About a 2-hour walking safari is a unique and thrilling experience and a chance to be up-close with wild animals, face-to-face. Here you’ll be walking alongside wild, freely roaming animals in their natural habitat. Your park ranger is experienced and knows what you can or can’t do near wild animals. During the walking safari, some unique sights will be visited, like the impressive Meru waterfall that hides in the heart of the park, the Ngurdoto Crater, and Lake Momella, where thousands of pink flamingos can often be spotted. You will have your lunch at Momela Lake Picnic Site. Later, you will travel to Moshi for 1.5 hours for an overnight at Kibo Palace Hotel in Moshi (bed and breakfast).",
+                "description": "After breakfast, you will drive about 1 hour to Arusha National Park. The park is beautiful and famous for its green surroundings, lakes, unique sights, and its black and white colubus monkey. About a 2-hour walking safari is a unique and thrilling experience and a chance to be up-close with wild animals, face-to-face. Here you’ll be walking alongside wild, freely roaming animals in their natural habitat. Your park ranger is experienced and knows what you can or can’t do near wild animals. During the walking safari, some unique sights will be visited, like the impressive Meru waterfall that hides in the heart of the park, the Ngurdoto Crater, and Lake Momella, where thousands of pink flamingos can often be spotted. You will have your lunch at Momela Lake Picnic Site. Later, you will travel to Kilimanjaro for 1.5 hours for an overnight at Kibo Palace Hotel in Kilimanjaro (bed and breakfast).",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""
             },
             {
-                "title": "Materuni Waterfalls and Coffee Tour in Moshi & Chemka Hot spring",
-                "description": "After breakfast, at 8:00 am, you will leave the hotel for Materuni Waterfalls and Coffee Tour for 45 minutes. It is the highest and most impressive waterfall at the foothills of Mt. Kilimanjaro. You’ll visit a coffee farm and learn about how coffee is grown, harvested, and processed, and you’ll try your hand at roasting and preparing a fresh cup of coffee the Chagga way for 1 hour. After the coffee tour and taste, you’ll take a beautiful 30-minute hike through the hills and valleys en route to the Materuni waterfalls. The valleys and hills are covered by tropical rainforest, coffee, banana, and avocado \"shambas,\" the Kiswahili word for farms. On a clear day, a great view of Kibo and Moshi town can be seen while hiking. The hike to the base of the waterfall can be demanding, and hiking boots are recommended. At 11 am, we will proceed to Chemka Hot Springs for 2 hours and arrive around 1:00 pm. Then at 4:00 pm, you will travel to the airport revitalized and relaxed after your amazing African safari.",
+                "title": "Materuni Waterfalls and Coffee Tour in Kilimanjaro & Chemka Hot spring",
+                "description": "After breakfast, at 8:00 am, you will leave the hotel for Materuni Waterfalls and Coffee Tour for 45 minutes. It is the highest and most impressive waterfall at the foothills of Mt. Kilimanjaro. You’ll visit a coffee farm and learn about how coffee is grown, harvested, and processed, and you’ll try your hand at roasting and preparing a fresh cup of coffee the Chagga way for 1 hour. After the coffee tour and taste, you’ll take a beautiful 30-minute hike through the hills and valleys en route to the Materuni waterfalls. The valleys and hills are covered by tropical rainforest, coffee, banana, and avocado \"shambas,\" the Kiswahili word for farms. On a clear day, a great view of Kibo and Kilimanjaro can be seen while hiking. The hike to the base of the waterfall can be demanding, and hiking boots are recommended. At 11 am, we will proceed to Chemka Hot Springs for 2 hours and arrive around 1:00 pm. Then at 4:00 pm, you will travel to the airport revitalized and relaxed after your amazing African safari.",
                 "accommodation": "",
                 "meals": "",
                 "altitude": ""

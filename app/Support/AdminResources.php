@@ -56,7 +56,7 @@ class AdminResources
                         $f('sort_order', 'Sort order', 'number', $half),
                         $f('is_featured', 'Feature on homepage', 'toggle', $half),
                         $f('is_published', 'Published', 'toggle', $half + ['default' => true]),
-                        $f('redirect_to', 'When unpublished, send visitors to', 'text', ['help' => 'e.g. /tours/2-day-zanzibar-to-selous-safari — keeps old links working after merging a duplicate.']),
+                        $f('redirect_to', 'When unpublished, send visitors to', 'text', ['help' => 'e.g. /tours/2-day-zanzibar-to-selous-safari: keeps old links working after merging a duplicate.']),
                     ],
                     'Details' => [
                         $f('duration_days', 'Duration (days)', 'number', $half + $req),
@@ -119,6 +119,9 @@ class AdminResources
                     $f('show_in_menu', 'Show in main menu', 'toggle', $half + ['default' => true]),
                     $f('show_on_home', 'Show a row of its tours on the homepage', 'toggle', $half + ['default' => true]),
                     $f('sort_order', 'Sort order', 'number', $half),
+                ], 'Includes & excludes' => [
+                    $f('includes', 'What’s included (default)', 'list', $half + ['help' => 'New tours in this category start with this list. Edit it on each tour when a trip differs.']),
+                    $f('excludes', 'Not included (default)', 'list', $half + ['help' => 'New tours in this category start with this list. Edit it on each tour when a trip differs.']),
                 ]],
             ],
             'destinations' => [
@@ -152,7 +155,7 @@ class AdminResources
                     ],
                     'Trip planner' => [
                         $f('planner_days', 'Recommended safari days', 'number', $half + ['nullable' => true, 'help' => 'Days a first-time visitor needs here. Leave empty to keep this place out of the planner’s safari parks.']),
-                        $f('planner_order', 'Order on the safari route', 'number', $half + ['help' => 'Driving order from Arusha — lower numbers are visited first.']),
+                        $f('planner_order', 'Order on the safari route', 'number', $half + ['help' => 'Driving order from Arusha: lower numbers are visited first.']),
                     ],
                     'Media' => [
                         $f('image', 'Cover image', 'image', $req),
@@ -190,7 +193,7 @@ class AdminResources
                         $f('sort_order', 'Sort order', 'number', $half),
                     ],
                     'Photos' => [
-                        $f('image', 'Cover photo (optional)', 'image', ['help' => 'Shown on the cards and at the top of the lodge page. Leave empty and the first gallery photo is used — or, with no photos at all, the site shows “photo coming soon”.']),
+                        $f('image', 'Cover photo (optional)', 'image', ['help' => 'Shown on the cards and at the top of the lodge page. Leave empty and the first gallery photo is used, or, with no photos at all, the site shows “photo coming soon”.']),
                         $f('gallery', 'More photos', 'gallery', ['help' => 'Upload or pick several photos at once (rooms, views, dining…). Drag to reorder.']),
                     ],
                 ],
@@ -269,14 +272,14 @@ class AdminResources
                         $f('title', 'Title', 'text', $req + $half),
                         $f('slug', 'URL slug', 'text', $half),
                         $f('eyebrow', 'Eyebrow', 'text', $half),
-                        $f('footer_group', 'Footer column', 'select', $half + ['options' => ['' => '— none —', 'About' => 'About Us', 'Volunteer' => 'Volunteering', 'Sustainability' => 'Sustainability', 'Kilimanjaro' => 'Kilimanjaro', 'Safari' => 'Safari', 'Day Tours' => 'Day Tours', 'Zanzibar' => 'Zanzibar', 'Travel Info' => 'Travel info', 'Legal' => 'Legal'], 'help' => 'Which menu/footer section links to this page.']),
+                        $f('footer_group', 'Footer column', 'select', $half + ['options' => ['' => 'None', 'About' => 'About Us', 'Volunteer' => 'Volunteering', 'Sustainability' => 'Sustainability', 'Kilimanjaro' => 'Kilimanjaro', 'Safari' => 'Safari', 'Day Tours' => 'Day Tours', 'Zanzibar' => 'Zanzibar', 'Travel Info' => 'Travel info', 'Legal' => 'Legal'], 'help' => 'Which menu/footer section links to this page.']),
                         $f('menu_title', 'Menu label (leave empty to hide from menus)', 'text', $half),
                         $f('subtitle', 'Subtitle', 'textarea'),
                         $f('image', 'Hero image', 'image'),
                         $f('body', 'Content', 'richtext'),
                         $f('is_published', 'Published', 'toggle', $half + ['default' => true]),
                         $f('sort_order', 'Sort order', 'number', $half),
-                        $f('redirect_to', 'When unpublished, send visitors to', 'text', ['help' => 'e.g. /volunteering — keeps old links and Google results working. Leave empty to show “not found”.']),
+                        $f('redirect_to', 'When unpublished, send visitors to', 'text', ['help' => 'e.g. /volunteering: keeps old links and Google results working. Leave empty to show “not found”.']),
                     ],
                     'Feature blocks' => [
                         $f('sections', 'Image + text blocks shown under the content', 'repeater', ['fields' => ['title' => 'text', 'text' => 'textarea', 'points' => 'textarea', 'button_label' => 'text', 'button_url' => 'text', 'image' => 'image'], 'itemLabel' => 'Block', 'help' => 'Points: one per line, shown as a list. Button is optional.']),
@@ -374,7 +377,7 @@ class AdminResources
                 'tabs' => ['Partner' => [
                     $f('name', 'Name', 'text', $req + $half),
                     $f('subtitle', 'Full name / description', 'text', $half),
-                    $f('logo', 'Logo', 'image', ['help' => 'Optional — the name is shown as a wordmark when empty.']),
+                    $f('logo', 'Logo', 'image', ['help' => 'Optional: the name is shown as a wordmark when empty.']),
                     $f('url', 'Link', 'text', $half),
                     $f('sort_order', 'Sort order', 'number', $half),
                 ]],

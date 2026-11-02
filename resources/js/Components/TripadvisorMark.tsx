@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-/** Tripadvisor's owl in its own brand colours (black on Tripadvisor green) — never tinted with the site colours. */
+/** Tripadvisor's owl in its own brand colours (black on Tripadvisor green): never tinted with the site colours. */
 export const TRIPADVISOR_GREEN = '#34E0A1';
 
 export default function TripadvisorMark({ size = 40, className }: { size?: number; className?: string }) {

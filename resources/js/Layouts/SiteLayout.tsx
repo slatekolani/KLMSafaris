@@ -104,6 +104,8 @@ function useMenuSections(): MenuSection[] {
         sections.push({ key: 'volunteer', label: t('menu_volunteer'), href: volunteer[0].href, columns: volunteer.length > 1 ? [{ title: t('menu_volunteer_col'), links: volunteer }] : [], plain: volunteer.length === 1 });
     }
 
+    sections.push({ key: 'blog', label: t('menu_blog'), href: '/journal', columns: [], plain: true });
+
     sections.push({
         key: 'about', label: t('menu_about'), href: '/about-klm-safaris',
         columns: [
@@ -199,7 +201,7 @@ function Header({ solid }: { solid: boolean }) {
                         </nav>
 
                         <div className="flex items-center gap-3">
-                            <Link href="/tours" aria-label="Search tours" className={cn('hidden h-11 w-11 items-center justify-center border transition sm:flex xl:hidden 2xl:flex', light ? 'border-white/30 text-white hover:bg-white hover:text-ink' : 'border-ink/15 text-ink hover:bg-ink hover:text-white')}>
+                            <Link href="/tours" aria-label="Search tours" className={cn('hidden h-11 w-11 items-center justify-center border transition sm:flex xl:hidden 2xl:flex', light ? 'border-white/30 text-white hover:bg-white hover:text-ink' : 'border-ink/15 text-ink hover:bg-forest-900 hover:text-white')}>
                                 <Icon name="search" size={17} />
                             </Link>
                             <Link href="/plan-your-trip" className="btn btn-brand hidden !h-11 !px-6 sm:inline-flex">{t('nav_plan')}</Link>
@@ -220,7 +222,7 @@ function Header({ solid }: { solid: boolean }) {
                                     {(menu?.destinations ?? []).slice(0, 8).map((d) => (
                                         <Link key={d.id} href={`/destinations/${d.slug}`} className="img-zoom group relative block h-40 overflow-hidden">
                                             <img src={img(d.image, 500)} alt="" className="h-full w-full object-cover" />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-forest-900/10 to-transparent" />
                                             <div className="absolute bottom-0 p-4 text-white">
                                                 <p className="text-[10px] uppercase tracking-[0.2em] text-white/70">{d.region}</p>
                                                 <p className="text-[17px] font-semibold leading-tight">{d.name}</p>
@@ -234,7 +236,7 @@ function Header({ solid }: { solid: boolean }) {
                                     {current.image ? (
                                         <Link href={current.href} className="img-zoom group relative col-span-3 block h-80 overflow-hidden">
                                             <img src={img(current.image, 700)} alt="" className="h-full w-full object-cover" />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent" />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/85 to-transparent" />
                                             <div className="absolute bottom-0 p-6 text-white">
                                                 <p className="text-[11px] uppercase tracking-eyebrow text-gold-light">{current.tagline}</p>
                                                 <p className="font-display mt-2 text-2xl font-semibold tracking-tight">{t('menu_all', { name: current.label })}</p>
@@ -243,7 +245,7 @@ function Header({ solid }: { solid: boolean }) {
                                         </Link>
                                     ) : (
                                         <div className="col-span-3">
-                                            <p className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink">{t('menu_home_title')}</p>
+                                            <p className="font-display text-2xl font-semibold leading-tight tracking-tight text-ink">{t('menu_home_title')}</p>
                                             <p className="mt-4 text-[15px] text-ink/60">{settings.footer_about}</p>
                                         </div>
                                     )}
@@ -273,8 +275,8 @@ function Header({ solid }: { solid: boolean }) {
 
             {/* Mobile drawer */}
             <div className={cn('fixed inset-0 z-[60] xl:hidden', drawer ? 'visible' : 'invisible')}>
-                <div onClick={() => setDrawer(false)} className={cn('absolute inset-0 bg-ink/50 backdrop-blur-sm transition-opacity duration-500', drawer ? 'opacity-100' : 'opacity-0')} />
-                <aside className={cn('absolute inset-y-0 right-0 flex w-full max-w-md flex-col bg-ink text-white transition-transform duration-700 ease-lux', drawer ? 'translate-x-0' : 'translate-x-full')}>
+                <div onClick={() => setDrawer(false)} className={cn('absolute inset-0 bg-forest-900/50 backdrop-blur-sm transition-opacity duration-500', drawer ? 'opacity-100' : 'opacity-0')} />
+                <aside className={cn('absolute inset-y-0 right-0 flex w-full max-w-md flex-col bg-forest-900 text-white transition-transform duration-700 ease-lux', drawer ? 'translate-x-0' : 'translate-x-full')}>
                     <div className="flex h-[84px] items-center justify-between px-6">
                         <Logo light />
                         <button onClick={() => setDrawer(false)} className="flex h-11 w-11 items-center justify-center border border-white/20" aria-label="Close menu"><Icon name="close" /></button>
@@ -286,7 +288,6 @@ function Header({ solid }: { solid: boolean }) {
                                     links={s.tiles ? (menu?.destinations ?? []).map((d) => ({ label: d.name, href: `/destinations/${d.slug}` })) : s.columns.flatMap((c) => c.links)} />
                             )
                         ))}
-                        <Link href="/journal" className="block border-b border-white/10 py-4 font-display text-[1.4rem] font-semibold">{t('menu_blog')}</Link>
                         <Link href="/gallery" className="block border-b border-white/10 py-4 font-display text-[1.4rem] font-semibold">{t('menu_gallery')}</Link>
                         <Link href="/accommodation" className="block border-b border-white/10 py-4 font-display text-[1.4rem] font-semibold">{t('menu_stays')}</Link>
                         <Link href="/contact" className="block border-b border-white/10 py-4 font-display text-[1.4rem] font-semibold">{t('menu_contact')}</Link>
@@ -340,11 +341,11 @@ function Newsletter() {
 
     return (
         <section className="border-t border-ink/10 bg-sand-100">
-            <div className="container-site grid gap-10 py-20 lg:grid-cols-12 lg:items-end">
+            <div className="container-site grid gap-10 py-14 lg:grid-cols-12 lg:items-end lg:py-16">
                 <div data-reveal className="lg:col-span-6">
-                    <p className="eyebrow">{t('newsletter_label')}</p>
-                    <h2 className="h-section mt-4 !text-[clamp(1.9rem,3vw,2.8rem)]">{settings.newsletter_title}</h2>
-                    <p className="mt-4 max-w-lg text-ink/60">{settings.newsletter_text}</p>
+                    <p className="eyebrow">{t('newsletter_eyebrow')}</p>
+                    <h2 className="h-section mt-4">{settings.newsletter_title}</h2>
+                    {settings.newsletter_text && <p className="mt-4 max-w-lg text-ink/60">{settings.newsletter_text}</p>}
                 </div>
                 <form onSubmit={submit} data-reveal className="lg:col-span-5 lg:col-start-8">
                     <div className="flex items-end gap-4 border-b border-ink pb-2">
@@ -371,11 +372,11 @@ function Footer() {
     const experiences = (menu?.categories ?? []).map((c) => ({ label: c.name, href: `/experiences/${c.slug}` }));
 
     return (
-        <footer className="bg-ink pb-16 text-white/65 lg:pb-0">
-            <div className="container-site pb-10 pt-20">
-                <div className="grid gap-12 border-b border-white/10 pb-16 lg:grid-cols-12">
-                    <div className="lg:col-span-4">
-                        <Logo light />
+        <footer className="bg-forest-900 pb-16 text-white/65 lg:pb-0 [@media(hover:hover)_and_(pointer:fine)]:pb-0">
+            <div className="container-site pb-[15px] pt-14">
+                <div className="grid items-start gap-x-6 gap-y-10 border-b border-white/10 pb-10 grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr_1fr_1.3fr] md:gap-6 lg:gap-10">
+                    <div className="col-span-2 md:col-span-1">
+                        <Logo light tagline={false} />
                         <p className="mt-6 max-w-sm text-[15px] leading-relaxed">{settings.footer_about}</p>
                         <div className="mt-8 flex flex-wrap gap-2">
                             {socials.map((s) => (
@@ -390,7 +391,6 @@ function Footer() {
                             )}
                         </div>
                     </div>
-                    <div className="grid gap-10 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4">
                         <FooterCol title={t('footer_experiences')} links={[...experiences, { label: t('footer_all_tours'), href: '/tours' }]} />
                         <FooterCol title={settings.footer_col1_title} links={col(settings.footer_col1_links)} />
                         <FooterCol title={settings.footer_col2_title} links={col(settings.footer_col2_links)} />
@@ -403,22 +403,24 @@ function Footer() {
                                 <li><a href={`mailto:${settings.email}`} className="hover:text-white">{settings.email}</a></li>
                             </ul>
                         </div>
-                    </div>
                 </div>
 
                 <FooterPartners />
 
-                {/* Bottom row: copyright left, the website credit centred, legal links right */}
-                <div className="grid gap-5 pt-8 text-[13px] lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-8">
-                    <p>© {new Date().getFullYear()} {settings.copyright}</p>
-                    {settings.footer_credit_label ? (
+                {/* Bottom row: everything on one line: copyright, credit, payment methods, legal links */}
+                <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 pt-6 text-[12.5px] md:flex-nowrap">
+                    <p className="md:min-w-0 md:flex-1">© {new Date().getFullYear()} {settings.copyright}</p>
+                    {settings.footer_payments && (
+                        <span className="flex shrink-0 items-center bg-white px-2 py-1"><img src={settings.footer_payments} alt="Payment methods: Mastercard, Maestro, Visa, American Express, PayPal" loading="lazy" className="h-5 w-auto max-w-none" /></span>
+                    )}
+                    {settings.footer_credit_label && (
                         <a href={settings.footer_credit_url || '#'} target="_blank" rel="noreferrer" aria-label={`${settings.footer_credit_label} ${settings.footer_credit_name}`}
-                            className="group flex items-center gap-2.5 transition hover:text-white lg:justify-self-center">
+                            className="group flex shrink-0 items-center gap-2 whitespace-nowrap transition hover:text-white">
                             <span>{settings.footer_credit_label}</span>
                             <span className="font-semibold text-white underline decoration-white/30 underline-offset-4 transition group-hover:decoration-white">{settings.footer_credit_name}</span>
                         </a>
-                    ) : <span className="hidden lg:block" />}
-                    <div className="flex flex-wrap items-center gap-x-6 gap-y-3 lg:justify-self-end">
+                    )}
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 md:shrink-0 md:flex-nowrap md:whitespace-nowrap">
                         {legal.map((p) => <Link key={p.slug} href={`/${p.slug}`} className="hover:text-white">{p.menu_title || p.title}</Link>)}
                         <Link href="/admin" className="hover:text-white">{t('footer_staff')}</Link>
                     </div>
@@ -469,14 +471,14 @@ function FooterPartners() {
             </span>
         );
         return (
-            <li key={`${copy}-${p.id}`} title={p.subtitle ? `${p.name} — ${p.subtitle}` : p.name} aria-hidden={copy ? true : undefined} className="shrink-0">
+            <li key={`${copy}-${p.id}`} title={p.subtitle ? `${p.name}: ${p.subtitle}` : p.name} aria-hidden={copy ? true : undefined} className="shrink-0">
                 {p.url ? <a href={p.url} target="_blank" rel="noreferrer" tabIndex={copy ? -1 : undefined} aria-label={p.subtitle || p.name} className="group block py-2">{tile}</a> : <span className="group block py-2">{tile}</span>}
             </li>
         );
     });
 
     return (
-        <section className="border-b border-white/10 py-14">
+        <section className="border-b border-white/10 py-9">
             <p className="text-center text-[12px] font-semibold uppercase tracking-[0.16em] text-white">{settings.home_partners_title}</p>
             <div ref={track} className="no-scrollbar -mx-5 mt-6 overflow-x-auto overscroll-x-contain sm:-mx-8 lg:mx-0 [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">
                 <ul className="flex w-max gap-3 px-5 sm:px-8 lg:px-0">
@@ -499,7 +501,7 @@ function FooterCol({ title, links }: { title: string; links: { label: string; hr
     );
 }
 
-/** Moshi's local time ("14:05") and whether it falls inside the team's online hours ("7-21"). */
+/** Kilimanjaro's local time ("14:05") and whether it falls inside the team's online hours ("7-21"). */
 function moshiClock(hours: string | undefined) {
     const now = new Date();
     const time = new Intl.DateTimeFormat('en-GB', { timeZone: 'Africa/Dar_es_Salaam', hour: '2-digit', minute: '2-digit' }).format(now);
@@ -538,7 +540,7 @@ function WhatsAppStamp() {
             <span className="leading-tight">
                 <span className="block text-[14px] font-semibold">{t('wa_button')}</span>
                 <span className="mt-1 flex items-center gap-1.5 text-[12px] text-ink/55">
-                    <span className={cn('h-1.5 w-1.5 rounded-full', clock.online ? 'bg-[#25D366]' : 'bg-ink/30')} />
+                    <span className={cn('h-1.5 w-1.5 rounded-full', clock.online ? 'bg-[#25D366]' : 'bg-forest-900/30')} />
                     {t(clock.online ? 'wa_online' : 'wa_offline', { time: clock.time })}
                 </span>
             </span>
@@ -547,7 +549,7 @@ function WhatsAppStamp() {
 }
 
 /* ------------------------------------------------------------------ */
-/** Phones: a persistent booking bar once the visitor scrolls past the hero. */
+/** Phones and tablets (touch only, never a PC with a mouse, whatever its window width): a booking bar once the visitor scrolls past the hero. */
 function MobileBar() {
     const { settings } = useShared();
     const t = useText();
@@ -560,7 +562,7 @@ function MobileBar() {
     }, []);
 
     return (
-        <div className={cn('fixed inset-x-0 bottom-0 z-40 flex gap-2 border-t border-ink/10 bg-white p-2.5 transition-transform duration-500 lg:hidden', show ? 'translate-y-0' : 'translate-y-full')}>
+        <div className={cn('fixed inset-x-0 bottom-0 z-40 flex gap-2 border-t border-ink/10 bg-white p-2.5 transition-transform duration-500 lg:hidden [@media(hover:hover)_and_(pointer:fine)]:hidden', show ? 'translate-y-0' : 'translate-y-full')}>
             <Link href="/plan-your-trip" className="btn btn-brand !h-12 flex-1">{t('mobile_plan')}</Link>
             {settings.whatsapp && (
                 <a href={whatsappLink(settings.whatsapp, t('whatsapp_message'))} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="flex h-12 w-12 items-center justify-center bg-[#25D366] text-white">
@@ -585,7 +587,7 @@ function Toast() {
 
     return (
         <div className={cn('fixed bottom-6 left-1/2 z-[80] w-[calc(100%-2.5rem)] max-w-md -translate-x-1/2 transition-all duration-500', msg ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-6 opacity-0')}>
-            <div className="flex items-start gap-4 bg-ink p-5 text-white shadow-2xl">
+            <div className="flex items-start gap-4 bg-forest-900 p-5 text-white shadow-2xl">
                 <Icon name="check" size={20} className="mt-0.5 shrink-0 text-gold-light" />
                 <p className="flex-1 text-sm leading-relaxed">{msg}</p>
                 <button onClick={() => setMsg(null)} aria-label="Dismiss" className="text-white/50 hover:text-white"><Icon name="close" size={18} /></button>

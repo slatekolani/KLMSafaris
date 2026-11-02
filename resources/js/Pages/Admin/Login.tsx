@@ -16,7 +16,7 @@ export default function Login() {
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-900 to-transparent" />
                 <div className="absolute bottom-0 p-14 text-white">
                     <p className="eyebrow eyebrow-light">Content studio</p>
-                    <p className="mt-4 max-w-md font-display text-5xl leading-tight">Every journey, page and story — <em className="text-gold-light">in one place.</em></p>
+                    <p className="mt-4 max-w-md font-display text-5xl leading-tight">Every journey, page and story, <em className="text-gold-light">in one place.</em></p>
                 </div>
             </div>
             <div className="flex items-center justify-center p-6">

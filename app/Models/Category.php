@@ -8,7 +8,7 @@ class Category extends Model
 {
     protected $guarded = ['id'];
 
-    protected $casts = ['show_in_menu' => 'boolean', 'show_on_home' => 'boolean'];
+    protected $casts = ['show_in_menu' => 'boolean', 'show_on_home' => 'boolean', 'includes' => 'array', 'excludes' => 'array'];
 
     public function tours()
     {

@@ -53,17 +53,18 @@ class ContentSeeder extends Seeder
             'Mountain and Adventure' => ['mount-kilimanjaro-day-tour'],
         ],
         'zanzibar' => [
-            'Zanzibar Holidays' => ['7-day-honeymoon-holiday', '4-days-zanzibar-beach-tour-exploration', '5-days-luxury-beach-tour-in-zanzibar', '6-days-zanzibar-beach-experience', '4-day-luxury-holiday'],
-            'Zanzibar Day Tours' => ['stone-town-tour-zanzibar', 'spice-tour-zanzibar', 'prison-island-tour-zanzibar', 'nakupenda-beach-day-tour'],
+            // Menu columns follow this order: day tours first, then the longer stays.
+            'Day Tours' => ['stone-town-tour-zanzibar', 'spice-tour-zanzibar', 'prison-island-tour-zanzibar', 'nakupenda-beach-day-tour'],
+            'Holidays & Multi-Day Trips' => ['7-day-honeymoon-holiday', '4-days-zanzibar-beach-tour-exploration', '5-days-luxury-beach-tour-in-zanzibar', '6-days-zanzibar-beach-experience', '4-day-luxury-holiday'],
         ],
     ];
 
-    /** Free Pexels footage (Pexels licence) — replace with KLM's own clips in CMS → Hero Slides. */
+    /** Free Pexels footage (Pexels licence): replace with KLM's own clips in CMS → Hero Slides. */
     private const HERO_VIDEOS = [
         0 => 'https://videos.pexels.com/video-files/18435830/18435830-hd_1920_1080_30fps.mp4',
     ];
 
-    /** Tours shown on the old homepage — featured first in each homepage row. */
+    /** Tours shown on the old homepage: featured first in each homepage row. */
     private const FEATURED = [
         'kilimanjaro-6-days-rongai-route', 'kilimanjaro-6-days-marangu-route', 'kilimanjaro-5-days-marangu-route', 'kilimanjaro-6-days-machame-route',
         'tanzania-luxury-safari', '7-day-epic-luxury-safari-in-tanzania', 'family-safari', 'camping-safari', 'private-safari',
@@ -94,9 +95,9 @@ class ContentSeeder extends Seeder
         /* ---------------- Categories (top menu of klmsafaris.com) ---------------- */
         $cats = [];
         foreach ([
-            ['Kilimanjaro', 'kilimanjaro', 'Discover the best routes to the Roof of Africa', 'Lemosho, Machame, Rongai, Umbwe, Marangu and the Northern Circuit — plus Mount Meru and Oldoinyo Lengai.', 'Popular Mount *Kilimanjaro* Trekking', '2016-04-Kilimanjaro-hiking-10.jpg'],
-            ['Safari', 'safari', 'Lodge, camping, fly-in & migration safaris', 'Serengeti, Ngorongoro, Tarangire, Lake Manyara and Lake Victoria — short lodge safaris, migration safaris, fly-in safaris and family safaris.', 'Most Popular *Safaris*', '2016-11-Serengeti-National-Park4-1.jpg'],
-            ['Day Tours', 'day-tours', 'Hot springs, waterfalls, coffee & culture', 'Short adventures from Moshi and Arusha: Chemka hot springs, Lake Chala, Materuni waterfalls, coffee tours and cultural villages.', 'Popular *Day Trips*', '2016-04-marangu-day-trip2-scaled.jpg'],
+            ['Kilimanjaro', 'kilimanjaro', 'Discover the best routes to the Roof of Africa', 'Lemosho, Machame, Rongai, Umbwe, Marangu and the Northern Circuit, plus Mount Meru and Oldoinyo Lengai.', 'Popular Mount *Kilimanjaro* Trekking', '2016-04-Kilimanjaro-hiking-10.jpg'],
+            ['Safari', 'safari', 'Lodge, camping, fly-in & migration safaris', 'Serengeti, Ngorongoro, Tarangire, Lake Manyara and Lake Victoria, short lodge safaris, migration safaris, fly-in safaris and family safaris.', 'Most Popular *Safaris*', '2016-11-Serengeti-National-Park4-1.jpg'],
+            ['Day Tours', 'day-tours', 'Hot springs, waterfalls, coffee & culture', 'Short adventures from Kilimanjaro and Arusha: Chemka hot springs, Lake Chala, Materuni waterfalls, coffee tours and cultural villages.', 'Popular *Day Trips*', '2024-11-bike.jpg'],
             ['Zanzibar', 'zanzibar', 'Beach holidays & island tours', 'Stone Town, spice farms, Prison Island, Nakupenda sandbank and beach holidays on the Indian Ocean.', 'Unforgettable *Zanzibar* Tours', '2024-11-prison-island2.jpg'],
         ] as $n => [$name, $slug, $tagline, $desc, $homeTitle, $img]) {
             $cats[$slug] = Category::create([
@@ -127,7 +128,7 @@ class ContentSeeder extends Seeder
 
         $dest = [];
         foreach ([
-            ['Mount Kilimanjaro', 'kilimanjaro', 'Moshi · Kilimanjaro', 'The roof of Africa', 'Kilimanjaro|Uhuru', '2016-04-Kilimanjaro-hiking-10.jpg', ['2016-04-Kilimanjaro-climbing.jpg', '2016-04-lava-tower-kilimanjaro.jpg', '2016-11-kilimanjaro-day-trip-tours.jpg']],
+            ['Mount Kilimanjaro', 'kilimanjaro', 'Kilimanjaro', 'The roof of Africa', 'Kilimanjaro|Uhuru', '2016-04-Kilimanjaro-hiking-10.jpg', ['2016-04-Kilimanjaro-climbing.jpg', '2016-04-lava-tower-kilimanjaro.jpg', '2016-11-kilimanjaro-day-trip-tours.jpg']],
             ['Serengeti National Park', 'serengeti', 'Northern circuit', 'Endless plains & the Great Migration', 'Serengeti', '2016-11-Serengeti-National-Park4-1.jpg', ['2016-11-Serengeti-Safari1.jpg', '2016-11-Serengeti-Safari3.jpg', '2016-11-Serengeti-National-Park2.jpg', '2016-11-Serengeti-Migration-Camp-May-–-August.jpg']],
             ['Ngorongoro Crater', 'ngorongoro', 'Northern circuit', 'The world’s largest intact caldera', 'Ngorongoro', '2024-11-ngorongorocrater-1.jpg', ['2019-01-Ngorongoro-Crater00.jpg', '2019-01-Ngorongoro-Crater1.jpg', '2019-01-Ngorongoro-Crater2.jpg']],
             ['Tarangire National Park', 'tarangire', 'Northern circuit', 'Baobabs and great elephant herds', 'Tarangire', '2016-11-Tarangire-national-park-10-scaled.jpg', ['2016-11-Tarangire-national-park-1-scaled.jpg', '2016-11-Tarangire-national-park-3-scaled.jpg', '2016-11-Tarangire-national-park-9-scaled.jpg']],
@@ -163,7 +164,7 @@ class ContentSeeder extends Seeder
             [$cat, $group, $pos] = $lookup[$t['slug']] ?? $this->guess($t);
             $text = Str::lower($t['title'].' '.strip_tags($t['overview']).' '.($t['destination'] ?? ''));
             $style = match (true) {
-                $cat === 'kilimanjaro' => $t['days'] >= 8 ? 'Moderate' : ($t['days'] <= 5 ? 'Challenging' : 'Moderate–challenging'),
+                $cat === 'kilimanjaro' => $t['days'] >= 8 ? 'Moderate' : ($t['days'] <= 5 ? 'Challenging' : 'Moderate to challenging'),
                 str_contains($text, 'luxury') => 'Luxury',
                 str_contains($text, 'camping') => 'Camping',
                 str_contains($text, 'lodge') => 'Lodge',
@@ -182,7 +183,7 @@ class ContentSeeder extends Seeder
                 'price_note' => $t['price_note'] ?: ($t['price'] ? 'per person' : null),
                 'difficulty' => $style,
                 'min_age' => $t['min_age'],
-                'season' => $cat === 'kilimanjaro' ? 'Jan – Mar · Jun – Oct' : 'All year round',
+                'season' => $cat === 'kilimanjaro' ? 'Jan to Mar · Jun to Oct' : 'All year round',
                 'departure' => $t['departure'],
                 'departure_time' => $t['departure_time'],
                 'return_time' => $t['return_time'],
@@ -211,14 +212,14 @@ class ContentSeeder extends Seeder
 
         /* ---------------- Hero slides (their homepage banners) ---------------- */
         foreach ([
-            ['Serengeti · Ngorongoro · Kilimanjaro · Zanzibar', 'Journey with *KLM Safaris*', 'From the heights of Mount Kilimanjaro to the plains of Serengeti and the white sands of Zanzibar — the experience you long for.', '2019-01-Tarangire-National-Pack00.jpg', 'Explore tours', '/tours'],
-            ['Kilimanjaro · 5,895 m', 'Climb Mount *Kilimanjaro*', 'Discover the best routes to the Roof of Africa with our experienced Moshi mountain crew.', '2016-04-Kilimanjaro-hiking-hero.jpg', 'Kilimanjaro routes', '/experiences/kilimanjaro'],
+            ['Serengeti · Ngorongoro · Kilimanjaro · Zanzibar', 'Journey with *KLM Safaris*', 'From the heights of Mount Kilimanjaro to the plains of Serengeti and the white sands of Zanzibar, the experience you long for.', '2019-01-Tarangire-National-Pack00.jpg', 'Explore tours', '/tours'],
+            ['Kilimanjaro · 5,895 m', 'Climb Mount *Kilimanjaro*', 'Discover the best routes to the Roof of Africa with our experienced Kilimanjaro mountain crew.', '2016-04-Kilimanjaro-hiking-hero.jpg', 'Kilimanjaro routes', '/experiences/kilimanjaro'],
             ['Serengeti · Ngorongoro · Tarangire', 'Tanzania *Safaris*', 'Lodge, camping, fly-in and migration safaris across Tanzania’s legendary national parks.', '2016-11-Tarangire-national-park-3-hero.jpg', 'Tanzania safaris', '/experiences/safari'],
             ['Serengeti National Park', 'Serengeti *Migration*', 'Witness the breathtaking Serengeti Migration, where millions of animals embark on a spectacular journey.', '2016-04-hero-serengeti-migration.jpg', 'Migration safaris', '/tours?q=Migration'],
-            ['Fly-in & helicopter', 'Helicopter *Safaris*', 'Catering for every need, prepared for any adventure — a safari built entirely around what you want.', '2016-04-hero-Helicopter-safari.jpeg', 'Fly-in safaris', '/tours?q=Fly'],
+            ['Fly-in & helicopter', 'Helicopter *Safaris*', 'Catering for every need, prepared for any adventure, a safari built entirely around what you want.', '2016-04-hero-Helicopter-safari.jpeg', 'Fly-in safaris', '/tours?q=Fly'],
             ['Zanzibar archipelago', 'Zanzibar *Beach Holidays*', 'Stone Town, spice farms, Prison Island and the beautiful white sands of the Indian Ocean.', '2022-06-nakupenda-tours.jpg', 'Zanzibar tours', '/experiences/zanzibar'],
-            ['Lodges · Tented camps · Beach hotels', 'Our *Accommodations*', 'Hand-picked lodges, tented camps and beach hotels across Tanzania — chosen for comfort, location and care.', '2016-04-hero-KLM-Luxury-Safari.jpg', 'Where you’ll stay', '/#accommodation'],
-            ['Moshi · Tanzania', 'Planned by *local experts*', 'Planning and preparation are crucial to the success of a safari in Tanzania — our Moshi team takes care of every detail.', '2016-04-hero-ABD09822-scaled.jpg', 'Meet our team', '/about-klm-safaris'],
+            ['Lodges · Tented camps · Beach hotels', 'Our *Accommodations*', 'Hand-picked lodges, tented camps and beach hotels across Tanzania, chosen for comfort, location and care.', '2016-04-hero-KLM-Luxury-Safari.jpg', 'Where you’ll stay', '/#accommodation'],
+            ['Kilimanjaro · Tanzania', 'Planned by *local experts*', 'Planning and preparation are crucial to the success of a safari in Tanzania. Our Kilimanjaro team takes care of every detail.', '2016-04-hero-ABD09822-scaled.jpg', 'Meet our team', '/about-klm-safaris'],
         ] as $n => [$eyebrow, $title, $sub, $img, $cta, $url]) {
             HeroSlide::create(['eyebrow' => $eyebrow, 'title' => $title, 'subtitle' => $sub, 'image' => $this->k($img), 'video' => self::HERO_VIDEOS[$n] ?? null,
                 // Migration clip: keep only the wildlife (the last seconds show the vehicle's dashboard), in slow motion.
@@ -266,7 +267,7 @@ class ContentSeeder extends Seeder
             foreach ($qa as $n => [, $q, $a]) {
                 $answer = trim(html_entity_decode(strip_tags($a)));
                 if (str_ends_with(trim(strip_tags($q)), '?') && $answer) {
-                    Faq::create(['topic' => 'Kilimanjaro', 'question' => trim(strip_tags($q)), 'answer' => $answer, 'sort_order' => $n]);
+                    Faq::create(['topic' => 'Kilimanjaro', 'question' => preg_replace('/^\d+\s*[.)]\s*/', '', trim(strip_tags($q))), 'answer' => $answer, 'sort_order' => $n]);
                 }
             }
         }
@@ -296,6 +297,9 @@ class ContentSeeder extends Seeder
         $this->volunteeringPage();
         $this->galleryPhotos();
         $this->accommodationsFromTours();
+        $this->luxuryStays();
+        $this->categoryIncludes();
+        $this->retiredPages();
         $this->oldSiteLeftovers();
     }
 
@@ -305,10 +309,10 @@ class ContentSeeder extends Seeder
      * [name, type, destination slug, location, cover, gallery]
      */
     private const LODGES = [
-        ['Park View Inn', 'Hotel', 'kilimanjaro', 'Moshi town', null, []],
-        ['Keys Hotel', 'Hotel', 'kilimanjaro', 'Moshi town', null, []],
-        ['Kilimanjaro Wonders Hotel', 'Hotel', 'kilimanjaro', 'Moshi', null, []],
-        ['Panama Garden Resort', 'Hotel', 'kilimanjaro', 'Moshi', null, []],
+        ['Park View Inn', 'Hotel', 'kilimanjaro', 'Kilimanjaro', null, []],
+        ['Keys Hotel', 'Hotel', 'kilimanjaro', 'Kilimanjaro', null, []],
+        ['Kilimanjaro Wonders Hotel', 'Hotel', 'kilimanjaro', 'Kilimanjaro', null, []],
+        ['Panama Garden Resort', 'Hotel', 'kilimanjaro', 'Kilimanjaro', null, []],
         ['Tulivu Kilimanjaro Retreat', 'Lodge', 'kilimanjaro', 'Kilimanjaro foothills', null, []],
         ['Kibo Palace Hotel', 'Hotel', 'arusha', 'Arusha city', null, []],
         ['Mount Meru Hotel', 'Hotel', 'arusha', 'Arusha city', null, []],
@@ -317,7 +321,7 @@ class ContentSeeder extends Seeder
         ['Marera Valley Lodge', 'Lodge', 'ngorongoro', 'Karatu', null, []],
         ['Kitela Lodge', 'Lodge', 'ngorongoro', 'Karatu', '2024-04-Kitela-Lodge-Room-Sitting-Area.jpg', []],
         ['Rhino Lodge', 'Lodge', 'ngorongoro', 'Ngorongoro Conservation Area', null, []],
-        ['Ngorongoro Serena Safari Lodge', 'Luxury lodge', 'ngorongoro', 'Ngorongoro Crater rim', null, []],
+        ['Ngorongoro Serena Safari Lodge', 'Luxury', 'ngorongoro', 'Ngorongoro Crater rim', null, []],
         ['Maramboi Tented Lodge', 'Tented camp', 'tarangire', 'Between Tarangire & Lake Manyara', null, []],
         ['Baobab Tented Camp', 'Tented camp', 'lake-manyara', 'Lake Manyara area', null, []],
         ['Mawe Tented Camp', 'Tented camp', 'serengeti', 'Serengeti National Park', '2016-11-mawe-1.jpg', ['2016-11-mawe-room-.jpg', '2016-11-mawe-bedroom.png', '2016-11-mawe-4.jpg', '2016-11-mawe-viti-nnje.png', '2016-11-mawe-waiter.png']],
@@ -325,7 +329,7 @@ class ContentSeeder extends Seeder
         ['Serengeti Heritage Tented Camp', 'Tented camp', 'serengeti', 'Serengeti National Park', null, []],
         ['Narudi Tented Camp', 'Tented camp', 'serengeti', 'Serengeti National Park', null, []],
         ['Malaika Beach Hotel', 'Hotel', 'lake-victoria', 'Mwanza, Lake Victoria', null, []],
-        ['Beho Beho Camp', 'Luxury lodge', null, 'Nyerere National Park', null, []],
+        ['Beho Beho Camp', 'Luxury', null, 'Nyerere National Park', null, []],
         ['Nyerere Tented Camp', 'Tented camp', null, 'Nyerere National Park', null, []],
         ['Ikaka Safari Camp', 'Tented camp', null, 'Ruaha National Park', null, []],
         ['Kinasi Lodge', 'Beach resort', null, 'Mafia Island', null, []],
@@ -350,7 +354,72 @@ class ContentSeeder extends Seeder
         }
     }
 
-    /** Every KLM photo from the old site (media library, tour pages, sliders) — de-duplicated, without theme demo or stock images. */
+    /** Pages KLM no longer wants on the site: hidden and sent on to a related page (November 2026). */
+    public function retiredPages(): void
+    {
+        foreach (['why-traveling-with-klm-safaris' => '/about-klm-safaris', 'sustainable-travel-3' => '/our-climate-emergency-plan'] as $slug => $to) {
+            Page::where('slug', $slug)->update(['is_published' => false, 'redirect_to' => $to]);
+        }
+        // Practical info pages use the plain, text-only hero (no photo).
+        Page::whereIn('slug', ['travel-information', 'information-about-tanzania', 'travel-advice', 'booking-terms-and-conditions', 'our-climate-emergency-plan'])->update(['image' => null]);
+    }
+
+    /** Default "included / not included" lists per category (CMS → Categories → Includes & excludes). Only fills empty ones. */
+    private const CATEGORY_INCLUDES = [
+        // From KLM's own list ("KILIMANJARO INCLUSION AND EXCLUSION.docx", November 2026).
+        'kilimanjaro' => [
+            ['Airport transfers (go and return)', 'Park fees at Kilimanjaro National Park', 'Rescue fees at Kilimanjaro National Park', 'Kilimanjaro camping fees', 'Kilimanjaro trekking as specified', 'Kilimanjaro National Park gate transfers (go and return)', 'Tents, mattress, cooking utensils, cooking gas, food and water', 'Wages for the guides, cooks and porters, plus 15% running costs', 'Emergency oxygen cylinder', 'Experienced, professional Kilimanjaro guide', 'Accommodation for two nights (one night before and one after the climb)', 'All meals while trekking', 'All taxes and VAT'],
+            ['International flights', 'Personal climbing gear', 'Personal trekking equipment', 'Sleeping bag (available for hire in Kilimanjaro)', 'Meals and drinks not listed', 'Visa fees', 'Travel insurance', 'Mandatory inbound travel insurance', 'Tips and gratuities', 'Personal expenses'],
+        ],
+        'safari' => [
+            ['Airport transfers (go and return)', 'National park entry fees', 'Game drives', 'Accommodation as specified', 'All activities in the itinerary as specified', 'Specified meals and drinks', 'Professional, experienced driver-guide', 'Safari jeep (4×4 pop-up roof safari Land Cruiser)', 'Bottled mineral water', 'All taxes and VAT'],
+            ['International flights', 'Meals and drinks not listed', 'Visa fees', 'Travel insurance', 'Mandatory inbound travel insurance', 'Tips', 'Accommodation after the tour', 'Activities not in the itinerary', 'Personal expenses'],
+        ],
+        'day-tours' => [
+            ['Entry fees', 'Hot lunch or lunch box', 'Bottled mineral drinking water', 'Pick-up and drop-off transport', 'English-speaking guide', 'Activities in the itinerary'],
+            ['Flight tickets', 'Airport transfers', 'Accommodation', 'Meals and drinks not listed', 'Visa fees', 'Travel insurance', 'Mandatory inbound travel insurance', 'Tips', 'Activities not in the itinerary', 'Personal expenses'],
+        ],
+        'zanzibar' => [
+            ['Transfers to and from your hotel', 'Personal guide', 'Entry fees for the listed sites', 'Meals as listed in the itinerary', 'Bottled water', 'All taxes'],
+            ['International flights and visas', 'Travel insurance', 'Tips for your guide', 'Meals not listed', 'Personal expenses'],
+        ],
+    ];
+
+    public function categoryIncludes(): void
+    {
+        foreach (self::CATEGORY_INCLUDES as $slug => [$in, $out]) {
+            $cat = Category::where('slug', $slug)->first();
+            if (! $cat) {
+                continue;
+            }
+            $cat->update(['includes' => $cat->includes ?: $in, 'excludes' => $cat->excludes ?: $out]);
+        }
+    }
+
+    /** The "Luxury" category: renames the old "Luxury lodge" type and adds the luxury lodges KLM books. Safe to run again. */
+    private const LUXURY = [
+        ['Four Seasons Safari Lodge Serengeti', 'serengeti', 'Central Serengeti'],
+        ['andBeyond Ngorongoro Crater Lodge', 'ngorongoro', 'Ngorongoro Crater rim'],
+        ['Lake Manyara Serena Safari Lodge', 'lake-manyara', 'Lake Manyara escarpment'],
+        ['Gran Meliá Arusha', 'arusha', 'Arusha'],
+        ['Elewana Arusha Coffee Lodge', 'arusha', 'Arusha'],
+    ];
+
+    public function luxuryStays(): void
+    {
+        Accommodation::where('type', 'Luxury lodge')->update(['type' => 'Luxury']);
+        Accommodation::where('name', 'Zanzibar Serena Hotel')->where('type', 'Hotel')->update(['type' => 'Luxury']);
+        $dest = Destination::pluck('id', 'slug');
+        $next = (int) Accommodation::max('sort_order');
+        foreach (self::LUXURY as [$name, $slug, $location]) {
+            Accommodation::firstOrCreate(['slug' => Str::slug($name)], [
+                'name' => $name, 'type' => 'Luxury', 'destination_id' => $dest[$slug] ?? null, 'location' => $location,
+                'is_published' => true, 'sort_order' => ++$next,
+            ]);
+        }
+    }
+
+    /** Every KLM photo from the old site (media library, tour pages, sliders): de-duplicated, without theme demo or stock images. */
     public function galleryPhotos(): void
     {
         if (GalleryPhoto::exists()) {
@@ -363,7 +432,7 @@ class ContentSeeder extends Seeder
 
     /**
      * The old site's images for these were thumbnails, panoramic strips or too dark to sit behind a
-     * full-screen hero — swap in KLM's own sharpest matching photo.
+     * full-screen hero: swap in KLM's own sharpest matching photo.
      */
     private const HERO_SWAPS = [
         Tour::class => [
@@ -534,37 +603,37 @@ class ContentSeeder extends Seeder
             ]);
         }
 
-        // 2. Small Enterprise — the sixth programme on the Volunteering page
+        // 2. Small Enterprise: the sixth programme on the Volunteering page
         $volunteering = Page::where('slug', 'volunteering')->first();
         if ($volunteering && ! collect($volunteering->sections ?? [])->contains('title', 'Small Enterprise')) {
             $volunteering->update([
-                'subtitle' => 'Six ways to make a real difference with KLM Safaris — with children, in healthcare, in schools, for nature, through sport and with small businesses.',
+                'subtitle' => 'Six ways to make a real difference with KLM Safaris, with children, in healthcare, in schools, for nature, through sport and with small businesses.',
                 'sections' => [...($volunteering->sections ?? []), [
                     'title' => 'Small Enterprise',
-                    'text' => 'Poverty, female discrimination and child labour hold many families back. With local NGOs we run small-enterprise projects in rural and urban Moshi and Arusha, where volunteers train groups in business skills — marketing, branding, record keeping, sales, accounting and quality product development — alongside local business experts. No special skills are needed: just an interest in entrepreneurship, gender equality and working with grassroots communities, especially women (18+).',
+                    'text' => 'Poverty, female discrimination and child labour hold many families back. With local NGOs we run small-enterprise projects in rural and urban Kilimanjaro and Arusha, where volunteers train groups in business skills (marketing, branding, record keeping, sales, accounting and quality product development) alongside local business experts. No special skills are needed: just an interest in entrepreneurship, gender equality and working with grassroots communities, especially women (18+).',
                     'points' => implode("\n", ['Female tailoring groups', 'Village community banks (VICOBA)', 'Brick making, dairy & horticulture groups', 'Honey keeping & retail shops', 'Tourism enterprises', 'Women & Entrepreneurship project in Masia, Marangu']),
                     'button_label' => 'Apply for this programme',
-                    'button_url' => "mailto:$email?subject=".rawurlencode('Volunteer application – Small Enterprise'),
+                    'button_url' => "mailto:$email?subject=".rawurlencode('Volunteer application: Small Enterprise'),
                     'image' => $this->k('2016-11-marangucultures.jpg'),
                 ]],
             ]);
         }
 
-        // 3. "Your Perfect Tanzania Holiday" — KLM's landing page with group prices and itinerary PDFs
+        // 3. "Your Perfect Tanzania Holiday": KLM's landing page with group prices and itinerary PDFs
         $pdf = fn (string $f) => "/files/itineraries/$f.pdf";
-        $item = fn (string $name, string $price, ?string $tour, ?string $file) => '<li><strong>'.($tour ? '<a href="/tours/'.$tour.'">'.e($name).'</a>' : e($name)).'</strong> — '.e($price)
+        $item = fn (string $name, string $price, ?string $tour, ?string $file) => '<li><strong>'.($tour ? '<a href="/tours/'.$tour.'">'.e($name).'</a>' : e($name)).'</strong>: '.e($price)
             .($file ? ' · <a href="'.$pdf($file).'" target="_blank" rel="noopener">Download itinerary (PDF)</a>' : '').'</li>';
         Page::firstOrCreate(['slug' => 'your-perfect-tanzania-holiday'], [
             'title' => 'Your Perfect *Tanzania* Holiday',
             'eyebrow' => 'Tanzania holidays',
-            'subtitle' => 'Climb Kilimanjaro, follow the Great Migration and unwind on Zanzibar — our selected packages at group prices.',
+            'subtitle' => 'Climb Kilimanjaro, follow the Great Migration and unwind on Zanzibar. Our selected packages at group prices.',
             'image' => $this->k('2023-02-migration.jpg'),
             'body' => '<p>Tanzania is the most captivating country in Africa, known for its breathtaking beauty and friendly people. Enriched with its stunning landscapes, diverse wildlife, picturesque beaches, historic towns, ancient sites, and remarkable geological formations, it truly is a visual perfection.</p>'
                 .'<p>One of the country’s most iconic features is certainly Mount Kilimanjaro, the highest mountain in Africa. Rising majestically from the lush, green plains, its snow-capped peak is a truly awe-inspiring sight. Surprisingly, climbing Kilimanjaro is relatively easy, and reaching the summit offers the unique climax of an epic adventure.</p>'
                 .'<p>Tanzania is an ideal destination for those seeking both adventure and relaxation. Here you can witness the incredible Great Migration, where vast herds of animals traverse the Serengeti plains, offering a truly unforgettable experience. And after an exhilarating safari, visitors can unwind on the serene beaches of Zanzibar, a captivating and exotic Spice Island which provides utterly wonderful leisure options.</p>'
                 .'<h2>Our selected safari packages</h2><ul>'
                 .$item('2-Days Tanzania National Park Safari', 'from $455 pp for 6+ people', '2-day-lodge-safari', '2-Days-Tanzania-safari')
-                .$item('5 Days Tanzania Budget Safari in Serengeti, Ngorongoro and Tarangire', 'from $1,200 pp for 4–6 people', null, '5-Days-Tanzania-Budget-Safari-in-Serengeti-Ngorongoro-and-Tarangire-National-Parks')
+                .$item('5 Days Tanzania Budget Safari in Serengeti, Ngorongoro and Tarangire', 'from $1,200 pp for 4-6 people', null, '5-Days-Tanzania-Budget-Safari-in-Serengeti-Ngorongoro-and-Tarangire-National-Parks')
                 .$item('5 Days Tanzania Midrange Safari in Serengeti, Ngorongoro and Tarangire', 'from $1,300 pp for 6+ people', null, '5-Days-Tanzania-Midrange-Safari-in-Serengeti-Ngorongoro-and-Tarangire-National-Parks')
                 .$item('7-Day Inclusive Luxury Epic Safari in Tanzania', 'from $3,000 pp for 6+ people', null, null)
                 .$item('11-Day Tanzania Safari and Cultural Experiences', 'from $3,850 pp for 6+ people', '11-day-tanzania-safari-and-cultural-experiences', '11-Day-Tanzania-Safari-and-Cultural-Experiences')
@@ -576,16 +645,16 @@ class ContentSeeder extends Seeder
                 .$item('7-Days Kilimanjaro Bike Tour, Marangu', 'from $2,450 pp for 10+ people', null, 'Kilimanjaro-Bike-Tour_KLM-Safaris')
                 .'</ul>',
             'cta_title' => 'Need more info? Send us a message!',
-            'cta_text' => 'Tell us which package caught your eye, your dates and group size — our Moshi team will reply personally.',
+            'cta_text' => 'Tell us which package caught your eye, your dates and group size. Our Kilimanjaro team will reply personally.',
             'cta_label' => 'Send us a message',
             'cta_url' => '/contact',
             'is_published' => true,
         ]);
 
-        // 4. Internship application — the old site had a separate form page; now a direct way to apply
+        // 4. Internship application: the old site had a separate form page; now a direct way to apply
         Page::where('slug', 'internship-opportunity')->whereNull('cta_url')->update([
             'cta_title' => 'Apply for an internship',
-            'cta_text' => 'Tell us which area interests you — digital marketing strategies, content creation, brand management, or market research and analytics — and attach your CV and a short cover letter.',
+            'cta_text' => 'Tell us which area interests you (digital marketing strategies, content creation, brand management, or market research and analytics) and attach your CV and a short cover letter.',
             'cta_label' => 'Apply by email',
             'cta_url' => "mailto:$email?subject=".rawurlencode('Internship application'),
         ]);
@@ -604,7 +673,7 @@ class ContentSeeder extends Seeder
     public function volunteeringPage(): void
     {
         $email = \App\Models\Setting::allValues()['email'] ?? 'info@klmsafaris.com';
-        $apply = fn (string $programme) => "mailto:$email?subject=".rawurlencode("Volunteer application – $programme");
+        $apply = fn (string $programme) => "mailto:$email?subject=".rawurlencode("Volunteer application: $programme");
         $block = fn (string $title, string $text, array $points, string $image) => [
             'title' => $title, 'text' => $text, 'points' => implode("\n", $points),
             'button_label' => 'Apply for this programme', 'button_url' => $apply($title), 'image' => $this->k($image),
@@ -615,19 +684,18 @@ class ContentSeeder extends Seeder
             'eyebrow' => 'Volunteering',
             'menu_title' => 'Volunteering',
             'footer_group' => 'Volunteer',
-            'subtitle' => 'Six ways to make a real difference with KLM Safaris — with children, in healthcare, in schools, for nature, through sport and with small businesses.',
+            'subtitle' => 'Six ways to make a real difference with KLM Safaris, with children, in healthcare, in schools, for nature, through sport and with small businesses.',
             'image' => $this->k('2025-03-education-children.jpg'),
-            'body' => '<p>KLM Safaris connects volunteers with communities in and around Moshi, at the foot of Mount Kilimanjaro. Choose the programme that fits your skills and passion — every placement is arranged and supported by our local team.</p>'
+            'body' => '<p>KLM Safaris connects volunteers with communities in and around Kilimanjaro, at the foot of Mount Kilimanjaro. Choose the programme that fits your skills and passion. Every placement is arranged and supported by our local team.</p>'
                 .'<h3>How it works</h3><ol><li>Choose a programme below.</li><li>Email your CV and a short cover letter telling us what motivates you.</li><li>We match you with the right placement and confirm the details with you.</li></ol>',
             'sections' => [
-                $block('Children’s Home Support', 'Care for orphaned and vulnerable children in local children’s homes — giving them routine, learning and the friendship that builds confidence. Open to anyone who loves working with children: students, professionals and retirees.', ['Daily childcare and play', 'Tutoring in English, maths and science', 'Health and hygiene education', 'Mentoring and emotional support', 'Administration and fundraising'], '2025-03-education-children.jpg'),
-                $block('Health Volunteering', 'Work alongside Tanzanian health workers in hospitals, health centres and dispensaries. We match each volunteer to a placement where their skills make the biggest impact. For medical professionals and anyone passionate about community health.', ['Public health campaigns — HIV, malaria, nutrition', 'Clinical services with local teams', 'Community health outreach', 'Training and capacity building', 'Maternal and child health'], '2025-03-medical-health-volunteer.jpg'),
-                $block('Education Volunteering', 'Support schools facing crowded classrooms, limited resources and teacher shortages — especially in rural communities. Teaching experience helps, but a passion for learning matters most.', ['Teaching literacy, maths, English, science and IT', 'Teacher training and mentoring', 'Special needs education', 'Early childhood education', 'School building and improvement projects'], '2025-03-children-mentor.jpg'),
-                $block('Environment Conservation', 'Help protect the landscapes and wildlife of Kilimanjaro, the Serengeti and beyond — working with local communities against deforestation, poaching, soil erosion and climate change. No experience required, just a love of nature.', ['Wildlife conservation', 'Reforestation and tree planting', 'Research and data collection', 'Environmental education and community outreach'], '2025-03-environmental-conservator.jpg'),
+                $block('Children’s Home Support', 'Care for orphaned and vulnerable children in local children’s homes, giving them routine, learning and the friendship that builds confidence. Open to anyone who loves working with children: students, professionals and retirees.', ['Daily childcare and play', 'Tutoring in English, maths and science', 'Health and hygiene education', 'Mentoring and emotional support', 'Administration and fundraising'], '2025-03-education-children.jpg'),
+                $block('Education Volunteering', 'Support schools facing crowded classrooms, limited resources and teacher shortages, especially in rural communities. Teaching experience helps, but a passion for learning matters most.', ['Teaching literacy, maths, English, science and IT', 'Teacher training and mentoring', 'Special needs education', 'Early childhood education', 'School building and improvement projects'], '2025-03-children-mentor.jpg'),
+                $block('Environment Conservation', 'Help protect the landscapes and wildlife of Kilimanjaro, the Serengeti and beyond, working with local communities against deforestation, poaching, soil erosion and climate change. No experience required, just a love of nature.', ['Wildlife conservation', 'Reforestation and tree planting', 'Research and data collection', 'Environmental education and community outreach'], '2025-03-environmental-expert.jpg'),
                 $block('Sports and Games', 'Coach and inspire young talent in communities where qualified coaches, facilities and playgrounds are scarce. For athletes, coaches, students and retirees who want to empower children through sport.', ['Coaching football, basketball, athletics, volleyball and netball', 'PE classes and teacher training', 'Improving sports facilities and playgrounds', 'Inclusive sports for children with disabilities', 'Life skills through sport'], '2025-03-children-sports.jpg'),
             ],
             'cta_title' => 'Ready to volunteer with KLM Safaris?',
-            'cta_text' => 'Send your CV and a short cover letter telling us what motivates you — our team will reply and match you with the right placement.',
+            'cta_text' => 'Send your CV and a short cover letter telling us what motivates you. Our team will reply and match you with the right placement.',
             'cta_label' => 'Apply by email',
             'cta_url' => "mailto:$email?subject=".rawurlencode('Volunteer application'),
             'is_published' => true,
@@ -675,7 +743,7 @@ class ContentSeeder extends Seeder
         }
     }
 
-    /** The old site used its logo as the share image on many pages — prefer a real photo. */
+    /** The old site used its logo as the share image on many pages: prefer a real photo. */
     private function photo(?string $image, string $body, string $group): ?string
     {
         if ($image && ! preg_match('/logo/i', $image)) {

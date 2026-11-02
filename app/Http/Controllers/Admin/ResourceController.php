@@ -120,7 +120,7 @@ class ResourceController extends Controller
             }
         }
 
-        return redirect()->route('admin.resource.edit', [$resource, $copy->id])->with('success', 'Duplicated — you are now editing the copy.');
+        return redirect()->route('admin.resource.edit', [$resource, $copy->id])->with('success', 'Duplicated. You are now editing the copy.');
     }
 
     public function destroy(string $resource, int $id)

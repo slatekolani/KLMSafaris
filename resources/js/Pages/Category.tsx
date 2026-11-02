@@ -1,6 +1,7 @@
 import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 import Icon from '@/Components/Icon';
+import Pagination, { usePaged } from '@/Components/Pagination';
 import PageHero from '@/Components/PageHero';
 import TourCard from '@/Components/TourCard';
 import SiteLayout from '@/Layouts/SiteLayout';
@@ -12,13 +13,14 @@ export default function Category({ category, tours, others, faqs, guides }: { ca
     const [len, setLen] = useState<'all' | 'short' | 'long'>('all');
     const prices = tours.map((t) => t.price_from).filter((p): p is number => !!p);
     const days = tours.map((t) => t.duration_days).filter(Boolean);
-    const span = days.length ? (Math.min(...days) === Math.max(...days) ? `${Math.min(...days)}` : `${Math.min(...days)}–${Math.max(...days)}`) : null;
+    const span = days.length ? (Math.min(...days) === Math.max(...days) ? `${Math.min(...days)}` : `${Math.min(...days)}-${Math.max(...days)}`) : null;
     const shown = tours.filter((t) => len === 'all' || (len === 'short' ? t.duration_days <= 5 : t.duration_days > 5));
+    const paged = usePaged(shown);
 
     return (
         <SiteLayout title={category.name} description={category.description} image={category.image}>
             <PageHero image={category.image} eyebrow={category.tagline} title={tx('cat_hero_title', { name: category.name })} subtitle={category.description} crumbs={[{ label: 'Experiences', href: '/tours' }, { label: category.name }]}
-                facts={[{ label: tx('cat_fact_tours'), value: tours.length }, { label: tx('cat_fact_price'), value: prices.length ? Math.min(...prices) : null, prefix: '$' }, { label: tx('cat_fact_length'), value: span, suffix: ` ${tx('label_days')}` }]}>
+                facts={[{ label: tx('cat_fact_tours'), value: tours.length }, { label: tx('cat_fact_price'), value: prices.length ? Math.min(...prices) : null, prefix: '$' }, { label: tx('cat_fact_length'), value: span, suffix: ` ${span === '1' ? tx('tour_fact_day') : tx('label_days')}` }]}>
                 <div className="mt-10 flex flex-wrap gap-3">
                     <a href="#journeys" className="btn btn-gold">{tx('cat_see', { count: tours.length })} <Icon name="arrow" size={16} className="arrow" /></a>
                     <Link href={`/plan-your-trip?category=${category.slug}`} className="btn btn-ghost">{tx('cat_custom')}</Link>
@@ -33,27 +35,39 @@ export default function Category({ category, tours, others, faqs, guides }: { ca
                     </div>
                     <div className="flex gap-2 rounded-none bg-white p-1.5 ring-1 ring-ink/10">
                         {([['all', tx('cat_filter_all')], ['short', tx('cat_filter_short')], ['long', tx('cat_filter_long')]] as const).map(([k, l]) => (
-                            <button key={k} onClick={() => setLen(k)} className={cn('rounded-none px-4 py-2 text-[13px] transition', len === k ? 'bg-ink text-sand' : 'text-ink/60 hover:text-ink')}>{l}</button>
+                            <button key={k} onClick={() => setLen(k)} className={cn('rounded-none px-4 py-2 text-[13px] transition', len === k ? 'bg-forest-900 text-sand' : 'text-ink/60 hover:text-ink')}>{l}</button>
                         ))}
                     </div>
                 </div>
-                <div className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {shown.map((t, i) => <TourCard key={t.id} tour={t} delay={(i % 3) * 70} />)}
+                <div ref={paged.top} className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    {paged.shown.map((t, i) => <TourCard key={t.id} tour={t} delay={(i % 4) * 60} />)}
                 </div>
+                <Pagination {...paged} />
             </section>
 
             {guides.length > 0 && (
                 <section className="container-site pb-20">
                     <span className="eyebrow">{tx('cat_prepare')}</span>
                     <h2 className="h-section mt-4">{tx('cat_guides', { name: category.name })}</h2>
-                    <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                        {guides.map((g) => (
-                            <Link key={g.id} href={`/${g.slug}`} data-reveal className="group flex items-center gap-5 bg-white p-4 ring-1 ring-ink/[0.06] transition hover:-translate-y-1 hover:ring-gold">
-                                <span className="h-20 w-24 shrink-0 overflow-hidden bg-sand-100">{g.image && <img src={img(g.image, 300)} alt="" loading="lazy" className="h-full w-full object-cover" />}</span>
-                                <span className="min-w-0">
-                                    <span className="block font-display text-xl leading-tight group-hover:text-gold-dark">{g.title}</span>
-                                    <span className="mt-1 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-ink/45">{tx('cat_read')} <Icon name="arrow" size={13} /></span>
-                                </span>
+                    {/* Guides use the same standard card as trips and stays */}
+                    <div className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                        {guides.map((g, i) => (
+                            <Link key={g.id} href={`/${g.slug}`} data-reveal style={{ ['--d' as string]: `${(i % 4) * 60}ms` }}
+                                className="group flex h-full flex-col overflow-hidden border border-ink/10 bg-white transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_18px_40px_-24px_rgba(29,68,104,.45)]">
+                                <div className="img-zoom relative aspect-[16/10] shrink-0 overflow-hidden bg-forest-900">
+                                    {g.image || category.image
+                                        ? <img src={img(g.image || category.image, 700)} alt="" loading="lazy" className="h-full w-full object-cover" />
+                                        : <span className="absolute inset-0 flex items-center justify-center text-white/40"><Icon name="file" size={28} /></span>}
+                                    <span className="absolute left-3 top-3 flex items-center gap-1.5 bg-white px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-ink"><Icon name="file" size={12} className="text-gold" />{tx('cat_prepare')}</span>
+                                </div>
+                                <div className="flex flex-1 flex-col p-4">
+                                    <p className="eyebrow !text-[11px]">{category.name}</p>
+                                    <h3 className="font-display mt-1.5 line-clamp-2 min-h-[2.75em] text-[1.05rem] font-semibold leading-snug tracking-tight text-ink group-hover:text-gold-dark">{g.title}</h3>
+                                    <div className="mt-auto flex items-center justify-between gap-4 border-t border-ink/10 pt-3 text-[13.5px]">
+                                        <span className="font-semibold text-ink">{tx('cat_read')}</span>
+                                        <span className="flex h-8 w-8 items-center justify-center text-gold transition group-hover:translate-x-0.5"><Icon name="arrow" size={16} /></span>
+                                    </div>
+                                </div>
                             </Link>
                         ))}
                     </div>
@@ -74,14 +88,19 @@ export default function Category({ category, tours, others, faqs, guides }: { ca
 
             <section className="container-site py-20">
                 <span className="eyebrow">{tx('cat_explore')}</span>
-                <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                {/* The same standard card as trips and stays */}
+                <div className="mt-8 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     {others.map((c) => (
-                        <Link key={c.id} href={`/experiences/${c.slug}`} data-reveal className="img-zoom group relative block h-72 overflow-hidden">
-                            <img src={img(c.image, 700)} alt="" loading="lazy" className="h-full w-full object-cover" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent" />
-                            <div className="absolute bottom-0 p-6 text-white">
-                                <p className="text-[11px] uppercase tracking-[0.2em] text-gold-light">{c.tagline}</p>
-                                <p className="font-display mt-1 text-3xl font-semibold tracking-tight">{c.name}</p>
+                        <Link key={c.id} href={`/experiences/${c.slug}`} data-reveal
+                            className="group flex h-full flex-col overflow-hidden border border-ink/10 bg-white transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_18px_40px_-24px_rgba(29,68,104,.45)]">
+                            <div className="img-zoom aspect-[16/10] shrink-0 overflow-hidden bg-sand-200"><img src={img(c.image, 700)} alt="" loading="lazy" className="h-full w-full object-cover" /></div>
+                            <div className="flex flex-1 flex-col p-4">
+                                <p className="eyebrow !text-[11px]">{c.name}</p>
+                                <h3 className="font-display mt-1.5 line-clamp-2 min-h-[2.75em] text-[1.05rem] font-semibold leading-snug tracking-tight text-ink group-hover:text-gold-dark">{c.tagline || c.name}</h3>
+                                <div className="mt-auto flex items-center justify-between gap-4 border-t border-ink/10 pt-3 text-[13.5px]">
+                                    <span className="font-semibold text-ink">{tx('cat_see_tours')}</span>
+                                    <span className="flex h-8 w-8 items-center justify-center text-gold transition group-hover:translate-x-0.5"><Icon name="arrow" size={16} /></span>
+                                </div>
                             </div>
                         </Link>
                     ))}
@@ -94,15 +113,15 @@ export default function Category({ category, tours, others, faqs, guides }: { ca
 export function FaqList({ faqs, dark = false }: { faqs: Faq[]; dark?: boolean }) {
     const [open, setOpen] = useState<number | null>(0);
     return (
-        <div className={cn('divide-y', dark ? 'divide-white/10' : 'divide-ink/10')}>
+        <div className="space-y-3">
             {faqs.map((f, i) => (
-                <div key={f.id}>
-                    <button onClick={() => setOpen(open === i ? null : i)} className="flex w-full items-center justify-between gap-6 py-6 text-left">
-                        <span className="font-display text-2xl leading-snug">{f.question}</span>
-                        <span className={cn('flex h-10 w-10 shrink-0 items-center justify-center rounded-none border transition-all duration-500', open === i ? 'rotate-45 border-gold bg-gold text-white' : dark ? 'border-white/20' : 'border-ink/15')}><Icon name="plus" size={16} /></span>
+                <div key={f.id} className={cn('border transition', dark ? 'border-white/15 bg-white/[0.04]' : 'bg-white', !dark && (open === i ? 'border-gold/40 shadow-[0_18px_40px_-28px_rgba(29,68,104,.5)]' : 'border-ink/10'))}>
+                    <button onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i} className="flex w-full items-center justify-between gap-6 px-5 py-4 text-left sm:px-6">
+                        <span className="font-display text-[1.05rem] font-semibold leading-snug sm:text-[1.1rem]">{f.question.replace(/^\d+\s*[.)]\s*/, '')}</span>
+                        <span className={cn('flex h-8 w-8 shrink-0 items-center justify-center border transition-all duration-300', open === i ? 'rotate-45 border-gold bg-gold text-white' : dark ? 'border-white/20' : 'border-ink/15')}><Icon name="plus" size={15} /></span>
                     </button>
-                    <div className={cn('grid transition-all duration-700 ease-lux', open === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0')}>
-                        <p className={cn('overflow-hidden pr-14 leading-relaxed', dark ? 'text-white/65' : 'text-ink/65')}><span className="block pb-6">{f.answer}</span></p>
+                    <div className={cn('grid transition-all duration-500', open === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0')}>
+                        <p className={cn('overflow-hidden px-5 text-[15px] leading-relaxed sm:px-6', dark ? 'text-white/70' : 'text-ink/70')}><span className="block pb-5">{f.answer}</span></p>
                     </div>
                 </div>
             ))}

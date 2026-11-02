@@ -40,7 +40,7 @@ export default function Contact({ faqs, team }: { faqs: Faq[]; team: TeamMember[
                     <h2 className="h-section mt-4">{tx('contact_form_title')}</h2>
                     <p className="mt-5 text-ink/60">{tx('contact_form_text')}</p>
                     <div className="mt-10 overflow-hidden ring-1 ring-ink/5">
-                        {settings.map_embed && <iframe src={settings.map_embed} title="Office map" className="h-72 w-full grayscale" loading="lazy" />}
+                        {settings.map_embed && <iframe src={settings.map_embed} title="Office map" className="block h-72 w-full border-0" loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade" />}
                         <div className="flex items-start gap-4 bg-white p-6"><Icon name="pin" className="mt-1 text-gold" /><p className="whitespace-pre-line text-ink/70"><span className="font-semibold text-ink">{settings.company_name}</span>{'\n'}{settings.address}</p></div>
                     </div>
                 </div>

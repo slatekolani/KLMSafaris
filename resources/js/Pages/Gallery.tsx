@@ -51,7 +51,7 @@ export default function Gallery({ photos, categories }: { photos: Photo[]; categ
                                 <button key={p.id} onClick={() => setOpen(i)} aria-label={`${tx('gallery_open')}: ${p.caption || p.category}`}
                                     className="img-zoom group relative mb-3 block w-full overflow-hidden bg-ink/5 md:mb-4" style={{ breakInside: 'avoid' }}>
                                     <img src={img(p.image, 700)} alt={p.caption || p.category} loading="lazy" className="block h-auto w-full" />
-                                    <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-10 text-left opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                    <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-900/70 to-transparent p-4 pt-10 text-left opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                                         <span className="block text-[11px] font-semibold uppercase tracking-[0.14em] text-white/75">{p.category}</span>
                                         {p.caption && <span className="mt-0.5 block font-display text-[15px] font-semibold text-white">{p.caption}</span>}
                                     </span>
