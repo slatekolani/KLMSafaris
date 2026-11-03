@@ -230,7 +230,7 @@ function Stays({ stays, total }: { stays: Stay[]; total: number }) {
     const matching = stays.filter((s) => !type || s.type === type);
 
     return (
-        <section id="accommodation" className="scroll-mt-24 py-14 lg:py-20">
+        <section id="accommodation" className="scroll-mt-24 py-12 lg:py-16">
             <div className="container-site">
                 <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
                     <div className="lg:col-span-7">
@@ -366,7 +366,7 @@ function Packages({ rows, categories, allTours, total }: { rows: Category[]; cat
     const count = countOf(current.slug);
 
     return (
-        <section id="packages" className="scroll-mt-24 py-14 lg:py-20">
+        <section id="packages" className="scroll-mt-24 pb-10 pt-14 lg:pb-14 lg:pt-20">
             <div className="container-site">
                 <div>
                     <p data-reveal className="eyebrow">{tx('packages_label')}</p>
@@ -750,12 +750,15 @@ function Reviews({ items }: { items: Testimonial[] }) {
     const r = items[i];
 
     return (
-        <section className="border-t border-ink/10 bg-sand-100 py-14 lg:py-20">
+        <section className="border-t border-ink/10 bg-sand-100 py-12 lg:py-16">
             <div className="container-site">
-                {/* Heading */}
-                <div>
-                    <p data-reveal className="eyebrow">{tx('reviews_label')}</p>
-                    <h2 data-reveal className="h-section fancy mt-4">{fancy(settings.home_reviews_title)}</h2>
+                {/* Heading, with a short line beside it on wide screens */}
+                <div className="grid gap-4 lg:grid-cols-12 lg:items-end">
+                    <div className="lg:col-span-7">
+                        <p data-reveal className="eyebrow">{tx('reviews_label')}</p>
+                        <h2 data-reveal className="h-section fancy mt-4">{fancy(settings.home_reviews_title)}</h2>
+                    </div>
+                    {tx('reviews_intro') && <p data-reveal className="text-[16px] leading-relaxed text-ink/65 lg:col-span-5">{tx('reviews_intro')}</p>}
                 </div>
 
                 {/* One line under the heading: Tripadvisor rating on the left, carousel controls on the right */}
@@ -780,11 +783,11 @@ function Reviews({ items }: { items: Testimonial[] }) {
                 </div>
 
                 {/* The review: fixed height, so long reviews never push the page around */}
-                <figure key={r.id} className="mt-8 flex h-[400px] max-w-4xl flex-col sm:h-[300px]">
+                <figure key={r.id} className="mt-8 flex h-[360px] max-w-4xl flex-col sm:h-[260px]">
                     <Stars count={r.rating} size={16} className="text-gold" />
                     {r.title && <p className="font-display mt-5 line-clamp-1 text-[1.2rem] font-semibold tracking-tight">{r.title}</p>}
                     <blockquote className="mt-4 min-h-0 flex-1">
-                        <p ref={quote} className={cn('h-full pr-2 font-display text-[1.1rem] font-medium leading-[1.5] tracking-tight text-ink sm:text-[1.25rem]', open ? 'overflow-y-auto' : 'overflow-hidden', long && !open && '[mask-image:linear-gradient(to_bottom,#000_75%,transparent)]')}>“{r.quote}”</p>
+                        <p ref={quote} className={cn('h-full pr-2 text-justify font-display text-[1.1rem] font-medium leading-[1.5] tracking-tight text-ink [hyphens:auto] sm:text-[1.25rem]', open ? 'overflow-y-auto' : 'overflow-hidden', long && !open && '[mask-image:linear-gradient(to_bottom,#000_75%,transparent)]')}>“{r.quote}”</p>
                     </blockquote>
                     {(long || open) && (
                         <button onClick={() => setOpen(!open)} className="link-arrow mt-3 self-start !text-[13px]">{tx(open ? 'reviews_less' : 'reviews_read_more')}</button>
@@ -797,6 +800,14 @@ function Reviews({ items }: { items: Testimonial[] }) {
 }
 
 const PILLAR_ICONS = ['users', 'pin', 'leaf', 'globe'];
+/** Pillar colours asked for by KLM: People & Culture black, Environment green, Nature light grey, Planet sky blue. */
+const PILLAR_TONES = [
+    { match: /people|culture/i, box: 'bg-[#111111] text-white', num: 'text-white/10', icon: 'bg-white/15 text-white', text: 'text-white/75' },
+    { match: /environment|place/i, box: 'bg-[#2e7d32] text-white', num: 'text-white/15', icon: 'bg-white/15 text-white', text: 'text-white/85' },
+    { match: /nature/i, box: 'bg-[#e6e8ea] text-ink', num: 'text-ink/[0.07]', icon: 'bg-white text-ink', text: 'text-ink/70' },
+    { match: /planet/i, box: 'bg-[#8fd3f4] text-ink', num: 'text-ink/[0.08]', icon: 'bg-white/60 text-ink', text: 'text-ink/75' },
+];
+const pillarTone = (title: string, i: number) => PILLAR_TONES.find((t) => t.match.test(title)) ?? PILLAR_TONES[i % PILLAR_TONES.length];
 
 /* ================================================================ Sustainability */
 /** KLM's sustainability commitment (CMS → Site settings → Homepage), where the partner logos used to sit. */
@@ -842,16 +853,18 @@ function Sustainability() {
 
                     {!!pillars.length && (
                         <ul className={cn('grid gap-4 sm:grid-cols-2 md:gap-5', settings.footer_sustain_image ? 'md:col-span-7' : 'md:col-span-12 lg:grid-cols-4')}>
-                            {pillars.map((p, i) => (
-                                <li key={p.title} data-reveal style={{ ['--d' as string]: `${i * 90}ms` }}
-                                    className={cn('relative flex flex-col overflow-hidden p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-20px_rgba(29,68,104,.45)] lg:p-7',
-                                        i === 0 ? 'bg-forest-900 text-white' : 'bg-white text-ink ring-1 ring-ink/10')}>
-                                    <span aria-hidden className={cn('absolute right-5 top-3 font-display text-[54px] font-bold leading-none tabular-nums', i === 0 ? 'text-white/10' : 'text-ink/[0.06]')}>{String(i + 1).padStart(2, '0')}</span>
-                                    <span className={cn('flex h-11 w-11 items-center justify-center', i === 0 ? 'bg-gold text-white' : 'bg-gold/10 text-gold')}><Icon name={PILLAR_ICONS[i % PILLAR_ICONS.length]} size={20} /></span>
-                                    <p className="mt-auto pt-8 font-display text-[18px] font-bold leading-snug">{p.title}</p>
-                                    {p.text && <p className={cn('mt-2 text-[14px] leading-relaxed', i === 0 ? 'text-white/75' : 'text-ink/65')}>{p.text}</p>}
-                                </li>
-                            ))}
+                            {pillars.map((p, i) => {
+                                const tone = pillarTone(p.title, i);
+                                return (
+                                    <li key={p.title} data-reveal style={{ ['--d' as string]: `${i * 90}ms` }}
+                                        className={cn('relative flex flex-col overflow-hidden p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-20px_rgba(29,68,104,.45)] lg:p-7', tone.box)}>
+                                        <span aria-hidden className={cn('absolute right-5 top-3 font-display text-[54px] font-bold leading-none tabular-nums', tone.num)}>{String(i + 1).padStart(2, '0')}</span>
+                                        <span className={cn('flex h-11 w-11 items-center justify-center', tone.icon)}><Icon name={PILLAR_ICONS[i % PILLAR_ICONS.length]} size={20} /></span>
+                                        <p className="mt-auto pt-8 font-display text-[18px] font-bold leading-snug">{p.title}</p>
+                                        {p.text && <p className={cn('mt-2 text-[14px] leading-relaxed', tone.text)}>{p.text}</p>}
+                                    </li>
+                                );
+                            })}
                         </ul>
                     )}
                 </div>

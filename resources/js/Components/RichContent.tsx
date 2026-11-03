@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type ReactNode } from 'react';
 import Icon from '@/Components/Icon';
 import { cn, img } from '@/lib/utils';
 
@@ -114,8 +114,10 @@ function parse(html: string) {
     return { intro, badges: badges.length > 1 ? badges.slice(0, 6) : [], faqs, sections };
 }
 
-/** Structured layout for long CMS pages (about, volunteering, travel info, guides…). */
-export default function RichContent({ html, heroImage }: { html: string; heroImage?: string | null }) {
+/** Structured layout for long CMS pages (about, volunteering, travel info, guides…).
+ *  `extra` is a block of the page's own (e.g. the team) shown right after the first section whose title matches
+ *  `after`, or at the end of the content when no section does. */
+export default function RichContent({ html, heroImage, extra }: { html: string; heroImage?: string | null; extra?: { after: RegExp; node: ReactNode } }) {
     const parsed = useMemo(() => parse(html || ''), [html]);
     const { intro, badges, faqs } = parsed;
     // The hero already shows the page photo: drop it from the content (and a section left with nothing to show).
@@ -133,6 +135,10 @@ export default function RichContent({ html, heroImage }: { html: string; heroIma
     // Many short entries that each have one photo (a list of trips or routes) read best as a grid of photo cards.
     const photoCards = story && sections.length >= 5 && sections.filter((s) => s.images.length === 1 && s.text.length < 600).length >= sections.length * 0.7;
     const toc = !asCards && !story && sections.length >= 4;
+    let placed = false;
+    const place = (items: Block[], out: JSX.Element[]) => {
+        if (extra && !placed && items.some((x) => extra.after.test(x.title))) { out.push(<div key="extra">{extra.node}</div>); placed = true; }
+    };
 
     return (
         <div className="rich-content">
@@ -198,10 +204,13 @@ export default function RichContent({ html, heroImage }: { html: string; heroIma
                                 const group = [s];
                                 while (sections[i + 1] && isShort(sections[i + 1]) && group.length < 4) group.push(sections[++i]);
                                 out.push(<IconCards key={s.id} items={group} />);
+                                place(group, out);
+                                continue;
                             } else if (s.images.length && !s.text && !/<table/i.test(s.html)) out.push(<Banner key={s.id} s={s} />);
                             else if (s.images.length === 1) out.push(<Split key={s.id} s={s} flip={side++ % 2 === 1} />);
                             else if (s.images.length > 1) out.push(<Mosaic key={s.id} s={s} />);
                             else out.push(<TextOnly key={s.id} s={s} />);
+                            place([s], out);
                         }
                         return out;
                     })()}
@@ -232,6 +241,7 @@ export default function RichContent({ html, heroImage }: { html: string; heroIma
                                     const group = [s];
                                     while (sections[i + 1] && isShort(sections[i + 1]) && group.length < 4) group.push(sections[++i]);
                                     out.push(<div key={s.id} className={gap}><IconCards items={group} /></div>);
+                                    place(group, out);
                                     continue;
                                 }
                                 out.push(
@@ -243,12 +253,15 @@ export default function RichContent({ html, heroImage }: { html: string; heroIma
                                         <div className="prose-lux mt-5" dangerouslySetInnerHTML={{ __html: s.html }} />
                                     </section>,
                                 );
+                                place([s], out);
                             }
                             return out;
                         })()}
                     </div>
                 </div>
             )}
+
+            {extra && !placed && <div className="mt-16">{extra.node}</div>}
 
             {faqs.length > 0 && <FaqBlock items={faqs} />}
         </div>

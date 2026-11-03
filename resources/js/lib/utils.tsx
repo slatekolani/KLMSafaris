@@ -64,6 +64,12 @@ export function useOptions(key: string): [string, string][] {
     return rows.map((r) => [r.value ?? '', r.title ?? '']);
 }
 
+/** "255755547595" → "+255 755 547 595", for showing the WhatsApp number. */
+export function whatsappNumber(number: string): string {
+    const d = (number || '').replace(/\D/g, '');
+    return d.length === 12 ? `+${d.slice(0, 3)} ${d.slice(3, 6)} ${d.slice(6, 9)} ${d.slice(9)}` : (d ? `+${d}` : '');
+}
+
 export function whatsappLink(number: string, text = 'Hello KLM Safaris! I would like to plan a trip to Tanzania.'): string {
     return `https://wa.me/${(number || '').replace(/\D/g, '')}?text=${encodeURIComponent(text)}`;
 }

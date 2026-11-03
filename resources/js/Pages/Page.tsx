@@ -17,7 +17,9 @@ export default function Page({ page, team, faqs }: { page: P; team: TeamMember[]
 
             {page.body && (
                 <section className="container-site py-16 lg:py-20">
-                    <RichContent html={page.body} heroImage={page.image || settings.og_image} />
+                    {/* The team comes straight after Mission & Vision (KLM's request), inside the page content */}
+                    <RichContent html={page.body} heroImage={page.image || settings.og_image}
+                        extra={team.length ? { after: /vision/i, node: <Team team={team} /> } : undefined} />
                 </section>
             )}
 
@@ -78,38 +80,10 @@ export default function Page({ page, team, faqs }: { page: P; team: TeamMember[]
                 </section>
             ))}
 
-            {/* Team (CMS → Team): photo cards with name and role on the photo, the short bio and email below */}
-            {team.length > 0 && (
+            {/* A page without text still shows its team in a section of its own */}
+            {team.length > 0 && !page.body && (
                 <section className="border-t border-ink/10 bg-sand-100 py-16 lg:py-20">
-                    <div className="container-site">
-                        <div className="max-w-2xl">
-                            <span className="eyebrow"><Icon name="users" size={15} className="text-gold" /> {tx('page_team')}</span>
-                            <h2 className="h-section mt-3">{tx('page_team_title')}</h2>
-                        </div>
-                        <div className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                            {team.map((m, i) => (
-                                <article key={m.id} data-reveal style={{ ['--d' as string]: `${(i % 4) * 60}ms` }}
-                                    className="group flex flex-col overflow-hidden border border-ink/10 bg-white transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_18px_40px_-24px_rgba(29,68,104,.45)]">
-                                    <div className="img-zoom relative aspect-[4/5] overflow-hidden bg-forest-900">
-                                        {m.photo
-                                            ? <img src={img(m.photo, 600)} alt={m.name} loading="lazy" className="h-full w-full object-cover" />
-                                            : <span className="font-display flex h-full w-full items-center justify-center text-6xl font-semibold text-gold-light">{initials(m.name)}</span>}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-forest-900/85 via-transparent to-transparent" />
-                                        <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-                                            <p className="font-display text-[1.15rem] font-semibold leading-tight">{m.name}</p>
-                                            {m.role && <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-light">{m.role}</p>}
-                                        </div>
-                                    </div>
-                                    {(m.bio || m.email) && (
-                                        <div className="flex flex-1 flex-col p-4">
-                                            {m.bio && <p className="line-clamp-4 text-[14px] leading-relaxed text-ink/65">{m.bio}</p>}
-                                            {m.email && <a href={`mailto:${m.email}`} className="mt-auto flex items-center gap-2 pt-3 text-[13px] font-semibold text-gold hover:text-gold-dark"><Icon name="mail" size={14} />{m.email}</a>}
-                                        </div>
-                                    )}
-                                </article>
-                            ))}
-                        </div>
-                    </div>
+                    <div className="container-site"><Team team={team} /></div>
                 </section>
             )}
 
@@ -120,12 +94,49 @@ export default function Page({ page, team, faqs }: { page: P; team: TeamMember[]
                 </section>
             )}
 
-            <section className="border-t border-ink/10 bg-sand-100 py-16"><div className="container-site max-w-none">
+            {/* Closing call to action: centred, as a banner of its own */}
+            <section className="border-t border-ink/10 bg-sand-100 py-16 text-center"><div className="container-site">
                 <p className="h-section">{page.cta_title || tx('page_cta_title', { site: settings.site_name })}</p>
-                {page.cta_text && <p className="mt-4 text-lg text-ink/60">{page.cta_text}</p>}
+                {page.cta_text && <p className="mx-auto mt-4 max-w-2xl text-lg text-ink/60">{page.cta_text}</p>}
                 <CtaLink href={page.cta_url || '/plan-your-trip'} className="btn btn-gold mt-6">{page.cta_label || tx('page_cta_button')}</CtaLink>
             </div></section>
         </SiteLayout>
+    );
+}
+
+/** Team (CMS → Team): photo cards with name and role on the photo, the short bio and email below. */
+function Team({ team }: { team: TeamMember[] }) {
+    const tx = useText();
+    return (
+        <div>
+            <div className="max-w-2xl">
+                <span className="eyebrow"><Icon name="users" size={15} className="text-gold" /> {tx('page_team')}</span>
+                <h2 className="h-section mt-3">{tx('page_team_title')}</h2>
+            </div>
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {team.map((m, i) => (
+                    <article key={m.id} data-reveal style={{ ['--d' as string]: `${(i % 4) * 60}ms` }}
+                        className="group flex flex-col overflow-hidden border border-ink/10 bg-white transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_18px_40px_-24px_rgba(29,68,104,.45)]">
+                        <div className="img-zoom relative aspect-[4/5] overflow-hidden bg-forest-900">
+                            {m.photo
+                                ? <img src={img(m.photo, 600)} alt={m.name} loading="lazy" className="h-full w-full object-cover" />
+                                : <span className="font-display flex h-full w-full items-center justify-center text-6xl font-semibold text-gold-light">{initials(m.name)}</span>}
+                            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/85 via-transparent to-transparent" />
+                            <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+                                <p className="font-display text-[1.15rem] font-semibold leading-tight">{m.name}</p>
+                                {m.role && <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-light">{m.role}</p>}
+                            </div>
+                        </div>
+                        {(m.bio || m.email) && (
+                            <div className="flex flex-1 flex-col p-4">
+                                {m.bio && <p className="line-clamp-4 text-[14px] leading-relaxed text-ink/65">{m.bio}</p>}
+                                {m.email && <a href={`mailto:${m.email}`} className="mt-auto flex items-center gap-2 pt-3 text-[13px] font-semibold text-gold hover:text-gold-dark"><Icon name="mail" size={14} />{m.email}</a>}
+                            </div>
+                        )}
+                    </article>
+                ))}
+            </div>
+        </div>
     );
 }
 

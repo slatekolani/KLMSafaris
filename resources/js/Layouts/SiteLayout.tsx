@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'rea
 import Icon from '@/Components/Icon';
 import BrandTile, { BrandMark } from '@/Components/BrandIcon';
 import Logo from '@/Components/Logo';
-import { cn, img, plain, setPriceFallback, useShared, useText, whatsappLink } from '@/lib/utils';
+import { cn, img, plain, setPriceFallback, useShared, useText, whatsappLink, whatsappNumber } from '@/lib/utils';
 
 type Props = { children: ReactNode; title?: string; description?: string | null; image?: string | null; solidHeader?: boolean; mobileBar?: boolean };
 
@@ -104,6 +104,13 @@ function useMenuSections(): MenuSection[] {
         sections.push({ key: 'volunteer', label: t('menu_volunteer'), href: volunteer[0].href, columns: volunteer.length > 1 ? [{ title: t('menu_volunteer_col'), links: volunteer }] : [], plain: volunteer.length === 1 });
     }
 
+    // Sustainability: its own menu item with the sustainability pages (the client asked for it in the main menu).
+    const sustain = pageLinks('Sustainability');
+    if (sustain.length) {
+        const main = sustain.find((l) => l.href === '/sustainable-travel-3') ?? sustain[0];
+        sections.push({ key: 'sustainability', label: t('menu_sustainability'), href: main.href, image: main.image || settings.footer_sustain_image, tagline: t('menu_sustainability_tagline'), columns: [{ title: t('menu_sustain_col'), links: sustain }] });
+    }
+
     sections.push({ key: 'blog', label: t('menu_blog'), href: '/journal', columns: [], plain: true });
 
     sections.push({
@@ -111,7 +118,6 @@ function useMenuSections(): MenuSection[] {
         image: pages.find((p) => p.slug === 'about-klm-safaris')?.image || settings.og_image, tagline: settings.tagline,
         columns: [
             { title: t('menu_about_col'), links: [...pageLinks('About'), { label: t('menu_blog_link'), href: '/journal', image: settings.journal_hero_image }, { label: t('menu_gallery_link'), href: '/gallery', image: settings.gallery_hero_image }, { label: t('menu_stays_link'), href: '/accommodation', image: settings.stays_hero_image }, { label: t('menu_contact_link'), href: '/contact' }] },
-            { title: t('menu_sustain_col'), links: pageLinks('Sustainability') },
             { title: t('menu_travel_col'), links: pageLinks('Travel Info') },
         ].filter((c) => c.links.length),
     });
@@ -319,10 +325,10 @@ function Header({ solid }: { solid: boolean }) {
 
 function NavItem({ label, href, light, active, plain, onEnter }: { label: string; href: string; light: boolean; active: boolean; plain?: boolean; onEnter: () => void }) {
     return (
-        <Link href={href} onMouseEnter={onEnter} className={cn('group relative flex items-center gap-1 whitespace-nowrap px-3 py-8 text-[14.5px] font-medium transition-colors 2xl:px-4', light ? 'text-white/90 hover:text-white' : 'text-ink/80 hover:text-ink')}>
+        <Link href={href} onMouseEnter={onEnter} className={cn('group relative flex items-center gap-1 whitespace-nowrap px-2 py-8 text-[14.5px] font-medium transition-colors 2xl:px-4', light ? 'text-white/90 hover:text-white' : 'text-ink/80 hover:text-ink')}>
             {label}
             {!plain && <Icon name="chevronDown" size={13} className={cn('transition-transform duration-300', active && 'rotate-180')} />}
-            <span className={cn('absolute inset-x-3 bottom-[22px] h-px origin-left bg-current transition-transform duration-300', active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100')} />
+            <span className={cn('absolute inset-x-2 bottom-[22px] h-px 2xl:inset-x-4 origin-left bg-current transition-transform duration-300', active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100')} />
         </Link>
     );
 }
@@ -413,7 +419,8 @@ function Footer() {
                             <ul className="mt-5 space-y-3 text-[14.5px]">
                                 <li className="whitespace-pre-line leading-relaxed">{settings.company_name}{'\n'}{settings.address}</li>
                                 <li><a href={`tel:${settings.phone}`} className="hover:text-white">{settings.phone}</a></li>
-                                {settings.phone_2 && <li><a href={whatsappLink(settings.whatsapp, t('whatsapp_message'))} target="_blank" rel="noreferrer" className="hover:text-white">{settings.phone_2} · WhatsApp</a></li>}
+                                {settings.phone_2 && <li><a href={`tel:${settings.phone_2}`} className="hover:text-white">{settings.phone_2}</a></li>}
+                                {settings.whatsapp && <li><a href={whatsappLink(settings.whatsapp, t('whatsapp_message'))} target="_blank" rel="noreferrer" className="hover:text-white">{whatsappNumber(settings.whatsapp)} · WhatsApp</a></li>}
                                 <li><a href={`mailto:${settings.email}`} className="hover:text-white">{settings.email}</a></li>
                             </ul>
                         </div>
@@ -425,7 +432,7 @@ function Footer() {
                 <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 pt-6 text-[12.5px] md:flex-nowrap">
                     <p className="md:min-w-0 md:flex-1">© {new Date().getFullYear()} {settings.copyright}</p>
                     {settings.footer_payments && (
-                        <span className="flex shrink-0 items-center bg-white px-2 py-1"><img src={settings.footer_payments} alt="Payment methods: Mastercard, Maestro, Visa, American Express, PayPal" loading="lazy" className="h-5 w-auto max-w-none" /></span>
+                        <span className="flex shrink-0 items-center bg-white px-2.5 py-1.5"><img src={settings.footer_payments} alt="Payment methods: Mastercard, Maestro, Visa, American Express, PayPal" loading="lazy" className="h-8 w-auto max-w-none sm:h-9" /></span>
                     )}
                     {settings.footer_credit_label && (
                         <a href={settings.footer_credit_url || '#'} target="_blank" rel="noreferrer" aria-label={`${settings.footer_credit_label} ${settings.footer_credit_name}`}

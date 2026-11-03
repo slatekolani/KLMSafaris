@@ -2,7 +2,7 @@ import EnquiryForm from '@/Components/EnquiryForm';
 import Icon from '@/Components/Icon';
 import PageHero from '@/Components/PageHero';
 import SiteLayout from '@/Layouts/SiteLayout';
-import { img, initials, useShared, useText, whatsappLink } from '@/lib/utils';
+import { img, initials, useShared, useText, whatsappLink, whatsappNumber } from '@/lib/utils';
 import type { Faq, TeamMember } from '@/types';
 import { FaqList } from './Category';
 
@@ -12,7 +12,7 @@ export default function Contact({ faqs, team }: { faqs: Faq[]; team: TeamMember[
     const cards = [
         { icon: 'phone', label: tx('contact_call'), value: settings.phone, href: `tel:${settings.phone}` },
         { icon: 'mail', label: tx('contact_email'), value: settings.email, href: `mailto:${settings.email}` },
-        { icon: 'send', label: tx('contact_whatsapp'), value: settings.phone_2 || tx('contact_whatsapp_text'), href: whatsappLink(settings.whatsapp, tx('whatsapp_message')) },
+        { icon: 'send', label: tx('contact_whatsapp'), value: whatsappNumber(settings.whatsapp) || tx('contact_whatsapp_text'), href: whatsappLink(settings.whatsapp, tx('whatsapp_message')) },
         { icon: 'clock', label: tx('contact_hours'), value: settings.office_hours },
     ];
 

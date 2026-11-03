@@ -3,7 +3,8 @@ import Pagination, { usePaged } from '@/Components/Pagination';
 import PageHero from '@/Components/PageHero';
 import StayCard, { type Stay } from '@/Components/StayCard';
 import SiteLayout from '@/Layouts/SiteLayout';
-import { cn, useShared, useText } from '@/lib/utils';
+import Icon from '@/Components/Icon';
+import { cn, fancy, img, useShared, useText } from '@/lib/utils';
 
 /** Every lodge, camp and hotel KLM uses (CMS → Accommodation), filterable by style. */
 export default function AccommodationIndex({ stays, types }: { stays: Stay[]; types: string[] }) {
@@ -14,11 +15,36 @@ export default function AccommodationIndex({ stays, types }: { stays: Stay[]; ty
     const shown = stays.filter((s) => !type || s.type === type);
     const paged = usePaged(shown);
     const areas = new Set(stays.map((s) => s.destination?.id).filter(Boolean)).size;
+    const luxPhotos = [1, 2, 3, 4].map((i) => settings[`stays_lux_image${i}`]).filter(Boolean) as string[];
+    const luxType = types.find((t) => /luxur/i.test(t));
 
     return (
         <SiteLayout title={tx('stays_title')}>
             <PageHero image={settings.stays_hero_image} eyebrow={settings.stays_hero_eyebrow} title={settings.stays_hero_title} subtitle={settings.stays_hero_text} crumbs={[{ label: tx('stays_title') }]}
                 facts={[{ label: tx('stays_fact_places'), value: stays.length || null }, { label: tx('stays_fact_areas'), value: areas || null }, { label: tx('stays_fact_types'), value: types.length || null }]} />
+
+            {/* Luxury properties first: four photos and a short introduction, the categories below */}
+            {settings.stays_lux_title && (
+                <section className="container-site grid items-center gap-8 pt-14 lg:grid-cols-[1fr_1.35fr] lg:gap-14 lg:pt-20">
+                    <div>
+                        {settings.stays_lux_eyebrow && <p className="eyebrow">{settings.stays_lux_eyebrow}</p>}
+                        <h2 className="h-section fancy mt-4 text-balance">{fancy(settings.stays_lux_title)}</h2>
+                        {settings.stays_lux_text && <p className="mt-5 text-justify text-[16px] leading-relaxed text-ink/70 [hyphens:auto]">{settings.stays_lux_text}</p>}
+                        {luxType && settings.stays_lux_button && (
+                            <button onClick={() => { setType(luxType); const el = paged.top.current; if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 160, behavior: 'smooth' }); }} className="btn btn-gold mt-8">{settings.stays_lux_button} <Icon name="arrow" size={16} className="arrow" /></button>
+                        )}
+                    </div>
+                    {luxPhotos.length > 0 && (
+                        <div className="grid grid-cols-2 gap-3">
+                            {luxPhotos.map((src, i) => (
+                                <div key={src + i} className="relative aspect-[4/3] overflow-hidden bg-sand-100">
+                                    <img src={img(src)} alt="" loading={i > 1 ? 'lazy' : undefined} className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105" />
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </section>
+            )}
 
             <section className="container-site py-14 lg:py-20">
                 {types.length > 1 && (

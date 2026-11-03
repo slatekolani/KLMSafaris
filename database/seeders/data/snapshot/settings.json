@@ -1,7 +1,7 @@
 [
     {
         "key": "address",
-        "value": "Market Street, P.O Box 7815\nKilimanjaro\nTanzania, East Africa",
+        "value": "Market Street, P.O. Box 7818\nKilimanjaro\nTanzania, East Africa",
         "created_at": "2026-10-26 06:16:18",
         "updated_at": "2026-10-26 06:16:18"
     },
@@ -211,7 +211,7 @@
     },
     {
         "key": "footer_col1_links",
-        "value": "[{\"label\": \"Kilimanjaro Routes\", \"url\": \"/experiences/kilimanjaro\"}, {\"label\": \"Tanzania Safaris\", \"url\": \"/experiences/safari\"}, {\"label\": \"Zanzibar Beach Holidays\", \"url\": \"/experiences/zanzibar\"}, {\"label\": \"Day Tours\", \"url\": \"/experiences/day-tours\"}, {\"label\": \"Mount Meru Trekking\", \"url\": \"/mount-meru-trekking\"}, {\"label\": \"Sustainability\", \"url\": \"/sustainable-travel-3\"}, {\"label\": \"Photo Gallery\", \"url\": \"/gallery\"}, {\"label\": \"Accommodation\", \"url\": \"/accommodation\"}]",
+        "value": "[{\"label\": \"Mount Kilimanjaro\", \"url\": \"/destinations/kilimanjaro\"}, {\"label\": \"Serengeti National Park\", \"url\": \"/destinations/serengeti\"}, {\"label\": \"Ngorongoro Crater\", \"url\": \"/destinations/ngorongoro\"}, {\"label\": \"Tarangire National Park\", \"url\": \"/destinations/tarangire\"}, {\"label\": \"Lake Manyara\", \"url\": \"/destinations/lake-manyara\"}, {\"label\": \"Arusha & Mount Meru\", \"url\": \"/destinations/arusha\"}, {\"label\": \"Zanzibar\", \"url\": \"/destinations/zanzibar\"}, {\"label\": \"Lake Victoria\", \"url\": \"/destinations/lake-victoria\"}]",
         "created_at": "2026-10-26 06:16:19",
         "updated_at": "2026-10-26 07:54:34"
     },
@@ -223,7 +223,7 @@
     },
     {
         "key": "footer_col2_links",
-        "value": "[{\"label\":\"Information about Tanzania\",\"url\":\"\\/information-about-tanzania\"},{\"label\":\"Travel Advice\",\"url\":\"\\/travel-advice\"},{\"label\":\"Travel Information\",\"url\":\"\\/travel-information\"},{\"label\":\"Tanzania Tourist Board\",\"url\":\"https:\\/\\/www.tanzaniatourism.go.tz\\/\"},{\"label\":\"Tanzania National Parks (TANAPA)\",\"url\":\"https:\\/\\/www.tanzaniaparks.go.tz\\/\"},{\"label\":\"Booking Terms & Conditions\",\"url\":\"\\/booking-terms-and-conditions\"}]",
+        "value": "[{\"label\": \"Information about Tanzania\", \"url\": \"/information-about-tanzania\"}, {\"label\": \"Travel Advice\", \"url\": \"/travel-advice\"}, {\"label\": \"Travel Information\", \"url\": \"/travel-information\"}, {\"label\": \"Tanzania Tourist Board\", \"url\": \"https://www.tanzaniatourism.go.tz/\"}, {\"label\": \"Tanzania National Parks (TANAPA)\", \"url\": \"https://www.tanzaniaparks.go.tz/\"}, {\"label\": \"Ngorongoro Conservation Area (NCAA)\", \"url\": \"https://www.ncaa.go.tz/\"}, {\"label\": \"Booking Terms & Conditions\", \"url\": \"/booking-terms-and-conditions\"}]",
         "created_at": "2026-10-26 06:16:19",
         "updated_at": "2026-10-26 06:16:19"
     },
@@ -1591,7 +1591,7 @@
     },
     {
         "key": "rating_count",
-        "value": "145 Tripadvisor reviews",
+        "value": "187 Tripadvisor reviews",
         "created_at": "2026-10-26 06:16:18",
         "updated_at": "2026-10-26 06:16:18"
     },
@@ -3049,13 +3049,13 @@
     },
     {
         "key": "whatsapp",
-        "value": "255744812556",
+        "value": "255755547595",
         "created_at": "2026-10-26 06:16:18",
         "updated_at": "2026-10-26 06:16:18"
     },
     {
         "key": "x",
-        "value": "https://x.com/klmsafaris",
+        "value": "",
         "created_at": "2026-10-26 06:16:18",
         "updated_at": "2026-10-26 06:16:18"
     },
