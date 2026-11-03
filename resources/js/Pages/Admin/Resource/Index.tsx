@@ -1,5 +1,6 @@
 import { Link, router } from '@inertiajs/react';
 import { useEffect, useRef, useState } from 'react';
+import Dropdown from '@/Components/Dropdown';
 import Icon from '@/Components/Icon';
 import AdminLayout, { Card } from '@/Layouts/AdminLayout';
 import { cn, formatDate, img, money } from '@/lib/utils';
@@ -39,10 +40,9 @@ export default function ResourceIndex({ resource, rows, filters, filterOptions }
                     </label>
                 )}
                 {filterOptions && (
-                    <select value={filters.filter ?? ''} onChange={(e) => router.get(base, { ...filters, filter: e.target.value || undefined }, { preserveState: true })} className="rounded-full border border-ink/10 bg-white px-4 py-2.5 text-sm outline-none">
-                        <option value="">All {resource.filterLabel?.toLowerCase()}s</option>
-                        {Object.entries(filterOptions).map(([id, name]) => <option key={id} value={id}>{name}</option>)}
-                    </select>
+                    <Dropdown className="min-w-[200px]" buttonClass="rounded-full border border-ink/10 bg-white px-4 py-2.5 text-sm" value={filters.filter ?? ''}
+                        onChange={(v) => router.get(base, { ...filters, filter: v || undefined }, { preserveState: true })}
+                        options={[['', `All ${resource.filterLabel?.toLowerCase()}s`], ...(Object.entries(filterOptions) as [string, string][])]} />
                 )}
                 <p className="self-center text-sm text-ink/50 sm:ml-auto">{rows.total} total</p>
             </div>

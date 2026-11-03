@@ -1,6 +1,7 @@
 import { Link, router } from '@inertiajs/react';
 import { useEffect, useRef, useState, type FormEvent, type MouseEvent } from 'react';
 import Counter from '@/Components/Counter';
+import Dropdown from '@/Components/Dropdown';
 import Icon from '@/Components/Icon';
 import StayCard, { type Stay } from '@/Components/StayCard';
 import TripadvisorMark, { TripadvisorBubbles } from '@/Components/TripadvisorMark';
@@ -343,16 +344,9 @@ function TripFinder({ categories }: { categories: Category[] }) {
     );
 }
 
+/** Trip finder field: the shared styled dropdown, with its label above the value. */
 function Select({ label, value, onChange, options }: { label: string; value: string; onChange: (v: string) => void; options: [string, string][] }) {
-    return (
-        <label className="relative flex cursor-pointer flex-col justify-center border-b border-ink/10 py-4 md:border-b-0 md:border-l md:px-6">
-            <span className="truncate text-[11px] font-semibold uppercase tracking-[0.16em] text-ink/45" title={label}>{label}</span>
-            <select value={value} onChange={(e) => onChange(e.target.value)} className="mt-1 w-full cursor-pointer appearance-none bg-transparent pr-6 text-[16px] font-medium text-ink outline-none">
-                {options.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
-            </select>
-            <Icon name="chevronDown" size={16} className="pointer-events-none absolute bottom-5 right-0 text-ink/40 md:right-6" />
-        </label>
-    );
+    return <Dropdown variant="finder" label={label} value={value} onChange={onChange} options={options} className="border-b border-ink/10 md:border-b-0 md:border-l" />;
 }
 
 /* ================================================================ Popular packages: tabbed by category */

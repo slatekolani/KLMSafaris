@@ -1,5 +1,6 @@
 import { Link, router } from '@inertiajs/react';
 import { useEffect, useRef, useState } from 'react';
+import Dropdown from '@/Components/Dropdown';
 import Icon from '@/Components/Icon';
 import Pagination, { usePaged } from '@/Components/Pagination';
 import PageHero from '@/Components/PageHero';
@@ -102,13 +103,7 @@ export default function ToursIndex({ tours, categories, destinations, filters }:
     );
 }
 
+/** Search bar filter: the shared styled dropdown (white list, check on the chosen option). */
 function Select({ value, onChange, options }: { value?: string; onChange: (v: string) => void; options: [string, string][] }) {
-    return (
-        <label className="relative">
-            <select value={value ?? ''} onChange={(e) => onChange(e.target.value)} className="field cursor-pointer appearance-none !rounded-none !py-2.5 pr-10">
-                {options.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
-            </select>
-            <Icon name="chevronDown" size={15} className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-ink/40" />
-        </label>
-    );
+    return <Dropdown value={value} onChange={onChange} options={options} />;
 }

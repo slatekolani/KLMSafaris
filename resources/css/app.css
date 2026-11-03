@@ -60,6 +60,9 @@
 
     /* Menu preview photo: fades in each time a different link is hovered. */
     .menu-fade { animation: menu-fade .45s ease both; }
+    /* Dropdown lists: a quick drop-in when they open. */
+    .menu-pop { animation: menu-pop .18s ease-out both; }
+    @keyframes menu-pop { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
     @keyframes menu-fade { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: scale(1.02); } }
     .link-underline { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .4s ease; }
     .link-underline:hover { background-size: 100% 1px; }

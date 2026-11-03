@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
+import Dropdown from '@/Components/Dropdown';
 import Icon from '@/Components/Icon';
 import { cn, img } from '@/lib/utils';
 
@@ -39,16 +40,13 @@ export function FieldRenderer({ field, value, onChange, error }: { field: FieldD
                 );
             case 'select':
                 return (
-                    <select className={input} value={value ?? ''} onChange={(e) => onChange(e.target.value)}>
-                        {Object.entries(field.options ?? {}).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
-                    </select>
+                    <Dropdown buttonClass={input} value={value ?? ''} onChange={onChange} searchable={Object.keys(field.options ?? {}).length > 8}
+                        options={Object.entries(field.options ?? {}) as [string, string][]} />
                 );
             case 'relation':
                 return (
-                    <select className={input} value={value ?? ''} onChange={(e) => onChange(e.target.value ? Number(e.target.value) : null)}>
-                        <option value="">None</option>
-                        {Object.entries(field.options ?? {}).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
-                    </select>
+                    <Dropdown buttonClass={input} value={value ?? ''} onChange={(v) => onChange(v ? Number(v) : null)} searchable={Object.keys(field.options ?? {}).length > 8}
+                        options={[['', 'None'], ...(Object.entries(field.options ?? {}) as [string, string][])]} />
                 );
             case 'multirelation':
                 return <MultiSelect options={field.options ?? {}} value={(value ?? []).map(Number)} onChange={onChange} />;
