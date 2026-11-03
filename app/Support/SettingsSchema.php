@@ -87,7 +87,7 @@ class SettingsSchema
                     'home_advice_badge_value' => ['label' => 'Why-us badge number', 'type' => 'text', 'default' => '145+'],
                     'home_advice_badge_label' => ['label' => 'Why-us badge label', 'type' => 'text', 'default' => 'Tripadvisor reviews'],
                     'home_advice_points' => ['label' => 'Why-us points', 'type' => 'repeater', 'fields' => ['title' => 'text', 'text' => 'textarea'], 'default' => [
-                        ['title' => 'Tanzania is our home', 'text' => 'A locally owned company based on Market Street in Kilimanjaro, at the foot of Kilimanjaro.'],
+                        ['title' => 'Tanzania is our home', 'text' => 'A locally owned company based on Market Street, at the foot of Mount Kilimanjaro.'],
                         ['title' => 'Expert local guides', 'text' => 'Our guides understand every single detail about the adventure and promise the best experience you will never forget.'],
                         ['title' => 'Sustainable travel', 'text' => 'We operate in ways that reduce environmental impacts, benefit host communities and protect destinations for future generations.'],
                         ['title' => 'Safe travel partner', 'text' => 'Members of the Flying Doctors’ Society of Africa with Global Rescue travel protection available for every safari.'],
@@ -428,6 +428,7 @@ class SettingsSchema
                         ['label' => 'Zanzibar Beach Holidays', 'url' => '/experiences/zanzibar'],
                         ['label' => 'Day Tours', 'url' => '/experiences/day-tours'],
                         ['label' => 'Mount Meru Trekking', 'url' => '/mount-meru-trekking'],
+                        ['label' => 'Sustainability', 'url' => '/sustainable-travel-3'],
                         ['label' => 'Photo Gallery', 'url' => '/gallery'],
                         ['label' => 'Accommodation', 'url' => '/accommodation'],
                     ]],

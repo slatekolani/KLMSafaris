@@ -42,6 +42,7 @@ export default function Home(props: Props) {
             <Sustainability />
             <AboutStory />
             <Figures counts={props.counts} />
+            <WhyUs />
         </SiteLayout>
     );
 }
@@ -687,6 +688,41 @@ function Figures({ counts }: { counts: Props['counts'] }) {
                         </div>
                     ))}
                 </dl>
+            </div>
+        </section>
+    );
+}
+
+/* ================================================================ Why travel with us */
+/** Four reasons (CMS → Homepage → Why travel points), right after the figures, with a link to the full page. */
+function WhyUs() {
+    const { settings } = useShared();
+    const tx = useText();
+    const points: { title: string; text: string }[] = (settings.home_advice_points ?? []).filter((p: { title?: string }) => p.title);
+    const icons = ['home', 'compass', 'leaf', 'shield'] as const;
+    if (!points.length) return null;
+    const more = tx('about_button2_url');
+    return (
+        <section className="border-t border-ink/10 bg-sand-100 py-14 lg:py-20">
+            <div className="container-site">
+                <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+                    <div className="max-w-2xl">
+                        <p data-reveal className="eyebrow">{tx('why_label')}</p>
+                        <h2 data-reveal className="h-section mt-3">{settings.home_advice_eyebrow}</h2>
+                        {settings.home_advice_text && <p data-reveal className="mt-4 text-[16px] leading-relaxed text-ink/65">{settings.home_advice_text}</p>}
+                    </div>
+                    {more && <Link href={more} className="btn btn-brand-outline shrink-0">{tx('why_more')} <Icon name="arrow" size={16} className="arrow" /></Link>}
+                </div>
+                <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                    {points.map((p, i) => (
+                        <li key={p.title} data-reveal style={{ ['--d' as string]: `${i * 70}ms` }}
+                            className="group flex flex-col border border-ink/10 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_18px_40px_-24px_rgba(29,68,104,.45)]">
+                            <span className="flex h-14 w-14 items-center justify-center bg-gold/10 text-gold transition group-hover:bg-gold group-hover:text-white"><Icon name={icons[i % icons.length]} size={24} /></span>
+                            <h3 className="font-display mt-5 text-[1.15rem] font-semibold leading-snug text-ink">{p.title}</h3>
+                            <p className="mt-2 text-[14.5px] leading-relaxed text-ink/65">{p.text}</p>
+                        </li>
+                    ))}
+                </ul>
             </div>
         </section>
     );

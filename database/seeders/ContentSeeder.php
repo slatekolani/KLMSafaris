@@ -367,11 +367,9 @@ class ContentSeeder extends Seeder
     /** Pages KLM no longer wants on the site: hidden and sent on to a related page (November 2026). */
     public function retiredPages(): void
     {
-        foreach (['why-traveling-with-klm-safaris' => '/about-klm-safaris', 'sustainable-travel-3' => '/our-climate-emergency-plan'] as $slug => $to) {
-            Page::where('slug', $slug)->update(['is_published' => false, 'redirect_to' => $to]);
-        }
+        // (Why travel with us and Sustainable Travel and Tourism were hidden on 2 Nov and switched back on on 3 Nov.)
         // Practical info pages use the plain, text-only hero (no photo).
-        Page::whereIn('slug', ['travel-information', 'information-about-tanzania', 'travel-advice', 'booking-terms-and-conditions', 'our-climate-emergency-plan'])->update(['image' => null]);
+        Page::whereIn('slug', ['travel-information', 'information-about-tanzania', 'travel-advice', 'booking-terms-and-conditions', 'our-climate-emergency-plan', 'sustainable-travel-3', 'why-traveling-with-klm-safaris'])->update(['image' => null]);
     }
 
     /** Default "included / not included" lists per category (CMS → Categories → Includes & excludes). Only fills empty ones. */
