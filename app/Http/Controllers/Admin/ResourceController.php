@@ -126,7 +126,12 @@ class ResourceController extends Controller
     public function destroy(string $resource, int $id)
     {
         $def = AdminResources::get($resource);
-        $def['model']::findOrFail($id)->delete();
+        $record = $def['model']::findOrFail($id);
+        // Deleting a category would silently unlink its tours (they vanish from menus and the homepage).
+        if ($record instanceof \App\Models\Category && ($n = \App\Models\Tour::where('category_id', $record->id)->count())) {
+            return back()->with('error', "This category still has {$n} tours. Move them to another category first, then delete it.");
+        }
+        $record->delete();
 
         return redirect()->route('admin.resource.index', $resource)->with('success', "{$def['singular']} deleted.");
     }
