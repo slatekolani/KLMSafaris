@@ -135,8 +135,8 @@ export default function RichContent({ html, heroImage }: { html: string; heroIma
     const toc = !asCards && !story && sections.length >= 4;
 
     return (
-        <div>
-            {intro.trim() && <div className="prose-lux prose-intro max-w-3xl" dangerouslySetInnerHTML={{ __html: intro }} />}
+        <div className="rich-content">
+            {intro.trim() && <div className="prose-lux prose-intro" dangerouslySetInnerHTML={{ __html: intro }} />}
 
             {badges.length > 0 && (
                 <ul className="mt-8 flex max-w-4xl flex-wrap gap-3">
@@ -220,7 +220,7 @@ export default function RichContent({ html, heroImage }: { html: string; heroIma
                             </div>
                         </nav>
                     )}
-                    <div className={cn('min-w-0', !toc && 'w-full max-w-3xl')}>
+                    <div className={cn('min-w-0', !toc && 'w-full')}>
                         {(() => {
                             // Short sections side by side (Vision, Mission…) become icon cards; the rest read as an article with an icon per heading.
                             const isShort = (x: Block) => x.text.length < 260 && !/<table|<ul|<ol/i.test(x.html);
@@ -290,7 +290,7 @@ function Mosaic({ s }: { s: Block }) {
     const pics = s.images.slice(0, 5);
     return (
         <section id={s.id} className="scroll-mt-28">
-            <div className="max-w-3xl">
+            <div>
                 <Heading s={s} />
                 {s.text && <div className="prose-lux mt-5" dangerouslySetInnerHTML={{ __html: s.html }} />}
             </div>
@@ -321,7 +321,7 @@ function Banner({ s }: { s: Block }) {
 function TextOnly({ s }: { s: Block }) {
     const short = s.text.length < 450 && !/<table|<ul|<ol/i.test(s.html);
     return (
-        <section id={s.id} className={cn('max-w-3xl scroll-mt-28', short && 'border-l-4 border-gold bg-sand-100 p-8 sm:p-10')}>
+        <section id={s.id} className={cn('scroll-mt-28', short && 'border-l-4 border-gold bg-sand-100 p-8 sm:p-10')}>
             <Heading s={s} icon />
             <div className="prose-lux mt-5" dangerouslySetInnerHTML={{ __html: s.html }} />
         </section>
@@ -331,7 +331,7 @@ function TextOnly({ s }: { s: Block }) {
 /** Two or more short sections in a row (Mission, Vision…): side by side as icon cards. */
 function IconCards({ items }: { items: Block[] }) {
     return (
-        <div className={cn('grid max-w-5xl gap-5', items.length === 2 || items.length === 4 ? 'md:grid-cols-2' : 'md:grid-cols-3')}>
+        <div className={cn('grid gap-5', items.length === 2 || items.length === 4 ? 'md:grid-cols-2' : 'md:grid-cols-3')}>
             {items.map((s, i) => (
                 <section key={s.id} id={s.id} data-reveal style={{ ['--d' as string]: `${i * 80}ms` }}
                     className="scroll-mt-28 border border-ink/10 bg-white p-7 transition hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_18px_40px_-24px_rgba(29,68,104,.45)] sm:p-8">
@@ -349,11 +349,11 @@ function FaqBlock({ items }: { items: Block[] }) {
     const [open, setOpen] = useState<number | null>(0);
     return (
         <section className="mt-20 border-t border-ink/10 pt-16">
-            <div className="max-w-3xl">
+            <div>
                 <p className="eyebrow">FAQ</p>
                 <h2 className="h-section mt-3">Common questions</h2>
             </div>
-            <div className="mt-10 max-w-3xl space-y-3">
+            <div className="mt-10 space-y-3">
                 {items.map((f, i) => (
                     <div key={f.id} className={cn('border bg-white transition', open === i ? 'border-gold/40 shadow-[0_18px_40px_-28px_rgba(29,68,104,.5)]' : 'border-ink/10')}>
                         <button onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i} className="flex w-full items-center justify-between gap-6 px-5 py-4 text-left sm:px-6">

@@ -122,7 +122,7 @@ export default function Page({ page, team, faqs }: { page: P; team: TeamMember[]
 
             <section className="border-t border-ink/10 bg-sand-100 py-16"><div className="container-site max-w-none">
                 <p className="h-section">{page.cta_title || tx('page_cta_title', { site: settings.site_name })}</p>
-                {page.cta_text && <p className="mt-4 max-w-2xl text-lg text-ink/60">{page.cta_text}</p>}
+                {page.cta_text && <p className="mt-4 text-lg text-ink/60">{page.cta_text}</p>}
                 <CtaLink href={page.cta_url || '/plan-your-trip'} className="btn btn-gold mt-6">{page.cta_label || tx('page_cta_button')}</CtaLink>
             </div></section>
         </SiteLayout>

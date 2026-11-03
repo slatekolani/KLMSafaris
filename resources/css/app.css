@@ -103,6 +103,8 @@
     /* The opening paragraph of a long page: bigger and lighter. */
     .prose-intro { @apply text-[17px] leading-[1.75] md:text-[19px]; }
     .prose-intro > p:first-child { @apply text-ink; }
+    /* Long content pages: paragraphs run the full width with both edges straight (justified); cards keep normal alignment. */
+    .rich-content .prose-lux:not(.prose-compact) p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
     /* Inside cards and FAQ answers: tighter spacing. */
     .prose-compact { @apply text-[15px] leading-[1.65] md:text-[15.5px]; }
     .prose-compact > * + * { @apply mt-3; }
