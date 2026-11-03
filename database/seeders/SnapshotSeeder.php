@@ -33,7 +33,8 @@ class SnapshotSeeder extends Seeder
             $catId = DB::table('categories')->pluck('id', 'slug');
             $destId = DB::table('destinations')->pluck('id', 'slug');
 
-            foreach ($read('tours') as $row) {
+            $tours = $read('tours');
+            foreach ($tours as $row) {
                 $row['category_id'] = $catId[$row['category_slug']] ?? null;
                 unset($row['category_slug']);
                 DB::table('tours')->updateOrInsert(['slug' => $row['slug']], $row);
@@ -42,7 +43,7 @@ class SnapshotSeeder extends Seeder
 
             // Which destinations each tour visits: rebuilt for the snapshot's tours only.
             $pairs = collect($read('destination_tour'))->filter(fn ($p) => isset($destId[$p['destination']], $tourId[$p['tour']]));
-            DB::table('destination_tour')->whereIn('tour_id', $pairs->map(fn ($p) => $tourId[$p['tour']])->unique()->values())->delete();
+            DB::table('destination_tour')->whereIn('tour_id', collect($tours)->map(fn ($t) => $tourId[$t['slug']] ?? null)->filter()->values())->delete();
             DB::table('destination_tour')->insertOrIgnore($pairs->map(fn ($p) => ['destination_id' => $destId[$p['destination']], 'tour_id' => $tourId[$p['tour']]])->values()->all());
 
             foreach ($read('accommodations') as $row) {

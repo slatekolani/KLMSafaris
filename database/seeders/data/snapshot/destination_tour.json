@@ -1,10 +1,6 @@
 [
     {
         "destination": "kilimanjaro",
-        "tour": "7-day-lodge-safari-from-mwanza"
-    },
-    {
-        "destination": "kilimanjaro",
         "tour": "kilimanjaro-6-days-machame-route"
     },
     {
@@ -13,23 +9,7 @@
     },
     {
         "destination": "kilimanjaro",
-        "tour": "3-day-lodge-safari-from-mwanza"
-    },
-    {
-        "destination": "kilimanjaro",
-        "tour": "6-day-lodge-safari-from-mwanza"
-    },
-    {
-        "destination": "kilimanjaro",
-        "tour": "mount-meru-climbing-4-days"
-    },
-    {
-        "destination": "kilimanjaro",
         "tour": "kilimanjaro-6-days-rongai-route"
-    },
-    {
-        "destination": "kilimanjaro",
-        "tour": "napuru-waterfalls-coffee-tour-from-arusha"
     },
     {
         "destination": "kilimanjaro",
@@ -61,34 +41,6 @@
     },
     {
         "destination": "kilimanjaro",
-        "tour": "materuni-water-falls"
-    },
-    {
-        "destination": "kilimanjaro",
-        "tour": "lake-challa-day-trip-tour"
-    },
-    {
-        "destination": "kilimanjaro",
-        "tour": "kikuletwa-hot-spring-day-tour"
-    },
-    {
-        "destination": "kilimanjaro",
-        "tour": "4-day-lodge-safari-from-mwanza"
-    },
-    {
-        "destination": "kilimanjaro",
-        "tour": "2-day-lodge-safari-from-mwanza"
-    },
-    {
-        "destination": "kilimanjaro",
-        "tour": "guided-bike-tour-to-chemka-hot-springs"
-    },
-    {
-        "destination": "kilimanjaro",
-        "tour": "materuni-and-chemka"
-    },
-    {
-        "destination": "kilimanjaro",
         "tour": "kibosho-village-tour"
     },
     {
@@ -97,31 +49,11 @@
     },
     {
         "destination": "kilimanjaro",
-        "tour": "serval-wildlife-sanctuary-tour-2"
-    },
-    {
-        "destination": "kilimanjaro",
-        "tour": "marangu-cultural-tours"
-    },
-    {
-        "destination": "kilimanjaro",
-        "tour": "olpopongi-maasai-cultural-village-tour"
-    },
-    {
-        "destination": "kilimanjaro",
         "tour": "kilimanjaro-8-days-lemosho-route"
     },
     {
         "destination": "kilimanjaro",
         "tour": "mount-kilimanjaro-day-tour"
-    },
-    {
-        "destination": "kilimanjaro",
-        "tour": "1-day-mkomazi-national-park-exploration"
-    },
-    {
-        "destination": "kilimanjaro",
-        "tour": "11-day-tanzania-safari-and-cultural-experiences"
     },
     {
         "destination": "serengeti",
@@ -177,15 +109,7 @@
     },
     {
         "destination": "serengeti",
-        "tour": "tanzania-children-safari"
-    },
-    {
-        "destination": "serengeti",
         "tour": "bar-mitzvah-african-safari"
-    },
-    {
-        "destination": "serengeti",
-        "tour": "1-day-to-ngorongoro-crater-tour"
     },
     {
         "destination": "serengeti",
@@ -197,7 +121,7 @@
     },
     {
         "destination": "ngorongoro",
-        "tour": "3-day-lodge-safari-from-mwanza"
+        "tour": "private-safari"
     },
     {
         "destination": "ngorongoro",
@@ -218,6 +142,10 @@
     {
         "destination": "ngorongoro",
         "tour": "5-day-lodge-safari"
+    },
+    {
+        "destination": "ngorongoro",
+        "tour": "tanzania-luxury-safari"
     },
     {
         "destination": "ngorongoro",
@@ -245,19 +173,11 @@
     },
     {
         "destination": "ngorongoro",
-        "tour": "2-day-lodge-safari-from-mwanza"
-    },
-    {
-        "destination": "ngorongoro",
         "tour": "tanzania-children-safari"
     },
     {
         "destination": "ngorongoro",
         "tour": "bar-mitzvah-african-safari"
-    },
-    {
-        "destination": "ngorongoro",
-        "tour": "1-day-arusha-national-park-exploration"
     },
     {
         "destination": "ngorongoro",
@@ -269,15 +189,19 @@
     },
     {
         "destination": "tarangire",
-        "tour": "7-day-lodge-safari-from-mwanza"
-    },
-    {
-        "destination": "tarangire",
         "tour": "camping-safari"
     },
     {
         "destination": "tarangire",
+        "tour": "family-safari"
+    },
+    {
+        "destination": "tarangire",
         "tour": "5-day-lodge-safari"
+    },
+    {
+        "destination": "tarangire",
+        "tour": "tanzania-luxury-safari"
     },
     {
         "destination": "tarangire",
@@ -301,7 +225,7 @@
     },
     {
         "destination": "tarangire",
-        "tour": "2-day-zanzibar-selous-safari"
+        "tour": "bar-mitzvah-african-safari"
     },
     {
         "destination": "tarangire",
@@ -317,6 +241,10 @@
     },
     {
         "destination": "lake-manyara",
+        "tour": "private-safari"
+    },
+    {
+        "destination": "lake-manyara",
         "tour": "7-day-lodge-safari"
     },
     {
@@ -325,7 +253,11 @@
     },
     {
         "destination": "lake-manyara",
-        "tour": "camping-safari"
+        "tour": "family-safari"
+    },
+    {
+        "destination": "lake-manyara",
+        "tour": "tanzania-luxury-safari"
     },
     {
         "destination": "lake-manyara",
@@ -337,10 +269,6 @@
     },
     {
         "destination": "lake-manyara",
-        "tour": "2-day-fly-from-zanzibar-lodge-safari"
-    },
-    {
-        "destination": "lake-manyara",
         "tour": "3-day-zanzibar-to-ngorongoro-luxury-safari"
     },
     {
@@ -349,7 +277,7 @@
     },
     {
         "destination": "lake-manyara",
-        "tour": "2-day-zanzibar-selous-safari"
+        "tour": "bar-mitzvah-african-safari"
     },
     {
         "destination": "lake-manyara",
@@ -361,19 +289,7 @@
     },
     {
         "destination": "arusha",
-        "tour": "7-day-lodge-safari-from-mwanza"
-    },
-    {
-        "destination": "arusha",
-        "tour": "3-day-lodge-safari-from-mwanza"
-    },
-    {
-        "destination": "arusha",
         "tour": "5-day-lodge-safari"
-    },
-    {
-        "destination": "arusha",
-        "tour": "6-day-lodge-safari-from-mwanza"
     },
     {
         "destination": "arusha",
@@ -397,11 +313,7 @@
     },
     {
         "destination": "arusha",
-        "tour": "4-day-lodge-safari-from-mwanza"
-    },
-    {
-        "destination": "arusha",
-        "tour": "2-day-lodge-safari-from-mwanza"
+        "tour": "tanzania-children-safari"
     },
     {
         "destination": "arusha",
@@ -409,39 +321,11 @@
     },
     {
         "destination": "arusha",
-        "tour": "coffee-tasting-experience"
-    },
-    {
-        "destination": "arusha",
-        "tour": "serval-wildlife-sanctuary-tour-2"
-    },
-    {
-        "destination": "arusha",
-        "tour": "olpopongi-maasai-cultural-village-tour"
-    },
-    {
-        "destination": "arusha",
-        "tour": "oldoinyo-lengai-mountain-trek"
-    },
-    {
-        "destination": "arusha",
-        "tour": "mount-kilimanjaro-day-tour"
-    },
-    {
-        "destination": "arusha",
         "tour": "1-day-arusha-national-park-exploration"
     },
     {
         "destination": "arusha",
-        "tour": "1-day-to-ngorongoro-crater-tour"
-    },
-    {
-        "destination": "arusha",
         "tour": "11-day-tanzania-safari-and-cultural-experiences"
-    },
-    {
-        "destination": "zanzibar",
-        "tour": "3-day-lodge-safari-from-mwanza"
     },
     {
         "destination": "zanzibar",
@@ -470,10 +354,6 @@
     {
         "destination": "zanzibar",
         "tour": "2-day-zanzibar-selous-safari"
-    },
-    {
-        "destination": "zanzibar",
-        "tour": "coffee-tasting-experience"
     },
     {
         "destination": "zanzibar",

@@ -2,7 +2,7 @@ import { Link } from '@inertiajs/react';
 import { cn, useShared, useText } from '@/lib/utils';
 
 /** Uses the logo uploaded in the CMS; falls back to a typographic KLM roundel. */
-export default function Logo({ light = false, tagline = true, className }: { light?: boolean; tagline?: boolean; className?: string }) {
+export default function Logo({ light = false, tagline = true, text = true, className }: { light?: boolean; tagline?: boolean; text?: boolean; className?: string }) {
     const { settings } = useShared();
     const t = useText();
     const [first, ...rest] = String(settings.site_name || '').split(' ');
@@ -18,10 +18,10 @@ export default function Logo({ light = false, tagline = true, className }: { lig
                     <span className="text-[9px] tracking-[0.2em]">{rest.join(' ').toLowerCase()}</span>
                 </span>
             )}
-            <span className="hidden leading-none sm:block">
+            {text && <span className="hidden leading-none sm:block">
                 <span className={cn('block font-display text-[17px] font-bold uppercase tracking-[0.02em] [font-stretch:112%]', light ? 'text-white' : 'text-ink')}>{settings.site_name}</span>
                 {tagline && <span className={cn('mt-1 block whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.16em]', light ? 'text-white/60' : 'text-ink/50')}>{t('logo_tagline')}</span>}
-            </span>
+            </span>}
         </Link>
     );
 }

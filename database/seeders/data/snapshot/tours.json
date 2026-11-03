@@ -2090,8 +2090,8 @@
         "dress_code": "Casual. comfortable athletic clothing, spare clothing,",
         "season": "All year round",
         "badge": null,
-        "image": "/images/klm/2022-06-zan-top.jpg",
-        "gallery": "[\"\\/images\\/klm\\/2022-06-stone-twon.jpg\",\"\\/images\\/klm\\/2022-06-stone-town.jpg\",\"\\/images\\/klm\\/2022-06-IMG-20241102-WA0007.jpg\",\"\\/images\\/klm\\/2022-06-IMG-20241102-WA0008.jpg\",\"\\/images\\/klm\\/2022-06-IMG-20241102-WA0009.jpg\"]",
+        "image": "/images/klm/2022-06-stone-twon.jpg",
+        "gallery": "[\"\\/images\\/klm\\/2022-06-stone-town.jpg\",\"\\/images\\/klm\\/2022-06-IMG-20241102-WA0007.jpg\",\"\\/images\\/klm\\/2022-06-IMG-20241102-WA0008.jpg\",\"\\/images\\/klm\\/2022-06-IMG-20241102-WA0009.jpg\"]",
         "highlights": null,
         "itinerary": "[]",
         "includes": "[\"Bottled water (safari)\",\"All taxes\",\"National Park entry fees\",\"Personal guide\",\"All meals while on tour (safari & trekking)\"]",
@@ -2105,7 +2105,7 @@
         "meta_title": null,
         "meta_description": null,
         "created_at": "2026-10-19 17:10:40",
-        "updated_at": "2026-10-19 17:10:40",
+        "updated_at": "2026-11-03 18:18:05",
         "category_slug": "zanzibar"
     },
     {
@@ -2238,8 +2238,8 @@
         "dress_code": "Casual. Comfortable athletic clothing, spare clothing, swimming costume.",
         "season": "All year round",
         "badge": null,
-        "image": "/images/klm/2016-11-Serengeti-National-Park0.jpg",
-        "gallery": "[\"\\/images\\/klm\\/2019-01-Mount-Meru-4days2.jpg\",\"\\/images\\/klm\\/2016-11-Gallery001-2.jpg\"]",
+        "image": "/images/klm/2019-01-Mount-Meru-4days2.jpg",
+        "gallery": "[\"\\/images\\/klm\\/2016-11-Gallery001-2.jpg\"]",
         "highlights": null,
         "itinerary": "[{\"title\":\"Day plan\",\"description\":\"This is an ideal day trip that takes you to a spectacular experience through observing variety of wildlife, flora, water bodies and scenic view of the landscapes within a short time at Arusha National Park. The park is close to Arusha and Kilimanjaro city hence easily to spend a day for more exploration of the wildlife habitats. Within the park there are different destination with authentic experience for game drive like Momella Lake and Ngurdoto crater but also the park allows walking safari that gives you a chance to get close with the nature while exploring the natural wonders. The park support canoeing and horse riding if interested hence you have a chance to have such experience and enough fun moments. The park can be visited all time throughout the year and accessible by road whereby it has 32 km from Arusha and 40 km from Kilimanjaro International Airport. Therefore, it\\u2019s your time now to refresh with Arusha National Park.\",\"accommodation\":\"\",\"meals\":\"\",\"altitude\":\"\"}]",
         "includes": "[\"Airport transfers (go and return)\",\"National park entry fees\",\"Game drives\",\"Accommodation as specified\",\"All activities in the itinerary as specified\",\"Specified meals and drinks\",\"Professional, experienced driver-guide\",\"Safari jeep (4\\u00d74 pop-up roof safari Land Cruiser)\",\"Bottled mineral water\",\"All taxes and VAT\"]",
@@ -2253,7 +2253,7 @@
         "meta_title": null,
         "meta_description": null,
         "created_at": "2026-10-19 17:10:40",
-        "updated_at": "2026-11-02 10:11:05",
+        "updated_at": "2026-11-03 18:18:05",
         "category_slug": "safari"
     },
     {

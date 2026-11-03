@@ -1,5 +1,6 @@
 import { Link } from '@inertiajs/react';
 import type { ReactNode } from 'react';
+import Counter from '@/Components/Counter';
 import Icon from '@/Components/Icon';
 import PageHero from '@/Components/PageHero';
 import RichContent from '@/Components/RichContent';
@@ -14,6 +15,9 @@ export default function Page({ page, team, faqs }: { page: P; team: TeamMember[]
     return (
         <SiteLayout title={page.meta_title || plain(page.title)} description={page.meta_description || page.subtitle} image={page.image}>
             <PageHero image={page.image} eyebrow={page.eyebrow} title={page.title} subtitle={page.subtitle} crumbs={[{ label: plain(page.title) }]} />
+
+            {/* The sustainability milestones from the homepage (CMS → Homepage → Sustainability section) on the main sustainability page */}
+            {`/${page.slug}` === settings.footer_sustain_stats_page && <Impact />}
 
             {page.body && (
                 <section className="container-site py-16 lg:py-20">
@@ -101,6 +105,28 @@ export default function Page({ page, team, faqs }: { page: P; team: TeamMember[]
                 <CtaLink href={page.cta_url || '/plan-your-trip'} className="btn btn-gold mt-6">{page.cta_label || tx('page_cta_button')}</CtaLink>
             </div></section>
         </SiteLayout>
+    );
+}
+
+/** "Our impact": the sustainability milestones (trees planted, homes built…) as counters, like the homepage figures. */
+function Impact() {
+    const { settings } = useShared();
+    const tx = useText();
+    const items: { value: string; label: string }[] = (settings.footer_sustain_milestones ?? []).filter((m: { value?: string }) => m.value);
+    if (!items.length) return null;
+    return (
+        <section className="container-site pt-14 lg:pt-20">
+            <p className="eyebrow"><Icon name="leaf" size={15} className="text-gold" /> {tx('sustain_badge')}</p>
+            <dl className={cn('mt-6 grid border-y border-ink/15 sm:divide-x sm:divide-ink/15', items.length > 2 ? 'sm:grid-cols-3 lg:grid-cols-4' : 'sm:grid-cols-2')}>
+                {items.map((m, i) => (
+                    <div key={m.value + m.label} data-reveal style={{ ['--d' as string]: `${i * 60}ms` }} className={cn('py-8 sm:px-6 lg:py-10', i === 0 && 'sm:pl-0', i > 0 && 'border-t border-ink/15 sm:border-t-0')}>
+                        <span aria-hidden className="mb-4 flex h-11 w-11 items-center justify-center bg-gold/10 text-gold"><Icon name={i % 2 ? 'home' : 'leaf'} size={20} /></span>
+                        <dt className="font-display text-[clamp(2.2rem,4vw,3.4rem)] font-semibold leading-none tracking-tight"><Counter value={m.value} /></dt>
+                        {m.label && <dd className="mt-3 text-[14px] text-ink/55">{m.label}</dd>}
+                    </div>
+                ))}
+            </dl>
+        </section>
     );
 }
 

@@ -170,9 +170,8 @@ function Header({ solid }: { solid: boolean }) {
     const light = false; // the navigation bar is always plain white
     const enter = (key: string) => { window.clearTimeout(closeTimer.current); setOpen(key); };
     const leave = () => { closeTimer.current = window.setTimeout(() => setOpen(null), 160); };
-    const current = sections.find((s) => s.key === open);
     const [preview, setPreview] = useState<MenuLink | null>(null);
-    // The open menu fills the screen from just under the bar to the bottom edge.
+    // Room between the bar and the bottom of the screen: the most the open menu may take before it scrolls.
     const mainBar = useRef<HTMLDivElement>(null);
     const [panelH, setPanelH] = useState(0);
     useEffect(() => {
@@ -211,7 +210,7 @@ function Header({ solid }: { solid: boolean }) {
                 {/* Main bar */}
                 <div ref={mainBar} className="relative border-b border-ink/10 bg-white" onMouseLeave={leave}>
                     <div className="container-site flex h-[78px] items-center justify-between gap-6">
-                        <Logo light={light} />
+                        <Logo light={light} text={false} />
 
                         <nav className="hidden items-center xl:flex">
                             {sections.map((s) => (
@@ -235,56 +234,67 @@ function Header({ solid }: { solid: boolean }) {
                         className={cn('absolute inset-x-0 top-full origin-top border-y border-ink/10 bg-white shadow-[0_30px_60px_-30px_rgba(0,0,0,.35)] transition-all duration-300', open ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-2 opacity-0')}
                         onMouseEnter={() => window.clearTimeout(closeTimer.current)}
                     >
-                        <div className="container-site py-8" style={{ height: panelH || undefined }}>
-                            {current?.tiles && (
-                                <div className="grid h-full grid-cols-4 grid-rows-2 gap-4">
-                                    {(menu?.destinations ?? []).slice(0, 8).map((d) => (
-                                        <Link key={d.id} href={`/destinations/${d.slug}`} className="img-zoom group relative block overflow-hidden bg-forest-900">
-                                            <img src={img(d.image, 500)} alt="" className="h-full w-full object-cover" />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/85 via-forest-900/10 to-transparent transition group-hover:from-forest-900/70" />
-                                            <div className="absolute bottom-0 p-4 text-white">
-                                                <p className="text-[10px] uppercase tracking-[0.2em] text-white/70">{d.region}</p>
-                                                <p className="text-[17px] font-semibold leading-tight">{d.name}</p>
+                        {/* Every menu is drawn in the same spot and only the open one is shown, so the panel is always as tall as
+                            the longest menu: all menus the same height, nothing cut off. A short screen scrolls the panel. */}
+                        <div className="no-scrollbar container-site grid overflow-y-auto py-8" style={{ maxHeight: panelH || undefined }}>
+                            {sections.filter((s) => !s.plain).map((s) => {
+                                const on = s.key === open;
+                                const shown = on ? preview : null;
+                                return (
+                                    <div key={s.key} style={{ gridArea: '1 / 1' }} className={on ? 'visible' : 'invisible'} aria-hidden={!on}>
+                                        {s.tiles ? (
+                                            <div className="grid grid-cols-4 gap-4">
+                                                {(menu?.destinations ?? []).slice(0, 8).map((d) => (
+                                                    <Link key={d.id} href={`/destinations/${d.slug}`} tabIndex={on ? undefined : -1} className="img-zoom group relative block aspect-[4/3] overflow-hidden bg-forest-900">
+                                                        <img src={img(d.image, 500)} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                                                        <div className="absolute inset-0 bg-gradient-to-t from-forest-900/85 via-forest-900/10 to-transparent transition group-hover:from-forest-900/70" />
+                                                        <div className="absolute bottom-0 p-4 text-white">
+                                                            <p className="text-[10px] uppercase tracking-[0.2em] text-white/70">{d.region}</p>
+                                                            <p className="text-[17px] font-semibold leading-tight">{d.name}</p>
+                                                        </div>
+                                                        <span className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center bg-white text-ink opacity-0 transition group-hover:opacity-100"><Icon name="arrowUpRight" size={15} /></span>
+                                                    </Link>
+                                                ))}
                                             </div>
-                                            <span className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center bg-white text-ink opacity-0 transition group-hover:opacity-100"><Icon name="arrowUpRight" size={15} /></span>
-                                        </Link>
-                                    ))}
-                                </div>
-                            )}
-                            {current && !current.tiles && (
-                                <div className="grid h-full grid-cols-12 gap-10">
-                                    {/* Preview: the hovered link's photo, or the section's own photo */}
-                                    <Link href={preview?.href ?? current.href} className="group relative col-span-4 block h-full overflow-hidden bg-forest-900">
-                                        {(preview?.image || current.image) && (
-                                            <img key={preview?.image || current.image || ''} src={img((preview?.image || current.image) as string, 800)} alt="" className="menu-fade h-full w-full scale-[1.02] object-cover transition-transform duration-[1.2s] group-hover:scale-105" />
-                                        )}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent" />
-                                        <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                                            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-light">{preview ? (preview.meta ? `${parseInt(preview.meta, 10)} ${parseInt(preview.meta, 10) === 1 ? t('tour_fact_day') : t('label_days')}` : current.label) : current.tagline}</p>
-                                            <p className="font-display mt-2 line-clamp-2 text-[1.35rem] font-semibold leading-snug">{preview?.label ?? t('menu_all', { name: current.label })}</p>
-                                            <span className="mt-3 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-white/85">{t('menu_explore')} <Icon name="arrow" size={14} className="transition group-hover:translate-x-1" /></span>
-                                        </div>
-                                    </Link>
-                                    <div className={cn('no-scrollbar col-span-8 h-full gap-10 overflow-y-auto pr-2', current.columns.length > 2 ? 'columns-3' : 'columns-2')}>
-                                        {current.columns.map((col) => (
-                                            <div key={col.title} className="mb-7 break-inside-avoid">
-                                                <p className="eyebrow !text-[11px] !text-ink">{col.title}</p>
-                                                <ul className="mt-3">
-                                                    {col.links.map((l) => (
-                                                        <li key={l.href}>
-                                                            <Link href={l.href} onMouseEnter={() => setPreview(l)} onFocus={() => setPreview(l)}
-                                                                className={cn('group flex items-start justify-between gap-3 py-1.5 text-[14.5px] leading-snug transition-colors', preview?.href === l.href ? 'text-gold' : 'text-ink/75 hover:text-ink')}>
-                                                                <span className="link-underline">{l.label}</span>
-                                                                {l.meta && <span className="shrink-0 pt-0.5 text-[11px] uppercase tracking-wider text-ink/35 group-hover:text-gold-dark">{l.meta}</span>}
-                                                            </Link>
-                                                        </li>
+                                        ) : (
+                                            <div className="grid grid-cols-12 gap-10">
+                                                {/* Preview: the hovered link's photo (or the section's own) at its natural landscape shape, never
+                                                    stretched to the panel's height, with its title underneath */}
+                                                <Link href={shown?.href ?? s.href} tabIndex={on ? undefined : -1} className="group col-span-4 block self-start">
+                                                    <span className="relative block aspect-[4/3] overflow-hidden bg-forest-900">
+                                                        {(shown?.image || s.image) && on && (
+                                                            <img key={shown?.image || s.image || ''} src={img((shown?.image || s.image) as string, 800)} alt="" className="menu-fade absolute inset-0 h-full w-full object-cover transition-transform duration-[1.2s] group-hover:scale-105" />
+                                                        )}
+                                                    </span>
+                                                    <span className="block pt-5">
+                                                        <span className="block text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">{shown ? (shown.meta ? `${parseInt(shown.meta, 10)} ${parseInt(shown.meta, 10) === 1 ? t('tour_fact_day') : t('label_days')}` : s.label) : s.tagline}</span>
+                                                        <span className="font-display mt-2 line-clamp-2 block text-[1.35rem] font-semibold leading-snug text-ink">{shown?.label ?? t('menu_all', { name: s.label })}</span>
+                                                        <span className="mt-3 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink/70 group-hover:text-gold">{t('menu_explore')} <Icon name="arrow" size={14} className="transition group-hover:translate-x-1" /></span>
+                                                    </span>
+                                                </Link>
+                                                <div className={cn('col-span-8 gap-10', s.columns.length > 2 ? 'columns-3' : 'columns-2')}>
+                                                    {s.columns.map((col) => (
+                                                        <div key={col.title} className="mb-7 break-inside-avoid">
+                                                            <p className="eyebrow !text-[11px] !text-ink">{col.title}</p>
+                                                            <ul className="mt-3">
+                                                                {col.links.map((l) => (
+                                                                    <li key={l.href}>
+                                                                        <Link href={l.href} tabIndex={on ? undefined : -1} onMouseEnter={() => setPreview(l)} onFocus={() => setPreview(l)}
+                                                                            className={cn('group flex items-start justify-between gap-3 py-1.5 text-[14.5px] leading-snug transition-colors', shown?.href === l.href ? 'text-gold' : 'text-ink/75 hover:text-ink')}>
+                                                                            <span className="link-underline">{l.label}</span>
+                                                                            {l.meta && <span className="shrink-0 pt-0.5 text-[11px] uppercase tracking-wider text-ink/35 group-hover:text-gold-dark">{l.meta}</span>}
+                                                                        </Link>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
                                                     ))}
-                                                </ul>
+                                                </div>
                                             </div>
-                                        ))}
+                                        )}
                                     </div>
-                                </div>
-                            )}
+                                );
+                            })}
                         </div>
                     </div>
                 </div>

@@ -122,6 +122,7 @@ class SettingsSchema
                         ['value' => '2000+', 'label' => 'Trees planted on the slopes of Kilimanjaro'],
                         ['value' => '150+', 'label' => 'Homes built for local families'],
                     ]],
+                    'footer_sustain_stats_page' => ['label' => 'Sustainability section: page that also shows the milestones (its address)', 'type' => 'text', 'default' => '/sustainable-travel-3'],
                     'footer_sustain_links' => ['label' => 'Sustainability section: links', 'type' => 'repeater', 'fields' => $links, 'default' => [
                         ['label' => 'Our sustainability policy', 'url' => '/sustainable-travel-2'],
                         ['label' => 'Climate Emergency Plan', 'url' => '/our-climate-emergency-plan'],

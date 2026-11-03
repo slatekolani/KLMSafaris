@@ -206,7 +206,8 @@ class ContentSeeder extends Seeder
 
             $ids = [];
             foreach ($destKeywords as $slug => $re) {
-                if (isset($dest[$slug]) && preg_match("/($re)/i", $text)) {
+                // Mount Kilimanjaro is named in nearly every itinerary (the airport, the view), so only trips with it in the title count.
+                if (isset($dest[$slug]) && preg_match("/($re)/i", $slug === 'kilimanjaro' ? $t['title'] : $text)) {
                     $ids[] = $dest[$slug]->id;
                 }
             }
