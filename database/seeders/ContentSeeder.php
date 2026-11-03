@@ -312,6 +312,25 @@ class ContentSeeder extends Seeder
         $this->categoryIncludes();
         $this->retiredPages();
         $this->call(SnapshotSeeder::class);
+        $this->newPosts();
+    }
+
+    /**
+     * Blog posts written for the new site (data/new-posts.json: slug => title, topic, date, cover, HTML body).
+     * Matched by slug, so running the seeder again updates the text instead of adding a copy.
+     */
+    public function newPosts(): void
+    {
+        foreach ($this->data('new-posts') as $slug => $p) {
+            $plain = trim(preg_replace('/\s+/', ' ', html_entity_decode(strip_tags(str_replace('<', ' <', $p['body'])), ENT_QUOTES | ENT_HTML5)));
+            Post::updateOrCreate(['slug' => $slug], [
+                'title' => $p['title'], 'topic' => $p['topic'], 'body' => $p['body'],
+                'excerpt' => $this->sentences($plain, 200),
+                'image' => $p['image'], 'author' => 'KLM Safaris',
+                'read_minutes' => max(2, (int) round(str_word_count($plain) / 220)),
+                'published_at' => $p['date'], 'is_published' => true,
+            ]);
+        }
     }
 
     /**
