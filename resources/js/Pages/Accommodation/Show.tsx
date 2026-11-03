@@ -101,8 +101,9 @@ export default function AccommodationShow({ stay, more, tours }: { stay: Full; m
                         <h2 className="h-section">{tx('stay_more')}</h2>
                         <Link href="/accommodation" className="link-arrow hidden sm:inline-flex">{tx('stays_title')} <Icon name="arrow" size={14} /></Link>
                     </div>
-                    <div className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                        {more.map((s) => <StayCard key={s.id} stay={s} />)}
+                    {/* Phones: one swipeable row (right to left); tablets and up: the grid */}
+                    <div className="mt-10 no-scrollbar -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-pl-5 px-5 pb-1 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 md:grid-cols-3 lg:grid-cols-4">
+                        {more.map((s) => <StayCard key={s.id} stay={s} className="w-[78%] shrink-0 snap-start sm:w-auto" />)}
                     </div>
                 </section>
             )}
