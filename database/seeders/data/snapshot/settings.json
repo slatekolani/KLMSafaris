@@ -1,0 +1,3068 @@
+[
+    {
+        "key": "address",
+        "value": "Market Street, P.O Box 7815\nKilimanjaro\nTanzania, East Africa",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "announcement_link",
+        "value": "/internship-opportunity",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "announcement_text",
+        "value": "KLM Safaris Internship Opportunity: Online Tourism Marketing and Content Creation",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "color_accent",
+        "value": "#468BC2",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "color_dark",
+        "value": "#1D4468",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-11-01 11:34:15"
+    },
+    {
+        "key": "color_light",
+        "value": "#FFFFFF",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "color_primary",
+        "value": "#468BC2",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "color_text",
+        "value": "#000000",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "company_name",
+        "value": "KLM Safaris Company Ltd",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "contact_hero_eyebrow",
+        "value": "Say hello",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "contact_hero_image",
+        "value": "",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "contact_hero_text",
+        "value": "Got a question, an idea or ready to book? Drop us a line and someone from our Kilimanjaro team will get back to you, usually within a day.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "contact_hero_title",
+        "value": "Let’s plan your *Tanzania* trip",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "copyright",
+        "value": "KLM Safaris Company Ltd. All rights reserved.",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "destinations_hero_eyebrow",
+        "value": "Where we travel",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "destinations_hero_image",
+        "value": "/images/klm/2019-01-Ngorongoro-Crater00.jpg",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "destinations_hero_text",
+        "value": "From the heights of Mount Kilimanjaro to the plains of Serengeti and the beautiful white sands of Zanzibar.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "destinations_hero_title",
+        "value": "Tanzania, *from mountain to coast*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "email",
+        "value": "info@klmsafaris.com",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "email_confirm_subject",
+        "value": "We’ve received your enquiry, KLM Safaris",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "email_confirm_text",
+        "value": "Thank you for contacting KLM Safaris. Your message is with our team in Kilimanjaro, and a Tanzania specialist will reply personally within 24 hours. Here is a copy of what you sent us.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "email_confirm_title",
+        "value": "Asante sana, {name}!",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "email_help_line",
+        "value": "Need to add something or talk sooner? Just reply to this email, call {phone} or message us on WhatsApp.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "email_newsletter_subject",
+        "value": "Karibu! You’re subscribed to KLM Safaris",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "email_newsletter_text",
+        "value": "Thank you for subscribing. You’ll receive Tanzania travel news, safari and Kilimanjaro tips and special offers from our team in Kilimanjaro, about one email a month.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "email_newsletter_title",
+        "value": "Karibu to the KLM Safaris family!",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "email_plan_subject",
+        "value": "Your trip plan is with us, KLM Safaris",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "email_plan_text",
+        "value": "Thank you for planning your trip with KLM Safaris. A Tanzania specialist is reviewing your plan and will send you a tailored day-by-day itinerary and quote within 24 hours. Here is a copy of your plan.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "email_sign_off",
+        "value": "Asante sana,\nThe KLM Safaris team, Kilimanjaro",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "enquiry_email",
+        "value": "info@klmsafaris.com",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "facebook",
+        "value": "https://www.facebook.com/klmsafaris/",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "favicon",
+        "value": "/images/klm/2016-04-Logo-1.png",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "font_body",
+        "value": "Afacad",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "font_heading",
+        "value": "Nunito Sans",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "footer_about",
+        "value": "Tanzania is our home and we understand the nature and beauty of its balance which brings life. Kilimanjaro climbs, safaris, day tours, Zanzibar holidays and volunteering from Kilimanjaro.",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "footer_col1_links",
+        "value": "[{\"label\": \"Kilimanjaro Routes\", \"url\": \"/experiences/kilimanjaro\"}, {\"label\": \"Tanzania Safaris\", \"url\": \"/experiences/safari\"}, {\"label\": \"Zanzibar Beach Holidays\", \"url\": \"/experiences/zanzibar\"}, {\"label\": \"Day Tours\", \"url\": \"/experiences/day-tours\"}, {\"label\": \"Mount Meru Trekking\", \"url\": \"/mount-meru-trekking\"}, {\"label\": \"Photo Gallery\", \"url\": \"/gallery\"}, {\"label\": \"Accommodation\", \"url\": \"/accommodation\"}]",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 07:54:34"
+    },
+    {
+        "key": "footer_col1_title",
+        "value": "Popular destinations",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "footer_col2_links",
+        "value": "[{\"label\":\"Information about Tanzania\",\"url\":\"\\/information-about-tanzania\"},{\"label\":\"Travel Advice\",\"url\":\"\\/travel-advice\"},{\"label\":\"Travel Information\",\"url\":\"\\/travel-information\"},{\"label\":\"Tanzania Tourist Board\",\"url\":\"https:\\/\\/www.tanzaniatourism.go.tz\\/\"},{\"label\":\"Tanzania National Parks (TANAPA)\",\"url\":\"https:\\/\\/www.tanzaniaparks.go.tz\\/\"},{\"label\":\"Booking Terms & Conditions\",\"url\":\"\\/booking-terms-and-conditions\"}]",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "footer_col2_title",
+        "value": "Useful links",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "gallery_hero_eyebrow",
+        "value": "Photo gallery",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "gallery_hero_image",
+        "value": "/images/klm/2016-11-Serengeti-National-Park4-1.jpg",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "gallery_hero_text",
+        "value": "Moments from our guests’ climbs, safaris, day trips and island holidays, photographed on KLM Safaris trips.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_advice_badge_label",
+        "value": "Tripadvisor reviews",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_advice_badge_value",
+        "value": "145+",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_advice_eyebrow",
+        "value": "Why travel with KLM Safaris",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_advice_image",
+        "value": "/images/klm/2024-11-ABD09542-scaled.jpg",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_advice_image_2",
+        "value": "/images/klm/2024-11-ngorongorocrater-1.jpg",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_advice_points",
+        "value": "[{\"title\":\"Tanzania is our home\",\"text\":\"A locally owned company based on Market Street in Kilimanjaro, at the foot of Kilimanjaro.\"},{\"title\":\"Expert local guides\",\"text\":\"Our guides understand every single detail about the adventure and promise the best experience you will never forget.\"},{\"title\":\"Sustainable travel\",\"text\":\"We operate in ways that reduce environmental impacts, benefit host communities and protect destinations for future generations.\"},{\"title\":\"Safe travel partner\",\"text\":\"Members of the Flying Doctors\\u2019 Society of Africa with Global Rescue travel protection available for every safari.\"}]",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_advice_text",
+        "value": "Our expert travel guides understand every single detail about the adventure, from the heights of Mount Kilimanjaro to the plains of Serengeti and the white sands of Zanzibar.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_advice_title",
+        "value": "Planning and preparation are *crucial* to the success of Safari in Tanzania",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_all_tab",
+        "value": "All tours",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_all_title",
+        "value": "All Tour *Packages*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_cta_image",
+        "value": "/images/klm/2016-11-Tarangire-national-park-10-scaled.jpg",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_cta_text",
+        "value": "Tell us how you dream of travelling and our team in Kilimanjaro will reply with ideas, honest advice and a tailor-made itinerary.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_cta_title",
+        "value": "Your Tanzania journey *starts here*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_dest_title",
+        "value": "Popular *destinations*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_help_text",
+        "value": "Planning and preparation are crucial to the success of Safari in Tanzania, talk to our Kilimanjaro team for free, honest advice.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_help_title",
+        "value": "Not sure where to begin?",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_intro_eyebrow",
+        "value": "Tanzania is our home",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_intro_text",
+        "value": "Tanzania is our home and we understand the nature and beauty of its balance which brings life. Our expert travel guides understand every single detail about the adventure and promise to give you the best experience you will never forget. From the heights of Mount Kilimanjaro to the plains of Serengeti to the beautiful white sands of the Indian Ocean in Zanzibar, we can provide the experience you long for.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_intro_title",
+        "value": "Journey with *KLM Safaris*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_journal_title",
+        "value": "From our *blog*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_kili_eyebrow",
+        "value": "Discover the best routes to the Roof of Africa",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_kili_image",
+        "value": "/images/klm/2016-04-Kilimanjaro-hiking-10.jpg",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_kili_title",
+        "value": "Popular Mount *Kilimanjaro* Trekking",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_partners_title",
+        "value": "Memberships & partnerships",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:38:46"
+    },
+    {
+        "key": "home_reviews_title",
+        "value": "Trusted travel *experiences*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_stats_image",
+        "value": "/images/klm/2016-11-Serengeti-National-Park4-1.jpg",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_stats_title",
+        "value": "What we have *achieved* so far",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_stays_eyebrow",
+        "value": "Where you’ll stay",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_stays_image",
+        "value": "/images/klm/2022-12-luxury.jpg",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_stays_soon_text",
+        "value": "We’re adding the campsites, tented camps, lodges and beach hotels our guests stay in. Ask us anytime. We’ll happily share options for your trip.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_stays_soon_title",
+        "value": "Coming soon",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "home_stays_title",
+        "value": "Handpicked *Accommodation*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "instagram",
+        "value": "https://www.instagram.com/klmsafaris/",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "journal_hero_eyebrow",
+        "value": "Get inspired by our blog",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "journal_hero_image",
+        "value": "/images/klm/2025-01-klm-safaris_env-scaled.jpg",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "journal_hero_text",
+        "value": "Travel tips, Kilimanjaro advice, safari seasons and sustainability news from KLM Safaris.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "journal_hero_title",
+        "value": "Stories & *travel advice*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "linkedin",
+        "value": "https://www.linkedin.com/company/klm-safaris/",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "logo",
+        "value": "/images/klm/2016-04-Logo-1.png",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "logo_light",
+        "value": null,
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "map_embed",
+        "value": "https://www.google.com/maps?q=Market+Street,+Moshi,+Tanzania&output=embed",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "meta_description",
+        "value": "KLM Safaris: Kilimanjaro climbs, Tanzania safaris, day tours, Zanzibar holidays and volunteering with a locally owned tour operator in Kilimanjaro, Tanzania.",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "newsletter_text",
+        "value": "Kilimanjaro climbing tips, safari seasons, offers and travel advice from KLM Safaris.",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "newsletter_title",
+        "value": "Tanzania, delivered to your inbox",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "office_hours",
+        "value": "Mon to Sat · 08:00-18:00 EAT",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "og_image",
+        "value": "/images/klm/2022-12-luxury.jpg",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "phone",
+        "value": "+255 755 547 595",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "phone_2",
+        "value": "+255 744 812 556",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "pinterest",
+        "value": "https://www.pinterest.com/klmsafaris/",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_adults_label",
+        "value": "Adults",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_adults_note",
+        "value": "{age} years and over",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_back",
+        "value": "Back",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_beach_nights_label",
+        "value": "Nights in Zanzibar",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_beach_nights_note",
+        "value": "Includes a Stone Town & spice farm visit",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_block_beach",
+        "value": "Your beach time",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_block_climb",
+        "value": "Your climb",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_block_daytrips",
+        "value": "Your day trips",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_block_safari",
+        "value": "Your safari",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_built_from",
+        "value": "Built from these KLM trips",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_children_label",
+        "value": "Children",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_children_note",
+        "value": "Under {age}",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_classic_circuit",
+        "value": "Safari · Tarangire, Ngorongoro & Serengeti",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_classic_circuit_text",
+        "value": "Our suggested classic northern circuit",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_climb_min_age",
+        "value": "16",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_climb_required",
+        "value": "Choose a package, or let us help you choose.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_consultant_note",
+        "value": "Your plan goes straight to {name}, who replies within 24 hours.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_continue",
+        "value": "Continue",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_daytrips_required",
+        "value": "Pick at least one, or go back and untick day trips.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_default_beach_nights",
+        "value": "4",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_default_climb_days",
+        "value": "7",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_default_safari_days",
+        "value": "4",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_done_browse",
+        "value": "Browse tours meanwhile",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_done_consultant",
+        "value": "A Tanzania specialist",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_done_email",
+        "value": "We’ve emailed a copy of your plan to {email}.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_done_route",
+        "value": "Your plan",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_done_steps",
+        "value": "[{\"title\":\"Your specialist reviews your plan\",\"text\":\"{consultant} reads every detail you shared.\"},{\"title\":\"You receive a tailored itinerary\",\"text\":\"Day-by-day route, hand-picked lodges and an exact quote, within 24 hours.\"},{\"title\":\"We refine it together\",\"text\":\"Change anything until it feels right. Nothing is booked until you say so.\"}]",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_done_text",
+        "value": "We’ve received your plan for a {trip} · {when}.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_done_title",
+        "value": "Asante sana, {name}! Your trip is in the making.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_done_whatsapp",
+        "value": "Chat on WhatsApp",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_exact",
+        "value": "I have exact dates",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_expect_title",
+        "value": "What to expect in {month}",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_fact_group",
+        "value": "Group",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_fact_style",
+        "value": "Style",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_fact_when",
+        "value": "When",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_field_country",
+        "value": "Country",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_field_email",
+        "value": "Email *",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_field_name",
+        "value": "Full name *",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_field_phone",
+        "value": "Phone / WhatsApp",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_flexible",
+        "value": "I’m flexible",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_flexible_label",
+        "value": "Dates flexible",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_free_note",
+        "value": "Free and no obligation. Prefer to talk? Call {phone}",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_from",
+        "value": "from",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_image",
+        "value": "/images/klm/2022-12-luxury.jpg",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_kicker",
+        "value": "Trip planner",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_arrive",
+        "value": "Arrive at Kilimanjaro Airport",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_arrive_text",
+        "value": "Met by your guide · transfer to {town}",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_beach",
+        "value": "Zanzibar beach",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_beach_text",
+        "value": "Fly to Zanzibar · {nights} by the Indian Ocean",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_climb",
+        "value": "Climb Kilimanjaro",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_climb_text",
+        "value": "{days} on the mountain · summit {peak}",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_climb_undecided",
+        "value": "Climb Kilimanjaro · route to be advised",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_climb_undecided_text",
+        "value": "{days}: we’ll recommend the best route for you",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_daytrip",
+        "value": "Day trip from Kilimanjaro",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_daytrip_any",
+        "value": "Day trip of your choice",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_daytrip_climb",
+        "value": "A gentle day that helps you acclimatise",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_home",
+        "value": "Fly home",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_home_beach",
+        "value": "Transfer to Zanzibar Airport",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_home_text",
+        "value": "Transfer to Kilimanjaro Airport",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_meru",
+        "value": "Climb Mount Meru",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_safari",
+        "value": "Safari",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_safari_first",
+        "value": "Game drives with your private guide",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_leg_safari_text",
+        "value": "Game drives",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_max_days",
+        "value": "14",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_meru_route",
+        "value": "Mount Meru",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_message_label",
+        "value": "Anything we should know? Celebrations, fitness, dietary needs…",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_min_beach_nights",
+        "value": "2",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_mobile_kicker",
+        "value": "Your plan so far",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_more_add",
+        "value": "Add another",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_more_done",
+        "value": "No, that’s enough",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_more_prompt",
+        "value": "“{item}” added. Would you like to add another?",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_note_climb_age",
+        "value": "KLM’s Kilimanjaro and Meru climbs are for ages {age} and over. Younger travellers can enjoy day trips around Kilimanjaro while you climb. We’ll plan that in.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_note_family",
+        "value": "We’ll suggest family-friendly lodges, private game drives and a relaxed pace.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_note_group",
+        "value": "Groups over {seats} travel in more than one safari vehicle, so everyone has a window seat.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_note_honeymoon",
+        "value": "Congratulations! We’ll add honeymoon touches, the best rooms, private dinners and surprises along the way.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_note_short_safari",
+        "value": "We recommend at least {days} for the parks you’ve chosen, the distances between them are long.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_park_days",
+        "value": "{days} recommended",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_beach_image",
+        "value": null,
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_beach_text",
+        "value": "White sand, Stone Town & spice farms · 3-7 nights",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_beach_title",
+        "value": "Relax in Zanzibar",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_climb_image",
+        "value": null,
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_climb_text",
+        "value": "Summit Africa’s highest peak · 5-9 days",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_climb_title",
+        "value": "Climb Kilimanjaro",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_daytrips_image",
+        "value": null,
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_daytrips_text",
+        "value": "Waterfalls, coffee farms, hot springs · 1 day each",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_daytrips_title",
+        "value": "Day trips around Kilimanjaro",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_safari_image",
+        "value": null,
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_safari_text",
+        "value": "Serengeti, Ngorongoro, Tarangire · 2-10 days",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_safari_title",
+        "value": "Go on safari",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_word_beach",
+        "value": "beach time",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_word_climb",
+        "value": "climb",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_part_word_safari",
+        "value": "safari",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_parties",
+        "value": "[{\"title\":\"Couple\",\"icon\":\"heart\",\"adults\":\"2\",\"children\":\"0\"},{\"title\":\"Honeymoon\",\"icon\":\"sparkle\",\"adults\":\"2\",\"children\":\"0\"},{\"title\":\"Family\",\"icon\":\"users\",\"adults\":\"2\",\"children\":\"1\"},{\"title\":\"Friends\",\"icon\":\"users\",\"adults\":\"4\",\"children\":\"0\"},{\"title\":\"Solo\",\"icon\":\"compass\",\"adults\":\"1\",\"children\":\"0\"}]",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_peak_kili",
+        "value": "Uhuru Peak, 5,895 m",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_peak_meru",
+        "value": "Socialist Peak, 4,562 m",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_pending_beach",
+        "value": "Choose how many nights",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_pending_climb",
+        "value": "Choose a route and package",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_pending_daytrips",
+        "value": "Choose your day trips",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_pending_safari",
+        "value": "Choose parks and days",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_pending_title",
+        "value": "Next, shape each part. Your day-by-day plan appears as you decide.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_per_day",
+        "value": "/day",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_per_night",
+        "value": "/night",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_pick_month",
+        "value": "Pick a month instead",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_popular",
+        "value": "Popular",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_price_note",
+        "value": "Based on KLM’s current package prices. Excludes international flights. Your specialist confirms the exact quote.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_price_pending",
+        "value": "choose style",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_price_sofar",
+        "value": "So far",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_price_title",
+        "value": "Price guide · per person",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_price_total",
+        "value": "Total",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_rain_advice",
+        "value": "Travelling in the rains is still rewarding, fewer people and lower rates. Your specialist will advise on the best options.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_rate_beach",
+        "value": "Zanzibar",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_rate_safari",
+        "value": "Safari",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_route_help_text",
+        "value": "Tell us about your fitness and we’ll recommend the best fit.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_route_help_title",
+        "value": "Help me choose a route",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_route_notes",
+        "value": "[{\"title\":\"Marangu Route\",\"note\":\"Sleeps in huts with a steady gradient, the classic “Coca-Cola” route.\"},{\"title\":\"Machame Route\",\"note\":\"Scenic and popular with good acclimatisation, the “Whiskey” route.\"},{\"title\":\"Lemosho Route\",\"note\":\"Quiet western start, superb views and high summit success.\"},{\"title\":\"Rongai Route\",\"note\":\"Drier northern approach with calmer trails.\"},{\"title\":\"Umbwe Route\",\"note\":\"Steep and direct: for fit, experienced hikers.\"},{\"title\":\"Northern Circuit\",\"note\":\"Longest route, best acclimatisation, highest success rate.\"},{\"title\":\"Mount Meru\",\"note\":\"Tanzania’s second-highest peak (4,562 m), a great warm-up or alternative.\"}]",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_safari_days_label",
+        "value": "Days on safari",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_safari_days_note",
+        "value": "Recommended for your choice: {days}",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_season_beach",
+        "value": "Zanzibar",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_season_climb",
+        "value": "Kilimanjaro",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_season_daytrips",
+        "value": "Day trips run all year round.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_season_safari",
+        "value": "Safari",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_seasons",
+        "value": "[{\"title\":\"January\",\"safari\":\"Calving season in the southern Serengeti\",\"climb\":\"Dry and clear \\u00b7 good climbing\",\"beach\":\"Hot and sunny\"},{\"title\":\"February\",\"safari\":\"Calving season \\u00b7 big-cat action in the south\",\"climb\":\"Dry and clear \\u00b7 good climbing\",\"beach\":\"Hot and sunny\"},{\"title\":\"March\",\"safari\":\"Herds in the south \\u00b7 green season\",\"climb\":\"Getting wetter \\u00b7 still climbable\",\"beach\":\"Hot and humid \\u00b7 rains begin\"},{\"title\":\"April\",\"safari\":\"Long rains \\u00b7 herds move west, lowest rates\",\"safari_caution\":\"1\",\"climb\":\"Long rains \\u00b7 the wettest month to climb\",\"climb_caution\":\"1\",\"beach\":\"Long rains \\u00b7 some resorts close\",\"beach_caution\":\"1\"},{\"title\":\"May\",\"safari\":\"Long rains \\u00b7 some camps close\",\"safari_caution\":\"1\",\"climb\":\"Long rains \\u00b7 wet, quiet trails\",\"climb_caution\":\"1\",\"beach\":\"Long rains \\u00b7 some resorts close\",\"beach_caution\":\"1\"},{\"title\":\"June\",\"safari\":\"Herds in the Western Corridor\",\"climb\":\"Dry season starts \\u00b7 great climbing\",\"beach\":\"Dry and breezy\"},{\"title\":\"July\",\"safari\":\"Mara River crossings begin\",\"climb\":\"Dry season \\u00b7 best and busiest\",\"beach\":\"Dry and breezy\"},{\"title\":\"August\",\"safari\":\"Peak river crossings in the north\",\"climb\":\"Dry season \\u00b7 best and busiest\",\"beach\":\"Dry and breezy\"},{\"title\":\"September\",\"safari\":\"River crossings in the north \\u00b7 dry season\",\"climb\":\"Dry season \\u00b7 excellent climbing\",\"beach\":\"Dry and breezy\"},{\"title\":\"October\",\"safari\":\"Dry season \\u00b7 herds in the north\",\"climb\":\"Dry season \\u00b7 excellent climbing\",\"beach\":\"Dry and sunny\"},{\"title\":\"November\",\"safari\":\"Short rains \\u00b7 herds head south\",\"climb\":\"Short rains \\u00b7 afternoon showers\",\"beach\":\"Short rains \\u00b7 brief showers\"},{\"title\":\"December\",\"safari\":\"Herds return south \\u00b7 green season\",\"climb\":\"Mostly dry \\u00b7 festive climbs\",\"beach\":\"Hot and sunny\"}]",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_send",
+        "value": "Send my trip plan",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_sending",
+        "value": "Sending…",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_short_beach",
+        "value": "Zanzibar",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_short_climb",
+        "value": "Kilimanjaro",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_short_daytrips",
+        "value": "Kilimanjaro",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_short_meru",
+        "value": "Meru",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_short_safari",
+        "value": "safari",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_review_hint",
+        "value": "A Tanzania specialist turns this plan into a detailed itinerary and exact quote, free and with no obligation.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_review_label",
+        "value": "Review & send",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_review_title",
+        "value": "Your trip is ready to *send*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_shape_hint",
+        "value": "Every choice below updates your day-by-day plan and price guide.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_shape_label",
+        "value": "Shape it",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_shape_title",
+        "value": "Let’s *shape each part*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_style_hint",
+        "value": "Price guides come from KLM’s current packages, per person, per day.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_style_label",
+        "value": "Style",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_style_title",
+        "value": "How would you *like to stay?*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_trip_hint",
+        "value": "Choose one or combine several: climb, then safari, then beach is the classic order. We’ll put them in the right sequence for you.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_trip_label",
+        "value": "Your trip",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_trip_title",
+        "value": "What would you like to *do in Tanzania?*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_when_hint",
+        "value": "Each month notes what to expect for your {part}.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_when_label",
+        "value": "When",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_when_title",
+        "value": "When would you *like to travel?*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_who_hint",
+        "value": "This shapes the lodges, vehicles and pace we suggest.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_who_label",
+        "value": "Who",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_step_who_title",
+        "value": "Who’s *coming along?*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_style_beach_name",
+        "value": "Comfort",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_style_beach_text",
+        "value": "Characterful hotels near the beach and Stone Town.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_style_camping",
+        "value": "Classic campsites with a full camping crew, closest to nature.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_style_camping_beach",
+        "value": "Comfort hotel in Zanzibar",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_style_lodge",
+        "value": "Comfortable lodges and tented camps with great food.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_style_luxury",
+        "value": "Top lodges and resorts, private guiding, the finest locations.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_summary_days",
+        "value": "days",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_summary_empty",
+        "value": "Start by choosing what to do",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_summary_kicker",
+        "value": "Your trip plan",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_tip_beach",
+        "value": "4-5 nights is the sweet spot to unwind after a climb or safari.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_tip_climb",
+        "value": "More days on the mountain means better acclimatisation, and a better chance of reaching the summit.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_tip_daytrips",
+        "value": "Each trip is a full or half day from Kilimanjaro or Arusha.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_tip_daytrips_climb",
+        "value": "Best done before the climb: an easy active day helps you acclimatise.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_tip_safari",
+        "value": "Not sure which parks? Leave them all unticked and we’ll plan the classic Tarangire-Ngorongoro-Serengeti circuit.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_town_arusha",
+        "value": "Arusha",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_town_moshi",
+        "value": "Kilimanjaro",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_trip_name",
+        "value": "{days}-day {parts} trip",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_trip_name_empty",
+        "value": "Tanzania",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_trip_name_pending",
+        "value": "Your {parts} trip",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_vehicle_seats",
+        "value": "6",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_word_day",
+        "value": "day",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_word_day_label",
+        "value": "Day",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_word_days",
+        "value": "days",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_word_night",
+        "value": "night",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_word_nights",
+        "value": "nights",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_word_people",
+        "value": "people",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "plan_word_person",
+        "value": "person",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "rating_count",
+        "value": "145 Tripadvisor reviews",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "rating_score",
+        "value": null,
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "rating_source",
+        "value": "Tripadvisor",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "rescue_button",
+        "value": "Get travel protection",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "rescue_eyebrow",
+        "value": "Global Rescue Travel",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "rescue_image",
+        "value": "/images/klm/2016-04-Global-Rescue-Image.jpg",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "rescue_link",
+        "value": "https://www.globalrescue.com/",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "rescue_text",
+        "value": "Accident or injury. Unplanned incidents are rare but can crop up when you travel. That’s why KLM Safari Co. Ltd wants you to have the most robust travel protection for your safari. If you need travel insurance, click the link below.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "rescue_title",
+        "value": "Wander the world *without worry*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "site_name",
+        "value": "KLM Safaris",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "tagline",
+        "value": "Journey with KLM Safaris",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "tours_hero_eyebrow",
+        "value": "Tours & safaris",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "tours_hero_image",
+        "value": "/images/klm/2016-11-Serengeti-National-Park4-1.jpg",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "tours_hero_text",
+        "value": "Kilimanjaro climbs, Tanzania safaris, day tours and Zanzibar holidays, filter by what moves you.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "tours_hero_title",
+        "value": "Find your *perfect* journey",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "tripadvisor",
+        "value": "https://www.tripadvisor.com/Attraction_Review-g317084-d16663354-Reviews-KLM_Safaris-Moshi_Kilimanjaro_Region.html",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_about_button",
+        "value": "About KLM Safaris",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_about_button_url",
+        "value": "/about-klm-safaris",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_about_button2",
+        "value": "",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_about_button2_url",
+        "value": "",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_blog_all",
+        "value": "All stories",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_blog_cta_button",
+        "value": "Plan my trip",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_blog_cta_text",
+        "value": "Free, honest advice from our Kilimanjaro team.",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_blog_cta_title",
+        "value": "Inspired? Let’s plan it together.",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_blog_fact_posts",
+        "value": "Stories & guides",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_blog_fact_topics",
+        "value": "Topics",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_blog_fact_written",
+        "value": "Written in",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_blog_fact_written_value",
+        "value": "Kilimanjaro, Tanzania",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_blog_more",
+        "value": "Keep reading",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_blog_read",
+        "value": "{minutes} min read",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_blog_share",
+        "value": "Share",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_blog_tours",
+        "value": "Journeys to match",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_card_season",
+        "value": "All year round",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_cat_choose",
+        "value": "Choose your tour",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_cat_custom",
+        "value": "Plan a custom trip",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_cat_explore",
+        "value": "Keep exploring",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_cat_fact_length",
+        "value": "Trip length",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_cat_fact_price",
+        "value": "Prices from",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_cat_fact_tours",
+        "value": "Tours to choose from",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_cat_filter_all",
+        "value": "All",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_cat_filter_long",
+        "value": "6+ days",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_cat_filter_short",
+        "value": "Up to 5 days",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_cat_know",
+        "value": "Good to know",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_cat_prepare",
+        "value": "Plan & prepare",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_cat_read",
+        "value": "Read guide",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_cat_see",
+        "value": "See {count} tours",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_contact_call",
+        "value": "Call us",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_contact_email",
+        "value": "Email us",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_contact_faq_title",
+        "value": "Before you ask",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_contact_form_label",
+        "value": "Send a message",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_contact_form_text",
+        "value": "The more you share, the better we can tailor our first ideas. There is never any obligation.",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_contact_form_title",
+        "value": "Tell us how you dream of travelling",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_contact_hours",
+        "value": "Office hours",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_contact_team",
+        "value": "The people behind your trip",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_contact_whatsapp",
+        "value": "WhatsApp",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_contact_whatsapp_text",
+        "value": "Chat instantly",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_country_all",
+        "value": "All countries",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_country_popular",
+        "value": "Popular",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_country_select",
+        "value": "Select your country",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_crumb_home",
+        "value": "Home",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_dest_about",
+        "value": "About {name}",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_dest_best",
+        "value": "Best time to visit",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_dest_combine",
+        "value": "Combine with",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_dest_fact_base",
+        "value": "Based in",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_dest_fact_base_value",
+        "value": "Kilimanjaro, Tanzania",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_dest_fact_count",
+        "value": "Destinations",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_dest_fact_tours",
+        "value": "Tours across them",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_dest_highlights",
+        "value": "Highlights",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_dest_journeys",
+        "value": "Journeys",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_dest_plan",
+        "value": "Plan a trip here",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_dest_region",
+        "value": "Region",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_dest_tours",
+        "value": "Tours that go here",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_faq_label",
+        "value": "FAQ",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_figure_destinations",
+        "value": "Destinations in Tanzania",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_figure_reviews",
+        "value": "{source} reviews",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_figure_tours",
+        "value": "Tours & day trips",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_finder_all_exp",
+        "value": "All experiences",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_finder_all_tours",
+        "value": "All tours",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_finder_budget",
+        "value": "Budget per person",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_finder_budgets",
+        "value": "[{\"title\":\"Any budget\",\"value\":null},{\"title\":\"Up to $500\",\"value\":\"500\"},{\"title\":\"Up to $1,500\",\"value\":\"1500\"},{\"title\":\"Up to $3,000\",\"value\":\"3000\"},{\"title\":\"Up to $10,000\",\"value\":\"10000\"}]",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_finder_button",
+        "value": "Search tours",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_finder_duration",
+        "value": "Duration",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_finder_durations",
+        "value": "[{\"title\":\"Any length\",\"value\":null},{\"title\":\"Day trips\",\"value\":\"1-1\"},{\"title\":\"2-5 days\",\"value\":\"2-5\"},{\"title\":\"6-9 days\",\"value\":\"6-9\"},{\"title\":\"10+ days\",\"value\":\"10-99\"}]",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_finder_experience",
+        "value": "Experience",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_finder_title",
+        "value": "Find your trip",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_flash_already",
+        "value": "You’re already on the list. Asante! Look out for our next email.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_flash_enquiry",
+        "value": "Asante sana! Your enquiry is with our team. We’ve emailed you a copy and will reply within 24 hours.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_flash_subscribed",
+        "value": "Karibu! You’re subscribed. We’ve sent a welcome email to {email}.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_flash_unsub_used",
+        "value": "This unsubscribe link has already been used.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_flash_unsubscribed",
+        "value": "You’ve been unsubscribed and won’t receive more newsletters. Kwaheri!",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_footer_all_tours",
+        "value": "All tours",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_footer_contact",
+        "value": "Contact",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_footer_experiences",
+        "value": "Experiences",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_footer_staff",
+        "value": "Staff login",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_added",
+        "value": "Added",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_adults",
+        "value": "Adults",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_again",
+        "value": "Send another enquiry",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_children",
+        "value": "Children",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_country",
+        "value": "Country",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_date",
+        "value": "Preferred travel date",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_email",
+        "value": "Email *",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_email_ph",
+        "value": "you@email.com",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_message",
+        "value": "Tell us about your dream trip",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_message_ph",
+        "value": "Interests, travel style, special occasions…",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_message_ph_tour",
+        "value": "Questions about this trip, preferred dates, special occasions…",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_name",
+        "value": "Full name *",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_name_ph",
+        "value": "Jane Doe",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_note",
+        "value": "No obligation · Reply within 24 hours · We never share your data",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_phone",
+        "value": "Phone / WhatsApp",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_phone_ph",
+        "value": "+1 555 000 000",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_send",
+        "value": "Send enquiry",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_sending",
+        "value": "Sending…",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_thanks",
+        "value": "Asante sana!",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_thanks_text",
+        "value": "Your enquiry is with our Kilimanjaro team. We’ve emailed a copy to {email}, expect a personal reply within 24 hours.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_trip",
+        "value": "Your trip",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_form_trip_meta",
+        "value": "{days} days · from {price} per person",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_gallery_all",
+        "value": "All photos",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_gallery_cta_button",
+        "value": "Plan my trip",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_gallery_cta_text",
+        "value": "Tell us what you’d like to see and our Kilimanjaro team will plan it around you.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_gallery_cta_title",
+        "value": "Want to be in the *next photo*?",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_gallery_empty",
+        "value": "Photos are coming soon.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_gallery_fact_by",
+        "value": "Taken on",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_gallery_fact_by_value",
+        "value": "KLM trips",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_gallery_fact_photos",
+        "value": "Photos",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_gallery_fact_themes",
+        "value": "Themes",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_gallery_open",
+        "value": "Open photo",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_gallery_title",
+        "value": "Gallery",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_hero_plan",
+        "value": "Plan your trip",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_label_days",
+        "value": "days",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_label_duration",
+        "value": "Duration",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_label_from",
+        "value": "From",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_logo_tagline",
+        "value": "Kilimanjaro · Tanzania",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_about",
+        "value": "About Us",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_about_col",
+        "value": "About us",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_all",
+        "value": "All {name}",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_blog",
+        "value": "Blog",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_blog_link",
+        "value": "Get inspired by our blog",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_contact",
+        "value": "Contact",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_contact_link",
+        "value": "Contact info",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_destinations",
+        "value": "Destinations",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_explore",
+        "value": "Explore",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_gallery",
+        "value": "Gallery",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_gallery_link",
+        "value": "Photo gallery",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_guides",
+        "value": "{name} guides",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_home_title",
+        "value": "Tanzania is our home.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_sustain_col",
+        "value": "Sustainability",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_travel_col",
+        "value": "Travel information",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_view_all",
+        "value": "View all {name} →",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_volunteer",
+        "value": "Volunteering",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_menu_volunteer_col",
+        "value": "Volunteer programmes",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_mobile_plan",
+        "value": "Plan my trip",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_nav_plan",
+        "value": "Plan your trip",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_new_label",
+        "value": "New",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_newsletter_button",
+        "value": "Subscribe",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_newsletter_note",
+        "value": "One email a month. Unsubscribe any time.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_newsletter_placeholder",
+        "value": "Your email address",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_packages_label",
+        "value": "Popular packages",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_packages_more",
+        "value": "Not finding the right fit?",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_packages_more_link",
+        "value": "Plan your own trip",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_packages_view_all",
+        "value": "View all {count} tours",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_packages_view_cat",
+        "value": "View all {count} {name} tours",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_page_cta_button",
+        "value": "Plan your trip",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_page_cta_title",
+        "value": "Ready to travel with {site}?",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_page_faq_title",
+        "value": "Common questions",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_page_team",
+        "value": "Meet the team",
+        "created_at": "2026-10-26 06:16:19",
+        "updated_at": "2026-10-26 06:16:19"
+    },
+    {
+        "key": "ui_price_request",
+        "value": "Price on request",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_reviews_label",
+        "value": "Guest reviews",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_routes_badge",
+        "value": "Uhuru Peak · 5,895 m",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_routes_no",
+        "value": "No.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_routes_popular",
+        "value": "Most popular route",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_routes_route",
+        "value": "Route",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_stays_all",
+        "value": "All",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_stays_ask",
+        "value": "Ask about accommodation",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_stays_ask_url",
+        "value": "/contact",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_stays_types",
+        "value": "Camping, Tented camps, Lodges, Luxury",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_altitude",
+        "value": "Altitude profile",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_collapse",
+        "value": "Collapse all",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_crumb",
+        "value": "Journeys",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_day",
+        "value": "Day",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_departure_time",
+        "value": "Departure time",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_destinations",
+        "value": "Destinations",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_details",
+        "value": "The details",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_dress_code",
+        "value": "Dress code",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_enq_label",
+        "value": "Start the conversation",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_enq_text",
+        "value": "Share a few details and a Tanzania specialist will reply within 24 hours with availability, honest advice and a tailored quote for “{tour}”.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_enq_title",
+        "value": "Make this journey *yours*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_enquire",
+        "value": "Enquire about this trip",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_enquire_now",
+        "value": "Enquire now",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_excluded",
+        "value": "Not included",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_expand",
+        "value": "Expand all",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_fact_age",
+        "value": "Age",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_fact_day",
+        "value": "day",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_fact_departure",
+        "value": "Departure",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_fact_duration",
+        "value": "Duration",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_fact_group",
+        "value": "Group",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_fact_season",
+        "value": "Season",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_fact_style",
+        "value": "Style",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_gallery",
+        "value": "Gallery",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_gallery_title",
+        "value": "Moments from the journey",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_highlights",
+        "value": "Journey highlights",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_included",
+        "value": "Included",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_included_title",
+        "value": "What’s included",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_itinerary",
+        "value": "The itinerary",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_itinerary_label",
+        "value": "Day by day",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_mobile_enquire",
+        "value": "Enquire",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_nav_enquire",
+        "value": "Enquire",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_nav_gallery",
+        "value": "Gallery",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_nav_included",
+        "value": "What’s included",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_nav_itinerary",
+        "value": "Itinerary",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_nav_overview",
+        "value": "Overview",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_nav_pricing",
+        "value": "Pricing",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_note",
+        "value": "Private departures, flexible dates and 100% locally operated.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_overview",
+        "value": "Overview",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_peak",
+        "value": "Peak {value} m",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_price_pp",
+        "value": "Price per person",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_pricing",
+        "value": "Pricing",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_return_time",
+        "value": "Return time",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_similar",
+        "value": "Similar journeys",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_similar_label",
+        "value": "You may also love",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_starting",
+        "value": "Starting from",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_stories",
+        "value": "Guest stories",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_whatsapp",
+        "value": "Hello KLM Safaris! I’m interested in “{tour}”.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tour_whatsapp_button",
+        "value": "Ask on WhatsApp",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_all",
+        "value": "All",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_all_dest",
+        "value": "All destinations",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_budgets",
+        "value": "[{\"title\":\"Any budget\",\"value\":null},{\"title\":\"Up to $1,000\",\"value\":\"1000\"},{\"title\":\"Up to $2,500\",\"value\":\"2500\"},{\"title\":\"Up to $5,000\",\"value\":\"5000\"}]",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_clear",
+        "value": "Clear filters",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_count_label",
+        "value": "Journeys available",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_count_label_cat",
+        "value": "{name} tours",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_durations",
+        "value": "[{\"title\":\"Any duration\",\"value\":null},{\"title\":\"1-3 days\",\"value\":\"1-3\"},{\"title\":\"4-7 days\",\"value\":\"4-7\"},{\"title\":\"8-14 days\",\"value\":\"8-14\"},{\"title\":\"15+ days\",\"value\":\"15-99\"}]",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_empty_button",
+        "value": "Plan your own trip",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_empty_text",
+        "value": "We design custom journeys every day. Tell us what you are dreaming of and we will build it from scratch.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_empty_title",
+        "value": "Nothing matches, yet",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_fact_destinations",
+        "value": "Destinations",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_fact_experiences",
+        "value": "Experiences",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_found",
+        "value": "tours found",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_search",
+        "value": "Search tours",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_sorts",
+        "value": "[{\"title\":\"Recommended\",\"value\":null},{\"title\":\"Price: low to high\",\"value\":\"price-asc\"},{\"title\":\"Price: high to low\",\"value\":\"price-desc\"},{\"title\":\"Shortest first\",\"value\":\"duration\"}]",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_title_all",
+        "value": "All journeys",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_tours_title_cat",
+        "value": "{name} *tours*",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_whatsapp_message",
+        "value": "Hello KLM Safaris! I would like to plan a trip to Tanzania.",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_why_label",
+        "value": "Why KLM Safaris",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "ui_why_more",
+        "value": "Learn more",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "whatsapp",
+        "value": "255744812556",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "x",
+        "value": "https://x.com/klmsafaris",
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    },
+    {
+        "key": "youtube",
+        "value": null,
+        "created_at": "2026-10-26 06:16:18",
+        "updated_at": "2026-10-26 06:16:18"
+    }
+]

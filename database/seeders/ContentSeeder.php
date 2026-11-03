@@ -86,7 +86,10 @@ class ContentSeeder extends Seeder
 
     public function run(): void
     {
+        // An existing site (tours already there) only gets the content updates, never a second import.
         if (Tour::exists()) {
+            $this->updates();
+
             return;
         }
 
@@ -297,10 +300,17 @@ class ContentSeeder extends Seeder
         $this->volunteeringPage();
         $this->galleryPhotos();
         $this->accommodationsFromTours();
+        $this->oldSiteLeftovers();
+        $this->updates();
+    }
+
+    /** Changes made after the first import, safe to run on a live site again and again; the snapshot comes last and wins. */
+    public function updates(): void
+    {
         $this->luxuryStays();
         $this->categoryIncludes();
         $this->retiredPages();
-        $this->oldSiteLeftovers();
+        $this->call(SnapshotSeeder::class);
     }
 
     /**

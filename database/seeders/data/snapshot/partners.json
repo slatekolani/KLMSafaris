@@ -1,0 +1,83 @@
+[
+    {
+        "name": "Yopal",
+        "subtitle": null,
+        "logo": "/images/klm/yopal-logo.png",
+        "url": "https://www.yopal-me.com/",
+        "sort_order": 0,
+        "created_at": "2026-10-26 06:45:24",
+        "updated_at": "2026-10-26 06:45:34"
+    },
+    {
+        "name": "TTB",
+        "subtitle": "Tanzania Tourist Board",
+        "logo": "/images/klm/2016-10-logo_ttb.png",
+        "url": "https://www.tanzaniatourism.go.tz/",
+        "sort_order": 1,
+        "created_at": "2026-10-19 17:10:40",
+        "updated_at": "2026-10-26 06:45:24"
+    },
+    {
+        "name": "TANAPA",
+        "subtitle": "Tanzania National Parks",
+        "logo": "/images/klm/2016-10-tanapa.png",
+        "url": "https://www.tanzaniaparks.go.tz/",
+        "sort_order": 2,
+        "created_at": "2026-10-19 17:10:40",
+        "updated_at": "2026-10-26 06:45:24"
+    },
+    {
+        "name": "FDSA",
+        "subtitle": "Flying Doctors’ Society of Africa",
+        "logo": "/images/klm/2016-10-fdsa-logo.png",
+        "url": "https://flydoc.org/",
+        "sort_order": 3,
+        "created_at": "2026-10-19 17:10:40",
+        "updated_at": "2026-10-26 06:45:24"
+    },
+    {
+        "name": "JATA",
+        "subtitle": "Japan Association of Travel Agents",
+        "logo": "/images/klm/2016-10-jata-logo.png",
+        "url": "https://www.jata-net.or.jp/",
+        "sort_order": 4,
+        "created_at": "2026-10-19 17:10:40",
+        "updated_at": "2026-10-26 06:45:24"
+    },
+    {
+        "name": "WYSE",
+        "subtitle": "WYSE Travel Confederation",
+        "logo": "/images/klm/2016-10-wysetc-logo.png",
+        "url": "https://www.wysetc.org/",
+        "sort_order": 5,
+        "created_at": "2026-10-19 17:10:40",
+        "updated_at": "2026-10-26 06:45:24"
+    },
+    {
+        "name": "STTA",
+        "subtitle": "Sustainable Travel and Tourism Agenda",
+        "logo": "/images/klm/2016-04-org_f7ba5f77-ac22-ed11-b83d-000d3a2d2ed8.jpg",
+        "url": null,
+        "sort_order": 6,
+        "created_at": "2026-10-19 17:10:40",
+        "updated_at": "2026-10-26 06:45:24"
+    },
+    {
+        "name": "Traveller Storyteller",
+        "subtitle": "Encounters in Tourism",
+        "logo": "/images/klm/2016-04-Traveller-Storyteller.png",
+        "url": null,
+        "sort_order": 7,
+        "created_at": "2026-10-19 17:10:40",
+        "updated_at": "2026-10-26 06:45:24"
+    },
+    {
+        "name": "Global Rescue",
+        "subtitle": "Safe Travel Partner",
+        "logo": "/images/klm/2016-04-global-travel-partner-logo.png",
+        "url": "https://www.globalrescue.com/",
+        "sort_order": 8,
+        "created_at": "2026-10-19 17:10:40",
+        "updated_at": "2026-10-26 06:45:24"
+    }
+]
