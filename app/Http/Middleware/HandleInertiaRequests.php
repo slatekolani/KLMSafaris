@@ -35,11 +35,11 @@ class HandleInertiaRequests extends Middleware
             'auth' => fn () => ['user' => $request->user()?->only('id', 'name', 'email')],
             'menu' => $isAdmin ? null : fn () => [
                 'categories' => Category::where('show_in_menu', true)->orderBy('sort_order')
-                    ->with(['tours' => fn ($q) => $q->select('id', 'category_id', 'group_name', 'title', 'slug', 'duration_days')])
+                    ->with(['tours' => fn ($q) => $q->select('id', 'category_id', 'group_name', 'title', 'slug', 'duration_days', 'image')])
                     ->get(['id', 'name', 'slug', 'tagline', 'image']),
                 'destinations' => Destination::orderBy('sort_order')->get(['id', 'name', 'slug', 'region', 'image']),
                 'partners' => Partner::orderBy('sort_order')->get(['id', 'name', 'subtitle', 'logo', 'url']),
-                'pages' => Page::where('is_published', true)->whereNotNull('footer_group')->orderBy('sort_order')->get(['title', 'menu_title', 'slug', 'footer_group']),
+                'pages' => Page::where('is_published', true)->whereNotNull('footer_group')->orderBy('sort_order')->get(['title', 'menu_title', 'slug', 'footer_group', 'image']),
             ],
             'admin' => $isAdmin && $request->user() ? fn () => [
                 'nav' => AdminResources::nav(),

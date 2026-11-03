@@ -71,24 +71,24 @@ function useRevealObserver() {
 }
 
 /* ------------------------------------------------------------------ */
-type MenuLink = { label: string; href: string; meta?: string };
+type MenuLink = { label: string; href: string; meta?: string; image?: string | null };
 type MenuColumn = { title: string; links: MenuLink[] };
 type MenuSection = { key: string; label: string; href: string; image?: string | null; tagline?: string | null; columns: MenuColumn[]; tiles?: boolean; plain?: boolean };
 
 /** Builds every navigation section from CMS data: categories → grouped tours, page groups → pages. */
 function useMenuSections(): MenuSection[] {
-    const { menu } = useShared();
+    const { menu, settings } = useShared();
     const t = useText();
     const pages = menu?.pages ?? [];
     const pageLinks = (group: string): MenuLink[] =>
-        pages.filter((p) => p.footer_group === group && p.menu_title).map((p) => ({ label: p.menu_title as string, href: `/${p.slug}` }));
+        pages.filter((p) => p.footer_group === group && p.menu_title).map((p) => ({ label: p.menu_title as string, href: `/${p.slug}`, image: p.image }));
 
     const sections: MenuSection[] = (menu?.categories ?? []).map((c) => {
         const groups = new Map<string, MenuLink[]>();
         (c.tours ?? []).forEach((t) => {
             const g = t.group_name || 'Tours';
             if (!groups.has(g)) groups.set(g, []);
-            groups.get(g)!.push({ label: t.title, href: `/tours/${t.slug}`, meta: `${t.duration_days}d` });
+            groups.get(g)!.push({ label: t.title, href: `/tours/${t.slug}`, meta: `${t.duration_days}d`, image: (t as { image?: string | null }).image });
         });
         const columns: MenuColumn[] = [...groups.entries()].map(([title, links]) => ({ title, links }));
         const guides = pageLinks(c.name);
@@ -108,8 +108,9 @@ function useMenuSections(): MenuSection[] {
 
     sections.push({
         key: 'about', label: t('menu_about'), href: '/about-klm-safaris',
+        image: pages.find((p) => p.slug === 'about-klm-safaris')?.image || settings.og_image, tagline: settings.tagline,
         columns: [
-            { title: t('menu_about_col'), links: [...pageLinks('About'), { label: t('menu_blog_link'), href: '/journal' }, { label: t('menu_gallery_link'), href: '/gallery' }, { label: t('menu_stays_link'), href: '/accommodation' }, { label: t('menu_contact_link'), href: '/contact' }] },
+            { title: t('menu_about_col'), links: [...pageLinks('About'), { label: t('menu_blog_link'), href: '/journal', image: settings.journal_hero_image }, { label: t('menu_gallery_link'), href: '/gallery', image: settings.gallery_hero_image }, { label: t('menu_stays_link'), href: '/accommodation', image: settings.stays_hero_image }, { label: t('menu_contact_link'), href: '/contact' }] },
             { title: t('menu_sustain_col'), links: pageLinks('Sustainability') },
             { title: t('menu_travel_col'), links: pageLinks('Travel Info') },
         ].filter((c) => c.links.length),
@@ -164,6 +165,8 @@ function Header({ solid }: { solid: boolean }) {
     const enter = (key: string) => { window.clearTimeout(closeTimer.current); setOpen(key); };
     const leave = () => { closeTimer.current = window.setTimeout(() => setOpen(null), 160); };
     const current = sections.find((s) => s.key === open);
+    const [preview, setPreview] = useState<MenuLink | null>(null);
+    useEffect(() => setPreview(null), [open]);
 
     return (
         <>
@@ -211,52 +214,50 @@ function Header({ solid }: { solid: boolean }) {
                         </div>
                     </div>
 
-                    {/* Mega menus */}
+                    {/* Mega menus: one full-width panel, always the same height. Hovering a link shows its photo on the left. */}
                     <div
-                        className={cn('absolute inset-x-0 top-full max-h-[calc(100vh-130px)] origin-top overflow-y-auto border-y border-ink/10 bg-white shadow-[0_30px_60px_-30px_rgba(0,0,0,.25)] transition-all duration-300', open ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-2 opacity-0')}
+                        className={cn('absolute inset-x-0 top-full origin-top border-y border-ink/10 bg-white shadow-[0_30px_60px_-30px_rgba(0,0,0,.35)] transition-all duration-300', open ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-2 opacity-0')}
                         onMouseEnter={() => window.clearTimeout(closeTimer.current)}
                     >
-                        <div className="container-site py-10">
+                        <div className="container-site h-[min(460px,calc(100vh-150px))] py-8">
                             {current?.tiles && (
-                                <div className="grid grid-cols-4 gap-5">
+                                <div className="grid h-full grid-cols-4 grid-rows-2 gap-4">
                                     {(menu?.destinations ?? []).slice(0, 8).map((d) => (
-                                        <Link key={d.id} href={`/destinations/${d.slug}`} className="img-zoom group relative block h-40 overflow-hidden">
+                                        <Link key={d.id} href={`/destinations/${d.slug}`} className="img-zoom group relative block overflow-hidden bg-forest-900">
                                             <img src={img(d.image, 500)} alt="" className="h-full w-full object-cover" />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-forest-900/10 to-transparent" />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/85 via-forest-900/10 to-transparent transition group-hover:from-forest-900/70" />
                                             <div className="absolute bottom-0 p-4 text-white">
                                                 <p className="text-[10px] uppercase tracking-[0.2em] text-white/70">{d.region}</p>
                                                 <p className="text-[17px] font-semibold leading-tight">{d.name}</p>
                                             </div>
+                                            <span className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center bg-white text-ink opacity-0 transition group-hover:opacity-100"><Icon name="arrowUpRight" size={15} /></span>
                                         </Link>
                                     ))}
                                 </div>
                             )}
                             {current && !current.tiles && (
-                                <div className="grid grid-cols-12 gap-10">
-                                    {current.image ? (
-                                        <Link href={current.href} className="img-zoom group relative col-span-3 block h-80 overflow-hidden">
-                                            <img src={img(current.image, 700)} alt="" className="h-full w-full object-cover" />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/85 to-transparent" />
-                                            <div className="absolute bottom-0 p-6 text-white">
-                                                <p className="text-[11px] uppercase tracking-eyebrow text-gold-light">{current.tagline}</p>
-                                                <p className="font-display mt-2 text-2xl font-semibold tracking-tight">{t('menu_all', { name: current.label })}</p>
-                                                <span className="mt-3 inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em]">{t('menu_explore')} <Icon name="arrow" size={14} /></span>
-                                            </div>
-                                        </Link>
-                                    ) : (
-                                        <div className="col-span-3">
-                                            <p className="font-display text-2xl font-semibold leading-tight tracking-tight text-ink">{t('menu_home_title')}</p>
-                                            <p className="mt-4 text-[15px] text-ink/60">{settings.footer_about}</p>
+                                <div className="grid h-full grid-cols-12 gap-10">
+                                    {/* Preview: the hovered link's photo, or the section's own photo */}
+                                    <Link href={preview?.href ?? current.href} className="group relative col-span-4 block h-full overflow-hidden bg-forest-900">
+                                        {(preview?.image || current.image) && (
+                                            <img key={preview?.image || current.image || ''} src={img((preview?.image || current.image) as string, 800)} alt="" className="menu-fade h-full w-full scale-[1.02] object-cover transition-transform duration-[1.2s] group-hover:scale-105" />
+                                        )}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/20 to-transparent" />
+                                        <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                                            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-light">{preview ? (preview.meta ? `${parseInt(preview.meta, 10)} ${parseInt(preview.meta, 10) === 1 ? t('tour_fact_day') : t('label_days')}` : current.label) : current.tagline}</p>
+                                            <p className="font-display mt-2 line-clamp-2 text-[1.35rem] font-semibold leading-snug">{preview?.label ?? t('menu_all', { name: current.label })}</p>
+                                            <span className="mt-3 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-white/85">{t('menu_explore')} <Icon name="arrow" size={14} className="transition group-hover:translate-x-1" /></span>
                                         </div>
-                                    )}
-                                    <div className="col-span-9 columns-3 gap-10">
+                                    </Link>
+                                    <div className={cn('no-scrollbar col-span-8 h-full gap-10 overflow-y-auto pr-2', current.columns.length > 2 ? 'columns-3' : 'columns-2')}>
                                         {current.columns.map((col) => (
                                             <div key={col.title} className="mb-7 break-inside-avoid">
                                                 <p className="eyebrow !text-[11px] !text-ink">{col.title}</p>
                                                 <ul className="mt-3">
                                                     {col.links.map((l) => (
                                                         <li key={l.href}>
-                                                            <Link href={l.href} className="group flex items-start justify-between gap-3 py-1.5 text-[14.5px] leading-snug text-ink/75 hover:text-ink">
+                                                            <Link href={l.href} onMouseEnter={() => setPreview(l)} onFocus={() => setPreview(l)}
+                                                                className={cn('group flex items-start justify-between gap-3 py-1.5 text-[14.5px] leading-snug transition-colors', preview?.href === l.href ? 'text-gold' : 'text-ink/75 hover:text-ink')}>
                                                                 <span className="link-underline">{l.label}</span>
                                                                 {l.meta && <span className="shrink-0 pt-0.5 text-[11px] uppercase tracking-wider text-ink/35 group-hover:text-gold-dark">{l.meta}</span>}
                                                             </Link>
@@ -272,6 +273,9 @@ function Header({ solid }: { solid: boolean }) {
                     </div>
                 </div>
             </header>
+
+            {/* While a menu is open the page behind it dims, so the panel reads as one layer over the whole screen */}
+            <div aria-hidden className={cn('pointer-events-none fixed inset-0 z-40 bg-forest-900/35 backdrop-blur-[2px] transition-opacity duration-300', open ? 'opacity-100' : 'opacity-0')} />
 
             {/* Mobile drawer */}
             <div className={cn('fixed inset-0 z-[60] xl:hidden', drawer ? 'visible' : 'invisible')}>

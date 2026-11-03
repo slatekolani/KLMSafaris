@@ -146,7 +146,7 @@ export interface SharedProps {
         categories: Category[];
         destinations: Destination[];
         partners: Partner[];
-        pages: { title: string; menu_title: string | null; slug: string; footer_group: string }[];
+        pages: { title: string; menu_title: string | null; slug: string; footer_group: string; image?: string | null }[];
     } | null;
     admin: { nav: { key: string; label: string; icon: string; group: string }[]; newEnquiries: number } | null;
     /** Search & share tags for this page, worked out on the server (App\\Support\\Seo). */
