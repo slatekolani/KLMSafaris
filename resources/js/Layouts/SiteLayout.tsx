@@ -166,6 +166,16 @@ function Header({ solid }: { solid: boolean }) {
     const leave = () => { closeTimer.current = window.setTimeout(() => setOpen(null), 160); };
     const current = sections.find((s) => s.key === open);
     const [preview, setPreview] = useState<MenuLink | null>(null);
+    // The open menu fills the screen from just under the bar to the bottom edge.
+    const mainBar = useRef<HTMLDivElement>(null);
+    const [panelH, setPanelH] = useState(0);
+    useEffect(() => {
+        if (!open) return;
+        const fit = () => setPanelH(Math.max(360, window.innerHeight - (mainBar.current?.getBoundingClientRect().bottom ?? 120)));
+        fit();
+        window.addEventListener('resize', fit);
+        return () => window.removeEventListener('resize', fit);
+    }, [open]);
     useEffect(() => setPreview(null), [open]);
 
     return (
@@ -193,7 +203,7 @@ function Header({ solid }: { solid: boolean }) {
             {/* Plain white navigation that sits in the page flow and tucks away on scroll down */}
             <header ref={bar} className={cn('sticky top-0 z-50 transition-transform duration-300 ease-out will-change-transform', tucked ? '-translate-y-full' : 'translate-y-0')}>
                 {/* Main bar */}
-                <div className="relative border-b border-ink/10 bg-white" onMouseLeave={leave}>
+                <div ref={mainBar} className="relative border-b border-ink/10 bg-white" onMouseLeave={leave}>
                     <div className="container-site flex h-[78px] items-center justify-between gap-6">
                         <Logo light={light} />
 
@@ -219,7 +229,7 @@ function Header({ solid }: { solid: boolean }) {
                         className={cn('absolute inset-x-0 top-full origin-top border-y border-ink/10 bg-white shadow-[0_30px_60px_-30px_rgba(0,0,0,.35)] transition-all duration-300', open ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-2 opacity-0')}
                         onMouseEnter={() => window.clearTimeout(closeTimer.current)}
                     >
-                        <div className="container-site h-[min(460px,calc(100vh-150px))] py-8">
+                        <div className="container-site py-8" style={{ height: panelH || undefined }}>
                             {current?.tiles && (
                                 <div className="grid h-full grid-cols-4 grid-rows-2 gap-4">
                                     {(menu?.destinations ?? []).slice(0, 8).map((d) => (
