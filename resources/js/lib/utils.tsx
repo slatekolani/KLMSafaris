@@ -42,6 +42,12 @@ export function formatDate(date: string | null | undefined, opts: Intl.DateTimeF
     return new Date(date).toLocaleDateString('en-GB', opts);
 }
 
+/** Today as YYYY-MM-DD on the visitor's own calendar (toISOString would give the UTC date, a day off near midnight). */
+export function todayISO(): string {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
 export function initials(name: string): string {
     return name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
 }

@@ -3,7 +3,7 @@ import { useMemo, useRef, useState, type ReactNode } from 'react';
 import CountrySelect from '@/Components/CountrySelect';
 import Icon from '@/Components/Icon';
 import SiteLayout from '@/Layouts/SiteLayout';
-import { cn, img, initials, money, useShared, whatsappLink } from '@/lib/utils';
+import { cn, img, initials, money, todayISO, useShared, whatsappLink } from '@/lib/utils';
 import type { TeamMember } from '@/types';
 
 /* ---------------------------------------------------------------- Types */
@@ -489,7 +489,7 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                                         <button onClick={() => { setExact(!exact); setMonth(''); }} className="text-[13px] font-semibold text-gold-dark underline underline-offset-4">{exact ? c('plan_pick_month') : c('plan_exact')}</button>
                                     </div>
                                     {exact ? (
-                                        <input type="date" min={new Date().toISOString().slice(0, 10)} className="field mt-4 max-w-xs" value={month === 'flexible' ? '' : month} onChange={(e) => { setMonth(e.target.value); if (e.target.value) toContinue(); }} />
+                                        <input type="date" min={todayISO()} className="field mt-4 max-w-xs" value={month === 'flexible' ? '' : month} onChange={(e) => { const v = e.target.value && e.target.value < todayISO() ? todayISO() : e.target.value; setMonth(v); if (v) toContinue(); }} />
                                     ) : (
                                         <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-4">
                                             {months.map((m) => {

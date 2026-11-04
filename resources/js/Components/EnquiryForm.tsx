@@ -2,7 +2,7 @@ import { useForm } from '@inertiajs/react';
 import { useState, type FormEvent } from 'react';
 import CountrySelect from '@/Components/CountrySelect';
 import Icon from '@/Components/Icon';
-import { cn, img, money, useText } from '@/lib/utils';
+import { cn, img, money, todayISO, useText } from '@/lib/utils';
 
 type TripSummary = { title: string; duration_days: number; price_from: number | null; image: string | null; group_name?: string | null };
 
@@ -70,7 +70,9 @@ export default function EnquiryForm({ tourId, tour, source = 'contact', compact 
             )}
             <div className={compact ? 'sm:col-span-2' : ''}>
                 <label className={label}>{tx('form_date')}</label>
-                <input type="date" className={field} value={data.travel_date} onChange={(e) => setData('travel_date', e.target.value)} />
+                {/* Travel dates from today on: past days can't be picked */}
+                <input type="date" min={todayISO()} className={field} value={data.travel_date} onChange={(e) => setData('travel_date', e.target.value && e.target.value < todayISO() ? todayISO() : e.target.value)} />
+                {errors.travel_date && <p className="mt-1 text-xs text-clay">{errors.travel_date}</p>}
             </div>
             <div className={cn('grid grid-cols-2 gap-3', compact && 'sm:col-span-2')}>
                 <div>

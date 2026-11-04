@@ -298,7 +298,18 @@ class SiteController extends Controller
             'email' => 'required|email|max:160',
             'phone' => 'nullable|string|max:40',
             'country' => 'nullable|string|max:80',
-            'travel_date' => 'nullable|date',
+            // A day (YYYY-MM-DD) or, from the trip planner, a month (YYYY-MM); never in the past. One day of slack so a
+            // visitor whose clock is behind Tanzania's can still pick their own "today".
+            'travel_date' => ['nullable', 'string', 'max:10', function ($attr, $value, $fail) {
+                $month = preg_match('/^\d{4}-\d{2}$/', $value);
+                $date = preg_match('/^\d{4}-\d{2}(-\d{2})?$/', $value) && checkdate((int) substr($value, 5, 2), $month ? 1 : (int) substr($value, 8, 2), (int) substr($value, 0, 4))
+                    ? \Carbon\Carbon::parse($month ? "$value-01" : $value) : null;
+                if (! $date) {
+                    $fail(Setting::allValues()['ui_form_date_invalid'] ?? 'Please choose a valid travel date.');
+                } elseif ($month ? $date->endOfMonth()->isPast() : $date->lt(now()->subDay()->startOfDay())) {
+                    $fail(Setting::allValues()['ui_form_date_past'] ?? 'Please choose a travel date from today onwards.');
+                }
+            }],
             'adults' => 'nullable|integer|min:1|max:99',
             'children' => 'nullable|integer|min:0|max:99',
             'nights' => 'nullable|integer|min:1|max:90',
