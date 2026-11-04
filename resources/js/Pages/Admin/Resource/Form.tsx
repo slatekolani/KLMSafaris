@@ -1,6 +1,7 @@
 import { Link, router, useForm } from '@inertiajs/react';
 import { useEffect, useState, type FormEvent } from 'react';
 import { FieldRenderer, type FieldDef } from '@/Components/admin/Fields';
+import { askConfirm } from '@/Components/admin/Confirm';
 import Icon from '@/Components/Icon';
 import AdminLayout, { Button, Card } from '@/Layouts/AdminLayout';
 import { cn } from '@/lib/utils';
@@ -65,7 +66,7 @@ export default function ResourceForm({ resource, tabs, record, viewUrl }: { reso
 
                 <div className="sticky bottom-4 z-20 mt-6 flex items-center justify-between gap-3 rounded-2xl bg-white/90 p-3 shadow-[0_20px_50px_-20px_rgba(18,20,15,.35)] ring-1 ring-ink/[0.06] backdrop-blur">
                     <div className="flex items-center gap-2">
-                        {editing && <Button type="button" variant="danger" onClick={() => confirm('Delete permanently?') && router.delete(`${base}/${record.id}`)}><Icon name="trash" size={15} /><span className="hidden sm:inline">Delete</span></Button>}
+                        {editing && <Button type="button" variant="danger" onClick={async () => (await askConfirm({ title: `Delete this ${resource.singular.toLowerCase()}?`, text: 'It will be removed permanently. This cannot be undone.' })) && router.delete(`${base}/${record.id}`)}><Icon name="trash" size={15} /><span className="hidden sm:inline">Delete</span></Button>}
                         {editing && <Button type="button" variant="ghost" onClick={() => router.post(`${base}/${record.id}/duplicate`)}><Icon name="copy" size={15} /><span className="hidden sm:inline">Duplicate</span></Button>}
                     </div>
                     <div className="flex items-center gap-3">

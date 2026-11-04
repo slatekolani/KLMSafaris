@@ -1,4 +1,5 @@
 import { Link, router } from '@inertiajs/react';
+import { askConfirm } from '@/Components/admin/Confirm';
 import Icon from '@/Components/Icon';
 import AdminLayout, { Card } from '@/Layouts/AdminLayout';
 import { cn, formatDate } from '@/lib/utils';
@@ -14,7 +15,7 @@ export default function Subscribers({ subscribers }: { subscribers: Paginated<{ 
                         <Icon name="mail" size={16} className="text-ink/30" />
                         <span className="flex-1">{s.email}</span>
                         <span className="text-xs text-ink/45">{formatDate(s.created_at)}</span>
-                        <button onClick={() => confirm('Remove subscriber?') && router.delete(`/admin/subscribers/${s.id}`)} className="rounded-lg p-2 text-ink/40 hover:text-clay"><Icon name="trash" size={15} /></button>
+                        <button onClick={async () => (await askConfirm({ title: 'Remove this subscriber?', text: `${s.email} will stop receiving the newsletter.`, confirm: 'Yes, remove' })) && router.delete(`/admin/subscribers/${s.id}`)} className="rounded-lg p-2 text-ink/40 hover:text-clay"><Icon name="trash" size={15} /></button>
                     </div>
                 ))}
             </Card>

@@ -1,5 +1,6 @@
 import { Link, router, useForm } from '@inertiajs/react';
 import { useEffect, useState, type FormEvent } from 'react';
+import { askConfirm } from '@/Components/admin/Confirm';
 import Icon from '@/Components/Icon';
 import AdminLayout, { Button, Card } from '@/Layouts/AdminLayout';
 import { cn, formatDate, whatsappLink } from '@/lib/utils';
@@ -118,7 +119,7 @@ function Detail({ e, statuses }: { e: Enquiry; statuses: string[] }) {
                         <p className="text-sm text-ink/50">Received {formatDate(e.created_at, { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
                     </div>
                 </div>
-                <button onClick={() => confirm('Delete this enquiry?') && router.delete(`/admin/enquiries/${e.id}`)} className="rounded-lg p-2 text-ink/40 hover:bg-clay/10 hover:text-clay" title="Delete"><Icon name="trash" size={17} /></button>
+                <button onClick={async () => (await askConfirm({ title: 'Delete this enquiry?', text: `The enquiry from ${e.name} will be removed permanently.` })) && router.delete(`/admin/enquiries/${e.id}`)} className="rounded-lg p-2 text-ink/40 hover:bg-clay/10 hover:text-clay" title="Delete"><Icon name="trash" size={17} /></button>
             </div>
 
             {/* Progress: click a step to move the enquiry there (saved at once, visible to everyone) */}

@@ -26,6 +26,7 @@ class MediaController extends Controller
 
         $urls = [];
         foreach ($request->file('files') as $file) {
+            \App\Support\ImageCompressor::shrink($file);
             $path = $file->store('uploads/'.now()->format('Y/m'), 'public');
             $urls[] = '/storage/'.$path;
         }

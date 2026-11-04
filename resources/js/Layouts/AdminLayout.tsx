@@ -1,5 +1,6 @@
 import { Head, Link, router, usePage } from '@inertiajs/react';
 import { useEffect, useState, type ReactNode } from 'react';
+import { ConfirmHost } from '@/Components/admin/Confirm';
 import Icon from '@/Components/Icon';
 import { cn, initials, useShared } from '@/lib/utils';
 
@@ -96,6 +97,7 @@ export default function AdminLayout({ title, actions, children }: { title: strin
                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-acacia"><Icon name="check" size={14} /></span>{toast}
                 </div>
             </div>
+            <ConfirmHost />
         </div>
     );
 }

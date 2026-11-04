@@ -1,6 +1,7 @@
 import { Link, router } from '@inertiajs/react';
 import { useEffect, useRef, useState } from 'react';
 import Dropdown from '@/Components/Dropdown';
+import { askConfirm } from '@/Components/admin/Confirm';
 import Icon from '@/Components/Icon';
 import AdminLayout, { Card } from '@/Layouts/AdminLayout';
 import { cn, formatDate, img, money } from '@/lib/utils';
@@ -73,7 +74,7 @@ export default function ResourceIndex({ resource, rows, filters, filterOptions }
                                     <td className="whitespace-nowrap px-5 py-3 text-right" onClick={(e) => e.stopPropagation()}>
                                         {r.view && <a href={r.view} target="_blank" rel="noreferrer" className="inline-flex rounded-lg p-2 text-ink/40 hover:bg-ink/5 hover:text-ink" title="View on site"><Icon name="eye" size={16} /></a>}
                                         <Link href={`${base}/${r.id}/edit`} className="inline-flex rounded-lg p-2 text-ink/40 hover:bg-ink/5 hover:text-ink" title="Edit"><Icon name="pen" size={16} /></Link>
-                                        <button onClick={() => confirm(`Delete “${r.title}”? This cannot be undone.`) && router.delete(`${base}/${r.id}`)} className="inline-flex rounded-lg p-2 text-ink/40 hover:bg-clay/10 hover:text-clay" title="Delete"><Icon name="trash" size={16} /></button>
+                                        <button onClick={async () => (await askConfirm({ title: `Delete “${r.title}”?`, text: 'This cannot be undone.' })) && router.delete(`${base}/${r.id}`, { preserveScroll: true })} className="inline-flex rounded-lg p-2 text-ink/40 hover:bg-clay/10 hover:text-clay" title="Delete"><Icon name="trash" size={16} /></button>
                                     </td>
                                 </tr>
                             ))}

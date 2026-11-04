@@ -54,6 +54,9 @@ Route::get('login', fn () => redirect()->route('admin.login'))->name('login');
 */
 
 Route::get('sitemap.xml', \App\Http\Controllers\SitemapController::class)->name('sitemap');
+// robots.txt names this site's own sitemap address (www or not, whatever APP_URL is), and the IndexNow key file.
+Route::get('robots.txt', fn () => response("User-agent: *\nDisallow: /admin\nDisallow: /login\nDisallow: /unsubscribe/\n\nSitemap: ".url('/sitemap.xml')."\n", 200, ['Content-Type' => 'text/plain']))->name('robots');
+Route::get('indexnow-key.txt', fn () => response(\App\Support\IndexNow::key(), 200, ['Content-Type' => 'text/plain']))->name('indexnow');
 Route::get('/', [SiteController::class, 'home'])->name('home');
 Route::get('tours', [SiteController::class, 'tours'])->name('tours');
 Route::get('tours/{slug}', [SiteController::class, 'tour'])->name('tour');

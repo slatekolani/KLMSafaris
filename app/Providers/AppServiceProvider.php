@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // New and changed tours, posts and pages are announced to search engines (see App\Support\IndexNow).
+        \App\Support\IndexNow::watch();
     }
 }

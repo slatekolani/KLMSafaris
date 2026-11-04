@@ -1,7 +1,10 @@
 import axios from 'axios';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import Dropdown from '@/Components/Dropdown';
+import { askConfirm } from '@/Components/admin/Confirm';
 import Icon from '@/Components/Icon';
+import UploadProgress from '@/Components/admin/UploadProgress';
+import { uploadMedia, type UploadStage } from '@/lib/upload';
 import { cn, img } from '@/lib/utils';
 
 export type FieldDef = {
@@ -142,7 +145,7 @@ function Repeater({ fields, value, onChange, itemLabel }: { fields: Record<strin
                         <IconBtn icon="up" onClick={() => i > 0 && move(i, -1)} disabled={i === 0} />
                         <IconBtn icon="down" onClick={() => i < value.length - 1 && move(i, 1)} disabled={i === value.length - 1} />
                         <IconBtn icon="copy" onClick={() => onChange([...value.slice(0, i + 1), { ...row }, ...value.slice(i + 1)])} />
-                        <IconBtn icon="trash" danger onClick={() => confirm(`Remove this ${itemLabel.toLowerCase()}?`) && onChange(value.filter((_, n) => n !== i))} />
+                        <IconBtn icon="trash" danger onClick={async () => (await askConfirm({ title: `Remove this ${itemLabel.toLowerCase()}?`, text: 'It is taken off when you save.', confirm: 'Yes, remove' })) && onChange(value.filter((_, n) => n !== i))} />
                     </div>
                     {open === i && (
                         <div className="grid gap-4 border-t border-ink/[0.06] bg-sand-50 p-4 sm:grid-cols-2">
@@ -248,7 +251,7 @@ function GalleryInput({ value, onChange }: { value: string[]; onChange: (v: stri
                         onDrop={() => { if (dragIdx === null) return; const n = [...value]; const [m] = n.splice(dragIdx, 1); n.splice(i, 0, m); onChange(n); setDragIdx(null); }}
                         className="group relative aspect-square cursor-move overflow-hidden rounded-xl ring-1 ring-ink/10">
                         <img src={img(url, 300)} alt="" className="h-full w-full object-cover" />
-                        <button type="button" onClick={() => onChange(value.filter((_, n) => n !== i))} className="absolute right-1.5 top-1.5 rounded-full bg-white/90 p-1.5 text-clay opacity-0 shadow transition group-hover:opacity-100"><Icon name="trash" size={13} /></button>
+                        <button type="button" onClick={async () => (await askConfirm({ title: 'Remove this photo from the gallery?', text: 'The photo stays in the media library.', confirm: 'Yes, remove' })) && onChange(value.filter((_, n) => n !== i))} className="absolute right-1.5 top-1.5 rounded-full bg-white/90 p-1.5 text-clay opacity-0 shadow transition group-hover:opacity-100"><Icon name="trash" size={13} /></button>
                     </div>
                 ))}
                 <button type="button" onClick={() => setPicker(true)} className="flex aspect-square flex-col items-center justify-center gap-1 rounded-xl border border-dashed border-ink/20 text-xs text-ink/50 hover:border-gold hover:text-gold-dark">
@@ -266,7 +269,7 @@ type MediaFile = { path: string; url: string; name: string; source?: 'upload' | 
 export function MediaPicker({ onClose, onPick, multiple = false }: { onClose: () => void; onPick: (urls: string[]) => void; multiple?: boolean }) {
     const [files, setFiles] = useState<MediaFile[]>([]);
     const [selected, setSelected] = useState<string[]>([]);
-    const [uploading, setUploading] = useState(false);
+    const [stage, setStage] = useState<UploadStage | null>(null);
     const [url, setUrl] = useState('');
     const [source, setSource] = useState<'' | 'upload' | 'site'>('');
     const [q, setQ] = useState('');
@@ -280,17 +283,14 @@ export function MediaPicker({ onClose, onPick, multiple = false }: { onClose: ()
 
     const upload = async (list: FileList | null) => {
         if (!list?.length) return;
-        setUploading(true);
-        const fd = new FormData();
-        Array.from(list).forEach((f) => fd.append('files[]', f));
         try {
-            const r = await axios.post<{ urls: string[] }>('/admin/media', fd);
+            const urls = await uploadMedia(Array.from(list), setStage);
             await load();
-            setSelected((s) => (multiple ? [...s, ...r.data.urls] : r.data.urls.slice(0, 1)));
+            setSelected((s) => (multiple ? [...s, ...urls] : urls.slice(0, 1)));
         } catch (e: any) {
             alert(e?.response?.data?.message ?? 'Upload failed');
         } finally {
-            setUploading(false);
+            window.setTimeout(() => setStage(null), 1500);
         }
     };
 
@@ -309,8 +309,8 @@ export function MediaPicker({ onClose, onPick, multiple = false }: { onClose: ()
                     onDrop={(e) => { e.preventDefault(); upload(e.dataTransfer.files); }}
                 >
                     <Icon name="upload" size={24} className="text-gold" />
-                    <p>Drag images here or <button type="button" onClick={() => fileRef.current?.click()} className="text-gold-dark underline">browse</button> · JPG, PNG, WEBP up to 12MB</p>
-                    {uploading && <p className="text-gold-dark">Uploading…</p>}
+                    <p>Drag images here or <button type="button" onClick={() => fileRef.current?.click()} className="text-gold-dark underline">browse</button> · JPG, PNG, WEBP, any size (large photos are compressed for you)</p>
+                    <UploadProgress stage={stage} />
                     <input ref={fileRef} type="file" accept="image/*" multiple className="hidden" onChange={(e) => upload(e.target.files)} />
                 </div>
                 <div className="flex gap-2 px-5">

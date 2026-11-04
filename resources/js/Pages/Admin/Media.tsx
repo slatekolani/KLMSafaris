@@ -1,7 +1,10 @@
 import { router } from '@inertiajs/react';
 import { useMemo, useRef, useState } from 'react';
+import { askConfirm } from '@/Components/admin/Confirm';
 import Icon from '@/Components/Icon';
+import UploadProgress from '@/Components/admin/UploadProgress';
 import AdminLayout, { Card } from '@/Layouts/AdminLayout';
+import { uploadMedia, type UploadStage } from '@/lib/upload';
 import { cn } from '@/lib/utils';
 
 type F = { path: string; url: string; name: string; size: number; source: 'upload' | 'site' };
@@ -17,7 +20,20 @@ export default function Media({ files }: { files: F[] }) {
     const [copied, setCopied] = useState<string | null>(null);
     const [source, setSource] = useState<'' | 'upload' | 'site'>('');
     const [q, setQ] = useState('');
-    const upload = (list: FileList | null) => list?.length && router.post('/admin/media', { files: Array.from(list) }, { forceFormData: true, preserveScroll: true });
+    // Large photos are compressed in the browser first, then uploaded; the box shows each step.
+    const [stage, setStage] = useState<UploadStage | null>(null);
+    const upload = async (list: FileList | null) => {
+        if (!list?.length) return;
+        try {
+            const urls = await uploadMedia(Array.from(list), setStage);
+            router.reload({ only: ['files'] });
+            window.setTimeout(() => setStage(null), 1800);
+            return urls;
+        } catch (e: any) {
+            setStage(null);
+            alert(e?.response?.data?.message ?? 'Upload failed');
+        }
+    };
 
     const shown = useMemo(() => {
         const words = q.toLowerCase().split(/\s+/).filter(Boolean);
@@ -31,7 +47,8 @@ export default function Media({ files }: { files: F[] }) {
                 className="flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-ink/15 bg-white p-10 text-center">
                 <Icon name="upload" size={30} className="text-gold" />
                 <p className="font-display text-2xl">Drop images to upload</p>
-                <p className="text-sm text-ink/50">or <button onClick={() => ref.current?.click()} className="text-gold-dark underline">browse your computer</button> · JPG, PNG, WEBP, SVG up to 12MB</p>
+                <p className="text-sm text-ink/50">or <button onClick={() => ref.current?.click()} className="text-gold-dark underline">browse your computer</button> · JPG, PNG, WEBP, SVG · large photos are compressed for you</p>
+                <UploadProgress stage={stage} />
                 <input ref={ref} type="file" multiple accept="image/*" className="hidden" onChange={(e) => upload(e.target.files)} />
             </div>
 
@@ -65,7 +82,7 @@ export default function Media({ files }: { files: F[] }) {
                                 <Icon name={copied === f.path ? 'check' : 'copy'} size={14} />
                             </button>
                             {f.source === 'upload' && (
-                                <button onClick={() => confirm('Delete this file? Pages using it will show a broken image.') && router.delete('/admin/media', { data: { path: f.path }, preserveScroll: true })} className="rounded-lg p-1.5 text-ink/40 hover:bg-clay/10 hover:text-clay" title="Delete">
+                                <button onClick={async () => (await askConfirm({ title: 'Delete this image?', text: 'Pages that use it will show an empty space instead.' })) && router.delete('/admin/media', { data: { path: f.path }, preserveScroll: true })} className="rounded-lg p-1.5 text-ink/40 hover:bg-clay/10 hover:text-clay" title="Delete">
                                     <Icon name="trash" size={14} />
                                 </button>
                             )}
