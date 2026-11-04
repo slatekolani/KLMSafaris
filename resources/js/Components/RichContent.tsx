@@ -1,5 +1,6 @@
 import { useMemo, useState, type ReactNode } from 'react';
 import Icon from '@/Components/Icon';
+import ReadMore from '@/Components/ReadMore';
 import { cn, img } from '@/lib/utils';
 
 type IconName = Parameters<typeof Icon>[0]['name'];
@@ -250,7 +251,7 @@ export default function RichContent({ html, heroImage, extra }: { html: string; 
                                             <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-gold/10 text-gold"><Icon name={iconFor(s.title)} size={19} /></span>
                                             {s.title}
                                         </h2>
-                                        <div className="prose-lux mt-5" dangerouslySetInnerHTML={{ __html: s.html }} />
+                                        <ReadMore className="mt-5" html={s.html} />
                                     </section>,
                                 );
                                 place([s], out);
@@ -292,7 +293,7 @@ function Split({ s, flip }: { s: Block; flip: boolean }) {
             </div>
             <div data-reveal className={cn('md:col-span-6', flip && 'md:order-1')}>
                 <Heading s={s} />
-                <div className="prose-lux mt-5" dangerouslySetInnerHTML={{ __html: s.html }} />
+                <ReadMore className="mt-5" html={s.html} />
             </div>
         </section>
     );
@@ -305,7 +306,7 @@ function Mosaic({ s }: { s: Block }) {
         <section id={s.id} className="scroll-mt-28">
             <div>
                 <Heading s={s} />
-                {s.text && <div className="prose-lux mt-5" dangerouslySetInnerHTML={{ __html: s.html }} />}
+                {s.text && <ReadMore className="mt-5" html={s.html} />}
             </div>
             <div className={cn('mt-10 grid gap-3 sm:gap-4', pics.length === 2 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-4 md:grid-rows-2')}>
                 {pics.map((src, i) => (
@@ -336,7 +337,7 @@ function TextOnly({ s }: { s: Block }) {
     return (
         <section id={s.id} className={cn('scroll-mt-28', short && 'border-l-4 border-gold bg-sand-100 p-8 sm:p-10')}>
             <Heading s={s} icon />
-            <div className="prose-lux mt-5" dangerouslySetInnerHTML={{ __html: s.html }} />
+            <ReadMore className="mt-5" html={s.html} fade={short ? 'from-sand-100' : undefined} />
         </section>
     );
 }

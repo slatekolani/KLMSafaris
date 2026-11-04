@@ -1,6 +1,7 @@
 import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 import Icon from '@/Components/Icon';
+import ReadMore from '@/Components/ReadMore';
 import Lightbox from '@/Components/Lightbox';
 import Pagination, { usePaged } from '@/Components/Pagination';
 import PageHero from '@/Components/PageHero';
@@ -24,7 +25,7 @@ export default function DestinationShow({ destination: d, tours, others }: { des
                 <div className="lg:col-span-7">
                     <span className="eyebrow">{tx('dest_about', { name: d.name })}</span>
                     <p className="font-display mt-6 text-xl font-semibold tracking-tight leading-snug sm:text-2xl">{d.excerpt}</p>
-                    <div className="prose-lux mt-8" dangerouslySetInnerHTML={{ __html: d.body ?? '' }} />
+                    <ReadMore className="mt-8" html={d.body ?? ''} />
                 </div>
                 <aside className="lg:col-span-5">
                     <div className="sticky top-28 space-y-5">

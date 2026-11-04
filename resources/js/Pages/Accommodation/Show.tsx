@@ -1,6 +1,7 @@
 import { Link } from '@inertiajs/react';
 import { useMemo, useState } from 'react';
 import Icon from '@/Components/Icon';
+import ReadMore from '@/Components/ReadMore';
 import Lightbox from '@/Components/Lightbox';
 import PageHero from '@/Components/PageHero';
 import StayCard, { stayCover, type Stay } from '@/Components/StayCard';
@@ -52,7 +53,7 @@ export default function AccommodationShow({ stay, more, tours }: { stay: Full; m
                     <span className="eyebrow">{tx('stay_about')}</span>
                     {stay.excerpt && <p className="lead mt-5 text-ink">{stay.excerpt}</p>}
                     {stay.description
-                        ? <div className="prose-lux mt-6" dangerouslySetInnerHTML={{ __html: stay.description }} />
+                        ? <ReadMore className="mt-6" html={stay.description} />
                         : !stay.excerpt && <p className="mt-5 text-[17px] leading-relaxed text-ink/70">{tx('stay_no_text')}</p>}
 
                     {photos.length > 0 && (

@@ -104,8 +104,10 @@
     /* The opening paragraph of a long page: bigger and lighter. */
     .prose-intro { @apply text-[17px] leading-[1.75] md:text-[19px]; }
     .prose-intro > p:first-child { @apply text-ink; }
-    /* Long content pages: paragraphs run the full width with both edges straight (justified); cards keep normal alignment. */
-    .rich-content .prose-lux:not(.prose-compact) p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+    /* Every CMS text (pages, destinations, trips, stays, blog posts, cards): paragraphs with both edges straight,
+       long words hyphenated so justified lines don't open wide gaps. Table cells keep normal alignment. */
+    .prose-lux p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+    .prose-lux td p, .prose-lux th p { text-align: left; }
     /* Inside cards and FAQ answers: tighter spacing. */
     .prose-compact { @apply text-[15px] leading-[1.65] md:text-[15.5px]; }
     .prose-compact > * + * { @apply mt-3; }

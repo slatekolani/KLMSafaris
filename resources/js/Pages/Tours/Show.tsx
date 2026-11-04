@@ -2,6 +2,7 @@ import { Link } from '@inertiajs/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import EnquiryForm from '@/Components/EnquiryForm';
 import Icon from '@/Components/Icon';
+import ReadMore from '@/Components/ReadMore';
 import HeroMedia from '@/Components/HeroMedia';
 import Lightbox from '@/Components/Lightbox';
 import Stars from '@/Components/Stars';
@@ -117,7 +118,7 @@ export default function TourShow({ tour, related, testimonials, consultant }: Pr
                             </dl>
                         )}
                         <span className="eyebrow">{tx('tour_overview')}</span>
-                        <div className="prose-lux mt-6" dangerouslySetInnerHTML={{ __html: tour.overview ?? '' }} />
+                        <ReadMore className="mt-6" html={tour.overview ?? ''} />
                         {!!tour.highlights?.length && (
                             <div className="mt-10 bg-white p-6 ring-1 ring-ink/5 sm:mt-12 sm:p-8">
                                 <p className="font-display text-xl sm:text-2xl">{tx('tour_highlights')}</p>
