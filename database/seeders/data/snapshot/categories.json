@@ -24,12 +24,12 @@
         "excludes": "[\"International flights\",\"Meals and drinks not listed\",\"Visa fees\",\"Travel insurance\",\"Mandatory inbound travel insurance\",\"Tips\",\"Accommodation after the tour\",\"Activities not in the itinerary\",\"Personal expenses\"]",
         "home_title": "Most Popular *Safaris*",
         "home_text": null,
-        "image": "/images/klm/2016-11-Serengeti-National-Park4-1.jpg",
+        "image": "/images/klm/2016-04-hero-serengeti-migration.jpg",
         "show_in_menu": 1,
         "show_on_home": 1,
         "sort_order": 1,
         "created_at": "2026-10-19 17:10:40",
-        "updated_at": "2026-11-02 10:08:48"
+        "updated_at": "2026-11-04 14:13:59"
     },
     {
         "name": "Day Tours",
@@ -40,12 +40,12 @@
         "excludes": "[\"Flight tickets\",\"Airport transfers\",\"Accommodation\",\"Meals and drinks not listed\",\"Visa fees\",\"Travel insurance\",\"Mandatory inbound travel insurance\",\"Tips\",\"Activities not in the itinerary\",\"Personal expenses\"]",
         "home_title": "Popular *Day Trips*",
         "home_text": null,
-        "image": "/images/klm/2024-11-bike.jpg",
+        "image": "/images/klm/2016-11-kikuletwa-hot-spring-tour1.jpg",
         "show_in_menu": 1,
         "show_on_home": 1,
         "sort_order": 2,
         "created_at": "2026-10-19 17:10:40",
-        "updated_at": "2026-11-02 10:08:48"
+        "updated_at": "2026-11-04 14:13:59"
     },
     {
         "name": "Zanzibar",
@@ -56,11 +56,11 @@
         "excludes": "[\"International flights and visas\",\"Travel insurance\",\"Tips for your guide\",\"Meals not listed\",\"Personal expenses\"]",
         "home_title": "Unforgettable *Zanzibar* Tours",
         "home_text": null,
-        "image": "/images/klm/2024-11-prison-island2.jpg",
+        "image": "/images/klm/2022-06-zan-top.jpg",
         "show_in_menu": 1,
         "show_on_home": 1,
         "sort_order": 3,
         "created_at": "2026-10-19 17:10:40",
-        "updated_at": "2026-11-02 09:55:24"
+        "updated_at": "2026-11-04 14:13:59"
     }
 ]

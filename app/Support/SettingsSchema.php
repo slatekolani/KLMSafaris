@@ -142,11 +142,11 @@ class SettingsSchema
             'headers' => [
                 'label' => 'Page headers',
                 'fields' => [
-                    'tours_hero_image' => ['label' => 'Tours page: image', 'type' => 'image', 'default' => $k('2016-11-Serengeti-National-Park4-1.jpg')],
+                    'tours_hero_image' => ['label' => 'Tours page: image', 'type' => 'image', 'default' => '/images/kilimanjaro/summit-glaciers-1.jpg'],
                     'tours_hero_eyebrow' => ['label' => 'Tours page: eyebrow', 'type' => 'text', 'default' => 'Tours & safaris'],
                     'tours_hero_title' => ['label' => 'Tours page: title', 'type' => 'text', 'default' => 'Find your *perfect* journey'],
                     'tours_hero_text' => ['label' => 'Tours page: text', 'type' => 'textarea', 'default' => 'Kilimanjaro climbs, Tanzania safaris, day tours and Zanzibar holidays, filter by what moves you.'],
-                    'destinations_hero_image' => ['label' => 'Destinations page: image', 'type' => 'image', 'default' => $k('2019-01-Ngorongoro-Crater00.jpg')],
+                    'destinations_hero_image' => ['label' => 'Destinations page: image', 'type' => 'image', 'default' => $k('2016-04-ABD09531-scaled.jpg')],
                     'destinations_hero_eyebrow' => ['label' => 'Destinations page: eyebrow', 'type' => 'text', 'default' => 'Where we travel'],
                     'destinations_hero_title' => ['label' => 'Destinations page: title', 'type' => 'text', 'default' => 'Tanzania, *from mountain to coast*'],
                     'destinations_hero_text' => ['label' => 'Destinations page: text', 'type' => 'textarea', 'default' => 'From the heights of Mount Kilimanjaro to the plains of Serengeti and the beautiful white sands of Zanzibar.'],
