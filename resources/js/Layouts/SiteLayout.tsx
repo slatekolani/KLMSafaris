@@ -209,21 +209,22 @@ function Header({ solid }: { solid: boolean }) {
             <header ref={bar} className={cn('sticky top-0 z-50 transition-transform duration-300 ease-out will-change-transform', tucked ? '-translate-y-full' : 'translate-y-0')}>
                 {/* Main bar */}
                 <div ref={mainBar} className="relative border-b border-ink/10 bg-white" onMouseLeave={leave}>
-                    <div className="container-site flex h-[78px] items-center justify-between gap-6">
+                    <div className="container-site flex h-[78px] items-center justify-between gap-6 lg:gap-3 xl:gap-6">
                         <Logo light={light} text={false} />
 
-                        <nav className="hidden items-center xl:flex">
+                        {/* Full menu from 1024px wide (most laptops); a little smaller text and spacing until 1280px */}
+                        <nav className="hidden items-center lg:flex">
                             {sections.map((s) => (
                                 <NavItem key={s.key} label={s.label} href={s.href} light={light} active={open === s.key} plain={s.plain} onEnter={() => (s.plain ? setOpen(null) : enter(s.key))} />
                             ))}
                         </nav>
 
                         <div className="flex items-center gap-3">
-                            <Link href="/tours" aria-label="Search tours" className={cn('hidden h-11 w-11 items-center justify-center border transition sm:flex xl:hidden 2xl:flex', light ? 'border-white/30 text-white hover:bg-white hover:text-ink' : 'border-ink/15 text-ink hover:bg-forest-900 hover:text-white')}>
+                            <Link href="/tours" aria-label="Search tours" className={cn('hidden h-11 w-11 items-center justify-center border transition sm:flex lg:hidden 2xl:flex', light ? 'border-white/30 text-white hover:bg-white hover:text-ink' : 'border-ink/15 text-ink hover:bg-forest-900 hover:text-white')}>
                                 <Icon name="search" size={17} />
                             </Link>
-                            <Link href="/plan-your-trip" className="btn btn-brand hidden !h-11 !px-6 sm:inline-flex">{t('nav_plan')}</Link>
-                            <button onClick={() => setDrawer(true)} className={cn('flex h-11 w-11 items-center justify-center xl:hidden', light ? 'text-white' : 'text-ink')} aria-label="Open menu">
+                            <Link href="/plan-your-trip" className="btn btn-brand hidden !h-11 !px-6 sm:inline-flex lg:!px-4 xl:!px-6">{t('nav_plan')}</Link>
+                            <button onClick={() => setDrawer(true)} className={cn('flex h-11 w-11 items-center justify-center lg:hidden', light ? 'text-white' : 'text-ink')} aria-label="Open menu">
                                 <Icon name="menu" size={24} />
                             </button>
                         </div>
@@ -236,7 +237,7 @@ function Header({ solid }: { solid: boolean }) {
                     >
                         {/* Every menu is drawn in the same spot and only the open one is shown, so the panel is always as tall as
                             the longest menu: all menus the same height, nothing cut off. A short screen scrolls the panel. */}
-                        <div className="no-scrollbar container-site grid overflow-y-auto py-8" style={{ maxHeight: panelH || undefined }}>
+                        <div className="menu-scroll container-site grid overflow-y-auto py-8" style={{ maxHeight: panelH || undefined }}>
                             {sections.filter((s) => !s.plain).map((s) => {
                                 const on = s.key === open;
                                 const shown = on ? preview : null;
@@ -304,7 +305,7 @@ function Header({ solid }: { solid: boolean }) {
             <div aria-hidden className={cn('pointer-events-none fixed inset-0 z-40 bg-forest-900/35 backdrop-blur-[2px] transition-opacity duration-300', open ? 'opacity-100' : 'opacity-0')} />
 
             {/* Mobile drawer */}
-            <div className={cn('fixed inset-0 z-[60] xl:hidden', drawer ? 'visible' : 'invisible')}>
+            <div className={cn('fixed inset-0 z-[60] lg:hidden', drawer ? 'visible' : 'invisible')}>
                 <div onClick={() => setDrawer(false)} className={cn('absolute inset-0 bg-forest-900/50 backdrop-blur-sm transition-opacity duration-500', drawer ? 'opacity-100' : 'opacity-0')} />
                 <aside className={cn('absolute inset-y-0 right-0 flex w-full max-w-md flex-col bg-forest-900 text-white transition-transform duration-700 ease-lux', drawer ? 'translate-x-0' : 'translate-x-full')}>
                     <div className="flex h-[84px] items-center justify-between px-6">
@@ -335,10 +336,10 @@ function Header({ solid }: { solid: boolean }) {
 
 function NavItem({ label, href, light, active, plain, onEnter }: { label: string; href: string; light: boolean; active: boolean; plain?: boolean; onEnter: () => void }) {
     return (
-        <Link href={href} onMouseEnter={onEnter} className={cn('group relative flex items-center gap-1 whitespace-nowrap px-2 py-8 text-[14.5px] font-medium transition-colors 2xl:px-4', light ? 'text-white/90 hover:text-white' : 'text-ink/80 hover:text-ink')}>
+        <Link href={href} onMouseEnter={onEnter} className={cn('group relative flex items-center gap-0.5 whitespace-nowrap px-[5px] py-8 text-[13px] font-medium transition-colors xl:gap-1 xl:px-2 xl:text-[14.5px] 2xl:px-4', light ? 'text-white/90 hover:text-white' : 'text-ink/80 hover:text-ink')}>
             {label}
-            {!plain && <Icon name="chevronDown" size={13} className={cn('transition-transform duration-300', active && 'rotate-180')} />}
-            <span className={cn('absolute inset-x-2 bottom-[22px] h-px 2xl:inset-x-4 origin-left bg-current transition-transform duration-300', active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100')} />
+            {!plain && <Icon name="chevronDown" size={12} className={cn('shrink-0 transition-transform duration-300', active && 'rotate-180')} />}
+            <span className={cn('absolute inset-x-[5px] bottom-[22px] h-px xl:inset-x-2 2xl:inset-x-4 origin-left bg-current transition-transform duration-300', active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100')} />
         </Link>
     );
 }

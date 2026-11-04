@@ -62,6 +62,10 @@
     .menu-fade { animation: menu-fade .45s ease both; }
     /* Dropdown lists: a quick drop-in when they open. */
     .menu-pop { animation: menu-pop .18s ease-out both; }
+    /* The open menu on a short screen: a slim scrollbar shows there is more below. */
+    .menu-scroll { scrollbar-width: thin; scrollbar-color: rgb(29 68 104 / .25) transparent; }
+    .menu-scroll::-webkit-scrollbar { width: 6px; }
+    .menu-scroll::-webkit-scrollbar-thumb { background: rgb(29 68 104 / .25); border-radius: 3px; }
     @keyframes upload-slide { from { transform: translateX(-100%); } to { transform: translateX(300%); } }
     @keyframes menu-pop { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
     @keyframes menu-fade { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: scale(1.02); } }
