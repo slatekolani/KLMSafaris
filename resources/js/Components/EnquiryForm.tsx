@@ -2,16 +2,19 @@ import { useForm } from '@inertiajs/react';
 import { useState, type FormEvent } from 'react';
 import CountrySelect from '@/Components/CountrySelect';
 import Icon from '@/Components/Icon';
-import { cn, img, money, todayISO, useText } from '@/lib/utils';
+import SpamShield from '@/Components/SpamShield';
+import { cn, img, money, todayISO, useShared, useText } from '@/lib/utils';
 
 type TripSummary = { title: string; duration_days: number; price_from: number | null; image: string | null; group_name?: string | null };
 
 export default function EnquiryForm({ tourId, tour, source = 'contact', compact = false, dark = false }: { tourId?: number; tour?: TripSummary; source?: string; compact?: boolean; dark?: boolean }) {
     const tx = useText();
+    const { turnstile } = useShared();
     const [sent, setSent] = useState<string | false>(false);
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '', email: '', phone: '', country: '', travel_date: '', adults: 2, children: 0, message: '',
         tour_id: tourId ?? null as number | null, source,
+        website: '', form_started_at: Date.now(), turnstile_token: '',
     });
 
     const submit = (e: FormEvent) => {
@@ -25,7 +28,7 @@ export default function EnquiryForm({ tourId, tour, source = 'contact', compact 
                 <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-none bg-gold text-white"><Icon name="check" size={24} /></span>
                 <h3 className="font-display mt-5 text-2xl font-semibold tracking-tight">{tx('form_thanks')}</h3>
                 <p className={cn('mt-2', dark ? 'text-white/70' : 'text-ink/60')}>{tx('form_thanks_text', { email: sent || '' })}</p>
-                <button onClick={() => setSent(false)} className="mt-6 text-sm text-gold underline underline-offset-4">{tx('form_again')}</button>
+                <button onClick={() => { setSent(false); setData('form_started_at', Date.now()); setData('turnstile_token', ''); }} className="mt-6 text-sm text-gold underline underline-offset-4">{tx('form_again')}</button>
             </div>
         );
     }
@@ -34,7 +37,10 @@ export default function EnquiryForm({ tourId, tour, source = 'contact', compact 
     const field = cn('field', dark && '!border-white/10 !bg-white/5 !text-white placeholder:!text-white/30');
 
     return (
-        <form onSubmit={submit} className="grid gap-4 sm:grid-cols-2">
+        <form onSubmit={submit} className="relative grid gap-4 sm:grid-cols-2">
+            <div className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+                <label>Website <input tabIndex={-1} autoComplete="off" value={data.website} onChange={(e) => setData('website', e.target.value)} /></label>
+            </div>
             {tour && (
                 <div className={cn('flex items-center gap-4 p-3 sm:col-span-2', dark ? 'bg-white/[.07] ring-1 ring-white/10' : 'bg-sand-100 ring-1 ring-ink/5')}>
                     {tour.image && <img src={img(tour.image, 240)} alt="" className="h-16 w-20 shrink-0 object-cover" />}
@@ -89,7 +95,8 @@ export default function EnquiryForm({ tourId, tour, source = 'contact', compact 
                 <textarea rows={compact ? 3 : 5} className={field} value={data.message} onChange={(e) => setData('message', e.target.value)} placeholder={tour ? tx('form_message_ph_tour') : tx('form_message_ph')} />
             </div>
             <div className="sm:col-span-2">
-                <button disabled={processing} className="btn btn-gold w-full disabled:opacity-60">
+                <SpamShield key={data.form_started_at} enabled={turnstile.enabled} siteKey={turnstile.siteKey} action="enquiry" onToken={(token) => setData('turnstile_token', token)} />
+                <button disabled={processing || (turnstile.enabled && !data.turnstile_token)} className="btn btn-gold mt-4 w-full disabled:opacity-60">
                     {processing ? tx('form_sending') : tx('form_send')} <Icon name="send" size={16} />
                 </button>
                 <p className={cn('mt-3 flex items-center justify-center gap-2 text-xs', dark ? 'text-white/45' : 'text-ink/45')}>

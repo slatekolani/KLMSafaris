@@ -18,6 +18,18 @@ return [
         'key' => env('INDEXNOW_KEY'),
     ],
 
+    // Cloudflare Turnstile protects public enquiry and newsletter forms.  It is
+    // on by default in production, but remains off for local development/tests
+    // unless explicitly enabled.
+    'turnstile' => [
+        'enabled' => env('TURNSTILE_ENABLED', env('APP_ENV') === 'production'),
+        'site_key' => env('TURNSTILE_SITE_KEY'),
+        'secret_key' => env('TURNSTILE_SECRET_KEY'),
+        'verify_url' => env('TURNSTILE_VERIFY_URL', 'https://challenges.cloudflare.com/turnstile/v0/siteverify'),
+        // Optional extra guard. Set this to the hostname registered with Cloudflare.
+        'expected_hostname' => env('TURNSTILE_EXPECTED_HOSTNAME'),
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),

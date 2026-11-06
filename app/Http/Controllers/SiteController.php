@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\EnquiryConfirmation;
 use App\Mail\EnquiryReceived;
 use App\Mail\NewSubscriber;
+use App\Mail\SubscriberConfirmation;
 use App\Mail\SubscriberWelcome;
 use App\Models\Accommodation;
 use App\Models\GalleryPhoto;
@@ -21,9 +22,11 @@ use App\Models\Subscriber;
 use App\Models\TeamMember;
 use App\Models\Testimonial;
 use App\Models\Tour;
+use App\Support\FormSpamProtection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Validation\Rule;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -293,6 +296,8 @@ class SiteController extends Controller
 
     public function enquire(Request $request)
     {
+        app(FormSpamProtection::class)->assertHuman($request, 'enquiry');
+
         $data = $request->validate([
             'name' => 'required|string|max:120',
             'email' => 'required|email|max:160',
@@ -317,7 +322,7 @@ class SiteController extends Controller
             'interests' => 'nullable|array',
             'message' => 'nullable|string|max:5000',
             'tour_id' => 'nullable|exists:tours,id',
-            'source' => 'nullable|string|max:30',
+            'source' => ['nullable', Rule::in(['contact', 'tour', 'planner'])],
         ]);
 
         $enquiry = Enquiry::create(array_filter($data, fn ($v) => $v !== null) + ['source' => 'contact']);
@@ -332,18 +337,51 @@ class SiteController extends Controller
 
     public function subscribe(Request $request)
     {
+        app(FormSpamProtection::class)->assertHuman($request, 'subscribe');
+
         $data = $request->validate(['email' => 'required|email|max:160']);
         $email = strtolower(trim($data['email']));
+        $subscriber = Subscriber::where('email', $email)->first();
 
-        if (Subscriber::where('email', $email)->exists()) {
+        if ($subscriber?->confirmed_at) {
             return back()->with('success', Setting::allValues()['ui_flash_already']);
         }
 
-        $subscriber = Subscriber::create(['email' => $email]);
+        if ($subscriber) {
+            $subscriber->refreshConfirmationToken();
+            $subscriber->save();
+        } else {
+            $subscriber = Subscriber::create(['email' => $email]);
+        }
+
+        // A confirmation email prevents someone from subscribing another
+        // person, and keeps unverified addresses out of the mailing list.
+        $this->sendMail(fn () => Mail::to($subscriber->email)->send(new SubscriberConfirmation($subscriber)), "subscriber #{$subscriber->id} confirmation");
+
+        return back()->with('success', str_replace('{email}', $subscriber->email, Setting::allValues()['ui_flash_subscribe_confirm']));
+    }
+
+    /** Complete newsletter double opt-in before sending any welcome or team alert. */
+    public function confirmSubscription(string $token)
+    {
+        $subscriber = Subscriber::where('confirmation_token', $token)->first();
+        if (! $subscriber) {
+            return redirect('/')->with('error', Setting::allValues()['ui_flash_confirm_used']);
+        }
+        if ($subscriber->confirmed_at) {
+            return redirect('/')->with('success', Setting::allValues()['ui_flash_already']);
+        }
+
+        $subscriber->update([
+            'confirmed_at' => now(),
+            'confirmation_token' => null,
+        ]);
+        $subscriber->refresh();
+
         $this->sendMail(fn () => Mail::to($subscriber->email)->send(new SubscriberWelcome($subscriber)), "subscriber #{$subscriber->id} welcome");
         $this->sendMail(fn () => Mail::to($this->teamInbox())->send(new NewSubscriber($subscriber)), "subscriber #{$subscriber->id} alert");
 
-        return back()->with('success', str_replace('{email}', $subscriber->email, Setting::allValues()['ui_flash_subscribed']));
+        return redirect('/')->with('success', str_replace('{email}', $subscriber->email, Setting::allValues()['ui_flash_subscribed']));
     }
 
     /** One-click unsubscribe from the link in every newsletter email. */

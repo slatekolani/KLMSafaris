@@ -70,8 +70,9 @@ Route::get('accommodation', [SiteController::class, 'stays'])->name('stays');
 Route::get('accommodation/{slug}', [SiteController::class, 'stay'])->name('stay');
 Route::get('contact', [SiteController::class, 'contact'])->name('contact');
 Route::get('plan-your-trip', [SiteController::class, 'plan'])->name('plan');
-Route::post('enquire', [SiteController::class, 'enquire'])->middleware('throttle:8,1')->name('enquire');
-Route::post('subscribe', [SiteController::class, 'subscribe'])->middleware('throttle:8,1')->name('subscribe');
+Route::post('enquire', [SiteController::class, 'enquire'])->middleware('throttle:public-form')->name('enquire');
+Route::post('subscribe', [SiteController::class, 'subscribe'])->middleware('throttle:public-form')->name('subscribe');
+Route::get('subscribe/confirm/{token}', [SiteController::class, 'confirmSubscription'])->name('subscribe.confirm');
 Route::get('unsubscribe/{token}', [SiteController::class, 'unsubscribe'])->name('unsubscribe');
 
 // CMS pages (About, Sustainability, Volunteer, Terms…): keep last.

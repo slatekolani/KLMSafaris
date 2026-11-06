@@ -141,6 +141,7 @@ export type Settings = Record<string, any>;
 export interface SharedProps {
     settings: Settings;
     flash: { success: string | null; error: string | null };
+    turnstile: { enabled: boolean; siteKey: string | null };
     auth: { user: { id: number; name: string; email: string } | null };
     menu: {
         categories: Category[];

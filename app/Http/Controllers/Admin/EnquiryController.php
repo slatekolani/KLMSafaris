@@ -60,7 +60,7 @@ class EnquiryController extends Controller
     public function subscribers()
     {
         return Inertia::render('Admin/Subscribers', [
-            'subscribers' => Subscriber::latest()->paginate(50),
+            'subscribers' => Subscriber::confirmed()->latest()->paginate(50),
         ]);
     }
 
@@ -69,7 +69,7 @@ class EnquiryController extends Controller
         return response()->streamDownload(function () {
             $out = fopen('php://output', 'w');
             fputcsv($out, ['email', 'subscribed_at']);
-            Subscriber::orderBy('id')->each(fn ($s) => fputcsv($out, [$s->email, $s->created_at]));
+            Subscriber::confirmed()->orderBy('id')->each(fn ($s) => fputcsv($out, [$s->email, $s->created_at]));
             fclose($out);
         }, 'subscribers.csv', ['Content-Type' => 'text/csv']);
     }

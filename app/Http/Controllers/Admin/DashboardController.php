@@ -30,7 +30,7 @@ class DashboardController extends Controller
                 'tours' => Tour::count(),
                 'destinations' => Destination::count(),
                 'posts' => Post::count(),
-                'subscribers' => Subscriber::count(),
+                'subscribers' => Subscriber::confirmed()->count(),
             ],
             'months' => $months,
             'recent' => Enquiry::with('tour:id,title')->latest()->take(6)->get(),

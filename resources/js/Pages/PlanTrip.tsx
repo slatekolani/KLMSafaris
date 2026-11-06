@@ -2,6 +2,7 @@ import { Link, useForm } from '@inertiajs/react';
 import { useMemo, useRef, useState, type ReactNode } from 'react';
 import CountrySelect from '@/Components/CountrySelect';
 import Icon from '@/Components/Icon';
+import SpamShield from '@/Components/SpamShield';
 import SiteLayout from '@/Layouts/SiteLayout';
 import { cn, img, initials, money, todayISO, useShared, whatsappLink } from '@/lib/utils';
 import type { TeamMember } from '@/types';
@@ -43,7 +44,7 @@ const num = (v: unknown, fallback: number) => (Number.isFinite(Number(v)) && Str
 
 /* ================================================================ Page */
 export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
-    const { settings } = useShared();
+    const { settings, turnstile } = useShared();
 
     /* ---------- CMS copy helpers ---------- */
     const c = (key: string) => String(copy[key] ?? '');
@@ -231,7 +232,10 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
         : new Date(`${month}T12:00:00`).toLocaleDateString('en-GB', exact ? { day: 'numeric', month: 'short', year: 'numeric' } : { month: 'long', year: 'numeric' });
 
     /* ---------- Group ---------- */
-    const form = useForm({ name: '', email: '', phone: '', country: '', message: '', adults: 2, children: 0 });
+    const form = useForm({
+        name: '', email: '', phone: '', country: '', message: '', adults: 2, children: 0,
+        website: '', form_started_at: Date.now(), turnstile_token: '',
+    });
     const { data, setData } = form;
     const travellers = data.adults + data.children;
     const chooseParty = (p: (typeof parties)[number]) => {
@@ -575,12 +579,16 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                             {current === 'review' && (
                                 <Step title={c('plan_step_review_title')} hint={c('plan_step_review_hint')}>
                                     <div className="mb-8 lg:hidden">{summary}</div>
-                                    <div className="grid gap-4 sm:grid-cols-2">
+                                    <div className="relative grid gap-4 sm:grid-cols-2">
+                                        <div className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+                                            <label>Website <input tabIndex={-1} autoComplete="off" value={data.website} onChange={(e) => setData('website', e.target.value)} /></label>
+                                        </div>
                                         <Field label={c('plan_field_name')} error={form.errors.name}><input className="field" value={data.name} onChange={(e) => setData('name', e.target.value)} autoComplete="name" /></Field>
                                         <Field label={c('plan_field_email')} error={form.errors.email}><input type="email" className="field" value={data.email} onChange={(e) => setData('email', e.target.value)} autoComplete="email" /></Field>
                                         <Field label={c('plan_field_phone')}><input type="tel" className="field" value={data.phone} onChange={(e) => setData('phone', e.target.value)} autoComplete="tel" /></Field>
                                         <Field label={c('plan_field_country')}><CountrySelect className="field cursor-pointer" value={data.country} onChange={(v) => setData('country', v)} /></Field>
                                         <div className="sm:col-span-2"><Field label={c('plan_message_label')}><textarea rows={4} className="field" value={data.message} onChange={(e) => setData('message', e.target.value)} /></Field></div>
+                                        <div className="sm:col-span-2"><SpamShield key={data.form_started_at} enabled={turnstile.enabled} siteKey={turnstile.siteKey} action="enquiry" onToken={(token) => setData('turnstile_token', token)} /></div>
                                     </div>
                                 </Step>
                             )}
@@ -612,7 +620,7 @@ export default function PlanTrip({ planner, copy, tour, consultant }: Props) {
                             {current !== 'review' ? (
                                 <button onClick={() => go(step + 1)} disabled={!canNext[current]} className={cn('btn btn-dark transition-shadow duration-500 disabled:opacity-40', nudge && canNext[current] && 'shadow-[0_0_0_6px_rgb(var(--c-primary)/0.25)]')}>{c('plan_continue')} <Icon name="arrow" size={16} className="arrow" /></button>
                             ) : (
-                                <button onClick={submit} disabled={!canNext.review || form.processing} className="btn btn-gold disabled:opacity-40">{form.processing ? c('plan_sending') : c('plan_send')} <Icon name="send" size={16} /></button>
+                                <button onClick={submit} disabled={!canNext.review || form.processing || (turnstile.enabled && !data.turnstile_token)} className="btn btn-gold disabled:opacity-40">{form.processing ? c('plan_sending') : c('plan_send')} <Icon name="send" size={16} /></button>
                             )}
                         </div>
                         <p className="mt-4 text-[13px] text-ink/45">{t('plan_free_note', { phone: settings.phone })}</p>

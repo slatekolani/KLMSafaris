@@ -1,6 +1,7 @@
 import { Head, Link, router, useForm, usePage } from '@inertiajs/react';
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
 import Icon from '@/Components/Icon';
+import SpamShield from '@/Components/SpamShield';
 import BrandTile, { BrandMark } from '@/Components/BrandIcon';
 import Logo from '@/Components/Logo';
 import { cn, img, plain, setPriceFallback, useShared, useText, whatsappLink, whatsappNumber } from '@/lib/utils';
@@ -365,10 +366,10 @@ function MobileGroup({ label, href, links }: { label: string; href: string; link
 
 /* ------------------------------------------------------------------ */
 function Newsletter() {
-    const { settings } = useShared();
+    const { settings, turnstile } = useShared();
     const t = useText();
-    const { data, setData, post, processing, errors, reset } = useForm({ email: '' });
-    const submit = (e: FormEvent) => { e.preventDefault(); post('/subscribe', { preserveScroll: true, onSuccess: () => reset() }); };
+    const { data, setData, post, processing, errors, reset } = useForm({ email: '', website: '', form_started_at: Date.now(), turnstile_token: '' });
+    const submit = (e: FormEvent) => { e.preventDefault(); post('/subscribe', { preserveScroll: true, onSuccess: () => { reset(); setData('form_started_at', Date.now()); } }); };
 
     return (
         <section className="border-t border-ink/10 bg-sand-100">
@@ -378,14 +379,18 @@ function Newsletter() {
                     <h2 className="h-section mt-4">{settings.newsletter_title}</h2>
                     {settings.newsletter_text && <p className="mt-4 max-w-lg text-ink/60">{settings.newsletter_text}</p>}
                 </div>
-                <form onSubmit={submit} data-reveal className="lg:col-span-5 lg:col-start-8">
+                <form onSubmit={submit} data-reveal className="relative lg:col-span-5 lg:col-start-8">
+                    <div className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+                        <label>Website <input tabIndex={-1} autoComplete="off" value={data.website} onChange={(e) => setData('website', e.target.value)} /></label>
+                    </div>
                     <div className="flex items-end gap-4 border-b border-ink pb-2">
                         <label className="flex-1">
                             <span className="sr-only">{t('newsletter_placeholder')}</span>
                             <input type="email" required value={data.email} onChange={(e) => setData('email', e.target.value)} placeholder={t('newsletter_placeholder')} className="w-full bg-transparent py-2 text-lg outline-none placeholder:text-ink/40" />
                         </label>
-                        <button disabled={processing} className="flex shrink-0 items-center gap-2 py-2 text-[14px] font-semibold hover:text-gold-dark">{t('newsletter_button')} <Icon name="arrow" size={16} /></button>
+                        <button disabled={processing || (turnstile.enabled && !data.turnstile_token)} className="flex shrink-0 items-center gap-2 py-2 text-[14px] font-semibold hover:text-gold-dark disabled:opacity-50">{t('newsletter_button')} <Icon name="arrow" size={16} /></button>
                     </div>
+                    <SpamShield key={data.form_started_at} enabled={turnstile.enabled} siteKey={turnstile.siteKey} action="subscribe" onToken={(token) => setData('turnstile_token', token)} />
                     {errors.email && <p className="mt-2 text-sm text-clay">{errors.email}</p>}
                     <p className="mt-3 text-[12.5px] text-ink/45">{t('newsletter_note')}</p>
                 </form>

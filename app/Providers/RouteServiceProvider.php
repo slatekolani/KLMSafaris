@@ -28,6 +28,18 @@ class RouteServiceProvider extends ServiceProvider
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
 
+        // Public forms are a common abuse target. Use both an IP and an email
+        // key: rotating an address cannot bypass the first one, and rotating an
+        // IP cannot repeatedly send to one inbox.
+        RateLimiter::for('public-form', function (Request $request) {
+            $email = strtolower(trim((string) $request->input('email')));
+
+            return [
+                Limit::perMinutes(10, 3)->by('public-form:ip:'.$request->ip()),
+                Limit::perHour(3)->by('public-form:email:'.($email ?: 'missing')),
+            ];
+        });
+
         $this->routes(function () {
             Route::middleware('api')
                 ->prefix('api')

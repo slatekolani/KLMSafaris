@@ -33,6 +33,11 @@ class HandleInertiaRequests extends Middleware
                 'error' => $request->session()->get('error'),
             ],
             'auth' => fn () => ['user' => $request->user()?->only('id', 'name', 'email')],
+            // The site key is deliberately public; the secret remains on the server.
+            'turnstile' => fn () => [
+                'enabled' => (bool) config('services.turnstile.enabled'),
+                'siteKey' => config('services.turnstile.site_key'),
+            ],
             'menu' => $isAdmin ? null : fn () => [
                 'categories' => Category::where('show_in_menu', true)->orderBy('sort_order')
                     ->with(['tours' => fn ($q) => $q->select('id', 'category_id', 'group_name', 'title', 'slug', 'duration_days', 'image')])
