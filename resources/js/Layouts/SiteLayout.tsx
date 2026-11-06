@@ -112,13 +112,11 @@ function useMenuSections(): MenuSection[] {
         sections.push({ key: 'sustainability', label: t('menu_sustainability'), href: main.href, image: main.image || settings.footer_sustain_image, tagline: t('menu_sustainability_tagline'), columns: [{ title: t('menu_sustain_col'), links: sustain }] });
     }
 
-    sections.push({ key: 'blog', label: t('menu_blog'), href: '/journal', columns: [], plain: true });
-
     sections.push({
         key: 'about', label: t('menu_about'), href: '/about-klm-safaris',
         image: pages.find((p) => p.slug === 'about-klm-safaris')?.image || settings.og_image, tagline: settings.tagline,
         columns: [
-            { title: t('menu_about_col'), links: [...pageLinks('About'), { label: t('menu_blog_link'), href: '/journal', image: settings.journal_hero_image }, { label: t('menu_gallery_link'), href: '/gallery', image: settings.gallery_hero_image }, { label: t('menu_stays_link'), href: '/accommodation', image: settings.stays_hero_image }, { label: t('menu_contact_link'), href: '/contact' }] },
+            { title: t('menu_about_col'), links: [...pageLinks('About'), { label: t('menu_gallery_link'), href: '/gallery', image: settings.gallery_hero_image }, { label: t('menu_stays_link'), href: '/accommodation', image: settings.stays_hero_image }, { label: t('menu_contact_link'), href: '/contact' }] },
             { title: t('menu_travel_col'), links: pageLinks('Travel Info') },
         ].filter((c) => c.links.length),
     });
@@ -459,6 +457,7 @@ function Footer() {
                     )}
                     <div className="flex flex-wrap items-center gap-x-4 gap-y-2 md:shrink-0 md:flex-nowrap md:whitespace-nowrap">
                         {legal.map((p) => <Link key={p.slug} href={`/${p.slug}`} className="hover:text-white">{p.menu_title || p.title}</Link>)}
+                        <Link href="/journal" className="hover:text-white">{t('menu_blog')}</Link>
                         <Link href="/admin" className="hover:text-white">{t('footer_staff')}</Link>
                     </div>
                 </div>

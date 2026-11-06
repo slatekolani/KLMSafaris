@@ -173,7 +173,10 @@ class SiteController extends Controller
 
         return Inertia::render('Journal/Index', [
             'posts' => $posts,
-            'topics' => Post::published()->whereNotNull('topic')->distinct()->pluck('topic'),
+            // published() orders by date. MySQL 8 rejects DISTINCT topic when
+            // that unrelated order remains in the query, which caused /journal
+            // to return a production-only 500 response.
+            'topics' => Post::published()->reorder()->whereNotNull('topic')->distinct()->orderBy('topic')->pluck('topic'),
             'topic' => $request->topic,
         ]);
     }
