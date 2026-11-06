@@ -404,7 +404,7 @@ function Footer() {
     const socials = (['facebook', 'instagram', 'x', 'linkedin', 'pinterest', 'youtube', 'tiktok', 'tripadvisor'] as const).filter((s) => settings[s]);
     const col = (links: { label: string; url: string }[] | undefined) => (links ?? []).map((l) => ({ label: l.label, href: l.url }));
     const experiences = (menu?.categories ?? []).map((c) => ({ label: c.name, href: `/experiences/${c.slug}` }));
-    const usefulLinks = [...col(settings.footer_col2_links).filter((link) => link.href !== '/journal'), { label: 'Our blogs', href: '/journal' }];
+    const usefulLinks = [{ label: 'Our blogs', href: '/journal' }, ...col(settings.footer_col2_links).filter((link) => link.href !== '/journal')];
 
     return (
         <footer className="bg-forest-900 pb-16 text-white/65 lg:pb-0 [@media(hover:hover)_and_(pointer:fine)]:pb-0">
