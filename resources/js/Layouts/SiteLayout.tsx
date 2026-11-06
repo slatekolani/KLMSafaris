@@ -404,6 +404,7 @@ function Footer() {
     const socials = (['facebook', 'instagram', 'x', 'linkedin', 'pinterest', 'youtube', 'tiktok', 'tripadvisor'] as const).filter((s) => settings[s]);
     const col = (links: { label: string; url: string }[] | undefined) => (links ?? []).map((l) => ({ label: l.label, href: l.url }));
     const experiences = (menu?.categories ?? []).map((c) => ({ label: c.name, href: `/experiences/${c.slug}` }));
+    const usefulLinks = [...col(settings.footer_col2_links).filter((link) => link.href !== '/journal'), { label: 'Our blogs', href: '/journal' }];
 
     return (
         <footer className="bg-forest-900 pb-16 text-white/65 lg:pb-0 [@media(hover:hover)_and_(pointer:fine)]:pb-0">
@@ -427,7 +428,7 @@ function Footer() {
                     </div>
                         <FooterCol title={t('footer_experiences')} links={[...experiences, { label: t('footer_all_tours'), href: '/tours' }]} />
                         <FooterCol title={settings.footer_col1_title} links={col(settings.footer_col1_links)} />
-                        <FooterCol title={settings.footer_col2_title} links={col(settings.footer_col2_links)} />
+                        <FooterCol title={settings.footer_col2_title} links={usefulLinks} />
                         <div>
                             <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-white">{t('footer_contact')}</p>
                             <ul className="mt-5 space-y-3 text-[14.5px]">
@@ -457,7 +458,6 @@ function Footer() {
                     )}
                     <div className="flex flex-wrap items-center gap-x-4 gap-y-2 md:shrink-0 md:flex-nowrap md:whitespace-nowrap">
                         {legal.map((p) => <Link key={p.slug} href={`/${p.slug}`} className="hover:text-white">{p.menu_title || p.title}</Link>)}
-                        <Link href="/journal" className="hover:text-white">{t('menu_blog')}</Link>
                         <Link href="/admin" className="hover:text-white">{t('footer_staff')}</Link>
                     </div>
                 </div>
